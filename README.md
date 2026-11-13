@@ -21,6 +21,10 @@ The central result is a reliability limitation: both cloud runs completed, but t
 
 Links require repository access while visibility is private.
 
+## Viewing files
+
+[Figure gallery](reports/figures.md) · [中文图表总览](reports/figures.zh-CN.md) · [Viewing/download help](docs/viewing-files.md). The galleries embed PNGs; large JSONL and SQLite files may need downloading rather than a GitHub preview.
+
 ## Research question
 
 Can execution-checked synthetic data, preference tuning, and explicit learner memory support reliable Python feedback, and which parts of the observed behavior come from the model versus the controller?

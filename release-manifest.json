@@ -173,14 +173,19 @@
       "sha256": "4f8248a4a3b6b09dfdc0d01ea6fcc381ba01ae03423011ed556c2049162eb7f3"
     },
     {
+      "path": "docs/viewing-files.md",
+      "bytes": 2529,
+      "sha256": "333deb55a3c1c7b983a001fbd3378ad1894cd92d24bdb44b34cdd23926a31f1c"
+    },
+    {
       "path": "README.md",
-      "bytes": 6556,
-      "sha256": "1183dc99b58a2dfe5cb961fce8cf15687e9fe17b534e79cb1246264a9e66b86d"
+      "bytes": 6823,
+      "sha256": "7b95110b00c7fb990776721582242f21079c19aa2f65dbbcbeb2bb5f4dfcf628"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 7712,
-      "sha256": "468b5ca9fe35fdfcb362bf93b77aee75c4932555d80bbde8a89dc0838b02d833"
+      "bytes": 7983,
+      "sha256": "2f02a78ba3c9bc07608ef97aef8720a6f10a18ff93a6eb6d3d33ccd85ab53847"
     },
     {
       "path": "reports/assets/en/agents-evidence.pdf",
@@ -301,6 +306,11 @@
       "path": "reports/assets/en/family-supply.svg",
       "bytes": 11462,
       "sha256": "d2ea41d1b90fd6069c7cead515e6fea5ff8d197706cae70e234b2edbebd79e99"
+    },
+    {
+      "path": "reports/assets/en/README.md",
+      "bytes": 282,
+      "sha256": "8cc53fc4079a486266acbe592ce22c0bd5f4e4559110659e76f8d8576d3d9691"
     },
     {
       "path": "reports/assets/en/roles-memory-concept.png",
@@ -488,6 +498,11 @@
       "sha256": "4b704a04ed25a7d2555c7c77d7f3cb3154624d6ef96d392848284ef2adbabe1a"
     },
     {
+      "path": "reports/assets/zh/README.md",
+      "bytes": 282,
+      "sha256": "8cc53fc4079a486266acbe592ce22c0bd5f4e4559110659e76f8d8576d3d9691"
+    },
+    {
       "path": "reports/assets/zh/selection-ablation.pdf",
       "bytes": 54595,
       "sha256": "3b15f45acef7b5d482f00abc36f8630d11dae73e90843798df5164bfc1c5abf5"
@@ -603,6 +618,16 @@
       "sha256": "3d6e4b50a04eedf4b81222ce2bdcbba67face3737adc8664b31ab0853f0d6841"
     },
     {
+      "path": "reports/figures.md",
+      "bytes": 3785,
+      "sha256": "4c67e73ee7db4e69c5cf12a39be78d4ef4bc0530b04aea7390c5179afbd03869"
+    },
+    {
+      "path": "reports/figures.zh-CN.md",
+      "bytes": 3130,
+      "sha256": "64e8b9e5eb39346d9da968f639ad03944df722a707f60457e9078e9b95b84344"
+    },
+    {
       "path": "reports/plotting/build_diagrams.py",
       "bytes": 29879,
       "sha256": "971a05c87a76bbff62edc1a9e77d8b5c20e24fb451816a7498f070b928f82f01"
@@ -629,8 +654,8 @@
     },
     {
       "path": "reports/README.md",
-      "bytes": 3949,
-      "sha256": "01f05223312a8056feb44c691510083bf0a7339a65fe7ed560b4339fcf6d0001"
+      "bytes": 4211,
+      "sha256": "a0cf8f654642a6bd57d3241c342ea3c0424ce2eaf960a4c1f4e9e2d379d61c49"
     },
     {
       "path": "reports/requirements-figures.txt",
@@ -759,8 +784,8 @@
     },
     {
       "path": "scripts/verify_release.py",
-      "bytes": 2702,
-      "sha256": "b93d9b4fe148fece61eb9411ab1f5e9681eb9d828b0a4b8479e3d846be3b8408"
+      "bytes": 3664,
+      "sha256": "fda8591db47b5961f835705a59db52437d29f2529f06d85aa44f1f8904d21c45"
     },
     {
       "path": "synthesis/dataset/audit/candidates.jsonl",
@@ -2328,7 +2353,7 @@
       "sha256": "63f71d31d69e73620a90e6b13d142f550cc11845c01b636ff65b694b53bce59a"
     }
   ],
-  "file_count": 465,
+  "file_count": 470,
   "manifest_self_excluded": true,
   "new_model_experiments": false,
   "scope": "Hashes of this de-identified publication snapshot; historical run hashes describe pre-publication artifacts."

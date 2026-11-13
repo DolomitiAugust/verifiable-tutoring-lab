@@ -4,6 +4,10 @@
 
 The two PDFs describe the same frozen datasets and experiments. English is the concise research version; Chinese adds short conceptual notes. Both retain the 14 scientific figures, primary comparison tables, failed responses, and uncertainty boundaries. Personal conversations and submission material are excluded.
 
+## Online figure previews
+
+[English gallery](figures.md) | [中文图表总览](figures.zh-CN.md) | [Viewing/download help](../docs/viewing-files.md). Use the embedded PNGs if GitHub cannot render an individual SVG.
+
 ## Build the PDFs
 
 From the repository root, with an existing Tectonic installation:

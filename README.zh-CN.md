@@ -19,6 +19,10 @@
 
 仓库处于私有状态时，需要先获得访问权限才能使用这些链接。两语报告共用同一套实验代码和证据，中文增加概念解释与阅读提示。
 
+## 在线查看
+
+[中文图表总览](reports/figures.zh-CN.md) · [English figure gallery](reports/figures.md) · [查看与下载说明](docs/viewing-files.md)。图集直接显示PNG；大JSONL或SQLite可能需要下载后查看，预览报错不等于漏传。
+
 ## 研究问题
 
 可执行数据、偏好优化和持久记忆能否共同支持可靠的Python教学反馈？观察到的效果来自模型本身，还是控制器、工具和模板？

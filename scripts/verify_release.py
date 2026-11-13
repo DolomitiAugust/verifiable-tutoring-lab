@@ -6,6 +6,7 @@ import json
 import re
 import sqlite3
 import sys
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +25,22 @@ def main():
         for link in re.findall(r'\]\(([^)]+)\)', text):
             if not re.match(r'https?://|#', link):
                 check(name + ': ' + link, (ROOT / link.split('#')[0]).exists())
+    for path in ROOT.rglob('*.md'):
+        if '.git' in path.parts:
+            continue
+        for link in re.findall(r'\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
+            if not re.match(r'https?://|#', link):
+                target = link.split('#')[0].split('?')[0]
+                check('Markdown link ' + path.relative_to(ROOT).as_posix() + ': ' + link,
+                      (path.parent / target).exists())
+    for path in (ROOT / 'reports/assets').rglob('*.svg'):
+        tree = ET.parse(path)
+        check('SVG XML ' + path.relative_to(ROOT).as_posix(),
+              tree.getroot().tag == '{http://www.w3.org/2000/svg}svg')
+        check('SVG PNG alternative ' + path.stem, path.with_suffix('.png').is_file())
+    for path in (ROOT / 'reports/assets').rglob('*.png'):
+        check('PNG signature ' + path.relative_to(ROOT).as_posix(),
+              path.read_bytes().startswith(b'\x89PNG\r\n\x1a\n'))
     counts = {'sft':1000, 'preference':500, 'dev':36, 'evaluation':60,
               'preference_eval':100, 'independent_test':24}
     for stem, expected in counts.items():
