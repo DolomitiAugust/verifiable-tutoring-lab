@@ -1,0 +1,278 @@
+{
+  "results_sha256": "4c00c831fa1ab18851a1c60568a3ec05b2b5c8bf368bde1f70dad189f247ca16",
+  "reviewer": "Codex independent review (supplement audit agent; not a teacher blind review)",
+  "review_date": "2026-11-07",
+  "scope": "逐轮阅读6轮完整最终回答、18条角色原始回复及其提示、记忆前后快照和检索内容，按运行前冻结标准评分。评审代理不同于场景设计代理，但已参与设计合理性审计并读过core材料及运行/导出器，非人类教师、非盲评。只评本批已观测输出，不推断真实学习效果。",
+  "interpretation_notes": [
+    "本批是在看到core汇总之后形成、追加运行前冻结的外部补充样本，不是原预登记未知测试集。预期、案例、参考和评分要求均未在运行后更改。",
+    "评分按冻结语义标准，允许等价表达；具体取值和累计能满足的要求不强求固定措辞，但结果陈述不能代替明确要求的因果解释。",
+    "S02的显式空字符串预测与null未预测不同。其反馈违背要求记0；空切片结果正确但正步长/方向原因缺失记1；有效给定复测独立记2。",
+    "6轮最终回答全部为verified_template且llm_used=false，18次真实角色调用均未被采用；成功归于程序执行、模板呈现、公开复测核验和学生记忆，不归于模型协作或自主出题。",
+    "S03/S04原预期partial，如全部通过则按既定规则记录意外成功；不能因展示案例目标而变更评分。"
+  ],
+  "cases": [
+    {
+      "case_id": "tutor-S01",
+      "criteria": [
+        {
+          "id": "descending_diagnosis",
+          "criterion": "明确本次20不正确，说明负步长使取值依次为8、6、4，终点2排除，总和18；不能把负步长当成空范围或递增范围。",
+          "score": 2,
+          "reason": "明确否定本次预测，列出负步长对应的降序8、6、4，指出终点2排除，并逐步累计至18。该具体执行依据已满足诊断，不因没有逐字重复“每次减2”而扣分。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S01-T1",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出不同。"
+            },
+            {
+              "turn_id": "tutor-S01-T1",
+              "field": "final.text",
+              "text": "range(8, 2, -2) 实际取值 [8, 6, 4]；终点 2 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-S01-T1",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=18，n=4。"
+            }
+          ]
+        },
+        {
+          "id": "provided_followup",
+          "criterion": "呈现给定的 range(8,0,-2) 完整复测程序和独立可辨认的答案20；不要求自主出题。",
+          "score": 2,
+          "reason": "完整呈现公开给定复测程序，单独给出正确答案20；本条不要求自主出题，也不要求额外解释复测。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S01-T1",
+              "field": "final.text",
+              "text": "total = 0\nfor n in range(8, 0, -2):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-S01-T1",
+              "field": "final.text",
+              "text": "复测参考输出：20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S02",
+      "criteria": [
+        {
+          "id": "explicit_empty_prediction",
+          "criterion": "明确认可学生的空字符串预测正确，并说明原题打印空行或空字符串；不能把显式空字符串预测当成未提供预测。",
+          "score": 0,
+          "reason": "请求明确预测空字符串，student_answer为JSON空字符串而非null，且独立程序只打印换行。回答却明确称未提供预测，没有认可本次正确作答；trace的student_evidence.status为unanswered，记忆attempts/correct未增加且unanswered增加，违反本条的关键要求。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S02-T1",
+              "field": "final.text",
+              "text": "这次未提供预测，因此不记录为作答正确或错误。"
+            },
+            {
+              "turn_id": "tutor-S02-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：打印 ''。"
+            }
+          ]
+        },
+        {
+          "id": "empty_slice_reason",
+          "criterion": "说明默认正步长下从4向右无法在排除的终点1之前选到字符，因此没有取到字符；不能凭空选下标4、3、2。",
+          "score": 1,
+          "reason": "准确列出空下标和空字符串，未凭空倒序取4、3、2；但只陈述结果，没有说明默认步长为正或从4向右无法走到终点1这一原因。冻结标准要求解释为什么取不到字符，因此只能算部分完成。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S02-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：word[4:1] 取下标 []，得到 ''。"
+            }
+          ]
+        },
+        {
+          "id": "provided_followup",
+          "criterion": "呈现给定 word[1:4] 完整复测程序及答案yth。",
+          "score": 2,
+          "reason": "完整呈现给定word[1:4]复测并明确给出yth，程序和答案均正确；不因本例其他部分失败而扣此条分数。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S02-T1",
+              "field": "final.text",
+              "text": "word = 'python'\nprint(word[1:4])"
+            },
+            {
+              "turn_id": "tutor-S02-T1",
+              "field": "final.text",
+              "text": "复测参考输出：yth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S03",
+      "criteria": [
+        {
+          "id": "new_topic_feedback",
+          "criterion": "第一轮正确诊断切片起点按1计数的错误，给出下标1、2、3与yth，以及给定复测pyt。",
+          "score": 2,
+          "reason": "明确判断pyt预测错误，给出word[1:4]实际下标1、2、3及yth，并以word[0:3]得到pyt的给定复测作对照，已提供纠正起点误解的具体依据；不要求复述参考中的固定措辞。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S03-T1",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出不同。"
+            },
+            {
+              "turn_id": "tutor-S03-T1",
+              "field": "final.text",
+              "text": "word[1:4] 取下标 [1, 2, 3]，得到 'yth'。"
+            },
+            {
+              "turn_id": "tutor-S03-T1",
+              "field": "final.text",
+              "text": "word = 'python'\nprint(word[0:3])"
+            },
+            {
+              "turn_id": "tutor-S03-T1",
+              "field": "final.text",
+              "text": "复测参考输出：pyt"
+            }
+          ]
+        },
+        {
+          "id": "relevant_old_memory",
+          "criterion": "第二轮确实引用该生先前range把终点2也计入、把18答成20的具体错误，并联系当前应排除终点3；只泛称有记录或只引用切片错误不足。允许同时提及其他历史，但不能把它当成range旧错因。",
+          "score": 2,
+          "reason": "第二轮准确引用同一学生S01把终点2也加入、预测20而实际18的原话和数值，并明确当前终点3排除。检索内容与S01原trace相符，没有用中间切片错误代替range旧错因。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "你写的预测是 '20'，核验输出为 '18'。当时你的原话是「我把终点2也加进去了，所以猜20」。"
+            },
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "range(9, 3, -3) 实际取值 [9, 6]；终点 3 不包含在内。"
+            }
+          ]
+        },
+        {
+          "id": "current_and_followup",
+          "criterion": "第二轮认可本次15正确，列出9、6及其和，并呈现给定复测程序与答案18；历史错误不能改写本次状态。",
+          "score": 2,
+          "reason": "正确认可本次15，列出9、6并逐步累计至15，完整给出公开复测程序及18。历史错误未改写当前正确状态。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出一致。"
+            },
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "range(9, 3, -3) 实际取值 [9, 6]；终点 3 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=15，n=6。"
+            },
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "total = 0\nfor n in range(9, 0, -3):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-S03-T2",
+              "field": "final.text",
+              "text": "复测参考输出：18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S04",
+      "criteria": [
+        {
+          "id": "first_visit_isolation",
+          "criterion": "第一轮准确认可18并说明8、6、4；不把旧学生的终点误答20、切片错误或学习背景归给新学生；给出给定复测与答案20。",
+          "score": 2,
+          "reason": "第一轮正确认可18，列出8、6、4并给出完整给定复测及20。全文没有引用学生A的终点误答、切片错误或背景；本轮记忆前快照和检索均为空。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S04-T1",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出一致。"
+            },
+            {
+              "turn_id": "tutor-S04-T1",
+              "field": "final.text",
+              "text": "range(8, 2, -2) 实际取值 [8, 6, 4]；终点 2 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-S04-T1",
+              "field": "final.text",
+              "text": "total = 0\nfor n in range(8, 0, -2):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-S04-T1",
+              "field": "final.text",
+              "text": "复测参考输出：20"
+            }
+          ]
+        },
+        {
+          "id": "own_correct_history",
+          "criterion": "第二轮确实引用该生自己的上次预测18与核验18或同等具体正确事实，结合当前10、8、6及24；不得引用另一学生的错误来描述他。仅泛称有历史不足。",
+          "score": 2,
+          "reason": "第二轮明确引用该生本人上次预测18、核验18的具体正确记录，与当前10、8、6及24结合；检索的student_id及原trace均对应学生B，没有把学生A的错误归给他。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "上次同一概念的记录中，你的预测与实际输出一致。你写的预测是 '18'，核验输出为 '18'。"
+            },
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "range(10, 4, -2) 实际取值 [10, 8, 6]；终点 4 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=24，n=6。"
+            }
+          ]
+        },
+        {
+          "id": "second_followup_calibration",
+          "criterion": "第二轮给出给定复测程序及答案28；不把两次正确预测外推为全面掌握。",
+          "score": 2,
+          "reason": "完整提供给定复测及正确答案28，并明确历史仅是作答证据、不等于掌握结论；没有把两次正确外推为全面掌握。",
+          "quotes": [
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "total = 0\nfor n in range(10, 2, -2):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "复测参考输出：28"
+            },
+            {
+              "turn_id": "tutor-S04-T2",
+              "field": "final.text",
+              "text": "这只是作答证据，不等于掌握结论。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

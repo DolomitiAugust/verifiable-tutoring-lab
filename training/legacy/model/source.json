@@ -1,0 +1,47 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B",
+  "variant": "pretrained base",
+  "provider": "ModelScope",
+  "repository": "https://modelscope.cn/models/Qwen/Qwen2.5-0.5B",
+  "revision": "e332bac62ed3c70fed5412a1cb5883c36efc4015",
+  "file_metadata": "https://modelscope.cn/api/v1/models/Qwen/Qwen2.5-0.5B/repo/files?Revision=e332bac62ed3c70fed5412a1cb5883c36efc4015&Recursive=true",
+  "weight_sha256_crosscheck": "https://huggingface.co/Qwen/Qwen2.5-0.5B/blob/main/model.safetensors",
+  "files": {
+    "config.json": [
+      681,
+      "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b"
+    ],
+    "generation_config.json": [
+      138,
+      "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+    ],
+    "tokenizer_config.json": [
+      7228,
+      "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+    ],
+    "tokenizer.json": [
+      7031645,
+      "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    ],
+    "vocab.json": [
+      2776833,
+      "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    ],
+    "merges.txt": [
+      1671839,
+      "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    ],
+    "LICENSE": [
+      11343,
+      "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    ],
+    "README.md": [
+      3850,
+      "3c93cbc9f60417337fcbf093da872007586b9d886b0f0187f21aec35b869616a"
+    ],
+    "model.safetensors": [
+      988097824,
+      "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+    ]
+  }
+}

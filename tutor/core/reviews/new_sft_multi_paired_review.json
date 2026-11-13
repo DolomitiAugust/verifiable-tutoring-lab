@@ -1,0 +1,155 @@
+{
+  "review_kind": "Non-blind technical review by Codex of all 18 raw role outputs, not independent teacher judgement.",
+  "sources": {
+    "tutor\\core\\results\\new_sft_multi_paired\\results.json": "47bf47815caba648a83127e9647357da8bf2479e82d8b45985e21ba07baae0b8",
+    "tutor\\core\\results\\instruct_multi\\results.json": "c230b8d767110f37bd66d009978d568863bed05ec0f8337f10aeddb6cb36b09f",
+    "tutor\\core\\model_backend.py": "137fe4b8af1205a294f3c619db19844cfd7de00b8f6401b8facb07b2d897d21e",
+    "training\\legacy\\data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+    "revisions\\v2\\models\\qwen2.5-0.5b-instruct\\tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  },
+  "new_sft_summary": {
+    "case_count": 6,
+    "turn_count": 6,
+    "real_model_calls": 18,
+    "generated_tokens": 2112,
+    "role_adoption": {
+      "planner": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "teacher": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "reviewer": {
+        "accepted": 0,
+        "calls": 6
+      }
+    },
+    "final_llm_used": 0,
+    "final_sources": {
+      "verified_template": 6
+    },
+    "automatic_passed": 70,
+    "automatic_total": 70,
+    "stop_reasons": {
+      "max_new_tokens": 18
+    },
+    "qualitative_status": "unreviewed",
+    "complete_case_success_claim": null,
+    "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+  },
+  "new_sft_generation_seconds": 176.63,
+  "observations": [
+    {
+      "case_id": "tutor-C01",
+      "review": "开头答案12正确但将学生20标correct；重复本题输出，夹杂20，最终截断。",
+      "input_equal": true,
+      "final_text_equal": true,
+      "full_role_prompt_text_equal": {
+        "planner": true,
+        "teacher": false,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-C01"
+    },
+    {
+      "case_id": "tutor-C02",
+      "review": "答案字段9错误，另复制yh和下标事实；随后重复无关字串，未形成合约输出。",
+      "input_equal": true,
+      "final_text_equal": true,
+      "full_role_prompt_text_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-C02"
+    },
+    {
+      "case_id": "tutor-C03",
+      "review": "开头9和correct符合当前题，复制事实与历史后重复并截断；不等于完成历史教学推理。",
+      "input_equal": true,
+      "final_text_equal": false,
+      "full_role_prompt_text_equal": {
+        "planner": false,
+        "teacher": false,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-C03"
+    },
+    {
+      "case_id": "tutor-C07",
+      "review": "将完整元组输出缩成[1,2]，状态错误；混入a=[1]、b=[2]与无关字串。局部默认值规则正确不能补救整体。",
+      "input_equal": true,
+      "final_text_equal": true,
+      "full_role_prompt_text_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-C07"
+    },
+    {
+      "case_id": "tutor-C08",
+      "review": "原题答案212正确，学生230却标correct；复制zip事实后重复截断。",
+      "input_equal": true,
+      "final_text_equal": true,
+      "full_role_prompt_text_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-C08"
+    },
+    {
+      "case_id": "tutor-S02",
+      "review": "空切片答案写9，声称省略步长覆盖整个字符串，解释错误。",
+      "input_equal": true,
+      "final_text_equal": true,
+      "full_role_prompt_text_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "role_prompt_template_equal": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": true
+      },
+      "raw_output_location": "tutor\\core\\results\\new_sft_multi_paired\\results.json#cases/tutor-S02"
+    }
+  ],
+  "comparison_limits": [
+    "Same six fixture inputs, prompt templates, role budgets and controller logic; different model sources.",
+    "SFT training_encode_prompt has no implicit system turn; official Instruct chat template adds 21 system tokens.",
+    "Dynamic history episode IDs, adopted plan_source, teacher drafts, and reviewer checks differ.",
+    "The selected SFT comes from training; Instruct is external. No base-checkpoint tutor run is available for estimating an SFT causal effect.",
+    "Both automatic check totals are 70/70; they verify engineering and fallback, not explanation quality. C07 original v2 tool-card defect remains.",
+    "No historical outputs, labels, prompt files, or frozen plans were modified."
+  ]
+}

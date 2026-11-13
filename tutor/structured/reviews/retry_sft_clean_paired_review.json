@@ -1,0 +1,315 @@
+{
+  "review_kind": "Non-blind technical review by Codex of all 18 raw role outputs and six final replies; not independent teacher judgement.",
+  "result_sha256": "16a2e863d945428f0dfe2bebe587aaddd34a3b369d923c83103d53a8a814af70",
+  "first_clean_result_sha256": "5d5824adf63c55e5b647fc1562ffb4b85d6ea1a94305253f499507033ae6f168",
+  "summary": {
+    "case_count": 6,
+    "turn_count": 6,
+    "real_model_calls": 18,
+    "generated_tokens": 1895,
+    "role_adoption": {
+      "planner": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "teacher": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "reviewer": {
+        "accepted": 0,
+        "calls": 6
+      }
+    },
+    "final_llm_used": 0,
+    "model_freeform_prose_used": 0,
+    "model_selected_tool_quotes": 0,
+    "teacher_parsed_count": 0,
+    "teacher_call_count": 6,
+    "teacher_current_answer_matches": 0,
+    "teacher_current_status_matches": 0,
+    "raw_reviewer_false_approval_count": 0,
+    "raw_reviewer_false_approval_turns": [],
+    "final_sources": {
+      "verified_template": 6
+    },
+    "automatic_passed": 70,
+    "automatic_total": 70,
+    "stop_reasons": {
+      "max_new_tokens": 16,
+      "eos": 2
+    },
+    "qualitative_status": "unreviewed",
+    "complete_case_success_claim": null,
+    "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+  },
+  "elapsed_seconds_including_load": 179.63087570000062,
+  "generation_seconds": 171.2325,
+  "reviews": [
+    {
+      "case_id": "tutor-C01",
+      "turn_id": "tutor-C01-T1",
+      "reference": {
+        "main_answer": "12",
+        "student_status": "incorrect",
+        "explanation": "range(2,8,2) 只取 2、4、6；8 是排除的终点，2+4+6=12。学生多加 8 得到 20。",
+        "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+        "followup_answer": "20"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "含正确输出12及range取值，但混有UIAlert等无关标签，结构不符合规划合约。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[12]:UIAlert: 8 也加进去了，所以猜 20。实际执行：[2, 4, 6]，终点 8 不包括。实际输出：12。 按照范围取值 [2, 4, 6"
+        },
+        "teacher": {
+          "assessment": "正确复述total=12和[2,4,6]，随后多次重复focus赋值；没有提交状态和证据字段的完整合约。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[12]\n实到法：8\nE = [2, 4, 6]，total = 12。E 的终点为 8，E 的赋值为 [2, 4, 6]。E 的终点为 8，E 的赋值为 [2, 4, 6]，所以 focus = [2, 4, 6]。E 的终点为 8，E 的赋值为 [2, 4, 6]，所以 focus = [2, 4, 6]。E 的终点为 8，E 的赋值为 [2, 4, 6]，focus = [2, 4, 6]。E 的终点为 8，E 的赋值为 [2, 4, 6]，所以 focus = [2, 4, 6]"
+        },
+        "reviewer": {
+          "assessment": "继续重复教师事实，没有approved/reason决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题知识点：range\nrange(2, 8, 2) = [2, 4, 6]，终点 8 不包括在内。 E = [2, 4, 6]，focus = [2, 4, 6]。E 的终点为 8，E 的赋值为 [2, 4, 6]。E 的终点为 8，E 的赋值为 [2,"
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C02",
+      "turn_id": "tutor-C02-T1",
+      "reference": {
+        "main_answer": "yh",
+        "student_status": "correct",
+        "explanation": "起点 1、步长 2、终点 5 排除，取下标 1、3，字符 y、h；一次正确预测不能证明掌握。",
+        "followup_code": "word = 'python'\nprint(word[0:6:2])",
+        "followup_answer": "pto"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "生成未提供的zhao yh历史和无关词，未按规划协议。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"topics\": [\"slice\", \"execution\"], \"history\": [\"我的预测是 yh。\", \"zhao yh\", \"yh\"]циальн\n本题输出：{\"topics\": [\"slice\", \"execution\"], \"history\": [\"我的预测是 yh。\", \"zhao yh"
+        },
+        "teacher": {
+          "assessment": "局部答案yh、状态correct、下标[1,3]均正确；缺少evidence_ids并含多个对象、printStats及后续重复，整体不可解析。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"取下标 [1, 3]，结果 'yh'。\"}printStats\n本题输出：[{\"id\": \"F1\", \"topic\": \"slice\", \"text\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}]:UIAlert: [yh] | Verified: [yh] | Student: [correct] | Fact: [1, 3] | Evidence: [1, 3] | Topic: slice | Text: word[1:5:2] | Focus: [1, 3] | Evidence ID: F1 | Verified: [yh] | Student: [correct] | Fact: [1, 3] | Evidence: [1, 3] | Topic: slice | Text: word[1"
+        },
+        "reviewer": {
+          "assessment": "复制和转义证据列表，无评审决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[{\\\"id\\\": \\\"F1\\\", \\\"topic\\\": \\\"slice\\\", \\\"text\\\": \\\"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}]\n本题输出：[{\\\"id\\\": \\\"F1\\\", \\\"topic\\\": \\\"slice\\\", \\\"text\\\": \\\"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}]\n"
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C03",
+      "turn_id": "tutor-C03-T1",
+      "reference": {
+        "main_answer": "9",
+        "student_status": "correct",
+        "explanation": "本题 range 只取 3、6，总和 9；此前 tutor-C01 把排除的终点 8 纳入，当前仍应检查终点 9 不被取到。",
+        "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)",
+        "followup_answer": "18"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "正确9及实际[3,6]与包含9的描述混在一起，未给出规划协议。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[9]\n本步输出：9\n本题输出不含筛选结果。\n本题过滤类型：复测\n第 1 步，看事实。 3, 6, 9 是 3 到 9 之间的数，执行 [3, 6]。"
+        },
+        "teacher": {
+          "assessment": "局部9正确，却称四个质素、列表只有一个和CRYSTAL，缺乏与累加/历史误解相关的解释。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "eos",
+          "raw_quote": "本题输出：[9]\n本步输出：9\n本题输出包括四个质素：[9]。质素列表中只有一个。质素编号为 [F1]。\n本步输出：[9]CRYSTAL\n参考答案：[9]"
+        },
+        "reviewer": {
+          "assessment": "输出true及重复质素文字，非有效评审。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：true\n本步输出：[9] 本题输出：[9]。质素列表中只有一个。质素编号为 [F1]。本步输出：[9] 本题输出：[9]。质素列表中只有一个。质素编号为 [F1]。本步输出：[9] 本题输出：[9]。质素列表中只有一个。质素编号为 [F"
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": false,
+        "teacher": false,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C07",
+      "turn_id": "tutor-C07-T1",
+      "reference": {
+        "main_answer": "([1, 2], [1, 2])",
+        "student_status": "incorrect",
+        "explanation": "默认列表在函数定义时创建一次，两次未显式提供 out 的调用复用它；a 与 b 都引用同一列表，第二次 append 后 a 也显示 [1,2]。",
+        "followup_code": "def collect(x, out=None):\n    if out == None:\n        out = []\n    out.append(x)\n    return out\na = collect(1)\nb = collect(2)\nprint((a, b))",
+        "followup_answer": "([1], [2])"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "只写[1,2]并混入日期/CRYPNET标签，非完整元组或规划。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[1, 2]CRYPNET 2018-08-29 15:20:30 100% 0.00s\n本题知识点：对象共享\n本题考点：对象属性\na = collect(1"
+        },
+        "teacher": {
+          "assessment": "正确引用共享默认容器和元组事实，随后又把output写成([1],[2])，内部矛盾，且没有完整合约。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "请求中没有提供 id，使用默认值。a 和 b 的事实相同，所以它们的证据 ID 也相同。evidence_id = [F1]。fact 1：参数 out 的默认值在定义时创建为可变容器。省略该参数时，同一个默认容器被重复传入，函数内部的后续操作仍须单独检查。fact 2：a 与 b 指向同一容器，原地修改会被这些引用共同观察到。fact 3：实际执行输出为 '([1, 2], [1, 2])'；代码中的赋值、运算与控制流按执行顺序决定此输出。input: def collect(x, out=[]):\\n    out.append(x)\\n    return out\\na = collect(1)\\nb = collect(2) output: ( [1], [2] ) ['a', 'b'] ['a',"
+        },
+        "reviewer": {
+          "assessment": "同样把结果列为独立[1]/[2]，与当前共享程序不符。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[ [1], [2] ] [ [1], [2] ] [ [1], [2]] 本题知识点：函数参数。 每个实例的证据 ID 一致。evidence_id = [F1]。fact 1：参数 out 的默认值在定义时创建为可变容器。省略该参数时，同一个默认容器被重复传入，函数内部的后续操作仍须单独检查"
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": true
+    },
+    {
+      "case_id": "tutor-C08",
+      "turn_id": "tutor-C08-T1",
+      "reference": {
+        "main_answer": "212",
+        "student_status": "incorrect",
+        "explanation": "zip 只产生五对，和分别为16、40、52、54、50，合计212；左列表末尾18没有搭档，不能再加入。",
+        "followup_code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44, 6]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+        "followup_answer": "236"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "212与230反复出现、无关跟踪号及乱码，没有有效规划。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：212\n顺序号 1：230。 跟踪号 1：230。 跟踪号 2：230。 预测值： 212。 预测步数： 3。 �"
+        },
+        "teacher": {
+          "assessment": "局部212正确，但实得为0和变式230等内容矛盾，混入ScrollIndicator标签。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "eos",
+          "raw_quote": "本题输出：212\n实得：212\n实得：212\n实得：212\n实得：212\n本题输出：212CHANTS\n本题输出：212\n变式参考输出\n230\n变式提示 输出实得 212。实得为 0。 本题输出：212CHANTSScrollIndicator=\"true\" style=\"white-space: pre-wrap;\">230</ScrollIndicator>"
+        },
+        "reviewer": {
+          "assessment": "复述212/0等矛盾数字，未给出合约决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "实得 212。实得为 0。实得为 212。\n变式参考输出：212\n变式提示 输出实得 212。实得为 0。 本题输出：212CHANTS\n本题输出：212\n变式参考输出：212\n变式提示 输出实得 212。实得为 0。实得为 "
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-S02",
+      "turn_id": "tutor-S02-T1",
+      "reference": {
+        "main_answer": "",
+        "student_status": "correct",
+        "explanation": "切片默认步长为正1，起点4已在终点1右侧，因此没有任何下标被选中，切片为长度0的空字符串；print 输出一个换行。该生明确作了空字符串预测，属于本次正确作答，不是未作答。给定复测选下标1、2、3，得到yth。",
+        "followup_code": "word = 'python'\nprint(word[1:4])",
+        "followup_answer": "yth"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "空下标和空输出局部正确，但JSON缺尾，混有CRYO。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[{\"id\": \"F1\", \"text\": \"word[4:1] 取下标 []，结果 '':}]CRYO\n本题输出：[{\"id\": \"F1\", \"text\": \"word[4:1] 取下标 []，结果"
+        },
+        "teacher": {
+          "assessment": "先正确说verified_answer为空，又错称没有student_answer并将复制字段verified_answer改为python；空字符串预测在输入中确实存在。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "请求中没有 \"student_answer\"。 \"verified_answer\" 为空字符串。 \"student_status\" 为 \"correct\"。\n输入：{\"program\": \"word = 'python'\\nprint(word[4:1])\", \"request\": \"我的预测是空字符串，也就是只打印一个空行。请核对并说明为什么没有取到字符，给一道复测及答案。\", \"background\": \"已认识字符串下标，从0开始计数。\", \"student_answer\": \"\", \"verified_answer\": \"python\", \"student_status\": \"correct\", \"facts\": [{\"id\": \"F1\", \"topic\": \"slice\", \"text\": \"word[4:1] 取下标 []，结果 ''。\"}, {\"id\": \"F2\", \"topic\": \"slice\", \"text\": \"切片起点到终点之间没有沿指定步长方向可取的下标，因此结果"
+        },
+        "reviewer": {
+          "assessment": "嵌入approved=true及无来源91%/100%评分，未形成完整协议，不能将formal误批0解释为可靠评审。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"approved\": true, \"reason\": \"python\", \"student_status\": \"correct\"}\n本题评分：91%。 本题输出：{\"approved\": true, \"reason\": \"python\", \"student_status\": \"correct\"} 本题评分：100%。\n{\"program\": \"word = 'python'\\nprint(word[4:1])\", \"request\": \"我的预测是空字符串，也就是只打印一个空"
+        }
+      },
+      "input_equal_to_first_clean_sft": true,
+      "final_text_equal_to_first_clean_sft": true,
+      "full_role_prompt_equal_to_first_clean_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    }
+  ],
+  "limits": [
+    "SFT checkpoint loaded with pinned official base identity, exact adapter layout and tensor keys; no DPO checkpoint was used.",
+    "Six already observed cases, exploratory regression.",
+    "Same source/prompts/role budgets/case inputs across clean groups; dynamic history IDs and generated context may differ.",
+    "Formal parsing/false-approval counts of zero do not mean raw content is all wrong or reviewer is reliable.",
+    "No independent human or student-learning evaluation."
+  ]
+}

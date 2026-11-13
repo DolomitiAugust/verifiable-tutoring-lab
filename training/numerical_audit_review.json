@@ -1,0 +1,135 @@
+{
+  "review_date": "2026-11-08",
+  "scope": "Post-hoc audit robustness correction, not a training or output change. Original failed audit and ZIP preserved.",
+  "reviewer": "Codex independent numeric-audit agent",
+  "original_audit": {
+    "path": "training\\retry_imports\\retry_048f9a92c0ef\\audit.json",
+    "sha256": "e2b42aa70a7ba78e602bca0d9645f361c4d63fefa3b90d74fff3b0d4fb4ce1f6",
+    "passed": false,
+    "checks": 965,
+    "errors": [
+      {
+        "passed": false,
+        "code": "training.dpo.initial_reference_identity",
+        "detail": null
+      }
+    ],
+    "importer_sha256": "b439a25fa4f4f4ec537e6f5cfc9425c572b20ce911217d001b57e2bbd7c5686c"
+  },
+  "revised_audit": {
+    "path": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\audit.json",
+    "sha256": "e070f975f954f5864dad272f4dd92626ba866dd99a90cf9cd774e917d62f5dfe",
+    "passed": true,
+    "checks": 966,
+    "errors": 0,
+    "importer_sha256": "a1fed798b08458e028a820f6914e6ec7c1db40a21b18ffc8d54605c523f8ec87"
+  },
+  "result_archive": {
+    "path": "training\\training_v2_retry_results.zip",
+    "sha256": "048f9a92c0ef60c5454424aca51d8b0bcedb5349b3b5ac013b431ad73a6b205e",
+    "bytes": 65349193
+  },
+  "observed_initial_step": {
+    "step": 1,
+    "ids": [
+      "V2-preference-00589"
+    ],
+    "loss": 0.6931479573249817,
+    "response_tokens": 162,
+    "policy_chosen_logp": -148.46653747558594,
+    "policy_rejected_logp": -143.99761962890625,
+    "reference_chosen_logp": -148.46653747558594,
+    "reference_rejected_logp": -143.9976348876953,
+    "policy_logratio": -4.4689178466796875,
+    "ref_logratio": -4.468902587890625,
+    "relative_margin": -1.52587890625e-05,
+    "dpo_scaled_margin": -1.5258789289873675e-06,
+    "grad_norm_before_clip": 46.259830474853516,
+    "adapter_step_l2": 0.010376539643339542,
+    "adapter_delta_from_stage_start_l2": 0.010376539643339542,
+    "seconds": 0.524
+  },
+  "numerical_inspection": {
+    "criterion": "each sequence logp differs by at most one binary32 ULP; recorded ratios, margin, beta scaling and logistic loss agree",
+    "maximum_sequence_ulp_distance": 1,
+    "legacy_margin_limit": 1e-05,
+    "legacy_loss_log2_abs_difference": 7.767650364032264e-07,
+    "legacy_margin_passed": false,
+    "sequence_scores": {
+      "policy_chosen": -148.46653747558594,
+      "reference_chosen": -148.46653747558594,
+      "policy_rejected": -143.99761962890625,
+      "reference_rejected": -143.9976348876953
+    },
+    "sequence_ulp_distances": {
+      "chosen": 0,
+      "rejected": 1
+    },
+    "expected_float32_arithmetic": {
+      "policy_logratio": -4.4689178466796875,
+      "ref_logratio": -4.468902587890625,
+      "relative_margin": -1.52587890625e-05,
+      "dpo_scaled_margin": -1.5258789289873675e-06,
+      "loss": 0.6931479573249817
+    },
+    "arithmetic_ulp_distances": {
+      "policy_logratio": 0,
+      "ref_logratio": 0,
+      "relative_margin": 0,
+      "dpo_scaled_margin": 0,
+      "loss": 0
+    },
+    "passed": true
+  },
+  "reason": "The rejected sequence summed log-probability differs by exactly one binary32 representable step at magnitude 144. The old absolute margin threshold 1e-5 was smaller than that step (1.52587890625e-5), although loss differs from ln(2) by only 7.767650364032264e-7. New check requires each policy/reference sequence score within one ULP and explicit binary32 ratio/margin/beta/logistic-loss consistency; also requires first logged reference pair to match frozen reference.json exactly.",
+  "unchanged_checks": "Original provenance, checkpoint, frozen reference identity, dataset, stage coverage and evaluation checks retained. Added exact first logged reference/cache equality check.",
+  "cpu_readonly_probe": {
+    "kind": "same selected SFT, same first DPO pair, no optimizer steps",
+    "candidate_id": "V2-preference-00589",
+    "checkpoint_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+    "gpu_recorded_reference": [
+      -148.46653747558594,
+      -143.9976348876953
+    ],
+    "cpu_no_grad": [
+      -148.46571350097656,
+      -143.99658203125
+    ],
+    "cpu_grad_enabled": [
+      -148.46571350097656,
+      -143.99658203125
+    ],
+    "cpu_grad_minus_no_grad": [
+      0.0,
+      0.0
+    ],
+    "cpu_minus_gpu_reference": [
+      0.000823974609375,
+      0.0010528564453125
+    ],
+    "note": "Verifies source checkpoint/score path only, not a direct reproduction of T4 ordering. CPU/GPU logits are not bit-identical."
+  },
+  "interpretation": "The recorded one-ULP discrepancy is consistent with floating-point accumulation/path differences (response_scores uses float32 index_add). Exact GPU root cause has not been independently replayed. This record does not prove all per-step probabilities by model recomputation.",
+  "validation": {
+    "numeric_boundary_tests": {
+      "count": 10,
+      "failures": 0,
+      "errors": 0
+    },
+    "retry_import_tests": {
+      "count": 28,
+      "failures": 0,
+      "errors": 0
+    },
+    "retry_chapter_tests": {
+      "count": 12,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "files": {
+    "dpo_numeric_audit.py": "d85e6c5d2780da94310fa23effb1f93dc74cced48f359ac7ecadb45af4a8a255",
+    "test_dpo_numeric_audit.py": "4f362d7c38e49257072004349c619b1e642ab1cf08f9bad7ae3047ea8d84e239",
+    "import_retry_results.py": "a1fed798b08458e028a820f6914e6ec7c1db40a21b18ffc8d54605c523f8ec87"
+  }
+}

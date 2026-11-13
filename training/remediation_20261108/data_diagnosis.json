@@ -1,0 +1,260 @@
+{
+  "schema": "training-data-diagnosis-20261108-v1",
+  "scope": "Read-only descriptive diagnosis, not causal identification; no new training or model generation.",
+  "reviewer": "Codex separate data-diagnosis agent",
+  "source_sha256": {
+    "synthesis\\data\\legacy\\sft.jsonl": "b76286fa1f0ce5750caf7f7b99dc8ec49e3390b37661e026290c83373d8b3b12",
+    "synthesis\\data\\legacy\\preference.jsonl": "72ebaac846744c05b7cffb52879fd3f050805dbcdc8b7614d734eb87ffdb80f1",
+    "synthesis\\data\\legacy\\dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "synthesis\\data\\legacy\\independent_test.jsonl": "86b1376a7b55515c5fcd57a6b0018900aa48c4cb78fd2301f321468cc896c54d",
+    "synthesis\\data\\legacy\\independent_test_metadata.jsonl": "d683c7fad438ff15094b2c8c039afbe3f8c9eb687eb9b93d0cf2f24411382c04",
+    "synthesis\\data\\legacy\\preference_eval_metadata.jsonl": "6949d78db15c715b4a23cb3fdbf05a0fdcda616a0cc433e19adb75abada97b39",
+    "synthesis\\data\\legacy\\audit\\candidates.jsonl": "c3f13d0416c69c17514602651bd1f8cda7261cf67a3641b0bd1a7064f05b2d62",
+    "synthesis\\data\\legacy\\stats.json": "a0fef9a824cd214ee57fafc2fb8223586c9e769289a978c065177c763d80a649",
+    "training\\data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+    "synthesis\\synthesis_legacy\\build_data.py": "65d6d72edc1558ba18a207713957fc8f426351b82992d3dfc962e0d78c9f62ff"
+  },
+  "sft": {
+    "examples": 1000,
+    "unique_program_signatures": 1000,
+    "ast_metric": "Same v2 published structure_key: normalize non-excluded names in ast.walk order, replace ast.Constant.value by its Python type marker, then SHA256(ast.dump).",
+    "recomputed_ast_structures": 145,
+    "ledger_ast_structures": 145,
+    "structure_key_mismatches": [],
+    "maximum_examples_per_ast_structure": 41,
+    "unique_exact_completions": 890,
+    "exact_completion_duplicate_excess": 110,
+    "completion_label_occurrence_counts": {
+      "1": 1000
+    },
+    "completions_with_adjacent_equal_lines": 0,
+    "completions_containing_observed_garbage_fragments": {
+      "OMATIC": 0,
+      "UIAlert": 0,
+      "MemoryWarning": 0,
+      "DonaldTrump": 0,
+      "DUCTON": 0
+    },
+    "prompts_without_python_code_fence": 0,
+    "reserved_chat_markers_in_completions": 0,
+    "numeric_normalization_only_note": "Optional regular-expression diagnostic below is not an AST count and must not replace the 145-structure metric.",
+    "unique_completions_after_numeric_regex_normalization": 493
+  },
+  "preference_training_reason_by_task": {
+    "factual_error": {
+      "predict": 6,
+      "explain": 1,
+      "diagnose": 121,
+      "transfer": 122
+    },
+    "instruction_mismatch": {
+      "predict": 122,
+      "explain": 128,
+      "diagnose": 0,
+      "transfer": 0
+    }
+  },
+  "preference_test_reason_by_task": {
+    "factual_error": {
+      "predict": 1,
+      "explain": 0,
+      "diagnose": 25,
+      "transfer": 24
+    },
+    "instruction_mismatch": {
+      "predict": 24,
+      "explain": 26,
+      "diagnose": 0,
+      "transfer": 0
+    }
+  },
+  "preference_interpretation": "243/250 (97.2%) factual-error pairs occur in diagnose/transfer; all instruction-mismatch pairs occur in predict/explain. The selector balances task counts, while the generator limits instruction-mismatch to predict/explain. This confounds task and negative type; it does not prove the cause of DPO degradation.",
+  "distribution": {
+    "prompt_char_median": {
+      "sft": 117.0,
+      "dev": 96.0,
+      "natural": 122.0
+    },
+    "response_char_median": {
+      "sft": 65.0,
+      "dev": 52.0,
+      "natural": 44.0
+    },
+    "dev_examples": 36,
+    "dev_ast_structures": 4,
+    "dev_families": {
+      "boolean_logic": 4,
+      "string_count": 16,
+      "while_counter": 16
+    },
+    "natural_authorship": "Same Codex project, individually authored natural requests; not external human data."
+  },
+  "eos_serialization_evidence": {
+    "source": "training\\data_io.py",
+    "sha256": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+    "function": "encode_response",
+    "line_start": 83,
+    "line_end": 87,
+    "verbatim_source": "def encode_response(tokenizer, answer):\n    \"\"\"Count the assistant's text and its turn terminator; no trailing newline.\"\"\"\n    if answer:\n        _reject_delimiters(answer)\n    return tokenizer.encode(answer, add_special_tokens=False) + [tokenizer.convert_tokens_to_ids(\"<|im_end|>\")]",
+    "finding": "Source explicitly appends tokenizer.convert_tokens_to_ids(\"<|im_end|>\") to every encoded assistant response. This is code evidence, not a fresh tokenization or training run."
+  },
+  "generated_label_repetition": {
+    "first": {
+      "base": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 0,
+        "occurrence_count_distribution": {
+          "0": 24
+        },
+        "source": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\base_independent.json",
+        "sha256": "29e4c84b028672e26a75c37b3e9a2831a329c8b2d42583de590929072d85fd88"
+      },
+      "sft": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 20,
+        "occurrence_count_distribution": {
+          "1": 4,
+          "2": 8,
+          "3": 1,
+          "4": 3,
+          "7": 1,
+          "8": 1,
+          "9": 1,
+          "12": 1,
+          "14": 1,
+          "28": 1,
+          "33": 1,
+          "42": 1
+        },
+        "source": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\sft_independent.json",
+        "sha256": "49e18834ef6c93b5e3877ff08b667ef7977408ac4102edc01ee8a4e671fecaa0"
+      },
+      "dpo": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 21,
+        "occurrence_count_distribution": {
+          "1": 3,
+          "2": 10,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "24": 1,
+          "41": 1,
+          "42": 1,
+          "43": 1,
+          "45": 2,
+          "64": 1
+        },
+        "source": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\dpo_independent.json",
+        "sha256": "74533a79f08bfb0aac1760c2286154010e7c65c217034cd5b704e91f7e70d2da"
+      },
+      "continued_sft": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 14,
+        "occurrence_count_distribution": {
+          "1": 10,
+          "2": 5,
+          "3": 1,
+          "4": 1,
+          "8": 1,
+          "9": 1,
+          "18": 2,
+          "20": 1,
+          "31": 1,
+          "37": 1
+        },
+        "source": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\continued_sft_independent.json",
+        "sha256": "4b1faaa7574e038fbce17e3601c291ac4c43bc48e0e55e9172a16c9afa5f6938"
+      }
+    },
+    "retry": {
+      "base": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 0,
+        "occurrence_count_distribution": {
+          "0": 24
+        },
+        "source": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\base_independent.json",
+        "sha256": "69c5236d79a744e38c73bc30c9c03096754b2fa2f107b75970be3ee93439d151"
+      },
+      "sft": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 21,
+        "occurrence_count_distribution": {
+          "1": 3,
+          "2": 7,
+          "3": 2,
+          "4": 1,
+          "10": 1,
+          "14": 1,
+          "15": 1,
+          "19": 1,
+          "24": 1,
+          "33": 1,
+          "35": 1,
+          "38": 1,
+          "40": 2,
+          "44": 1
+        },
+        "source": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\sft_independent.json",
+        "sha256": "e77105cc7c8449b336df348fa692d5a1f4cfea9c97ba29d908b5130ad7c5c1e6"
+      },
+      "dpo": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 14,
+        "occurrence_count_distribution": {
+          "0": 1,
+          "1": 9,
+          "2": 6,
+          "3": 4,
+          "4": 2,
+          "15": 1,
+          "20": 1
+        },
+        "source": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\dpo_independent.json",
+        "sha256": "9da9d9f075ec4aad9483fec539e345061196fb50c0ea5d0f4b4996c3ae9036a1"
+      },
+      "continued_sft": {
+        "cases": 24,
+        "label_occurrences_at_least_2": 22,
+        "occurrence_count_distribution": {
+          "1": 2,
+          "2": 6,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "9": 1,
+          "10": 1,
+          "14": 1,
+          "15": 1,
+          "16": 1,
+          "18": 1,
+          "24": 1,
+          "26": 1,
+          "31": 1,
+          "34": 1,
+          "40": 2,
+          "44": 1
+        },
+        "source": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\continued_sft_independent.json",
+        "sha256": "12aec657a0ff832af85f0530a8d7111bb4b872978c1ab9538c723e77ef5e358b"
+      }
+    }
+  },
+  "calculation_notes": [
+    "Counts use frozen JSONL rows; training ledger rows are decision=selected. Published dev rows are marked decision=evaluation_only; all 36 dev export pointers/content are matched independently.",
+    "The reason-by-task table includes explicit zero cells for both reasons and all four task labels.",
+    "Exact duplicate excess is total examples minus distinct full response strings; it is not duplicated-program count.",
+    "Adjacent equal lines are literal string equality, not an overall semantic repetition measure.",
+    "The generated-label statistic counts literal 本题输出 occurrences in each complete raw_response; it is not the audited four-token repetition metric.",
+    "Absence of listed garbage fragments in source does not exclude every possible data-quality issue."
+  ],
+  "bounded_remedies": [
+    "Build a separately versioned reason-by-task cross-balanced preference set; support instruction mismatches for diagnose/transfer and factual-error alternatives for predict/explain.",
+    "Diversify request/response forms and preserve a small general-instruction mixture; verify references and EOS while keeping the old frozen release.",
+    "Use a prespecified development suite spanning training-domain novel instances, held-out families, factual explanation and termination; do not tune on the already observed 24 natural tests.",
+    "These data remedies require a separately evaluated new training run; decoding stops alone cannot correct a wrong first value or explanation."
+  ],
+  "input_files_unchanged_after_recomputation": true
+}

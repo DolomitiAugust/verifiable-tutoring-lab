@@ -1,0 +1,208 @@
+{
+  "candidate_count": 4120,
+  "chosen_length_median": 296.0,
+  "chosen_shorter": 220,
+  "decisions": {
+    "overlapping_program": 95,
+    "quota_surplus": 2465,
+    "selected": 1560
+  },
+  "decisions_by_split": {
+    "evaluation": {
+      "quota_surplus": 60,
+      "selected": 60
+    },
+    "preference": {
+      "overlapping_program": 69,
+      "quota_surplus": 1431,
+      "selected": 500
+    },
+    "sft": {
+      "overlapping_program": 26,
+      "quota_surplus": 974,
+      "selected": 1000
+    }
+  },
+  "equal_length": 1,
+  "generated_by_split": {
+    "evaluation": 120,
+    "preference": 2000,
+    "sft": 2000
+  },
+  "heldout_families": [
+    "snapshot",
+    "split_join",
+    "zip_pairs"
+  ],
+  "preference_reasons": {
+    "factual_error": 160,
+    "incomplete": 161,
+    "off_target": 179
+  },
+  "rejected_length_median": 276.0,
+  "seed": 20261104,
+  "selected": {
+    "evaluation": {
+      "count": 60,
+      "families": {
+        "snapshot": 20,
+        "split_join": 20,
+        "zip_pairs": 20
+      },
+      "levels": {
+        "基础": 20,
+        "挑战": 20,
+        "进阶": 20
+      },
+      "profiles": {
+        "blocks": 15,
+        "math": 15,
+        "self_taught": 15,
+        "spreadsheet": 15
+      },
+      "program_structures": 18,
+      "student_evidence": {
+        "correct": 14,
+        "incorrect": 30,
+        "none": 16
+      },
+      "tasks": {
+        "coach": 15,
+        "diagnose": 16,
+        "explain": 16,
+        "quiz": 13
+      },
+      "topics": {
+        "zip 按位置配对": 20,
+        "拆分与拼接字符串": 20,
+        "赋值与更新": 20
+      }
+    },
+    "preference": {
+      "count": 500,
+      "families": {
+        "alias": 34,
+        "boundary": 34,
+        "branch_order": 34,
+        "default_arg": 33,
+        "dictionary": 34,
+        "division": 34,
+        "enumerate": 33,
+        "filter": 33,
+        "index": 33,
+        "loop_control": 33,
+        "nested_pairs": 33,
+        "precedence": 33,
+        "range_sum": 33,
+        "recursion": 33,
+        "slice": 33
+      },
+      "levels": {
+        "基础": 167,
+        "挑战": 166,
+        "进阶": 167
+      },
+      "profiles": {
+        "blocks": 123,
+        "math": 128,
+        "self_taught": 122,
+        "spreadsheet": 127
+      },
+      "program_structures": 93,
+      "student_evidence": {
+        "correct": 101,
+        "incorrect": 245,
+        "none": 154
+      },
+      "tasks": {
+        "coach": 126,
+        "diagnose": 125,
+        "explain": 126,
+        "quiz": 123
+      },
+      "topics": {
+        "break 与 continue": 33,
+        "enumerate 的起始编号": 33,
+        "if 与 elif 的顺序": 34,
+        "range 的终点": 33,
+        "函数的默认参数": 33,
+        "列表下标": 33,
+        "列表别名与复制": 34,
+        "字典按键累加": 34,
+        "字符串切片": 33,
+        "嵌套循环配对": 33,
+        "整除与取余": 34,
+        "条件的边界": 34,
+        "筛选后计数或求和": 33,
+        "表达式的计算顺序": 33,
+        "递归的停止条件": 33
+      }
+    },
+    "sft": {
+      "count": 1000,
+      "families": {
+        "alias": 67,
+        "boundary": 67,
+        "branch_order": 67,
+        "default_arg": 67,
+        "dictionary": 67,
+        "division": 67,
+        "enumerate": 67,
+        "filter": 66,
+        "index": 67,
+        "loop_control": 67,
+        "nested_pairs": 66,
+        "precedence": 67,
+        "range_sum": 66,
+        "recursion": 66,
+        "slice": 66
+      },
+      "levels": {
+        "基础": 334,
+        "挑战": 333,
+        "进阶": 333
+      },
+      "profiles": {
+        "blocks": 253,
+        "math": 251,
+        "self_taught": 248,
+        "spreadsheet": 248
+      },
+      "program_structures": 97,
+      "student_evidence": {
+        "correct": 243,
+        "incorrect": 474,
+        "none": 283
+      },
+      "tasks": {
+        "coach": 253,
+        "diagnose": 249,
+        "explain": 250,
+        "quiz": 248
+      },
+      "topics": {
+        "break 与 continue": 67,
+        "enumerate 的起始编号": 67,
+        "if 与 elif 的顺序": 67,
+        "range 的终点": 66,
+        "函数的默认参数": 67,
+        "列表下标": 67,
+        "列表别名与复制": 67,
+        "字典按键累加": 67,
+        "字符串切片": 66,
+        "嵌套循环配对": 66,
+        "整除与取余": 67,
+        "条件的边界": 67,
+        "筛选后计数或求和": 66,
+        "表达式的计算顺序": 67,
+        "递归的停止条件": 66
+      }
+    }
+  },
+  "sha256": {
+    "audit/candidates.jsonl": "8425fe2ea635e76c15e66195642bad1333e4ab5635d12d1d5c9af58f6264ec68",
+    "evaluation.jsonl": "83e018cfbfc3fe1703271b73435e20f75b937b6a4afa3e07b27de2cf8c11776c",
+    "preference.jsonl": "f791b26d16a1df80c10c25fdf11950bf0352ea5a428716d51568146b9f32e840",
+    "sft.jsonl": "2c2a81db8faaa9dd34cd4558f6c0c71e6ac174a343dccb3dedddc976fe1fa515"
+  }
+}

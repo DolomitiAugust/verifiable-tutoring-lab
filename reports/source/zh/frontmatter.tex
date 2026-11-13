@@ -1,0 +1,22 @@
+{\centering
+\vspace*{4mm}
+{\fontsize{22}{29}\selectfont\bfseries 可核验教学智能体研究\par}
+\vspace{3mm}{\large 可执行数据、偏好优化与学习者记忆\par}
+\vspace{4mm}{\small 技术研究报告与原理注释\quad 2026年11月13日\par}
+}
+\vspace{6mm}
+\noindent\textbf{摘要}\quad
+本项目面向大学Python入门教学，连接可执行数据合成、模型后训练、可核验教学记忆与商业情景分析。修订数据包含1000条监督示范、500对偏好，并另设开发与评估记录。规则生成和程序检查支持追溯，但不能证明教学质量或真实学习收益。
+
+项目从官方Qwen2.5-0.5B基础模型实际完成SFT、DPO及继续SFT对照，两轮云端结果均保留。探索性追加实验中，SFT与DPO在24道自然问法中仅有3题、4题主值正确，且常伴随错误解释；DPO将参考NLL由3.587升至6.615。有限补救未恢复可靠教学，因此停止继续实验。
+
+简化的OpenMAIC式控制器结合三个提示角色、执行证据与SQLite持久记忆。两例超预期成功和两例意外失败展示了学生隔离检索的作用，以及约束出题、空答案记账的缺陷。后续修复与云端权重联动另行报告，工具回退不记作模型推理成功。商业部分比较CodeGrade与Khanmigo，分析人工复核成本；需求、学习收益和付费意愿仍无真实观测。
+
+本报告按研究问题、方法、实验、结果分析和局限组织，保留真实失败，并区分程序核验、模型表现与商业假设。中文增加简短原理注释，科学数据与英文版一致；代码与证据使用同一套发布文件。
+
+\medskip\noindent\textbf{关键词}\quad 教育智能体；合成数据；监督微调；偏好优化；可核验记忆；商业可行性
+
+\begin{center}
+\includegraphics[width=0.46\linewidth]{../../assets/en/roles-memory-concept.png}\par
+{\scriptsize 角色与记忆的概念插图，AI生成，不代表实验效果。}
+\end{center}

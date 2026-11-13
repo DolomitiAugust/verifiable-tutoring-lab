@@ -1,0 +1,490 @@
+{
+  "schema_version": 1,
+  "suite_id": "tutor-preregistered-core-v1",
+  "created_date": "2026-11-07",
+  "purpose": "检验 tutor 多智能体教学系统；冻结预期后运行，案例参考值不传入系统。",
+  "run_order": "按 cases 与 turns 的文件顺序；共用一个新建 memory_path；restart 标记重新构造系统但保留同一数据库。",
+  "selection_policy": {
+    "success": "全部必须自动检查通过，且该场景每条定性要求均评分2，才称完整成功。",
+    "unexpected_success": "expected_before_run.completion=partial 且实际完整成功。",
+    "unexpected_failure": "expected_before_run.completion=complete 且实际未完整完成；不能将预期局部能力不足伪称意外。",
+    "showcase": "优先按文件顺序选最早2个超预期成功与最早2个意外失败；若不足，明示不足，禁止重标原预期，可另建明确标识的追加挑战集。"
+  },
+  "qualitative_scale": {
+    "0": "缺失、实质错误或违背要求",
+    "1": "部分完成，仍缺少一个必要内容或依据不充分",
+    "2": "具体、正确且完整地满足本条要求"
+  },
+  "review_policy": "定性评分须读完整实际 role trace 和 final 文本，记录原文证据与评审者。未评审不算失败或成功；工具答对不等于教学完整。不同于参考的有效变式允许，但必须满足该题请求并可核验。",
+  "reference_policy": "仅由运行器独立以本机 Python 执行人工审阅的主程序与参考变式，结果与固定答案严格一致；不执行模型返回的未知代码，不把参考答案或评分标准传给系统。",
+  "case_count": 8,
+  "turn_count": 11,
+  "cases": [
+    {
+      "case_id": "tutor-C01",
+      "title": "诊断 range 终点误答",
+      "expected_before_run": {
+        "completion": "complete",
+        "rationale": "题目单一、误解已明确给出，并提供合法变式程序；预期系统应完整诊断与核验。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C01-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_range_a",
+            "topic": "range 终点与步长",
+            "code": "total = 0\nfor n in range(2, 8, 2):\n    total += n\nprint(total)",
+            "student_answer": "20",
+            "request": "我把 8 也加进去了，所以猜 20。请指出错在第几步，列出实际取值与和，再出一道只改终点的复测，并把答案另列。",
+            "background": "大一学生，熟悉电子表格，刚开始学 Python。",
+            "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)"
+          },
+          "reference": {
+            "main_answer": "12",
+            "student_status": "incorrect",
+            "explanation": "range(2,8,2) 只取 2、4、6；8 是排除的终点，2+4+6=12。学生多加 8 得到 20。",
+            "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+            "followup_answer": "20"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "diagnosis",
+          "criterion": "明确指出误把终点 8 纳入，列出 2、4、6 及总和 12，不认可学生的 20。"
+        },
+        {
+          "id": "followup",
+          "criterion": "给出请求的终点变式及答案 20，题目与答案能区分。"
+        }
+      ],
+      "memory_checks": [
+        {
+          "kind": "student_count_delta",
+          "turn_id": "tutor-C01-T1",
+          "attempts": 1,
+          "correct": 0,
+          "incorrect": 1,
+          "unanswered": 0
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C02",
+      "title": "正确预测的证据与克制反馈",
+      "expected_before_run": {
+        "completion": "complete",
+        "rationale": "标准切片题且有给定复测；预期能正确认可本次作答并给出逐项依据。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C02-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_slice_b",
+            "topic": "字符串切片",
+            "code": "word = 'python'\nprint(word[1:5:2])",
+            "student_answer": "yh",
+            "request": "我的预测是 yh。请先核对，再说明取了哪些下标，不能因为一次答对就说我已掌握。给一道改起点和终点的复测及答案。",
+            "background": "做过积木编程，容易把下标起点数成 1。",
+            "followup_code": "word = 'python'\nprint(word[0:6:2])"
+          },
+          "reference": {
+            "main_answer": "yh",
+            "student_status": "correct",
+            "explanation": "起点 1、步长 2、终点 5 排除，取下标 1、3，字符 y、h；一次正确预测不能证明掌握。",
+            "followup_code": "word = 'python'\nprint(word[0:6:2])",
+            "followup_answer": "pto"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "correct_feedback",
+          "criterion": "肯定 yh 是本次正确输出，说明下标 1、3；不声称已完全掌握，也不臆造该生本次答错。"
+        },
+        {
+          "id": "followup",
+          "criterion": "给出有效的改起点/终点复测及可核对答案。"
+        }
+      ],
+      "memory_checks": [
+        {
+          "kind": "student_count_delta",
+          "turn_id": "tutor-C02-T1",
+          "attempts": 1,
+          "correct": 1,
+          "incorrect": 0,
+          "unanswered": 0
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C03",
+      "title": "重建会话后的错因记忆复用",
+      "expected_before_run": {
+        "completion": "partial",
+        "rationale": "training 小模型曾认可 range/配对误答；跨实例取回事实后能否把旧错因和新题依据正确结合，基线预期仅部分完成。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C03-T1",
+          "restart_system_before": true,
+          "inputs": {
+            "student_id": "student_range_a",
+            "topic": "range 终点与步长",
+            "code": "total = 0\nfor n in range(3, 9, 3):\n    total += n\nprint(total)",
+            "student_answer": "9",
+            "request": "这是另一次会话。我记不清上次错在哪里。请结合你保存的记录说明我应重点核对什么，核对本次的 9，并再出一道同概念复测及答案。",
+            "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)"
+          },
+          "reference": {
+            "main_answer": "9",
+            "student_status": "correct",
+            "explanation": "本题 range 只取 3、6，总和 9；此前 tutor-C01 把排除的终点 8 纳入，当前仍应检查终点 9 不被取到。",
+            "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)",
+            "followup_answer": "18"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "memory_use",
+          "criterion": "回答确实引用此前把 range 终点也计入的已保存错误，说明当前要排除 9；不能只泛称“根据记录”。"
+        },
+        {
+          "id": "current_reasoning",
+          "criterion": "核对当前预测 9 正确，说明 3+6=9；不把历史错误算作本次错误。"
+        },
+        {
+          "id": "followup",
+          "criterion": "提供同概念复测及正确答案。"
+        }
+      ],
+      "memory_checks": [
+        {
+          "kind": "before_topic_count",
+          "turn_id": "tutor-C03-T1",
+          "attempts": 1,
+          "incorrect": 1,
+          "correct": 0
+        },
+        {
+          "kind": "retrieved_contains_turn",
+          "turn_id": "tutor-C03-T1",
+          "prior_turn_id": "tutor-C01-T1"
+        },
+        {
+          "kind": "student_count_delta",
+          "turn_id": "tutor-C03-T1",
+          "attempts": 1,
+          "correct": 1,
+          "incorrect": 0,
+          "unanswered": 0
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C04",
+      "title": "同名主题跨学生隔离",
+      "expected_before_run": {
+        "completion": "partial",
+        "rationale": "复用同一主题和同一程序容易诱发对话历史混用；预期能完成讲解，但能否同时保留身份隔离和未作答状态需实际检验。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C04-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_range_new",
+            "topic": "range 终点与步长",
+            "code": "total = 0\nfor n in range(2, 8, 2):\n    total += n\nprint(total)",
+            "student_answer": null,
+            "request": "这是我第一次来，我还没有给出预测。请从头解释循环取值并给一道复测，别把别人的答题记录当成我的。",
+            "background": "擅长数学推导，没有电子表格学习背景。",
+            "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)"
+          },
+          "reference": {
+            "main_answer": "12",
+            "student_status": "unanswered",
+            "explanation": "本题依次取 2、4、6，和为 12；新学生没有既往作答，也未提供本次预测，不能记为正确或错误。",
+            "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+            "followup_answer": "20"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "identity",
+          "criterion": "不给新学生归因旧学生的错误或电子表格背景；不声称“你上次把 8 算进去了”。"
+        },
+        {
+          "id": "unanswered",
+          "criterion": "把本轮视为未作预测，不评价其回答对错，也不把系统给出的答案记成学生掌握。"
+        },
+        {
+          "id": "explanation_followup",
+          "criterion": "解释 2、4、6 与 12，并提供相关复测及答案。"
+        }
+      ],
+      "memory_checks": [
+        {
+          "kind": "no_prior_student_memory",
+          "turn_id": "tutor-C04-T1"
+        },
+        {
+          "kind": "retrieved_only_student",
+          "turn_id": "tutor-C04-T1",
+          "student_id": "student_range_new"
+        },
+        {
+          "kind": "student_count_delta",
+          "turn_id": "tutor-C04-T1",
+          "attempts": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "unanswered": 1
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C05",
+      "title": "连续正确后的实际难度提高",
+      "expected_before_run": {
+        "completion": "partial",
+        "rationale": "统计可由规则准确更新，但把升级建议落实为增加条件而非只换数字的有效新题，对小模型更难，预期部分完成。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C05-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_progress",
+            "topic": "range 难度适配",
+            "code": "print(sum(range(1, 4)))",
+            "student_answer": "6",
+            "request": "请核对我的预测并解释关键取值，再给一道同概念的小复测及答案。",
+            "background": "有数学基础的大一学生。",
+            "followup_code": "print(sum(range(1, 5)))"
+          },
+          "reference": {
+            "main_answer": "6",
+            "student_status": "correct",
+            "explanation": "range 取 1、2、3，和为 6。",
+            "followup_code": "print(sum(range(1, 5)))",
+            "followup_answer": "10"
+          }
+        },
+        {
+          "turn_id": "tutor-C05-T2",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_progress",
+            "topic": "range 难度适配",
+            "code": "print(sum(range(2, 7, 2)))",
+            "student_answer": "12",
+            "request": "请核对我的预测并解释关键取值，再给一道同概念的小复测及答案。",
+            "followup_code": "print(sum(range(2, 9, 2)))"
+          },
+          "reference": {
+            "main_answer": "12",
+            "student_status": "correct",
+            "explanation": "range 取 2、4、6，和为 12。",
+            "followup_code": "print(sum(range(2, 9, 2)))",
+            "followup_answer": "20"
+          }
+        },
+        {
+          "turn_id": "tutor-C05-T3",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_progress",
+            "topic": "range 难度适配",
+            "code": "print(sum(range(3, 10, 3)))",
+            "student_answer": "18",
+            "request": "请核对我的预测并解释关键取值，再给一道同概念的小复测及答案。",
+            "followup_code": "print(sum(range(3, 13, 3)))"
+          },
+          "reference": {
+            "main_answer": "18",
+            "student_status": "correct",
+            "explanation": "range 取 3、6、9，和为 18。",
+            "followup_code": "print(sum(range(3, 13, 3)))",
+            "followup_answer": "30"
+          }
+        },
+        {
+          "turn_id": "tutor-C05-T4",
+          "restart_system_before": true,
+          "inputs": {
+            "student_id": "student_progress",
+            "topic": "range 难度适配",
+            "code": "print(sum(range(2, 8, 2)))",
+            "student_answer": null,
+            "request": "请根据我前三次已核验的预测记录决定是否提高难度。不要只换数字，请给一道在 range 内增加奇偶条件的复测，附完整程序、正确输出与解释。"
+          },
+          "reference": {
+            "main_answer": "12",
+            "student_status": "unanswered",
+            "explanation": "前三次独立学生预测均正确，只能支持提高一个练习等级的建议，不能证明全面掌握；新题应增加条件筛选。",
+            "followup_code": "total = 0\nfor n in range(1, 7):\n    if n % 2 == 0:\n        total += n\nprint(total)",
+            "followup_answer": "12"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "evidence_based_progression",
+          "criterion": "最后一轮基于前三次真实预测建议提高一级，未答的第四轮不得增加正确次数，也不宣称已经完全掌握。"
+        },
+        {
+          "id": "actual_harder_exercise",
+          "criterion": "最后一轮交付含 range 与奇偶判断的复测完整程序、正确输出和解释；仅改常量或文字称更难不算完成。"
+        }
+      ],
+      "memory_checks": [
+        {
+          "kind": "before_topic_count",
+          "turn_id": "tutor-C05-T4",
+          "attempts": 3,
+          "correct": 3,
+          "incorrect": 0
+        },
+        {
+          "kind": "recommendation",
+          "turn_id": "tutor-C05-T4",
+          "action": "increase"
+        },
+        {
+          "kind": "student_count_delta",
+          "turn_id": "tutor-C05-T4",
+          "attempts": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "unanswered": 1
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C06",
+      "title": "别名与复制的详细因果解释",
+      "expected_before_run": {
+        "completion": "partial",
+        "rationale": "执行器可给结果，但模型需解释对象关系并自主出同概念变式，预期只能部分完成。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C06-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_alias",
+            "topic": "列表别名与复制",
+            "code": "left = [1, 2]\nalias = left\ncopy = left[:]\nalias.append(3)\nprint((left, copy))",
+            "student_answer": null,
+            "request": "请逐行解释 alias、left、copy 的关系，为什么 append 只影响其中两者。再自主设计一道能区分别名与复制的变式，附完整程序、输出和原因。",
+            "background": "只学过整数赋值，还未区分可变对象。"
+          },
+          "reference": {
+            "main_answer": "([1, 2, 3], [1, 2])",
+            "student_status": "unanswered",
+            "explanation": "alias 与 left 指向同一个列表；left[:] 建立独立浅拷贝；alias.append(3) 修改原列表，copy 仍为 [1,2]。",
+            "followup_code": "left = [1, 2]\nalias = left[:]\ncopy = left[:]\nalias.append(3)\nprint((left, copy))",
+            "followup_answer": "([1, 2], [1, 2])"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "causal_state",
+          "criterion": "逐行区分同一对象的别名与独立切片副本，说明 append 改变 left/alias 而不改变 copy；不能只复述数值。"
+        },
+        {
+          "id": "conceptual_followup",
+          "criterion": "自主复测必须仍考察别名与复制的差异，给出完整程序、正确输出和原因。"
+        }
+      ],
+      "memory_checks": []
+    },
+    {
+      "case_id": "tutor-C07",
+      "title": "可变默认参数的跨调用状态",
+      "expected_before_run": {
+        "completion": "partial",
+        "rationale": "本题同时要求默认值生命周期、返回对象别名与修复，超过简单输出核对；预期部分完成。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C07-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_defaults",
+            "topic": "可变默认参数",
+            "code": "def collect(x, out=[]):\n    out.append(x)\n    return out\na = collect(1)\nb = collect(2)\nprint((a, b))",
+            "student_answer": "([1], [2])",
+            "request": "我以为每次调用都有新的空列表，所以猜 ([1], [2])。请解释默认列表何时创建、a 和 b 为什么会相互影响，再给一道只改默认参数处理方式的修复练习及答案。",
+            "background": "学过函数参数，但尚未理解对象共享。"
+          },
+          "reference": {
+            "main_answer": "([1, 2], [1, 2])",
+            "student_status": "incorrect",
+            "explanation": "默认列表在函数定义时创建一次，两次未显式提供 out 的调用复用它；a 与 b 都引用同一列表，第二次 append 后 a 也显示 [1,2]。",
+            "followup_code": "def collect(x, out=None):\n    if out == None:\n        out = []\n    out.append(x)\n    return out\na = collect(1)\nb = collect(2)\nprint((a, b))",
+            "followup_answer": "([1], [2])"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "default_lifetime",
+          "criterion": "明确默认列表只在定义时创建且被两次调用复用，a、b 最后都指向 [1,2]；准确诊断“每次新建”的误解。"
+        },
+        {
+          "id": "repair_followup",
+          "criterion": "修复练习采用每次调用必要时建立新列表的机制，完整代码与结果 ([1],[2]) 相符；只改常量不算修复。"
+        }
+      ],
+      "memory_checks": []
+    },
+    {
+      "case_id": "tutor-C08",
+      "title": "不等长 zip 的诊断与定向变式",
+      "expected_before_run": {
+        "completion": "complete",
+        "rationale": "该题的旧模型错误已在 training 记录；现在有执行、审阅与教学请求约束，预期整套系统应纠正 230 并完成明确的补数变式。"
+      },
+      "turns": [
+        {
+          "turn_id": "tutor-C08-T1",
+          "restart_system_before": false,
+          "inputs": {
+            "student_id": "student_zip",
+            "topic": "zip 不等长配对",
+            "code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+            "student_answer": "230",
+            "request": "请解释为什么我算出的 230 不对，逐对列出求和，说明没有配对的元素。再只给右列表补一个数，设计第二题，附完整程序和答案并讲解变化。",
+            "background": "熟悉积木顺序，但容易忽略循环的终止条件。"
+          },
+          "reference": {
+            "main_answer": "212",
+            "student_status": "incorrect",
+            "explanation": "zip 只产生五对，和分别为16、40、52、54、50，合计212；左列表末尾18没有搭档，不能再加入。",
+            "followup_code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44, 6]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+            "followup_answer": "236"
+          }
+        }
+      ],
+      "required_qualitative_criteria": [
+        {
+          "id": "pairwise_diagnosis",
+          "criterion": "列出五对及其和16、40、52、54、50，总和212；指出末尾18不参与，不认可230。"
+        },
+        {
+          "id": "constrained_followup",
+          "criterion": "只给右列表新增一个数形成第六对，给出完整程序及正确新和并解释；仅改已有数或改别的语句不符合请求。"
+        }
+      ],
+      "memory_checks": []
+    }
+  ]
+}

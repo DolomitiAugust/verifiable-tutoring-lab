@@ -1,0 +1,181 @@
+{
+  "repository": "THU-MAIC/OpenMAIC",
+  "commit": "5bd8cc840ee6397d063e1fe6aba974b9f0401593",
+  "commit_date_utc": "2026-11-06T12:52:12Z",
+  "retrieved_date": "2026-11-07",
+  "method": "GitHub plugin fetch_file at fixed ref; bytes independently checked against fixed commit's recursive tree Git blob SHA-1; no repository code executed.",
+  "commit_url": "https://github.com/THU-MAIC/OpenMAIC/commit/5bd8cc840ee6397d063e1fe6aba974b9f0401593",
+  "files": [
+    {
+      "path": "README-zh.md",
+      "git_blob_sha1": "2957416194e4e1f892c2972d91d377c459692129",
+      "bytes": 48485,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/README-zh.md",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/README-zh.md",
+      "sha256": "781a79e536b46709c8078e2a18ab5ab507d6f4f4aec78f5b7087fd5f48bf046b",
+      "lines": 945
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "76abc5f13261e94fc0382b33ac8c101555288083",
+      "bytes": 1065,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/LICENSE",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/LICENSE",
+      "sha256": "ba252563743227138231604c9138dd400faca5a10c3cf206b466e5466c565a19",
+      "lines": 21
+    },
+    {
+      "path": "lib/chat/pi/director-loop.ts",
+      "git_blob_sha1": "3ae4443fbbbe7ebda2a7884cf7bd36c00f5021c5",
+      "bytes": 12021,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/director-loop.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/director-loop.ts",
+      "sha256": "a683c44e25ccd1c6f35ef6bbae8241fd9b9feead571929e77eccac4bdc6d90bd",
+      "lines": 300
+    },
+    {
+      "path": "lib/chat/pi/prompts.ts",
+      "git_blob_sha1": "1e69a05f87383381363b3bd213214da26a6ef35b",
+      "bytes": 32763,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/prompts.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/prompts.ts",
+      "sha256": "44bbbc76433a5367acb1966bfec99558503243dbf31b9f7a3bcf7c5ba0aed729",
+      "lines": 612
+    },
+    {
+      "path": "lib/chat/pi/director-compaction.ts",
+      "git_blob_sha1": "abfc89c2e3844ffd12363297fec7291de2cfb484",
+      "bytes": 7960,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/director-compaction.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/director-compaction.ts",
+      "sha256": "88bc88893c9d840e757dac37e999f0932562477d38496eca21050d6119903a6a",
+      "lines": 234
+    },
+    {
+      "path": "lib/chat/pi/tools/call-agent.ts",
+      "git_blob_sha1": "b194bf889eee75d0a440a23ed8a5456dfd2d0a62",
+      "bytes": 36527,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/call-agent.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/call-agent.ts",
+      "sha256": "e8c8c92d40b409b17f65b412d9689f3f8254542385e38fd0c226ea8c22307985",
+      "lines": 1011
+    },
+    {
+      "path": "lib/chat/pi/tools/cue-user.ts",
+      "git_blob_sha1": "fcdd1d0fe5cab2e32eab51adae65dcdc1d014a4f",
+      "bytes": 3519,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/cue-user.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/cue-user.ts",
+      "sha256": "0f056855dd9fa743e317c8aee16dc7106a9a7fc8fbaf54bad3efc40dff996e64",
+      "lines": 97
+    },
+    {
+      "path": "lib/chat/pi/tools/close-session.ts",
+      "git_blob_sha1": "06627d3e5065f85fee9d4c687669911881513cb3",
+      "bytes": 2333,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/close-session.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/close-session.ts",
+      "sha256": "645b452f032505c2d3677b77f0d3420022a1d6e670e86c2e2bf519bfd84c4238",
+      "lines": 74
+    },
+    {
+      "path": "lib/orchestration/registry/built-in.ts",
+      "git_blob_sha1": "d653fc42541e5bf687eb91f9336c02f19c69971a",
+      "bytes": 8927,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/orchestration/registry/built-in.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/orchestration/registry/built-in.ts",
+      "sha256": "ea3f952b0f348c4b4488eebf1dec05319977e8072da204b8344405357892acea",
+      "lines": 195
+    },
+    {
+      "path": "lib/orchestration/summarizers/state-context.ts",
+      "git_blob_sha1": "8aeb3c029a79ae6300bd22411ed0c46eaf670ed5",
+      "bytes": 12672,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/orchestration/summarizers/state-context.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/orchestration/summarizers/state-context.ts",
+      "sha256": "ef71d8aae37683845e6a1b9c3531c4ad48e9d1236e2042fa2cdb03e70ba7493f",
+      "lines": 271
+    },
+    {
+      "path": "lib/server/generation/steps/outline.ts",
+      "git_blob_sha1": "a70902dcf444428eb6f61ea530ac76da35959b33",
+      "bytes": 32330,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/steps/outline.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/steps/outline.ts",
+      "sha256": "f639dae93213881700814a85f507c11495faabebfe7e52ee7840f49db86619ba",
+      "lines": 828
+    },
+    {
+      "path": "lib/server/generation/steps/scene-content.ts",
+      "git_blob_sha1": "2a47addc02921548f4f346525afc1547b8dc392f",
+      "bytes": 13450,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/steps/scene-content.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/steps/scene-content.ts",
+      "sha256": "b4a355ae85bab634fdd9c03b3f6180bac216275d78bee3b511fcaa56c9bf307e",
+      "lines": 334
+    },
+    {
+      "path": "app/api/quiz-grade/route.ts",
+      "git_blob_sha1": "9fe4ebc1a81faea1a0a01089419eb384c5f9cc59",
+      "bytes": 3976,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/app/api/quiz-grade/route.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/app/api/quiz-grade/route.ts",
+      "sha256": "3b74492e4218669666d20dab17425b4d952e5ee6fe32a574358c7f2e4e350a1f",
+      "lines": 117
+    },
+    {
+      "path": "lib/pbl/v2/agents/instructor-memory.ts",
+      "git_blob_sha1": "197687a4e7794a74f6c89f58e615593c2009a7c7",
+      "bytes": 5359,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/pbl/v2/agents/instructor-memory.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/pbl/v2/agents/instructor-memory.ts",
+      "sha256": "28ec111c839409b05aaf87740c771f0299f1b1c901b72b5c4c1c2ddfdf0c15e7",
+      "lines": 149
+    },
+    {
+      "path": "lib/chat/pi/tools/read-scene.ts",
+      "git_blob_sha1": "d45a288f92236757715fe1a191f6917a053c1ed4",
+      "bytes": 8579,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/read-scene.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/chat/pi/tools/read-scene.ts",
+      "sha256": "4a580bf87bb97410db04d4a5fbcc3ed02dea7e5b2dda7183f09aa1069ac5e4e1",
+      "lines": 218
+    },
+    {
+      "path": "lib/server/generation/run/plan.ts",
+      "git_blob_sha1": "083f370593df90dcc59ca05967e346bfb302032b",
+      "bytes": 6689,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/run/plan.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/server/generation/run/plan.ts",
+      "sha256": "f65a2bb26c8583cec7308ae8cf8454a315ee2af7d5e454fc61fa264131d40135",
+      "lines": 166
+    },
+    {
+      "path": "lib/store/user-profile.ts",
+      "git_blob_sha1": "98d0ba577557fe23341fb5c0efdcdd56a62f990e",
+      "bytes": 2568,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/store/user-profile.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/store/user-profile.ts",
+      "sha256": "dde2f81e90575450d8f9301e58e644f5006177cc7f0c94b731f83323a6bd7074",
+      "lines": 73
+    },
+    {
+      "path": "lib/pbl/v2/agents/instructor.ts",
+      "git_blob_sha1": "d7196bb01514dafaf8b919747246a30897bc58a1",
+      "bytes": 93463,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/pbl/v2/agents/instructor.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/lib/pbl/v2/agents/instructor.ts",
+      "sha256": "60e9ea5a6f1170a11f44d314f83d74aeaffdd154e7e3f77eaa21ba80a8162ac1",
+      "lines": 1864
+    },
+    {
+      "path": "packages/@openmaic/generation/synthesis_legacy/scene-builder.ts",
+      "git_blob_sha1": "9c793bf65f628b7c6d465a227c1c8365032361eb",
+      "bytes": 3076,
+      "github_url": "https://github.com/THU-MAIC/OpenMAIC/blob/5bd8cc840ee6397d063e1fe6aba974b9f0401593/packages/@openmaic/generation/synthesis_legacy/scene-builder.ts",
+      "raw_url": "https://raw.githubusercontent.com/THU-MAIC/OpenMAIC/5bd8cc840ee6397d063e1fe6aba974b9f0401593/packages/@openmaic/generation/synthesis_legacy/scene-builder.ts",
+      "sha256": "4995900143631447590b9d212fd7c5e644fc42ad734f8463ae05aced7b7f1c5b",
+      "lines": 115
+    }
+  ]
+}

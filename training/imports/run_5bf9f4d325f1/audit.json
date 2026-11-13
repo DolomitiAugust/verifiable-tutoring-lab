@@ -1,0 +1,3276 @@
+{
+  "schema": "training-v2-import-audit-1",
+  "audited_at_utc": "2026-11-07T06:42:24.831998+00:00",
+  "passed": true,
+  "status": "passed_with_limitations",
+  "check_count": 552,
+  "error_count": 0,
+  "errors": [],
+  "warnings": [
+    "GPU型号未记录，不能从CUDA字段推断T4。",
+    "继续SFT对照仅匹配新增更新次数，token与运行时间不相同。",
+    "安全值补评分为保守自动抽取，未判定不是错误；教学质量仍需阅读原文。",
+    "自然表达测试由Codex编写，并非真人或外部独立评审。"
+  ],
+  "details": {
+    "protocol": {
+      "base": "Qwen/Qwen2.5-0.5B",
+      "epochs": 3,
+      "seed": 20261107,
+      "adapter": {
+        "rank": 16,
+        "alpha": 32,
+        "last_layers": 8
+      },
+      "sft_learning_rate": 0.0002,
+      "dpo_learning_rate": 1e-05,
+      "beta": 0.1,
+      "scheduler": "constant (same verified optimizer as v1)",
+      "batch_size": 1,
+      "sft_selection": "lowest reference NLL on separate dev.jsonl after each full epoch; ties choose earlier epoch",
+      "control": "same SFT parent, learning rate, batch size and number of additional optimizer updates as DPO; response tokens and wall time are not identical",
+      "generation": {
+        "max_new_tokens": 384,
+        "sampling": false,
+        "limit": 24
+      },
+      "device": "cuda",
+      "dtype": "float32",
+      "script_sha256": {
+        "train.py": "437a0fca48989f89d98d8ac1dcc2cc01710c324dd455a530912fbf5fc0d552cf",
+        "evaluate.py": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+        "run_cloud.py": "01d14890361524e92e0790f564fe2d46eae178424b918d3285ab582ae8e9869f"
+      }
+    },
+    "training": {
+      "sft": {
+        "steps": 3000,
+        "unique_examples": 1000,
+        "response_tokens": 143934,
+        "training_step_seconds": 251.538,
+        "adapter_delta_l2": 13.366248059327475,
+        "first_10_mean_loss": 3.914514237642288,
+        "last_10_mean_loss": 0.6430334404110909,
+        "adapter_sha256": "97e9f37e9f03d837229159aea6598172fe9f8a7d4d67f0423d567e5b986a93ac",
+        "parent_sft_sha256": null,
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      },
+      "dpo": {
+        "steps": 500,
+        "unique_examples": 500,
+        "response_tokens": 48091,
+        "training_step_seconds": 68.913,
+        "adapter_delta_l2": 0.26592359803938104,
+        "first_10_mean_loss": 0.69493288397789,
+        "last_10_mean_loss": 0.6100392535328865,
+        "adapter_sha256": "e2c44c85c19f726f186c0b9dd78278fe42b8be95d9c2ad99b1611802f52f9f27",
+        "parent_sft_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      },
+      "continued_sft": {
+        "steps": 500,
+        "unique_examples": 500,
+        "response_tokens": 23981,
+        "training_step_seconds": 44.141,
+        "adapter_delta_l2": 0.2575706995952652,
+        "first_10_mean_loss": 1.3752139702439308,
+        "last_10_mean_loss": 0.822588887810707,
+        "adapter_sha256": "dc441f4eae1a5b6f2f77107266f066b45098d39240d12deafe7ba043aef9bc41",
+        "parent_sft_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      }
+    },
+    "selection": {
+      "candidates": [
+        {
+          "epoch": 1,
+          "dev_nll": 2.644899927548,
+          "checkpoint_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797"
+        },
+        {
+          "epoch": 2,
+          "dev_nll": 3.070906735828945,
+          "checkpoint_sha256": "91cb4a0df78a9e75dc63b22c3b372bef3ab6ad89f413b29e1bc0ed90ce7cbb64"
+        },
+        {
+          "epoch": 3,
+          "dev_nll": 3.3793597071511403,
+          "checkpoint_sha256": "97e9f37e9f03d837229159aea6598172fe9f8a7d4d67f0423d567e5b986a93ac"
+        }
+      ],
+      "selected_epoch": 1,
+      "selected_steps": 1000,
+      "selected_sft_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797"
+    },
+    "evaluation": {
+      "base": {
+        "independent": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\base_independent.json",
+          "file_sha256": "29e4c84b028672e26a75c37b3e9a2831a329c8b2d42583de590929072d85fd88",
+          "reference_nll": 3.725828029579919,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 17,
+            "eos": 7
+          },
+          "safe_value_counts": {
+            "unresolved": 24
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.43,
+          "mean_repeat_fraction": 0.6326312284772216
+        },
+        "bridge_nll": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\base_bridge_nll.json",
+          "file_sha256": "821da89be0c46f5649492fe7f9eee25f8cf8fa6b59a1e3577d3f2d43db1f714b",
+          "reference_nll": 3.2758085729643427,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "sft": {
+        "independent": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\sft_independent.json",
+          "file_sha256": "49e18834ef6c93b5e3877ff08b667ef7977408ac4102edc01ee8a4e671fecaa0",
+          "reference_nll": 3.5892165900772457,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 23,
+            "eos": 1
+          },
+          "safe_value_counts": {
+            "unresolved": 19,
+            "wrong": 5
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.47,
+          "mean_repeat_fraction": 0.7915573053368329
+        },
+        "bridge_nll": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\sft_bridge_nll.json",
+          "file_sha256": "93abe12a20f28f05663f7eefc26c255945f909a5bfeef0d7d0f3c034716fb8ff",
+          "reference_nll": 4.008079125109888,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "dpo": {
+        "independent": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\dpo_independent.json",
+          "file_sha256": "74533a79f08bfb0aac1760c2286154010e7c65c217034cd5b704e91f7e70d2da",
+          "reference_nll": 4.299217243266375,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 23,
+            "eos": 1
+          },
+          "safe_value_counts": {
+            "unresolved": 20,
+            "wrong": 4
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.51,
+          "mean_repeat_fraction": 0.7629265091863516
+        },
+        "bridge_nll": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\dpo_bridge_nll.json",
+          "file_sha256": "5dfa3ad88d98656fae9af3b989cf929a8525d35c839f580cf7c5808fe0441c02",
+          "reference_nll": 4.521613113438523,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "continued_sft": {
+        "independent": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\continued_sft_independent.json",
+          "file_sha256": "4b1faaa7574e038fbce17e3601c291ac4c43bc48e0e55e9172a16c9afa5f6938",
+          "reference_nll": 3.444474811386434,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 24
+          },
+          "safe_value_counts": {
+            "wrong": 11,
+            "unresolved": 13
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.47,
+          "mean_repeat_fraction": 0.8246937882764654
+        },
+        "bridge_nll": {
+          "file": "training\\imports\\run_5bf9f4d325f1\\results\\evaluation\\continued_sft_bridge_nll.json",
+          "file_sha256": "95cf61fc58a54ac6f4554de7d9e210da91bd562be9ec696012ed8ecbc2eed793",
+          "reference_nll": 3.9351876183546945,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      }
+    },
+    "paired_comparisons": {
+      "base_to_sft": {
+        "independent": {
+          "lower_nll_cases": 15,
+          "tied_cases": 0,
+          "higher_nll_cases": 9,
+          "micro_nll_delta": -0.13661143950267318
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 60,
+          "micro_nll_delta": 0.7322705521455455
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 2.791601495742798,
+          "positive_relative_margin_pairs": 57,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      },
+      "sft_to_dpo": {
+        "independent": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 24,
+          "micro_nll_delta": 0.710000653189129
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 60,
+          "micro_nll_delta": 0.5135339883286347
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 4.280647163391113,
+          "positive_relative_margin_pairs": 59,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      },
+      "sft_to_continued_sft": {
+        "independent": {
+          "lower_nll_cases": 24,
+          "tied_cases": 0,
+          "higher_nll_cases": 0,
+          "micro_nll_delta": -0.14474177869081162
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 60,
+          "tied_cases": 0,
+          "higher_nll_cases": 0,
+          "micro_nll_delta": -0.07289150675519362
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 0.25426589012145995,
+          "positive_relative_margin_pairs": 53,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      }
+    },
+    "hardware": {
+      "device_recorded": "cuda",
+      "gpu_model": null,
+      "gpu_model_verification": "unverified: frozen result files do not record GPU model; CUDA does not establish T4"
+    },
+    "source": {
+      "results_directory": "training\\imports\\run_5bf9f4d325f1\\results",
+      "frozen_upload_sha256": "8e303e9c07bbfa340bee2dd11548785fd0f1f21fbccb2e5e70c0d64d93c9f774",
+      "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0"
+    }
+  },
+  "checks": [
+    {
+      "passed": true,
+      "code": "provenance.frozen_upload_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "provenance.upload_member_hashes",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.base_epochs_seed",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.adapter_batch",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.cuda_float32",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.script.evaluate.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.script.run_cloud.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.sft.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.equal_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.parent_sft_sha256",
+      "detail": {
+        "expected": null,
+        "recorded": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.sft.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.equal_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.initial_reference_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.parent_sft_sha256",
+      "detail": {
+        "expected": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+        "recorded": [
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.frozen_reference_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.parent_sft_sha256",
+      "detail": {
+        "expected": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+        "recorded": [
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+          "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.final_epoch_matches_training_export",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.complete_epochs",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.minimum_dev_nll",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.recorded_candidates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.checkpoint_matches_best_epoch",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.selected_checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "completion.all_stages_finished",
+      "detail": null
+    }
+  ],
+  "result_archive": {
+    "path": "training\\training_v2_results.zip",
+    "sha256": "5bf9f4d325f1eeaa95c60488b2dcdf285653e8e27e5a35b2b3caf192a4f2fbad",
+    "bytes": 22419704
+  },
+  "importer_sha256": "1b922635999b40d29ff3062c0d0c9cdd2b657859241a4d3d9df2a2ffcf06815b"
+}

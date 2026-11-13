@@ -1,0 +1,421 @@
+{
+  "as_of": "2026-11-07",
+  "method": "Primary official pages, original research; product features are vendor claims, no account-level competitor tests.",
+  "source_count": 21,
+  "sources": [
+    {
+      "id": "K1",
+      "organization": "Khan Academy",
+      "title": "Khanmigo pricing",
+      "url": "https://khanmigo.ai/pricing",
+      "published_or_updated": "未标注；实时定价页",
+      "source_class": "官方产品与报价",
+      "locator": "For Teachers; For you; For families; Khanmigo District Tools",
+      "short_quote": "Request pricing",
+      "facts": [
+        "教师工具免费；个人及家庭页面标价$4/月或$44/年，页面注明不含销售税。",
+        "District Tools提供教师与学生接入、学校/学区数据、自动名册和SSO等，机构方案询价。"
+      ],
+      "limitations": [
+        "个人订阅价不能作为机构采购价。",
+        "没有完成账号购买或合同核验；公开标价不等于最终成交价。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 2
+    },
+    {
+      "id": "K2",
+      "organization": "Khan Academy",
+      "title": "Khanmigo: AI-powered teaching assistant & tutor",
+      "url": "https://khanmigo.ai/",
+      "published_or_updated": "未标注；实时产品FAQ",
+      "source_class": "官方产品说明",
+      "locator": "FAQ: Will I be able to give my students access; Can anyone use Khanmigo; What grades and subjects",
+      "short_quote": "classroom access for Khanmigo is only available through school or district implementations",
+      "facts": [
+        "学习者功能包含引导思考、编程等领域；官网描述覆盖小学到大学。",
+        "教师免费账户不能直接给学生开通课堂接入，课堂接入经学校/学区方案。",
+        "个人/家长订阅入口要求成年、居住美国并有美国账单地址；未成年人通过家长或合作学校接入。"
+      ],
+      "limitations": [
+        "这是功能和可用性声明，并未证明大学Python课程学习效果。",
+        "教师工具、个人导师和机构方案不能混写成同一产品权限。",
+        "没有验证面向中国高校的机构供货、跨境可用性或中文效果。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 12
+    },
+    {
+      "id": "K3",
+      "organization": "Khan Academy",
+      "title": "Khanmigo for Teachers Now Available in Pilot in 180+ Countries, Powered by Microsoft",
+      "url": "https://blog.khanacademy.org/teachers-in-44-countries-now-get-free-access-to-khanmigo-in-english-thanks-to-microsoft-support/",
+      "published_or_updated": "初稿2024-07-17；页面最后明确更新2025-12-04",
+      "source_class": "官方发布说明",
+      "locator": "December 4, 2025 update; Educators in 180+ countries; final learner-access note",
+      "short_quote": "more than 180 countries and territories",
+      "facts": [
+        "教师工具试点扩展至180多个国家和地区，并新增30余种实验性语言。",
+        "同页仍把个人学习者/家长入口限定在美国。"
+      ],
+      "limitations": [
+        "不能把整个Khanmigo说成仅美国可用，也不能把教师工具覆盖推导为全球学生账户可用。",
+        "实验性语言支持不等于已验证的中文教学质量。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 6
+    },
+    {
+      "id": "C1",
+      "organization": "CodeGrade",
+      "title": "Pricing & Plans",
+      "url": "https://www.codegrade.com/pricing",
+      "published_or_updated": "未标注；实时定价页",
+      "source_class": "官方产品与报价",
+      "locator": "Free; Starter; Advanced; AI Assistant Add-on; Institutional licensing; LMS FAQ",
+      "short_quote": "Up to 50 students per course",
+      "facts": [
+        "Free为每课程至多50名学生，包含编辑器、自动评分、行内反馈和rubric。",
+        "Starter标价$24/学生/课程；Advanced标价$39/学生/课程；AI Assistant Add-on为+$15/学生/课程，可附加至Starter或Advanced。",
+        "Advanced支持LMS集成、Jupyter等；机构许可为定制方案，未列统一机构价格。",
+        "官网表示也可由学生购买课程访问资格；Canvas、learning platform、Moodle、Brightspace通过LTI集成。"
+      ],
+      "limitations": [
+        "正文未单列ISO币种或税费条件；保留官网$符号，不换算人民币。",
+        "机构定价、折扣、数据驻留、中国区供货及最终发票条件未核实。",
+        "官网合规宣称并非本项目独立审计结论。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 6
+    },
+    {
+      "id": "C2",
+      "organization": "CodeGrade",
+      "title": "AI Coding Assistant for CS Courses",
+      "url": "https://www.codegrade.com/solutions/ai-assistant",
+      "published_or_updated": "未标注；实时产品页",
+      "source_class": "官方产品说明",
+      "locator": "Sections 1–3; FAQ",
+      "short_quote": "Every student-AI conversation is visible in the Assistant Chat tab.",
+      "facts": [
+        "提供Learning、Feedback、Coding三类助手；教师可按作业配置system prompt及内容限制。",
+        "教师可以审阅学生与AI的会话；助手读取编辑器内Python等文件上下文。",
+        "AI为付费方案附加项；页面另称新用户首门课可体验完整环境。"
+      ],
+      "limitations": [
+        "功能声明没有在本项目账户中实测；不能据此断言防越狱机制完全有效。",
+        "首课体验描述不应混同永久免费层，资格与合同需确认。",
+        "未发现其公开证明与本项目完全相同的跨会话学生主题计数；这不构成竞品没有记忆的证据。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 10
+    },
+    {
+      "id": "C3",
+      "organization": "CodeGrade",
+      "title": "AI Assistant — CodeGrade Help",
+      "url": "https://help.codegrade.com/setup-assignment/other-features/ai-assistant",
+      "published_or_updated": "未显示可靠页面更新时间；页面图片文件名含2026日期，不视为发布日期",
+      "source_class": "官方操作文档",
+      "locator": "Beta notice; Configuring AI Assistants; Content Access",
+      "short_quote": "The AI Assistant is currently in Beta.",
+      "facts": [
+        "文档仍显示AI Assistant处于Beta。",
+        "可开启Content Access，使助手读取学生有权限看到的代码、文件、测验、notebook、AutoTest结果和作业说明；关闭则只使用会话。",
+        "教师和学生可审阅已有会话；关闭助手后仍可访问历史会话。"
+      ],
+      "limitations": [
+        "Beta措辞与当前付费页面和版本发布文档并存，发布/供货状态应向官方确认。",
+        "不自行用“正式上线”消除官方页面间阶段描述差异。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 7
+    },
+    {
+      "id": "C4",
+      "organization": "CodeGrade",
+      "title": "Snowball Miracle: A Terminal, a Smarter AI Assistant, and Tighter Exam Controls",
+      "url": "https://www.codegrade.com/blog/codegrade-snowball-miracle-release",
+      "published_or_updated": "2026-09-25",
+      "source_class": "官方版本发布说明",
+      "locator": "Section 2: An AI assistant that can see why the test failed",
+      "short_quote": "The AI assistant can now read a student's own AutoTest results.",
+      "facts": [
+        "该版本说明AI助手可读取学生本人可见的AutoTest结果；隐藏测试与未发布分数保持不可见。",
+        "说明AI附加项为$15/学生/课程，并保持教师对每次会话的可见性。"
+      ],
+      "limitations": [
+        "这是官方功能宣告，不是独立效果评估。",
+        "不采纳营销文案中“能解释测试失败”作为永远正确的保证。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 11
+    },
+    {
+      "id": "O1",
+      "organization": "OpenAI",
+      "title": "Introducing study mode in ChatGPT",
+      "url": "https://openai.com/index/chatgpt-study-mode/",
+      "published_or_updated": "2025-07-29",
+      "source_class": "官方发布说明（替代品）",
+      "locator": "Opening availability paragraph; Key features; Limitations",
+      "short_quote": "Free, Plus, Pro, Team",
+      "facts": [
+        "发布时学习模式向Free等已登录方案开放，以引导提问、分层解释、知识检查和可选记忆支持学习。",
+        "官方明确指出可能有不一致行为和错误。"
+      ],
+      "limitations": [
+        "这是发布时入口说明，不应当作无限免费用量承诺。",
+        "未据此声称中国大陆可正常提供服务或可直接在学校采购。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 4
+    },
+    {
+      "id": "O2",
+      "organization": "OpenAI",
+      "title": "Using study mode in ChatGPT",
+      "url": "https://help.openai.com/en/articles/11780217-using-study-mode-in-chatgpt",
+      "published_or_updated": "页面显示Updated: 18 days ago；不将相对日期强行转换为官方绝对日期",
+      "source_class": "官方帮助文档（替代品）",
+      "locator": "Availability; Personalize guidance with Memory; Limitations",
+      "short_quote": "Study mode can make mistakes.",
+      "facts": [
+        "当前帮助页仍描述学习模式跨ChatGPT方案提供，受既有模型、消息、速率和上传限制。",
+        "记忆可在可用且开启时用于个性化；可能直接给答案，也可能出错。"
+      ],
+      "limitations": [
+        "未做账号内功能测试，不保证各地区/版本实时入口一致。",
+        "免费通用工具的存在构成价格压力；机构治理、课程对接和效果是否足以让客户付费仍需试点验证。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 5
+    },
+    {
+      "id": "R1",
+      "organization": "CodeAid authors / arXiv",
+      "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
+      "url": "https://arxiv.org/abs/2401.11314v2",
+      "published_or_updated": "v2: 2024-02-25; CHI 2024; DOI 10.1145/3613904.3642773",
+      "source_class": "独立学术研究（非上述竞品评测）",
+      "locator": "Abstract; Comments; DOI",
+      "short_quote": "700 students for a 12-week semester",
+      "facts": [
+        "研究在700人编程课部署12周，主题分析约8000次使用，并结合问卷及访谈。",
+        "结果提出避免直接解答、支持认知参与、提高透明度与学生控制等设计考虑。"
+      ],
+      "limitations": [
+        "该来源用于说明课堂需求与设计问题，不能证明本项目已提高成绩或有支付意愿。",
+        "不是Khanmigo或CodeGrade横向测评，也不是本项目随机对照试验。"
+      ],
+      "accessed_date": "2026-11-07",
+      "verified_at_utc": "2026-11-07T04:05:49Z",
+      "verification_method": "官方或作者页面经web.open读取；短摘录仅作定位，未登录试用或购买。",
+      "short_quote_word_count": 6
+    },
+    {
+      "id": "business-M01",
+      "title": "2025年全国教育事业发展统计公报",
+      "publisher": "中华人民共和国教育部",
+      "url": "https://www.moe.gov.cn/jyb_sjzl/sjzl_fztjgb/202607/t20260706_1442870.html",
+      "fallback_url": "https://jyt.hlj.gov.cn/jyt/c110518/202608/c00_31969727.shtml",
+      "published": "2026-07-06",
+      "fallback_published": "2026-08-25",
+      "accessed": "2026-11-07",
+      "source_type": "official_statistics",
+      "verification": "教育部页面搜索结果全文可读；直接open重定向循环；黑龙江省教育厅转载正文完整核对，第六节及注[25]。",
+      "facts": [
+        "2025年全国高等学校3167所；各种形式高等教育在学总规模4872.57万人。",
+        "在学总规模包括研究生、本专科、成人、网络、自考等形式，不等于Python初学者人数。"
+      ],
+      "short_quote": "全国共有高等学校3167所。",
+      "location": "第六节 高等教育；注[1]、[25]",
+      "limitations": "仅说明教育总体规模。不能作为本项目TAM、SAM、付费客户或采购意愿；统计不含港澳台。"
+    },
+    {
+      "id": "business-M02",
+      "title": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting",
+      "authors": "Greg Kestin, Kelly Miller, Anna Klales, Timothy Milbourne, Gregorio Ponti",
+      "publisher": "Scientific Reports 15, 17458",
+      "url": "https://www.nature.com/articles/s41598-025-97652-6",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179260/",
+      "doi": "10.1038/s41598-025-97652-6",
+      "published": "2025-06-03",
+      "accessed": "2026-11-07",
+      "source_type": "peer_reviewed_original_RCT",
+      "verification": "出版商open因认证重定向失败；PMC原文Results、Methods、Limitations完整核对。",
+      "facts": [
+        "哈佛物理课程233名选课者中194人符合纳入条件；两周两课交叉设计，表面张力和流体流动。",
+        "论文报告AI即时后测优于课堂主动学习；线性回归效应量0.63，分位数估计0.73–1.3标准差；后者不是95%置信区间。"
+      ],
+      "short_quote": "Of the 233 enrolled students, 194 were eligible for inclusion in the study.",
+      "location": "Results / Methods: Study population / Context, limitations, and future directions",
+      "limitations": "专家逐题提示、预写答案、GPT-4与教学支架；单课程两课、非中国Python课程；不能证明本项目效果、长期保持、付费或教师工时收益。"
+    },
+    {
+      "id": "business-M03",
+      "title": "Generative AI without guardrails can harm learning: Evidence from high school mathematics",
+      "authors": "Hamsa Bastani, Osbert Bastani, Alp Sungu, Haosen Ge, Özge Kabakcı, Rei Mariman",
+      "publisher": "PNAS 122(26), e2422633122",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2422633122",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/",
+      "doi": "10.1073/pnas.2422633122",
+      "published_online": "2025-06-25",
+      "issue_date": "2025-07-01",
+      "accessed": "2026-11-07",
+      "source_type": "peer_reviewed_original_RCT",
+      "verification": "PMC原文实验设计与Table 1核对。",
+      "facts": [
+        "土耳其一所高中，近1000名9至11年级学生，四次90分钟活动；按班分配。Table 1的2848是重复学生-课次观测，不是独立学生数。",
+        "无辅助考试GPT Base相对对照估计为-0.054（0至1量表）；对照均值0.321，约相对下降17%。GPT Tutor估计-0.004，未检出相对对照显著提升。"
+      ],
+      "short_quote": "comprising nearly 1,000 students",
+      "location": "Experiment design; Table 1; paragraph following Table 1",
+      "limitations": "高中数学、单校短期，不能直接迁移本项目；提示保护降低负面影响，不等于证明本项目或所有AI辅导提高成绩。17%是相对变化，不是17个百分点。"
+    },
+    {
+      "id": "business-M04",
+      "title": "中华人民共和国个人信息保护法",
+      "publisher": "中国人大网；中央网信办转载",
+      "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "published": "2021-08-20",
+      "effective": "2021-11-01",
+      "accessed": "2026-11-07",
+      "source_type": "official_statute",
+      "verification": "中央网信办全文核对第6、13、19、21、46、47、55条。",
+      "facts": [
+        "第6条最小必要；第13条要求确定合法处理依据；第19条最短必要保存期限；第21条规定委托处理约定及监督。",
+        "第46、47条涉及更正和删除；第55条规定委托处理等情形的事前影响评估。"
+      ],
+      "short_quote": "个人信息处理者应当对其个人信息处理活动负责",
+      "location": "第6、13、19、21、46、47、55条",
+      "limitations": "仅列设计与合同审查事项，未完成合规评估。学生ID去标识化不自动等于匿名化；校内部署不能自动认定合规；具体合法依据、跨境与采购要求需按实际部署和学校制度审查。"
+    },
+    {
+      "id": "business-T01",
+      "title": "How to write a business plan",
+      "publisher": "Accelerate Cambridge, Cambridge Judge Business School",
+      "url": "https://www.jbs.cam.ac.uk/wp-content/uploads/2020/08/how-to-write-a-business-plan.pdf",
+      "published": "2013-10",
+      "accessed": "2026-11-07",
+      "source_type": "teacher_recommended_planning_guide",
+      "verification": "11页PDF可访问；封面/页脚为October 2013，URL中的2020不是文献年份。",
+      "facts": [
+        "指南框架包括产品、市场与竞品、营销、运营、管理、财务及风险/回报/退出。",
+        "财务叙述要求明确假设、敏感性、现金需要与悲观场景；用于组织结构，不能证明本项目商业需求。"
+      ],
+      "short_quote": "Key assumptions underpinning your forecasts.",
+      "location": "PDF p3框架；p5–6市场竞品；p9财务",
+      "limitations": "旧版通用创业指南，其成功率等历史数字不作为当前市场事实引用。"
+    },
+    {
+      "id": "business-T02",
+      "title": "老师指定知乎链接（正文未核实）",
+      "publisher": "知乎",
+      "url": "https://zhuanlan.zhihu.com/p/21845926",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_reference_unavailable",
+      "verification": "web open 403 Forbidden",
+      "facts": [],
+      "short_quote": null,
+      "limitations": "不可声称读过或从其正文引用；仅保留原始链接和失败记录。"
+    },
+    {
+      "id": "business-T03",
+      "title": "老师指定融资路演知乎链接（正文未核实）",
+      "publisher": "知乎",
+      "url": "https://zhuanlan.zhihu.com/p/24545659",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_reference_unavailable",
+      "verification": "web open 403 Forbidden",
+      "facts": [],
+      "short_quote": null,
+      "limitations": "不可声称读过或从其正文引用；仅保留原始链接和失败记录。"
+    },
+    {
+      "id": "business-T04",
+      "title": "Product Hunt – The best new products in tech.",
+      "publisher": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_recommended_idea_directory",
+      "verification": "web open可读取首页",
+      "facts": [
+        "提供产品发布和发现目录。"
+      ],
+      "short_quote": null,
+      "limitations": "浏览灵感，未将榜单、投票或发布数量视作付费意愿、收入、市场份额。"
+    },
+    {
+      "id": "business-T05",
+      "title": "中国独立开发者项目列表",
+      "publisher": "1c7 and contributors",
+      "url": "https://github.com/1c7/chinese-independent-developer",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_recommended_idea_directory",
+      "verification": "web open可读取GitHub仓库",
+      "facts": [
+        "独立开发者项目列表，用于产品发现。"
+      ],
+      "short_quote": null,
+      "limitations": "未逐项验证其产品商业数据；不据此推导市场需求或收入。"
+    },
+    {
+      "id": "business-T06",
+      "title": "How to Start a Business: Essential Steps and Key Considerations",
+      "publisher": "Investopedia",
+      "authors": "Elysse Bell",
+      "url": "https://www.investopedia.com/how-to-start-a-business-7970202",
+      "updated": "2026-03-31",
+      "accessed": "2026-11-07",
+      "source_type": "teacher_recommended_general_guide",
+      "verification": "web open可读标题、日期与正文。",
+      "facts": [
+        "通用创业流程参考，涵盖市场研究、计划与资金。"
+      ],
+      "short_quote": null,
+      "limitations": "二手通用指南，且有美国商业语境；不用于验证中国高校采购规则或本项目商业可行性。"
+    },
+    {
+      "id": "business-P01",
+      "organization": "阿里云",
+      "title": "qwen-plus 模型信息",
+      "url": "https://help.aliyun.com/zh/model-studio/qwen-plus",
+      "published_or_updated": "页面未显示可核实的更新时间；动态产品文档",
+      "accessed_date": "2026-11-07",
+      "source_class": "官方价格文档",
+      "locator": "模型价格 / 华北2（北京） / 输入<=128k / 输入、输出（非思考）",
+      "short_quote": "输入<=128k",
+      "facts": [
+        "实时非思考输入0.8元/百万tokens、输出2元/百万tokens；不计缓存、Batch或促销折扣。"
+      ],
+      "limitations": [
+        "仅提供未来部署情景的API单价参照，不等于training微调模型，也没有在本项目实际调用。",
+        "tokens、重试率、质量、延迟、运维与人工复核需求都是另列假设。",
+        "单价可能变化；采购与部署前需重新核实。"
+      ]
+    }
+  ]
+}

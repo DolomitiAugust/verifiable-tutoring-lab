@@ -1,0 +1,189 @@
+{
+  "review_kind": "Auditable paired deployment comparison, exploratory and non-blind.",
+  "groups": {
+    "original_first": {
+      "result_path": "tutor/core/results/new_sft_multi_paired/results.json",
+      "result_sha256": "47bf47815caba648a83127e9647357da8bf2479e82d8b45985e21ba07baae0b8",
+      "plan_sha256": "946b5f7307bfa8d5c6e3c8bd3b541760fdcbfa8ca9c2115cb329fc06e7a4a650",
+      "adapter_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+      "summary": {
+        "case_count": 6,
+        "turn_count": 6,
+        "real_model_calls": 18,
+        "generated_tokens": 2112,
+        "role_adoption": {
+          "planner": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "teacher": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "reviewer": {
+            "accepted": 0,
+            "calls": 6
+          }
+        },
+        "final_llm_used": 0,
+        "final_sources": {
+          "verified_template": 6
+        },
+        "automatic_passed": 70,
+        "automatic_total": 70,
+        "stop_reasons": {
+          "max_new_tokens": 18
+        },
+        "qualitative_status": "unreviewed",
+        "complete_case_success_claim": null,
+        "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+      },
+      "elapsed_seconds_including_load": 185.95334719999937,
+      "generation_seconds": 176.63
+    },
+    "original_retry": {
+      "result_path": "tutor/core/results/retry_sft_multi_paired/results.json",
+      "result_sha256": "606c91861ded9a70c483dfbe706365f9a2447b6a6e1f1f9a7f92c3fccfa8ae01",
+      "plan_sha256": "dd09d691329bfc4b43ed835d7c73fad0d5af668329fe0a8c771b671a53bac29c",
+      "adapter_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+      "summary": {
+        "case_count": 6,
+        "turn_count": 6,
+        "real_model_calls": 18,
+        "generated_tokens": 1914,
+        "role_adoption": {
+          "planner": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "teacher": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "reviewer": {
+            "accepted": 0,
+            "calls": 6
+          }
+        },
+        "final_llm_used": 0,
+        "final_sources": {
+          "verified_template": 6
+        },
+        "automatic_passed": 70,
+        "automatic_total": 70,
+        "stop_reasons": {
+          "max_new_tokens": 15,
+          "eos": 3
+        },
+        "qualitative_status": "unreviewed",
+        "complete_case_success_claim": null,
+        "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+      },
+      "elapsed_seconds_including_load": 202.53592170000047,
+      "generation_seconds": 164.3625
+    },
+    "clean_first": {
+      "result_path": "tutor/structured/results/first_sft_clean_paired/results.json",
+      "result_sha256": "5d5824adf63c55e5b647fc1562ffb4b85d6ea1a94305253f499507033ae6f168",
+      "plan_sha256": "b7c35203dc5927fe3dec8877c6bc69ff9117250a1cab5305cc694967d2c601c4",
+      "adapter_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+      "summary": {
+        "case_count": 6,
+        "turn_count": 6,
+        "real_model_calls": 18,
+        "generated_tokens": 2112,
+        "role_adoption": {
+          "planner": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "teacher": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "reviewer": {
+            "accepted": 0,
+            "calls": 6
+          }
+        },
+        "final_llm_used": 0,
+        "model_freeform_prose_used": 0,
+        "model_selected_tool_quotes": 0,
+        "teacher_parsed_count": 0,
+        "teacher_call_count": 6,
+        "teacher_current_answer_matches": 0,
+        "teacher_current_status_matches": 0,
+        "raw_reviewer_false_approval_count": 0,
+        "raw_reviewer_false_approval_turns": [],
+        "final_sources": {
+          "verified_template": 6
+        },
+        "automatic_passed": 70,
+        "automatic_total": 70,
+        "stop_reasons": {
+          "max_new_tokens": 18
+        },
+        "qualitative_status": "unreviewed",
+        "complete_case_success_claim": null,
+        "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+      },
+      "elapsed_seconds_including_load": 188.40936789999978,
+      "generation_seconds": 179.0448
+    },
+    "clean_retry": {
+      "result_path": "tutor/structured/results/retry_sft_clean_paired/results.json",
+      "result_sha256": "16a2e863d945428f0dfe2bebe587aaddd34a3b369d923c83103d53a8a814af70",
+      "plan_sha256": "1f743e4089af705c784d35c6dd5de535cba97795f811dea14d117db6ef7d5fe1",
+      "adapter_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+      "summary": {
+        "case_count": 6,
+        "turn_count": 6,
+        "real_model_calls": 18,
+        "generated_tokens": 1895,
+        "role_adoption": {
+          "planner": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "teacher": {
+            "accepted": 0,
+            "calls": 6
+          },
+          "reviewer": {
+            "accepted": 0,
+            "calls": 6
+          }
+        },
+        "final_llm_used": 0,
+        "model_freeform_prose_used": 0,
+        "model_selected_tool_quotes": 0,
+        "teacher_parsed_count": 0,
+        "teacher_call_count": 6,
+        "teacher_current_answer_matches": 0,
+        "teacher_current_status_matches": 0,
+        "raw_reviewer_false_approval_count": 0,
+        "raw_reviewer_false_approval_turns": [],
+        "final_sources": {
+          "verified_template": 6
+        },
+        "automatic_passed": 70,
+        "automatic_total": 70,
+        "stop_reasons": {
+          "max_new_tokens": 16,
+          "eos": 2
+        },
+        "qualitative_status": "unreviewed",
+        "complete_case_success_claim": null,
+        "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+      },
+      "elapsed_seconds_including_load": 179.63087570000062,
+      "generation_seconds": 171.2325
+    }
+  },
+  "new_real_model_calls": 54,
+  "new_result_count": 3,
+  "all_new_final_model_explanations_adopted": 0,
+  "original_first_vs_original_retry_same_frozen_design_except_weight_identity": true,
+  "clean_first_vs_clean_retry_same_frozen_design_except_weight_identity": true,
+  "clean_final_texts_equal": 6
+}

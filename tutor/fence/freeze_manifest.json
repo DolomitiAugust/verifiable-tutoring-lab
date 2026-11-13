@@ -1,0 +1,40 @@
+{
+  "frozen_at_utc": "2026-11-07T06:10:06.826833+00:00",
+  "source_sha256": {
+    "baseline_contracts.py": "1afc7fb7123bd36d2ccfdb5e849a92bd6041c9a30879616039862d5422560426",
+    "cases.counterexample.json": "87049e2d2ec2ca4fd58865d8bd92740fc162743856cec20a843e9470d8f68900",
+    "constraints.py": "47e8a826245a9cfdf502383f538a0e1a9bf450faa09a82ee926a6a6e76a3417a",
+    "contracts.py": "56965bba66104553f4bd469bfbcf6d6f85aefb37f167f94fd887bd8150832d38",
+    "engine.py": "9e944615722a666a831f9bd47530839a21ee2bdea5d67ce263ce7a2f2059d2da",
+    "experiment_design.json": "0361028ccc4b26684c767c5fc603691aa3aa14b8ccf5ba3ada19f6ab0370325c",
+    "memory.py": "a53f1dc5a628c8250c33ed8434d72b22cc3fa5fb9dc8452834672e229d9b335c",
+    "model_backend.py": "137fe4b8af1205a294f3c619db19844cfd7de00b8f6401b8facb07b2d897d21e",
+    "observed_first_two.json": "8c590f77f45fd25c9ed1bbf270a48b279ce99817ea35296121d20134d5afc91f",
+    "offline_rejudge.py": "20d957edb218b05c23adf794bb4db29b7a8e1de2be6a8b5b67a5365d86f3453a",
+    "prompts.clean.json": "fc01027e45db01af992a8cfbdf0501cbacd5aea2c97aa19e130f2297eeacee56",
+    "prompts.guarded.json": "c11e0cd556a1f6feebeae222337c3059739918d9366f7fc4f8a0a4677f071c03",
+    "run_experiment.py": "87bc933b038b8951dc234570d9696d226257fee108ccbd1794d846cdd9c0b30d",
+    "system.py": "c9d48b91e0ad3c82082287aab455473a40549fad167de06c7595cc3e45c9680f",
+    "test_fence_parser.py": "8677186879f8a50aa4a0e47d72380774d98efd3324249a984a9750b6c5c939bc",
+    "test_prompt_revision.py": "2b542be4d51ed656a86dadcfbc7cb56dae4523388f7c4849b4e8e711bfc18c52",
+    "__init__.py": "75efa6c59796532f693c2bf598473f0247551aa5fc3903c890de57ef23dd280c"
+  },
+  "plan_sha256": "326f01a46fcbd7b06076100e0d687bd4644d56a6f9eafd9c0fe40ef2d662dab5",
+  "unchanged_checks": {
+    "system.py": true,
+    "engine.py": true,
+    "memory.py": true,
+    "constraints.py": true,
+    "model_backend.py": true,
+    "prompts.clean.json": true,
+    "prompts.guarded.json": true,
+    "all_case_inputs_and_references": true
+  },
+  "unit_tests": {
+    "passed": 30,
+    "failed": 0,
+    "actual_model_calls": 0
+  },
+  "offline_rejudge_sha256": "ce6722a548b3f802723874fb9f5307fca9d0bd1b97a9067f61999b1fcd99fba5",
+  "study_role": "exploratory after observing prior outputs"
+}

@@ -1,0 +1,24 @@
+{
+  "sft": {
+    "count": 1000,
+    "skipped": [],
+    "max_tokens": 254,
+    "mean_tokens": 115.349,
+    "answer_tokens": 47978
+  },
+  "dpo": {
+    "count": 500,
+    "skipped": [],
+    "max_tokens": 252,
+    "mean_tokens": 126.2,
+    "answer_tokens": 48091
+  },
+  "dev.jsonl": {
+    "count": 36,
+    "max_tokens": 144
+  },
+  "preference_eval.jsonl": {
+    "count": 100,
+    "max_tokens": 198
+  }
+}

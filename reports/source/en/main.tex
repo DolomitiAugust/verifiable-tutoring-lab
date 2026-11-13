@@ -1,0 +1,37 @@
+\documentclass[11pt,a4paper,oneside,openany]{report}
+\usepackage{fontspec,xeCJK,geometry,xcolor,graphicx,amsmath,amssymb,array,booktabs,tabularx,fancyhdr,float,placeins,needspace,hyperref,fvextra}
+\geometry{left=25mm,right=23mm,top=22mm,bottom=22mm,headheight=15pt,headsep=6mm}
+\setmainfont{Times New Roman}\setsansfont{Segoe UI}\setmonofont{Consolas}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}\setCJKsansfont{Microsoft YaHei}\setCJKmonofont{Microsoft YaHei}
+\definecolor{navy}{HTML}{203A4C}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy,bookmarksnumbered=true,pdftitle={Verifiable Tutoring Lab: Executable Data, Preference Tuning, and Learner Memory},pdfauthor={Verifiable Tutoring Lab}}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Verifiable Tutoring Lab}\fancyhead[R]{\small Technical Research Report}\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}\linespread{1.06}
+\setlength{\emergencystretch}{3em}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\setlength{\textfloatsep}{11pt}\setlength{\intextsep}{10pt}\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.08}\renewcommand{\floatpagefraction}{0.8}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}\renewcommand{\arraystretch}{1.14}\raggedbottom
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,breaklines=true,breakanywhere=true,breaksymbolleft={\tiny\texttt{>}},breaksymbolright={}}
+\newcommand{\filepath}[1]{\path{#1}}
+\newcommand{\sourcefilename}[1]{\texttt{\detokenize{#1}}}
+\makeatletter
+\def\@makechapterhead#1{\vspace*{2mm}{\parindent\z@\raggedright\normalfont{\small\sffamily\color{navy}Chapter \thechapter\par}\vskip5pt\Large\bfseries #1\par\nobreak\vskip10pt}}
+\def\@makeschapterhead#1{\vspace*{2mm}{\parindent\z@\raggedright\Large\bfseries #1\par\nobreak\vskip10pt}}
+\makeatother
+\begin{document}
+\pagenumbering{roman}
+\input{frontmatter.tex}
+\clearpage{\small\linespread{0.98}\selectfont\setlength{\parskip}{0pt}\tableofcontents}
+\clearpage\pagenumbering{arabic}
+\chapter{Executable Data Synthesis and Filtering}\label{ch:data}\input{chapters/data.tex}\FloatBarrier
+\chapter{Supervised Fine-Tuning and Preference Optimization}\label{ch:training}\input{chapters/training.tex}\FloatBarrier
+\chapter{Verifiable Tutoring Agents and Learner Memory}\label{ch:agents}\input{chapters/agents.tex}\FloatBarrier
+\chapter{Application, Competition, and Commercial Feasibility}\label{ch:business}\input{chapters/feasibility.tex}\FloatBarrier
+\input{references.tex}
+\appendix
+\chapter{Evidence and Reproducibility}\label{app:repro}\input{artifacts.tex}\FloatBarrier
+\chapter{Research Provenance and Limitations}\label{app:prompts}\input{disclosure.tex}
+\end{document}

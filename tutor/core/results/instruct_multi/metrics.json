@@ -1,0 +1,34 @@
+{
+  "case_count": 12,
+  "turn_count": 17,
+  "real_model_calls": 51,
+  "generated_tokens": 1468,
+  "role_adoption": {
+    "planner": {
+      "accepted": 12,
+      "calls": 17
+    },
+    "teacher": {
+      "accepted": 1,
+      "calls": 17
+    },
+    "reviewer": {
+      "accepted": 1,
+      "calls": 17
+    }
+  },
+  "final_llm_used": 1,
+  "final_sources": {
+    "verified_template": 16,
+    "llm_explanation_with_tool_facts": 1
+  },
+  "automatic_passed": 209,
+  "automatic_total": 209,
+  "stop_reasons": {
+    "eos": 50,
+    "max_new_tokens": 1
+  },
+  "qualitative_status": "unreviewed",
+  "complete_case_success_claim": null,
+  "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+}

@@ -1,0 +1,5417 @@
+{
+  "schema": "training-v2-retry-import-audit-1",
+  "audited_at_utc": "2026-11-08T06:37:35.451073+00:00",
+  "passed": true,
+  "status": "passed_with_limitations",
+  "check_count": 966,
+  "error_count": 0,
+  "errors": [],
+  "warnings": [
+    "追加实验使用已观察过的测试集，仅为探索性比较，不是盲测或独立确认性实验。",
+    "继续SFT对照仅匹配新增更新次数，token与运行时间不相同。",
+    "安全值补评分为保守自动抽取，未判定不是错误；教学质量仍需阅读原文。",
+    "自然表达测试由Codex编写，并非真人或外部独立评审。",
+    "此审计核对来源、记录、张量和算术，不重新运行模型计算每一步概率；GPU信息是实验日志，不是外部硬件认证。"
+  ],
+  "details": {
+    "retry_input_provenance": {
+      "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\inputs.json",
+      "file_sha256": "da582fe5c6e8004cbea5d20ea56f4fbe6fc1ffbf1f4807791fd57025a2811f88",
+      "expected_runner_sha256": "33f7eaefbd9488a13bdc32bd9ac9634b9bebef3381e5ff452bee63f7a0a36906",
+      "plan_sha256": "45186c543c2a9f8b2d0e81f916a1c3849e970206a73874341b01b97f198dd85a",
+      "dataset_file_count": 13,
+      "exploratory": true,
+      "blind_test": false
+    },
+    "protocol": {
+      "version": "exploratory-retry-2",
+      "base": "Qwen/Qwen2.5-0.5B",
+      "epochs": 3,
+      "seed": 20261107,
+      "adapter": {
+        "rank": 16,
+        "alpha": 32,
+        "last_layers": 24
+      },
+      "sft_learning_rate": 0.0001,
+      "dpo_learning_rate": 1e-05,
+      "beta": 0.1,
+      "batch_size": 1,
+      "device": "cuda",
+      "dtype": "float32",
+      "threads": 4,
+      "evaluation_status": "exploratory; chosen after observing first-run test outputs; not a blind test",
+      "selection": "minimum 36-case dev NLL after three complete SFT epochs; ties choose earlier epoch",
+      "control": "500 added updates and shared parent; tokens and compute are not matched",
+      "generation": {
+        "max_new_tokens": 384,
+        "do_sample": false,
+        "cases": 24
+      },
+      "final_evaluation_required": true
+    },
+    "training": {
+      "sft": {
+        "steps": 3000,
+        "unique_examples": 1000,
+        "response_tokens": 143934,
+        "training_step_seconds": 411.91700000000003,
+        "adapter_delta_l2": 10.797353657644134,
+        "first_10_mean_loss": 3.8222671270370485,
+        "last_10_mean_loss": 0.6133751392364502,
+        "adapter_sha256": "535fc40b8b4953cd52930101e766c53b529d75c9aad7a2388f5622235bf8e0bd",
+        "parent_sft_sha256": null,
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      },
+      "dpo": {
+        "steps": 500,
+        "unique_examples": 500,
+        "response_tokens": 48091,
+        "training_step_seconds": 103.802,
+        "adapter_delta_l2": 0.4247337460887261,
+        "first_10_mean_loss": 0.7046877801418304,
+        "last_10_mean_loss": 0.10326867022085935,
+        "adapter_sha256": "c0f8e804afed3169ea42da1a9e90323c0bfd24ee9210778d2ad3b5543f2c2f31",
+        "parent_sft_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      },
+      "continued_sft": {
+        "steps": 500,
+        "unique_examples": 500,
+        "response_tokens": 23981,
+        "training_step_seconds": 70.92,
+        "adapter_delta_l2": 0.367502268984511,
+        "first_10_mean_loss": 1.0159926034510136,
+        "last_10_mean_loss": 0.6199129901826381,
+        "adapter_sha256": "3db7849be9e0fe3a6412555903c9be3c11282a88526e4849a68d4eb3f9179e7c",
+        "parent_sft_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+        "device_recorded": "cuda",
+        "torch": "2.14.1+cu130"
+      }
+    },
+    "selection": {
+      "candidates": [
+        {
+          "epoch": 1,
+          "dev_nll": 2.8672262069157193,
+          "checkpoint_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7"
+        },
+        {
+          "epoch": 2,
+          "dev_nll": 3.3245308780670166,
+          "checkpoint_sha256": "572c360ebe7dcf64e060f640754a1ab8f4c74c5a89ed981e5fc51ad79f978918"
+        },
+        {
+          "epoch": 3,
+          "dev_nll": 3.629325201170785,
+          "checkpoint_sha256": "535fc40b8b4953cd52930101e766c53b529d75c9aad7a2388f5622235bf8e0bd"
+        }
+      ],
+      "selected_epoch": 1,
+      "selected_steps": 1000,
+      "selected_sft_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7"
+    },
+    "evaluation": {
+      "base": {
+        "independent": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\base_independent.json",
+          "file_sha256": "69c5236d79a744e38c73bc30c9c03096754b2fa2f107b75970be3ee93439d151",
+          "reference_nll": 3.725828029579919,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 17,
+            "eos": 7
+          },
+          "safe_value_counts": {
+            "unresolved": 24
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.43,
+          "mean_repeat_fraction": 0.6326312284772216
+        },
+        "bridge_nll": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\base_bridge_nll.json",
+          "file_sha256": "5292a44f53c70b7096eea8429bdee40af7b49a364ac5dbcedc1b2d0012f14c67",
+          "reference_nll": 3.2758085638797025,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "sft": {
+        "independent": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\sft_independent.json",
+          "file_sha256": "e77105cc7c8449b336df348fa692d5a1f4cfea9c97ba29d908b5130ad7c5c1e6",
+          "reference_nll": 3.587295760773356,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 16,
+            "eos": 8
+          },
+          "safe_value_counts": {
+            "unresolved": 21,
+            "wrong": 3
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.45,
+          "mean_repeat_fraction": 0.5571629951262723
+        },
+        "bridge_nll": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\sft_bridge_nll.json",
+          "file_sha256": "8e197274f6ca7d997a6132f0b1f6dc334acf991240f993e12a3846e800bccb5c",
+          "reference_nll": 4.223359278521119,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "dpo": {
+        "independent": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\dpo_independent.json",
+          "file_sha256": "9da9d9f075ec4aad9483fec539e345061196fb50c0ea5d0f4b4996c3ae9036a1",
+          "reference_nll": 6.6152457042201105,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 13,
+            "eos": 11
+          },
+          "safe_value_counts": {
+            "unresolved": 18,
+            "wrong": 5,
+            "correct": 1
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.53,
+          "mean_repeat_fraction": 0.3117400510283647
+        },
+        "bridge_nll": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\dpo_bridge_nll.json",
+          "file_sha256": "9bb4e5475003f78fe1f48393c0abb8ab3fd17a9c52cc6682b8ab3f63bf6cdf76",
+          "reference_nll": 6.761929877041936,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      },
+      "continued_sft": {
+        "independent": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\continued_sft_independent.json",
+          "file_sha256": "12aec657a0ff832af85f0530a8d7111bb4b872978c1ab9538c723e77ef5e358b",
+          "reference_nll": 3.576355253289006,
+          "reference_cases": 24,
+          "reference_tokens": 797,
+          "generation_cases": 24,
+          "stop_counts": {
+            "max_new_tokens": 17,
+            "eos": 7
+          },
+          "safe_value_counts": {
+            "unresolved": 21,
+            "wrong": 3
+          },
+          "preference_pairs": 100,
+          "raw_preference_accuracy": 0.47,
+          "mean_repeat_fraction": 0.6295357976153174
+        },
+        "bridge_nll": {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\evaluation\\continued_sft_bridge_nll.json",
+          "file_sha256": "6d1dc2dc7fce3e46c1d0dcaa3cf61fe4ee7f43ff737868794c448f59e40c30b8",
+          "reference_nll": 4.35695689585252,
+          "reference_cases": 60,
+          "reference_tokens": 13437,
+          "generation_cases": 0,
+          "stop_counts": {},
+          "safe_value_counts": {},
+          "preference_pairs": 0,
+          "raw_preference_accuracy": null,
+          "mean_repeat_fraction": null
+        }
+      }
+    },
+    "paired_comparisons": {
+      "base_to_sft": {
+        "independent": {
+          "lower_nll_cases": 16,
+          "tied_cases": 0,
+          "higher_nll_cases": 8,
+          "micro_nll_delta": -0.13853226880656289
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 60,
+          "micro_nll_delta": 0.9475507146414168
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 5.616911096572876,
+          "positive_relative_margin_pairs": 63,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      },
+      "sft_to_dpo": {
+        "independent": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 24,
+          "micro_nll_delta": 3.0279499434467545
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 60,
+          "micro_nll_delta": 2.538570598520817
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 11.348925771713256,
+          "positive_relative_margin_pairs": 55,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      },
+      "sft_to_continued_sft": {
+        "independent": {
+          "lower_nll_cases": 15,
+          "tied_cases": 0,
+          "higher_nll_cases": 9,
+          "micro_nll_delta": -0.010940507484349826
+        },
+        "bridge_nll": {
+          "lower_nll_cases": 0,
+          "tied_cases": 0,
+          "higher_nll_cases": 60,
+          "micro_nll_delta": 0.13359761733140108
+        },
+        "preference": {
+          "pairs": 100,
+          "mean_relative_logratio": 0.6689224624633789,
+          "positive_relative_margin_pairs": 59,
+          "note": "Relative sequence-likelihood margin, not a human preference win rate."
+        }
+      }
+    },
+    "hardware": {
+      "device_recorded": "cuda",
+      "gpu_models_recorded": [
+        "Tesla T4"
+      ],
+      "attempts": [
+        {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\attempts\\20261108T054444_f40061ad\\hardware.json",
+          "file_sha256": "b1fbcd4e3a4f9afec585af17ba6188b524639492d004a269475873e749786dc5",
+          "device_names_recorded": [
+            "Tesla T4"
+          ],
+          "cuda_available": true,
+          "torch": "2.14.1+cu130",
+          "nvidia_smi_corroborates": true,
+          "timestamp_utc": "2026-11-08T05:44:46.481606+00:00"
+        },
+        {
+          "file": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\attempts\\20261108T061341_79cb49dc\\hardware.json",
+          "file_sha256": "5c59e1f7190089075c104cd6fbc3fcbdf215a078289cbeacf01105879fdd8c77",
+          "device_names_recorded": [
+            "Tesla T4"
+          ],
+          "cuda_available": true,
+          "torch": "2.14.1+cu130",
+          "nvidia_smi_corroborates": true,
+          "timestamp_utc": "2026-11-08T06:13:41.699112+00:00"
+        }
+      ],
+      "gpu_model_verification": "Actual runtime log records from torch device properties; nvidia-smi corroboration listed per attempt. These are stored experiment logs, not external hardware attestation."
+    },
+    "source": {
+      "results_directory": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results",
+      "frozen_upload_sha256": "8e303e9c07bbfa340bee2dd11548785fd0f1f21fbccb2e5e70c0d64d93c9f774",
+      "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0"
+    }
+  },
+  "checks": [
+    {
+      "passed": true,
+      "code": "provenance.frozen_upload_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "provenance.upload_member_hashes",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "provenance.local_official_tokenizer_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.base_epochs_seed",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.adapter_batch",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "protocol.cuda_float32",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.provenance.local_runner_matches_released_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.inputs.all_frozen_dataset_hashes",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.inputs.pinned_script_hashes",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.inputs.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.inputs.preregistered_plan_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.protocol.version",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.protocol.optimization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.protocol.complete_evaluation",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.protocol.exploratory_not_blind",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.archived_source.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.archived_source.evaluate.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.archived_source.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.archived_source.base_source.json",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.archived_source.run_retry.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.protocol.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.protocol.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.inputs.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.inputs.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.selection.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.selection.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.completed.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.completed.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_1.pt.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_1.pt.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_2.pt.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_2.pt.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_3.pt.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/sft_epoch_3.pt.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/selected_sft.pt.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.checkpoints/selected_sft.pt.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_1_dev.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_1_dev.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_2_dev.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_2_dev.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_3_dev.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_epoch_3_dev.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/base_independent.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/base_independent.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/base_bridge_nll.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/base_bridge_nll.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_independent.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_independent.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_bridge_nll.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/sft_bridge_nll.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/dpo_independent.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/dpo_independent.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/dpo_bridge_nll.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/dpo_bridge_nll.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/continued_sft_independent.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/continued_sft_independent.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/continued_sft_bridge_nll.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.evaluation/continued_sft_bridge_nll.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/train.py.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/train.py.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/evaluate.py.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/evaluate.py.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/data_io.py.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/data_io.py.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/base_source.json.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/base_source.json.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/run_retry.py.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.seal.sources/run_retry.py.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.completed.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.completed.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.inputs.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.inputs.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.protocol.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.protocol.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.selection.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.selection.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/selected_sft.pt.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/selected_sft.pt.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_1.pt.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_1.pt.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_2.pt.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_2.pt.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_3.pt.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.checkpoints/sft_epoch_3.pt.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/base_bridge_nll.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/base_bridge_nll.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/base_independent.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/base_independent.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/continued_sft_bridge_nll.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/continued_sft_bridge_nll.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/continued_sft_independent.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/continued_sft_independent.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/dpo_bridge_nll.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/dpo_bridge_nll.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/dpo_independent.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/dpo_independent.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_bridge_nll.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_bridge_nll.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_1_dev.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_1_dev.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_2_dev.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_2_dev.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_3_dev.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_epoch_3_dev.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_independent.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.evaluation/sft_independent.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/base_source.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/base_source.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/evaluate.py.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/evaluate.py.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/data_io.py.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/data_io.py.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/run_retry.py.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/run_retry.py.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/train.py.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.sources/train.py.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T054444_f40061ad/hardware.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T054444_f40061ad/hardware.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T054444_f40061ad/preflight.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T054444_f40061ad/preflight.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T061341_79cb49dc/hardware.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T061341_79cb49dc/hardware.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T061341_79cb49dc/preflight.json.sha256.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "retry.all_recorded_seals.attempts/20261108T061341_79cb49dc/preflight.json.sha256.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.sft.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.optimizer_chat_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.parameter_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.equal_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.parent_sft_sha256",
+      "detail": {
+        "expected": null,
+        "recorded": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.sft.nonzero_output_adapter",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.sft.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.optimizer_chat_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.parameter_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.equal_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.initial_reference_identity",
+      "detail": {
+        "criterion": "each sequence logp differs by at most one binary32 ULP; recorded ratios, margin, beta scaling and logistic loss agree",
+        "maximum_sequence_ulp_distance": 1,
+        "legacy_margin_limit": 1e-05,
+        "legacy_loss_log2_abs_difference": 7.767650364032264e-07,
+        "legacy_margin_passed": false,
+        "sequence_scores": {
+          "policy_chosen": -148.46653747558594,
+          "reference_chosen": -148.46653747558594,
+          "policy_rejected": -143.99761962890625,
+          "reference_rejected": -143.9976348876953
+        },
+        "sequence_ulp_distances": {
+          "chosen": 0,
+          "rejected": 1
+        },
+        "expected_float32_arithmetic": {
+          "policy_logratio": -4.4689178466796875,
+          "ref_logratio": -4.468902587890625,
+          "relative_margin": -1.52587890625e-05,
+          "dpo_scaled_margin": -1.5258789289873675e-06,
+          "loss": 0.6931479573249817
+        },
+        "arithmetic_ulp_distances": {
+          "policy_logratio": 0,
+          "ref_logratio": 0,
+          "relative_margin": 0,
+          "dpo_scaled_margin": 0,
+          "loss": 0
+        },
+        "passed": true,
+        "legacy_combined_passed": false
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.parent_sft_sha256",
+      "detail": {
+        "expected": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+        "recorded": [
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.nonzero_output_adapter",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.measured_parent_weight_delta",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.frozen_reference_coverage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.complete_frozen_reference_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.finite_reference_pairs",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.dpo.first_logged_reference_matches_frozen_cache",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.input_hashes",
+      "detail": {
+        "expected_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ],
+        "recorded_names": [
+          "audit/candidates.jsonl",
+          "dev.jsonl",
+          "dev_metadata.jsonl",
+          "evaluation.jsonl",
+          "preference.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl",
+          "sft.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.official_base",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.settings_device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.sampling_config",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.learning_rate",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.optimizer_chat_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.parameter_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.no_length_skip",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.script.train.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.script.data_io.py",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.selection_from_frozen_ledger",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.step_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.step_sequence",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.unique_examples",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.batch_one",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.scheduled_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.token_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.total_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.time_accounting",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_losses",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_updates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.changed_weights",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.adapter_file_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_complete",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.checkpoint_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.finite_adapter_tensors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.optimizer_history",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.optimizer_adapter_match",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.parent_sft_sha256",
+      "detail": {
+        "expected": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+        "recorded": [
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+          "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.nonzero_output_adapter",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.measured_parent_weight_delta",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "training.continued_sft.console_log_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.layout_parent",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_1.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_1.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.layout_parent",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_2.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_2.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.all_24_qv_tensor_names",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.tensor_shapes_dtype_finite",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.layout_parent",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.serialization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.epoch_3.identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.input_hashes",
+      "detail": {
+        "expected_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "dev.jsonl",
+          "dev_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dev_epoch_3.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "checkpoint.final_epoch_matches_training_export",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.complete_epochs",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.minimum_dev_nll",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.recorded_candidates",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.checkpoint_matches_best_epoch",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.selected_recorded_hash",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.recorded_checkpoint_hashes",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "selection.selected_checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_positive_counts_finite_scores",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.complete_preference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.base.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_positive_counts_finite_scores",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.complete_preference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.sft.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_positive_counts_finite_scores",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.complete_preference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.dpo.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.input_hashes",
+      "detail": {
+        "expected_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ],
+        "recorded_names": [
+          "independent_test.jsonl",
+          "independent_test_metadata.jsonl",
+          "preference_eval.jsonl",
+          "preference_eval_metadata.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_1.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_2.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_3.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_4.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_5.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_6.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_7.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_8.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_9.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_10.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_11.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_12.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_13.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_14.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_15.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_16.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_17.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_18.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_19.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_20.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_21.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_22.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_23.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.frozen_text",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.token_stop",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.text_matches_decoded_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.complete_reference_tokens",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.case_24.repetition_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_positive_counts_finite_scores",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.complete_preference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.independent.preference_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.script",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.input_hashes",
+      "detail": {
+        "expected_names": [
+          "evaluation.jsonl"
+        ],
+        "recorded_names": [
+          "evaluation.jsonl"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.model_identity",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.parent_sft_sha256",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.adapter_stage",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.full_reference",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.checkpoint_step",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.device",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.complete_reference_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.reference_arithmetic",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.complete_reference_tokenization",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.nll_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_protocol",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.generation_order",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.stop_summary",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "evaluation.continued_sft.bridge_nll.preference_count",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "completion.all_stages_finished",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "completion.wrapper_validation_recorded",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "completion.selected_epoch_matches_dev",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.at_least_one_attempt_record",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.cuda_device_api",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.explicit_device_properties",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.preflight.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.preflight.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_1.preflight_matches_pinned_inputs",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.cuda_device_api",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.explicit_device_properties",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.preflight.artifact_and_seal_present",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.preflight.seal_matches_content",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "code": "hardware.attempt_2.preflight_matches_pinned_inputs",
+      "detail": null
+    }
+  ],
+  "result_archive": {
+    "path": "training\\training_v2_retry_results.zip",
+    "sha256": "048f9a92c0ef60c5454424aca51d8b0bcedb5349b3b5ac013b431ad73a6b205e",
+    "bytes": 65349193
+  },
+  "importer_sha256": "a1fed798b08458e028a820f6914e6ec7c1db40a21b18ffc8d54605c523f8ec87",
+  "numeric_audit_helper_sha256": "d85e6c5d2780da94310fa23effb1f93dc74cced48f359ac7ecadb45af4a8a255",
+  "exploratory": true,
+  "blind_test": false
+}

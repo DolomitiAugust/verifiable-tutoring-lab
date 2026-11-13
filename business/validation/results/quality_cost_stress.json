@@ -1,0 +1,93 @@
+{
+  "status": "scenario_not_market_measurement",
+  "source_assumptions_sha256": "67fd52464bb70d5d66979fb040dc800ff34216ea3232e5d3bab810852cd0ba52",
+  "review_rates_are_measured": false,
+  "rule_fallback_is_not_equivalent_to_human_review": true,
+  "rows": [
+    {
+      "review_fraction": 0.0,
+      "annual_review_hours": 0.0,
+      "annual_review_cost_cny": 0.0,
+      "contribution_after_incremental_cac_cny": 55172.32,
+      "contracts_covering_fixed": 11
+    },
+    {
+      "review_fraction": 0.02,
+      "annual_review_hours": 72.0,
+      "annual_review_cost_cny": 6480.0,
+      "contribution_after_incremental_cac_cny": 48692.32,
+      "contracts_covering_fixed": 13
+    },
+    {
+      "review_fraction": 0.05,
+      "annual_review_hours": 180.0,
+      "annual_review_cost_cny": 16200.0,
+      "contribution_after_incremental_cac_cny": 38972.32,
+      "contracts_covering_fixed": 16
+    },
+    {
+      "review_fraction": 0.1,
+      "annual_review_hours": 360.0,
+      "annual_review_cost_cny": 32400.0,
+      "contribution_after_incremental_cac_cny": 22772.32,
+      "contracts_covering_fixed": 27
+    },
+    {
+      "review_fraction": 0.2,
+      "annual_review_hours": 720.0,
+      "annual_review_cost_cny": 64800.0,
+      "contribution_after_incremental_cac_cny": -9627.679999999993,
+      "contracts_covering_fixed": null
+    },
+    {
+      "review_fraction": 0.5,
+      "annual_review_hours": 1800.0,
+      "annual_review_cost_cny": 162000.0,
+      "contribution_after_incremental_cac_cny": -106827.68,
+      "contracts_covering_fixed": null
+    },
+    {
+      "review_fraction": 1.0,
+      "annual_review_hours": 3600.0,
+      "annual_review_cost_cny": 324000.0,
+      "contribution_after_incremental_cac_cny": -268827.68,
+      "contracts_covering_fixed": null
+    }
+  ],
+  "buyer_value": [
+    {
+      "net_minutes_saved_per_enrolment": 10,
+      "assumed_teacher_time_value_cny": 15.0,
+      "assumed_price_cny": 120,
+      "value_minus_price_cny": -105.0
+    },
+    {
+      "net_minutes_saved_per_enrolment": 20,
+      "assumed_teacher_time_value_cny": 30.0,
+      "assumed_price_cny": 120,
+      "value_minus_price_cny": -90.0
+    },
+    {
+      "net_minutes_saved_per_enrolment": 40,
+      "assumed_teacher_time_value_cny": 60.0,
+      "assumed_price_cny": 120,
+      "value_minus_price_cny": -60.0
+    },
+    {
+      "net_minutes_saved_per_enrolment": 80,
+      "assumed_teacher_time_value_cny": 120.0,
+      "assumed_price_cny": 120,
+      "value_minus_price_cny": 0.0
+    },
+    {
+      "net_minutes_saved_per_enrolment": 120,
+      "assumed_teacher_time_value_cny": 180.0,
+      "assumed_price_cny": 120,
+      "value_minus_price_cny": 60.0
+    }
+  ],
+  "decision": "Do not assume 2% review or sufficient buyer savings without operational and buyer evidence.",
+  "actual_customer_interviews": 0,
+  "actual_paid_contracts": 0,
+  "actual_teacher_blind_reviews": 0
+}

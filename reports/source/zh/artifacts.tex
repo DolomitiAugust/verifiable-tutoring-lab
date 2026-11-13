@@ -1,0 +1,15 @@
+\section{发布证据与复现边界}
+仓库提供源码、冻结教育数据、保存的回答与逐题审阅。报告构建不重新运行数值实验。官方模型、适配器和优化器二进制、本机运行环境不随仓库分发；重新运行模型需固定官方基座与说明中的依赖。查看已存结果无需模型推理。
+\begin{table}[htbp]\centering\small
+\caption{研究证据与代码入口。}
+\begin{tabularx}{\linewidth}{@{}p{27mm}Y@{}}\toprule
+领域 & 发布文件\\\midrule
+数据合成 & \filepath{synthesis/}：生成器、1000条SFT和500对偏好、候选账本及核验；\filepath{synthesis_legacy/}、\filepath{data/legacy/}保留早期筛选对照。\\
+后训练 & \filepath{training/}：SFT/DPO与评估代码、两轮云端结果、继续SFT对照、完整回答、初次失败的数值审计及独立复审。\\
+学生记忆 & \filepath{tutor/}：冻结案例、修订与结构化控制器、角色原文、记忆证据、工具回归及隔离的输出修复。\\
+可行性 & \filepath{business/}：来源、商业假设、单位经济、敏感性及待执行的验证计划。\\
+科研图 & \filepath{reports/assets/}：矢量科研图与概念插画；后者不属于实验测量。\\\bottomrule
+\end{tabularx}\end{table}\FloatBarrier
+英文摘录是中文实录的翻译，不是新的英文模型评估；事实判断仍依据完整原回答。发布记录删除身份与本机字段，保留科学数值和失败标签。历史运行散列描述原始实验文件，发布清单另行核对仓库文件。
+
+两语说明提供依赖、已存记录核对、不加载模型的控制器检查，以及可选训练命令。重建PDF需Tectonic或兼容XeLaTeX与说明中的字体。能够运行流程不等于已经验证自主教学能力或真实学生学习收益。

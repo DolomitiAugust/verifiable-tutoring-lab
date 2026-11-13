@@ -1,0 +1,8013 @@
+{
+  "identity": {
+    "sft_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+    "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+    "selection": [
+      {
+        "candidate_id": "V2-preference-00589",
+        "export_line": 205,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00472",
+        "export_line": 420,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          26,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00321",
+        "export_line": 324,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          45,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00320",
+        "export_line": 210,
+        "family": "dictionary",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          7,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00327",
+        "export_line": 304,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          58,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00201",
+        "export_line": 138,
+        "family": "division",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 40,
+        "response_tokens": [
+          6,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00322",
+        "export_line": 91,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          65,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00362",
+        "export_line": 278,
+        "family": "alias",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          20,
+          89
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00014",
+        "export_line": 19,
+        "family": "list_comprehension",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          51,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00203",
+        "export_line": 147,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 104,
+        "response_tokens": [
+          54,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01496",
+        "export_line": 477,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 105,
+        "response_tokens": [
+          94,
+          94
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02316",
+        "export_line": 448,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          7,
+          31
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00430",
+        "export_line": 377,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          46,
+          46
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00513",
+        "export_line": 165,
+        "family": "division",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          47,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00042",
+        "export_line": 20,
+        "family": "precedence",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 39,
+        "response_tokens": [
+          35,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00360",
+        "export_line": 256,
+        "family": "unpack",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          7,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01487",
+        "export_line": 441,
+        "family": "sorted_key",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          85,
+          85
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00076",
+        "export_line": 31,
+        "family": "boundary",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00644",
+        "export_line": 225,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          88,
+          88
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00390",
+        "export_line": 386,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          52,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00484",
+        "export_line": 177,
+        "family": "boundary",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00335",
+        "export_line": 149,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          76,
+          76
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00024",
+        "export_line": 15,
+        "family": "unpack",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          51,
+          51
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00319",
+        "export_line": 259,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 105,
+        "response_tokens": [
+          70,
+          124
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00038",
+        "export_line": 40,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          14,
+          44
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01157",
+        "export_line": 449,
+        "family": "branch_order",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00446",
+        "export_line": 332,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          43,
+          13
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00070",
+        "export_line": 48,
+        "family": "slice",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 41,
+        "response_tokens": [
+          39,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00134",
+        "export_line": 137,
+        "family": "list_comprehension",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          65,
+          101
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00426",
+        "export_line": 432,
+        "family": "precedence",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 39,
+        "response_tokens": [
+          35,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00258",
+        "export_line": 254,
+        "family": "precedence",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 36,
+        "response_tokens": [
+          34,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00389",
+        "export_line": 472,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          53,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00189",
+        "export_line": 194,
+        "family": "set_unique",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          34,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00607",
+        "export_line": 376,
+        "family": "dict_comprehension",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          18,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00265",
+        "export_line": 258,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          58,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00451",
+        "export_line": 372,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          7,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00399",
+        "export_line": 257,
+        "family": "loop_control",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 108,
+        "response_tokens": [
+          61,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00835",
+        "export_line": 273,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          78,
+          78
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00179",
+        "export_line": 437,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          73,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00583",
+        "export_line": 469,
+        "family": "dict_comprehension",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          97,
+          125
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00008",
+        "export_line": 28,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          57,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00188",
+        "export_line": 182,
+        "family": "recursion",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          8,
+          83
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00444",
+        "export_line": 45,
+        "family": "function_return",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00031",
+        "export_line": 36,
+        "family": "dict_comprehension",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          57,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00475",
+        "export_line": 243,
+        "family": "range_sum",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          61,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00377",
+        "export_line": 389,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 105,
+        "response_tokens": [
+          70,
+          73
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00297",
+        "export_line": 296,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 45,
+        "response_tokens": [
+          44,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01374",
+        "export_line": 283,
+        "family": "default_arg",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          48,
+          48
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00903",
+        "export_line": 319,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          97,
+          97
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00380",
+        "export_line": 370,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          70,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00593",
+        "export_line": 207,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 102,
+        "response_tokens": [
+          91,
+          91
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00462",
+        "export_line": 440,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00381",
+        "export_line": 159,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          49,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01860",
+        "export_line": 261,
+        "family": "function_return",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          39,
+          39
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00581",
+        "export_line": 289,
+        "family": "branch_order",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          74,
+          74
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00366",
+        "export_line": 362,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01855",
+        "export_line": 493,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 96,
+        "response_tokens": [
+          82,
+          110
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00526",
+        "export_line": 470,
+        "family": "slice",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 36,
+        "response_tokens": [
+          37,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00253",
+        "export_line": 268,
+        "family": "index",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          36,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00293",
+        "export_line": 382,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00434",
+        "export_line": 383,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          131,
+          119
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00138",
+        "export_line": 126,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 33,
+        "response_tokens": [
+          7,
+          31
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00449",
+        "export_line": 436,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 87,
+        "response_tokens": [
+          53,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00222",
+        "export_line": 246,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00350",
+        "export_line": 305,
+        "family": "list_comprehension",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          57,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00029",
+        "export_line": 30,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00259",
+        "export_line": 222,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          7,
+          54
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00368",
+        "export_line": 340,
+        "family": "dictionary",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 97,
+        "response_tokens": [
+          7,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00275",
+        "export_line": 193,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          51,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00066",
+        "export_line": 80,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 33,
+        "response_tokens": [
+          6,
+          28
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00488",
+        "export_line": 460,
+        "family": "dictionary",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 96,
+        "response_tokens": [
+          7,
+          64
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00126",
+        "export_line": 85,
+        "family": "default_arg",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          50,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00417",
+        "export_line": 434,
+        "family": "division",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          6,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00241",
+        "export_line": 109,
+        "family": "accumulate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          57,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01035",
+        "export_line": 167,
+        "family": "any_all",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00036",
+        "export_line": 21,
+        "family": "function_return",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00373",
+        "export_line": 496,
+        "family": "index",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          6,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01013",
+        "export_line": 403,
+        "family": "branch_order",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 95,
+        "response_tokens": [
+          56,
+          56
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01522",
+        "export_line": 455,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 93,
+        "response_tokens": [
+          69,
+          69
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01703",
+        "export_line": 487,
+        "family": "sorted_key",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          88,
+          88
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01727",
+        "export_line": 421,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00649",
+        "export_line": 465,
+        "family": "accumulate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          62,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00136",
+        "export_line": 101,
+        "family": "loop_else",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          37,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00001",
+        "export_line": 1,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          81,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00246",
+        "export_line": 111,
+        "family": "default_arg",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          75,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00063",
+        "export_line": 35,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          88,
+          86
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00221",
+        "export_line": 242,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          52,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00656",
+        "export_line": 253,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 119,
+        "response_tokens": [
+          79,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00535",
+        "export_line": 424,
+        "family": "dict_comprehension",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          71,
+          25
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00367",
+        "export_line": 302,
+        "family": "dict_comprehension",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          18,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00405",
+        "export_line": 428,
+        "family": "set_unique",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          43,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01328",
+        "export_line": 429,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 99,
+        "response_tokens": [
+          87,
+          87
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00083",
+        "export_line": 84,
+        "family": "filter",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 76,
+        "response_tokens": [
+          6,
+          39
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00093",
+        "export_line": 102,
+        "family": "set_unique",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          6,
+          35
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00477",
+        "export_line": 267,
+        "family": "set_unique",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          57,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00163",
+        "export_line": 63,
+        "family": "range_sum",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          62,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00378",
+        "export_line": 157,
+        "family": "precedence",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          40,
+          40
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00053",
+        "export_line": 76,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          7,
+          54
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00578",
+        "export_line": 183,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          145,
+          145
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00874",
+        "export_line": 313,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 95,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00357",
+        "export_line": 406,
+        "family": "set_unique",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          6,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00295",
+        "export_line": 280,
+        "family": "dict_comprehension",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          67,
+          23
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00482",
+        "export_line": 443,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          94,
+          106
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00502",
+        "export_line": 285,
+        "family": "slice",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          51,
+          51
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01391",
+        "export_line": 397,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          75,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01532",
+        "export_line": 479,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          76,
+          76
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00469",
+        "export_line": 450,
+        "family": "index",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          53,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00071",
+        "export_line": 68,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          64,
+          20
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01485",
+        "export_line": 473,
+        "family": "set_unique",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          63,
+          63
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00041",
+        "export_line": 56,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 89,
+        "response_tokens": [
+          64,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00387",
+        "export_line": 144,
+        "family": "any_all",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          29,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00318",
+        "export_line": 169,
+        "family": "default_arg",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00376",
+        "export_line": 284,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          26,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00058",
+        "export_line": 58,
+        "family": "enumerate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          8,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00050",
+        "export_line": 59,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          102,
+          94
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00214",
+        "export_line": 94,
+        "family": "slice",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 39,
+        "response_tokens": [
+          42,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00364",
+        "export_line": 129,
+        "family": "boundary",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01215",
+        "export_line": 415,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          106,
+          106
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00486",
+        "export_line": 476,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          48,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00519",
+        "export_line": 483,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          81,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00004",
+        "export_line": 4,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00164",
+        "export_line": 73,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          93,
+          93
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00174",
+        "export_line": 196,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          7,
+          46
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00302",
+        "export_line": 186,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          13,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00844",
+        "export_line": 357,
+        "family": "boundary",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00464",
+        "export_line": 396,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 89,
+        "response_tokens": [
+          56,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00895",
+        "export_line": 355,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          96,
+          110
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00347",
+        "export_line": 299,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          74,
+          70
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02052",
+        "export_line": 213,
+        "family": "function_return",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          42,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00269",
+        "export_line": 360,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00059",
+        "export_line": 64,
+        "family": "filter",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 79,
+        "response_tokens": [
+          42,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00867",
+        "export_line": 71,
+        "family": "any_all",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          36,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00169",
+        "export_line": 174,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 71,
+        "response_tokens": [
+          61,
+          9
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01199",
+        "export_line": 325,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          75,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00287",
+        "export_line": 288,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          60,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00442",
+        "export_line": 410,
+        "family": "enumerate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          8,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00208",
+        "export_line": 184,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 74,
+        "response_tokens": [
+          25,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00069",
+        "export_line": 44,
+        "family": "set_unique",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          43,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00056",
+        "export_line": 51,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 119,
+        "response_tokens": [
+          71,
+          71
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00052",
+        "export_line": 54,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01626",
+        "export_line": 481,
+        "family": "precedence",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00466",
+        "export_line": 115,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 96,
+        "response_tokens": [
+          69,
+          69
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00044",
+        "export_line": 60,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          77,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00152",
+        "export_line": 152,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 98,
+        "response_tokens": [
+          59,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00175",
+        "export_line": 118,
+        "family": "dict_comprehension",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          57,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00120",
+        "export_line": 92,
+        "family": "unpack",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          7,
+          55
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00547",
+        "export_line": 486,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          7,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01603",
+        "export_line": 461,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          87,
+          87
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00127",
+        "export_line": 65,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 92,
+        "response_tokens": [
+          70,
+          108
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00713",
+        "export_line": 231,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 99,
+        "response_tokens": [
+          100,
+          100
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00591",
+        "export_line": 189,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          106,
+          106
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00166",
+        "export_line": 72,
+        "family": "slice",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 36,
+        "response_tokens": [
+          6,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00395",
+        "export_line": 388,
+        "family": "filter",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          50,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00280",
+        "export_line": 161,
+        "family": "loop_else",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 74,
+        "response_tokens": [
+          38,
+          38
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01201",
+        "export_line": 327,
+        "family": "accumulate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          66,
+          66
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01854",
+        "export_line": 351,
+        "family": "default_arg",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00888",
+        "export_line": 235,
+        "family": "unpack",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00789",
+        "export_line": 337,
+        "family": "set_unique",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01141",
+        "export_line": 363,
+        "family": "index",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          44,
+          44
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01592",
+        "export_line": 499,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 121,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00323",
+        "export_line": 279,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 89,
+        "response_tokens": [
+          77,
+          73
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00215",
+        "export_line": 224,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          63,
+          19
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00040",
+        "export_line": 46,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          6,
+          25
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01076",
+        "export_line": 387,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          107,
+          107
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00447",
+        "export_line": 438,
+        "family": "loop_control",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 79,
+        "response_tokens": [
+          7,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00585",
+        "export_line": 187,
+        "family": "division",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00520",
+        "export_line": 488,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          26,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00137",
+        "export_line": 17,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 117,
+        "response_tokens": [
+          83,
+          83
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01594",
+        "export_line": 497,
+        "family": "enumerate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          85,
+          85
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00479",
+        "export_line": 458,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          65,
+          20
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00431",
+        "export_line": 368,
+        "family": "sorted_key",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          20,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00170",
+        "export_line": 89,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          159,
+          147
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00098",
+        "export_line": 104,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          90,
+          21
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00382",
+        "export_line": 262,
+        "family": "slice",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          37,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00605",
+        "export_line": 311,
+        "family": "branch_order",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          70,
+          70
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01368",
+        "export_line": 413,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01716",
+        "export_line": 402,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 41,
+        "response_tokens": [
+          7,
+          32
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01364",
+        "export_line": 433,
+        "family": "recursion",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          74,
+          74
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00480",
+        "export_line": 462,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00314",
+        "export_line": 252,
+        "family": "alias",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          21,
+          92
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01590",
+        "export_line": 307,
+        "family": "default_arg",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          78,
+          78
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00304",
+        "export_line": 234,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          6,
+          25
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00305",
+        "export_line": 127,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 123,
+        "response_tokens": [
+          83,
+          83
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01113",
+        "export_line": 281,
+        "family": "division",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          47,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00435",
+        "export_line": 241,
+        "family": "any_all",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 38,
+        "response_tokens": [
+          6,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00198",
+        "export_line": 218,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          7,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00131",
+        "export_line": 136,
+        "family": "filter",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          46,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00062",
+        "export_line": 62,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          12,
+          40
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00410",
+        "export_line": 328,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          90,
+          21
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00980",
+        "export_line": 345,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          85,
+          85
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00313",
+        "export_line": 300,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          59,
+          9
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00233",
+        "export_line": 188,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          53,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00026",
+        "export_line": 27,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 89,
+        "response_tokens": [
+          134,
+          126
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00005",
+        "export_line": 10,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          54
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00202",
+        "export_line": 131,
+        "family": "enumerate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 71,
+        "response_tokens": [
+          82,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00485",
+        "export_line": 199,
+        "family": "branch_order",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 98,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00284",
+        "export_line": 151,
+        "family": "recursion",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          89,
+          89
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00088",
+        "export_line": 88,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 79,
+        "response_tokens": [
+          6,
+          26
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00684",
+        "export_line": 310,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          7,
+          32
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00128",
+        "export_line": 97,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 122,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00506",
+        "export_line": 466,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          120,
+          31
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00192",
+        "export_line": 164,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          53,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00301",
+        "export_line": 384,
+        "family": "index",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          7,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00236",
+        "export_line": 103,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          101,
+          101
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01404",
+        "export_line": 191,
+        "family": "function_return",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00339",
+        "export_line": 47,
+        "family": "any_all",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          36,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00181",
+        "export_line": 180,
+        "family": "index",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          37,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00211",
+        "export_line": 81,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          77,
+          77
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00740",
+        "export_line": 269,
+        "family": "recursion",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          79,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00340",
+        "export_line": 380,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          34,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00013",
+        "export_line": 16,
+        "family": "index",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          7,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00270",
+        "export_line": 123,
+        "family": "default_arg",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          50,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00756",
+        "export_line": 143,
+        "family": "function_return",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          42,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00288",
+        "export_line": 292,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          44,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00306",
+        "export_line": 197,
+        "family": "precedence",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          43,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00406",
+        "export_line": 331,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00544",
+        "export_line": 330,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          6,
+          26
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00173",
+        "export_line": 176,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          7,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00248",
+        "export_line": 228,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 107,
+        "response_tokens": [
+          77,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00954",
+        "export_line": 297,
+        "family": "precedence",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          40,
+          40
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00393",
+        "export_line": 93,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          60,
+          60
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00247",
+        "export_line": 233,
+        "family": "dict_comprehension",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          93,
+          143
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00068",
+        "export_line": 9,
+        "family": "recursion",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00077",
+        "export_line": 100,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          52,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00565",
+        "export_line": 223,
+        "family": "index",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 77,
+        "response_tokens": [
+          44,
+          44
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00199",
+        "export_line": 203,
+        "family": "dict_comprehension",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          117,
+          159
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00592",
+        "export_line": 398,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          6,
+          27
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00613",
+        "export_line": 245,
+        "family": "index",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00249",
+        "export_line": 212,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          46,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00281",
+        "export_line": 371,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 106,
+        "response_tokens": [
+          60,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00168",
+        "export_line": 41,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          58,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00213",
+        "export_line": 240,
+        "family": "set_unique",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          44,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00496",
+        "export_line": 260,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          6,
+          26
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00311",
+        "export_line": 274,
+        "family": "sorted_key",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          20,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00857",
+        "export_line": 251,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 87,
+        "response_tokens": [
+          78,
+          78
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00087",
+        "export_line": 75,
+        "family": "loop_control",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 115,
+        "response_tokens": [
+          62,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01632",
+        "export_line": 485,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          55,
+          55
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00184",
+        "export_line": 140,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          27,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00993",
+        "export_line": 349,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 45,
+        "response_tokens": [
+          58,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00283",
+        "export_line": 171,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          83,
+          83
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00150",
+        "export_line": 154,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          6,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00346",
+        "export_line": 364,
+        "family": "enumerate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 76,
+        "response_tokens": [
+          9,
+          66
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00299",
+        "export_line": 249,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          54,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00054",
+        "export_line": 29,
+        "family": "default_arg",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          79,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00043",
+        "export_line": 24,
+        "family": "range_sum",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          55,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00452",
+        "export_line": 456,
+        "family": "recursion",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          7,
+          73
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00027",
+        "export_line": 22,
+        "family": "any_all",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 39,
+        "response_tokens": [
+          6,
+          29
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00353",
+        "export_line": 342,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 95,
+        "response_tokens": [
+          64,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01330",
+        "export_line": 393,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 93,
+        "response_tokens": [
+          71,
+          71
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00439",
+        "export_line": 399,
+        "family": "dict_comprehension",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          99,
+          139
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01095",
+        "export_line": 277,
+        "family": "loop_control",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 112,
+        "response_tokens": [
+          67,
+          67
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00117",
+        "export_line": 13,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          49,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00109",
+        "export_line": 49,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          52,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02017",
+        "export_line": 489,
+        "family": "accumulate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          55,
+          55
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00025",
+        "export_line": 26,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          9,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00349",
+        "export_line": 474,
+        "family": "index",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          7,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00182",
+        "export_line": 116,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          23,
+          69
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01092",
+        "export_line": 494,
+        "family": "function_return",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          33,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00223",
+        "export_line": 142,
+        "family": "dict_comprehension",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          25,
+          71
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00422",
+        "export_line": 238,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          9,
+          31
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01458",
+        "export_line": 459,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          65,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00660",
+        "export_line": 168,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00351",
+        "export_line": 338,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          55,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00303",
+        "export_line": 209,
+        "family": "loop_control",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 120,
+        "response_tokens": [
+          53,
+          55
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00290",
+        "export_line": 155,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          108,
+          105
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00146",
+        "export_line": 130,
+        "family": "alias",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          17,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00220",
+        "export_line": 244,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00172",
+        "export_line": 107,
+        "family": "boundary",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 76,
+        "response_tokens": [
+          40,
+          38
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00402",
+        "export_line": 390,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 35,
+        "response_tokens": [
+          8,
+          35
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00243",
+        "export_line": 95,
+        "family": "any_all",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          42,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00577",
+        "export_line": 418,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 71,
+        "response_tokens": [
+          11,
+          77
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01093",
+        "export_line": 405,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          80,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00470",
+        "export_line": 354,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          66,
+          21
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00882",
+        "export_line": 275,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          61,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00143",
+        "export_line": 23,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          74,
+          74
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01363",
+        "export_line": 409,
+        "family": "range_sum",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 84,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00361",
+        "export_line": 350,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          59,
+          9
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00226",
+        "export_line": 204,
+        "family": "enumerate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          56,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00423",
+        "export_line": 392,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          59,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00440",
+        "export_line": 139,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 106,
+        "response_tokens": [
+          65,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00111",
+        "export_line": 53,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          84,
+          86
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00119",
+        "export_line": 124,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          60,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00658",
+        "export_line": 247,
+        "family": "enumerate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          96,
+          96
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01130",
+        "export_line": 301,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 92,
+        "response_tokens": [
+          141,
+          141
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01980",
+        "export_line": 287,
+        "family": "function_return",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          39,
+          39
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00407",
+        "export_line": 344,
+        "family": "sorted_key",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          20,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00251",
+        "export_line": 173,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          54,
+          50
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00784",
+        "export_line": 467,
+        "family": "loop_else",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 74,
+        "response_tokens": [
+          38,
+          38
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00237",
+        "export_line": 87,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00176",
+        "export_line": 178,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 105,
+        "response_tokens": [
+          74,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01089",
+        "export_line": 391,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          58,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01161",
+        "export_line": 407,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00336",
+        "export_line": 190,
+        "family": "unpack",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          7,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00348",
+        "export_line": 113,
+        "family": "function_return",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          39,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00551",
+        "export_line": 201,
+        "family": "sorted_key",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          77,
+          77
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01214",
+        "export_line": 263,
+        "family": "list_comprehension",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 87,
+        "response_tokens": [
+          65,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00212",
+        "export_line": 202,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          69,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00217",
+        "export_line": 200,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          9,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00278",
+        "export_line": 216,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          62,
+          20
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00141",
+        "export_line": 57,
+        "family": "set_unique",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          49,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00197",
+        "export_line": 220,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          51,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00538",
+        "export_line": 431,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          66,
+          64
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00694",
+        "export_line": 490,
+        "family": "slice",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 36,
+        "response_tokens": [
+          6,
+          44
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00510",
+        "export_line": 326,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          8,
+          51
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01457",
+        "export_line": 475,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 109,
+        "response_tokens": [
+          62,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00196",
+        "export_line": 198,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          33,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00558",
+        "export_line": 464,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          7,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00369",
+        "export_line": 366,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          42,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00015",
+        "export_line": 8,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          55,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00343",
+        "export_line": 166,
+        "family": "dict_comprehension",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          19,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00107",
+        "export_line": 108,
+        "family": "filter",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 74,
+        "response_tokens": [
+          40,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00245",
+        "export_line": 270,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01472",
+        "export_line": 417,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 106,
+        "response_tokens": [
+          64,
+          64
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00086",
+        "export_line": 82,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          41,
+          13
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00239",
+        "export_line": 250,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          63,
+          19
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00383",
+        "export_line": 175,
+        "family": "sorted_key",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          85,
+          85
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00490",
+        "export_line": 181,
+        "family": "enumerate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          85,
+          85
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00073",
+        "export_line": 74,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          59,
+          9
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00424",
+        "export_line": 374,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          26,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01387",
+        "export_line": 435,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          69,
+          69
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00436",
+        "export_line": 452,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00242",
+        "export_line": 208,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          84,
+          17
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00400",
+        "export_line": 308,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          25,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00035",
+        "export_line": 43,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 99,
+        "response_tokens": [
+          53,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00334",
+        "export_line": 214,
+        "family": "slice",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 38,
+        "response_tokens": [
+          6,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00487",
+        "export_line": 329,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 116,
+        "response_tokens": [
+          70,
+          136
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00494",
+        "export_line": 378,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          79,
+          25
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00291",
+        "export_line": 120,
+        "family": "any_all",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 41,
+        "response_tokens": [
+          6,
+          30
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00413",
+        "export_line": 153,
+        "family": "branch_order",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 77,
+        "response_tokens": [
+          75,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00672",
+        "export_line": 141,
+        "family": "unpack",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          52,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00289",
+        "export_line": 230,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          8,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00733",
+        "export_line": 295,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          52,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00498",
+        "export_line": 498,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 35,
+        "response_tokens": [
+          8,
+          35
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00049",
+        "export_line": 50,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          8,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00386",
+        "export_line": 341,
+        "family": "alias",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          102,
+          94
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01117",
+        "export_line": 427,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          80,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00064",
+        "export_line": 66,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          6,
+          26
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01183",
+        "export_line": 447,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 92,
+        "response_tokens": [
+          84,
+          108
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00091",
+        "export_line": 98,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00011",
+        "export_line": 11,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 90,
+        "response_tokens": [
+          79,
+          75
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00264",
+        "export_line": 276,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          53,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00780",
+        "export_line": 356,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          7,
+          32
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00566",
+        "export_line": 446,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          59,
+          19
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00957",
+        "export_line": 317,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          48,
+          48
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00590",
+        "export_line": 492,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          56,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00309",
+        "export_line": 133,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          45,
+          45
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00873",
+        "export_line": 255,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          58,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00408",
+        "export_line": 348,
+        "family": "unpack",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          7,
+          45
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02451",
+        "export_line": 215,
+        "family": "any_all",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 46,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01413",
+        "export_line": 495,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          49,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00330",
+        "export_line": 318,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 36,
+        "response_tokens": [
+          7,
+          30
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00638",
+        "export_line": 422,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          13,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00155",
+        "export_line": 347,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 88,
+        "response_tokens": [
+          45,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00419",
+        "export_line": 365,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          78,
+          74
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00975",
+        "export_line": 359,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 77,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00007",
+        "export_line": 7,
+        "family": "dict_comprehension",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 96,
+        "response_tokens": [
+          70,
+          110
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00268",
+        "export_line": 294,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00257",
+        "export_line": 272,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          55,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00206",
+        "export_line": 158,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          13,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00210",
+        "export_line": 61,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 41,
+        "response_tokens": [
+          63,
+          63
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00307",
+        "export_line": 298,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          8,
+          62
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00355",
+        "export_line": 346,
+        "family": "range_sum",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          63,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00474",
+        "export_line": 411,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          60,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01170",
+        "export_line": 343,
+        "family": "precedence",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          47,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00207",
+        "export_line": 162,
+        "family": "loop_control",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 77,
+        "response_tokens": [
+          8,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00344",
+        "export_line": 291,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          83,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00341",
+        "export_line": 426,
+        "family": "branch_order",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 72,
+        "response_tokens": [
+          7,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00515",
+        "export_line": 482,
+        "family": "filter",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          6,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01269",
+        "export_line": 385,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          55,
+          55
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00992",
+        "export_line": 369,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 110,
+        "response_tokens": [
+          100,
+          100
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00047",
+        "export_line": 42,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          60,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01188",
+        "export_line": 379,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          7,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00461",
+        "export_line": 500,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 78,
+        "response_tokens": [
+          51,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00263",
+        "export_line": 105,
+        "family": "sorted_key",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          81,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01905",
+        "export_line": 463,
+        "family": "division",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          47,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00274",
+        "export_line": 226,
+        "family": "enumerate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          8,
+          48
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00505",
+        "export_line": 395,
+        "family": "accumulate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          68,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00085",
+        "export_line": 33,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00404",
+        "export_line": 306,
+        "family": "recursion",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          8,
+          92
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00397",
+        "export_line": 135,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          80,
+          80
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00162",
+        "export_line": 172,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 35,
+        "response_tokens": [
+          7,
+          32
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00379",
+        "export_line": 322,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          8,
+          67
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00154",
+        "export_line": 156,
+        "family": "enumerate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          59,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00881",
+        "export_line": 303,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 102,
+        "response_tokens": [
+          91,
+          91
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00460",
+        "export_line": 478,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00372",
+        "export_line": 333,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          7,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01317",
+        "export_line": 451,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00002",
+        "export_line": 2,
+        "family": "alias",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          29,
+          114
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00478",
+        "export_line": 445,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00777",
+        "export_line": 117,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00125",
+        "export_line": 132,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          51,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01440",
+        "export_line": 439,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01836",
+        "export_line": 471,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          7,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00518",
+        "export_line": 400,
+        "family": "list_comprehension",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          54,
+          17
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00429",
+        "export_line": 217,
+        "family": "set_unique",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          52,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00255",
+        "export_line": 232,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          41,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00061",
+        "export_line": 83,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 68,
+        "response_tokens": [
+          78,
+          81
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00325",
+        "export_line": 334,
+        "family": "index",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          36,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01409",
+        "export_line": 453,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 102,
+        "response_tokens": [
+          101,
+          101
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00354",
+        "export_line": 358,
+        "family": "precedence",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 40,
+        "response_tokens": [
+          29,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00157",
+        "export_line": 99,
+        "family": "index",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          44,
+          44
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00121",
+        "export_line": 128,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          44,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00010",
+        "export_line": 3,
+        "family": "enumerate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 80,
+        "response_tokens": [
+          92,
+          92
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00032",
+        "export_line": 5,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 113,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00115",
+        "export_line": 146,
+        "family": "range_sum",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 51,
+        "response_tokens": [
+          7,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02355",
+        "export_line": 192,
+        "family": "any_all",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          6,
+          29
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00145",
+        "export_line": 150,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 63,
+        "response_tokens": [
+          10,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00006",
+        "export_line": 12,
+        "family": "default_arg",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          7,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00428",
+        "export_line": 412,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          57,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00238",
+        "export_line": 239,
+        "family": "slice",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          52,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00706",
+        "export_line": 293,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 93,
+        "response_tokens": [
+          63,
+          63
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00981",
+        "export_line": 361,
+        "family": "set_unique",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          63,
+          63
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00262",
+        "export_line": 185,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          46,
+          46
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01320",
+        "export_line": 367,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          56,
+          56
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00421",
+        "export_line": 163,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 70,
+        "response_tokens": [
+          53,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00151",
+        "export_line": 179,
+        "family": "dict_comprehension",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          57,
+          113
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00190",
+        "export_line": 134,
+        "family": "slice",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 37,
+        "response_tokens": [
+          7,
+          45
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00009",
+        "export_line": 6,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          40,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00101",
+        "export_line": 55,
+        "family": "branch_order",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          56,
+          56
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00144",
+        "export_line": 114,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00308",
+        "export_line": 248,
+        "family": "recursion",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          8,
+          90
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00356",
+        "export_line": 315,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 67,
+        "response_tokens": [
+          95,
+          93
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00514",
+        "export_line": 484,
+        "family": "enumerate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 74,
+        "response_tokens": [
+          54,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00216",
+        "export_line": 69,
+        "family": "unpack",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00113",
+        "export_line": 106,
+        "family": "nested_pairs",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          6,
+          54
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00148",
+        "export_line": 221,
+        "family": "boundary",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 77,
+        "response_tokens": [
+          39,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00277",
+        "export_line": 314,
+        "family": "index",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 62,
+        "response_tokens": [
+          7,
+          36
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01476",
+        "export_line": 237,
+        "family": "function_return",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 50,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00554",
+        "export_line": 419,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 86,
+        "response_tokens": [
+          122,
+          114
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00030",
+        "export_line": 52,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 54,
+        "response_tokens": [
+          42,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00824",
+        "export_line": 271,
+        "family": "dictionary",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 108,
+        "response_tokens": [
+          65,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00481",
+        "export_line": 442,
+        "family": "accumulate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          53,
+          9
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01489",
+        "export_line": 373,
+        "family": "accumulate",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          58,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00696",
+        "export_line": 211,
+        "family": "unpack",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          49,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00539",
+        "export_line": 457,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          55,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00266",
+        "export_line": 236,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          84,
+          17
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00034",
+        "export_line": 38,
+        "family": "enumerate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 71,
+        "response_tokens": [
+          8,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00640",
+        "export_line": 444,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          6,
+          26
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00204",
+        "export_line": 67,
+        "family": "function_return",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 49,
+        "response_tokens": [
+          39,
+          39
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00153",
+        "export_line": 70,
+        "family": "division",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          7,
+          46
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01075",
+        "export_line": 381,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          71,
+          71
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00296",
+        "export_line": 316,
+        "family": "dictionary",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 99,
+        "response_tokens": [
+          70,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00100",
+        "export_line": 79,
+        "family": "boundary",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          41,
+          41
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01659",
+        "export_line": 265,
+        "family": "any_all",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          6,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01017",
+        "export_line": 229,
+        "family": "division",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 66,
+        "response_tokens": [
+          47,
+          47
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00019",
+        "export_line": 25,
+        "family": "range_sum",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 87,
+        "response_tokens": [
+          63,
+          65
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00471",
+        "export_line": 454,
+        "family": "loop_control",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          39,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00686",
+        "export_line": 468,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 64,
+        "response_tokens": [
+          18,
+          57
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00312",
+        "export_line": 320,
+        "family": "unpack",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          48,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00017",
+        "export_line": 32,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 91,
+        "response_tokens": [
+          53,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00412",
+        "export_line": 430,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00116",
+        "export_line": 122,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          70,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00094",
+        "export_line": 119,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          51,
+          52
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00250",
+        "export_line": 266,
+        "family": "enumerate",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 75,
+        "response_tokens": [
+          59,
+          8
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01169",
+        "export_line": 321,
+        "family": "nested_pairs",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 115,
+        "response_tokens": [
+          72,
+          72
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00244",
+        "export_line": 264,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          7,
+          33
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00677",
+        "export_line": 335,
+        "family": "branch_order",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 82,
+        "response_tokens": [
+          76,
+          76
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01356",
+        "export_line": 425,
+        "family": "function_return",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          7,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00489",
+        "export_line": 480,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          41,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00016",
+        "export_line": 14,
+        "family": "loop_else",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 73,
+        "response_tokens": [
+          26,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00432",
+        "export_line": 394,
+        "family": "unpack",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 61,
+        "response_tokens": [
+          7,
+          54
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00358",
+        "export_line": 309,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          52,
+          53
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00438",
+        "export_line": 416,
+        "family": "default_arg",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          44,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00401",
+        "export_line": 408,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 97,
+        "response_tokens": [
+          66,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00316",
+        "export_line": 336,
+        "family": "boundary",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 53,
+        "response_tokens": [
+          6,
+          31
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00371",
+        "export_line": 323,
+        "family": "filter",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 95,
+        "response_tokens": [
+          47,
+          45
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00454",
+        "export_line": 423,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          47,
+          49
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00450",
+        "export_line": 219,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 43,
+        "response_tokens": [
+          60,
+          60
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00095",
+        "export_line": 90,
+        "family": "sorted_key",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 52,
+        "response_tokens": [
+          60,
+          18
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00862",
+        "export_line": 401,
+        "family": "slice",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 42,
+        "response_tokens": [
+          51,
+          51
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00574",
+        "export_line": 352,
+        "family": "slice",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 38,
+        "response_tokens": [
+          6,
+          37
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00124",
+        "export_line": 148,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          33,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00235",
+        "export_line": 121,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 58,
+        "response_tokens": [
+          76,
+          76
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00385",
+        "export_line": 282,
+        "family": "accumulate",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 65,
+        "response_tokens": [
+          8,
+          58
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00089",
+        "export_line": 86,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 99,
+        "response_tokens": [
+          73,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00165",
+        "export_line": 170,
+        "family": "set_unique",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          39,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00636",
+        "export_line": 96,
+        "family": "function_return",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 44,
+        "response_tokens": [
+          32,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00388",
+        "export_line": 404,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 56,
+        "response_tokens": [
+          33,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00118",
+        "export_line": 145,
+        "family": "slice",
+        "task": "transfer",
+        "level": "基础",
+        "prompt_tokens": 55,
+        "response_tokens": [
+          43,
+          43
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00090",
+        "export_line": 39,
+        "family": "precedence",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 39,
+        "response_tokens": [
+          56,
+          56
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00232",
+        "export_line": 206,
+        "family": "loop_else",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 76,
+        "response_tokens": [
+          6,
+          25
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00114",
+        "export_line": 110,
+        "family": "precedence",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 35,
+        "response_tokens": [
+          8,
+          35
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00079",
+        "export_line": 78,
+        "family": "dict_comprehension",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 60,
+        "response_tokens": [
+          59,
+          19
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00033",
+        "export_line": 34,
+        "family": "division",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 47,
+        "response_tokens": [
+          6,
+          42
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00866",
+        "export_line": 491,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          111,
+          99
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00542",
+        "export_line": 286,
+        "family": "list_comprehension",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 69,
+        "response_tokens": [
+          28,
+          87
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00092",
+        "export_line": 37,
+        "family": "recursion",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          66,
+          66
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01048",
+        "export_line": 353,
+        "family": "loop_else",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 79,
+        "response_tokens": [
+          32,
+          32
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00135",
+        "export_line": 112,
+        "family": "loop_control",
+        "task": "predict",
+        "level": "挑战",
+        "prompt_tokens": 81,
+        "response_tokens": [
+          8,
+          61
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00159",
+        "export_line": 125,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 90,
+        "response_tokens": [
+          90,
+          92
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00161",
+        "export_line": 160,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 94,
+        "response_tokens": [
+          54,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00292",
+        "export_line": 312,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 57,
+        "response_tokens": [
+          33,
+          7
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-02018",
+        "export_line": 375,
+        "family": "alias",
+        "task": "transfer",
+        "level": "进阶",
+        "prompt_tokens": 85,
+        "response_tokens": [
+          117,
+          117
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00104",
+        "export_line": 77,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 110,
+        "response_tokens": [
+          100,
+          97
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00022",
+        "export_line": 18,
+        "family": "slice",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 38,
+        "response_tokens": [
+          36,
+          6
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00443",
+        "export_line": 414,
+        "family": "filter",
+        "task": "predict",
+        "level": "进阶",
+        "prompt_tokens": 79,
+        "response_tokens": [
+          8,
+          46
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00227",
+        "export_line": 227,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 83,
+        "response_tokens": [
+          73,
+          69
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00331",
+        "export_line": 195,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 59,
+        "response_tokens": [
+          79,
+          79
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-01162",
+        "export_line": 339,
+        "family": "enumerate",
+        "task": "transfer",
+        "level": "挑战",
+        "prompt_tokens": 84,
+        "response_tokens": [
+          59,
+          59
+        ]
+      },
+      {
+        "candidate_id": "V2-preference-00261",
+        "export_line": 290,
+        "family": "set_unique",
+        "task": "predict",
+        "level": "基础",
+        "prompt_tokens": 48,
+        "response_tokens": [
+          6,
+          33
+        ]
+      }
+    ],
+    "dtype": "float32",
+    "device": "cuda",
+    "batch_size": 1
+  },
+  "scores": {
+    "V2-preference-00589": [
+      -137.60781860351562,
+      -143.5756072998047
+    ],
+    "V2-preference-00472": [
+      -50.748779296875,
+      -9.76677417755127
+    ],
+    "V2-preference-00321": [
+      -47.953086853027344,
+      -19.97126007080078
+    ],
+    "V2-preference-00320": [
+      -12.838970184326172,
+      -31.609432220458984
+    ],
+    "V2-preference-00327": [
+      -43.97921371459961,
+      -18.32148551940918
+    ],
+    "V2-preference-00201": [
+      -10.986435890197754,
+      -54.17440414428711
+    ],
+    "V2-preference-00322": [
+      -51.461181640625,
+      -43.75787353515625
+    ],
+    "V2-preference-00362": [
+      -8.939651489257812,
+      -31.747112274169922
+    ],
+    "V2-preference-00014": [
+      -30.834863662719727,
+      -27.124975204467773
+    ],
+    "V2-preference-00203": [
+      -39.201812744140625,
+      -39.99634552001953
+    ],
+    "V2-preference-01496": [
+      -69.17725372314453,
+      -65.02499389648438
+    ],
+    "V2-preference-02316": [
+      -13.010436058044434,
+      -28.651844024658203
+    ],
+    "V2-preference-00430": [
+      -41.75947189331055,
+      -45.25828552246094
+    ],
+    "V2-preference-00513": [
+      -55.907474517822266,
+      -57.3687858581543
+    ],
+    "V2-preference-00042": [
+      -11.123735427856445,
+      -18.71345329284668
+    ],
+    "V2-preference-00360": [
+      -12.604195594787598,
+      -20.67937469482422
+    ],
+    "V2-preference-01487": [
+      -34.73664093017578,
+      -37.54716110229492
+    ],
+    "V2-preference-00076": [
+      -22.099761962890625,
+      -24.012174606323242
+    ],
+    "V2-preference-00644": [
+      -142.8595733642578,
+      -135.29002380371094
+    ],
+    "V2-preference-00390": [
+      -18.988109588623047,
+      -18.985559463500977
+    ],
+    "V2-preference-00484": [
+      -66.51040649414062,
+      -75.64671325683594
+    ],
+    "V2-preference-00335": [
+      -53.99748229980469,
+      -45.336795806884766
+    ],
+    "V2-preference-00024": [
+      -32.03125762939453,
+      -32.349002838134766
+    ],
+    "V2-preference-00319": [
+      -67.1333236694336,
+      -49.77835464477539
+    ],
+    "V2-preference-00038": [
+      -13.374698638916016,
+      -23.561429977416992
+    ],
+    "V2-preference-01157": [
+      -76.0398178100586,
+      -79.0135269165039
+    ],
+    "V2-preference-00446": [
+      -25.22671890258789,
+      -12.955164909362793
+    ],
+    "V2-preference-00070": [
+      -47.980873107910156,
+      -17.505390167236328
+    ],
+    "V2-preference-00134": [
+      -43.2791748046875,
+      -52.02360534667969
+    ],
+    "V2-preference-00426": [
+      -11.04946231842041,
+      -17.80561065673828
+    ],
+    "V2-preference-00258": [
+      -19.77007484436035,
+      -12.960516929626465
+    ],
+    "V2-preference-00389": [
+      -27.698410034179688,
+      -9.356330871582031
+    ],
+    "V2-preference-00189": [
+      -26.740013122558594,
+      -12.773448944091797
+    ],
+    "V2-preference-00607": [
+      -15.119357109069824,
+      -32.09125900268555
+    ],
+    "V2-preference-00265": [
+      -68.1261215209961,
+      -20.800872802734375
+    ],
+    "V2-preference-00451": [
+      -14.963846206665039,
+      -24.46844482421875
+    ],
+    "V2-preference-00399": [
+      -48.973392486572266,
+      -53.24579620361328
+    ],
+    "V2-preference-00835": [
+      -43.03329849243164,
+      -35.95404052734375
+    ],
+    "V2-preference-00179": [
+      -79.61325073242188,
+      -91.86567687988281
+    ],
+    "V2-preference-00583": [
+      -51.72978591918945,
+      -62.42350387573242
+    ],
+    "V2-preference-00008": [
+      -27.211029052734375,
+      -25.06148338317871
+    ],
+    "V2-preference-00188": [
+      -14.594382286071777,
+      -86.77619934082031
+    ],
+    "V2-preference-00444": [
+      -36.01772689819336,
+      -34.16803741455078
+    ],
+    "V2-preference-00031": [
+      -41.75889205932617,
+      -29.178050994873047
+    ],
+    "V2-preference-00475": [
+      -25.23202133178711,
+      -24.609088897705078
+    ],
+    "V2-preference-00377": [
+      -24.538013458251953,
+      -57.071250915527344
+    ],
+    "V2-preference-00297": [
+      -58.504371643066406,
+      -20.778430938720703
+    ],
+    "V2-preference-01374": [
+      -18.3865966796875,
+      -21.823089599609375
+    ],
+    "V2-preference-00903": [
+      -106.52910614013672,
+      -95.77381134033203
+    ],
+    "V2-preference-00380": [
+      -58.99717712402344,
+      -19.169511795043945
+    ],
+    "V2-preference-00593": [
+      -116.11949920654297,
+      -117.80744171142578
+    ],
+    "V2-preference-00462": [
+      -14.177437782287598,
+      -19.554960250854492
+    ],
+    "V2-preference-00381": [
+      -26.30001449584961,
+      -50.0756950378418
+    ],
+    "V2-preference-01860": [
+      -30.439085006713867,
+      -33.557220458984375
+    ],
+    "V2-preference-00581": [
+      -83.22503662109375,
+      -91.42386627197266
+    ],
+    "V2-preference-00366": [
+      -18.910888671875,
+      -21.721439361572266
+    ],
+    "V2-preference-01855": [
+      -56.40381622314453,
+      -48.62372970581055
+    ],
+    "V2-preference-00526": [
+      -31.21570587158203,
+      -17.2819766998291
+    ],
+    "V2-preference-00253": [
+      -24.68442153930664,
+      -13.393288612365723
+    ],
+    "V2-preference-00293": [
+      -8.697732925415039,
+      -33.63920593261719
+    ],
+    "V2-preference-00434": [
+      -74.37631225585938,
+      -74.42494201660156
+    ],
+    "V2-preference-00138": [
+      -13.774457931518555,
+      -27.6498966217041
+    ],
+    "V2-preference-00449": [
+      -20.50261688232422,
+      -15.800888061523438
+    ],
+    "V2-preference-00222": [
+      -19.538158416748047,
+      -20.650203704833984
+    ],
+    "V2-preference-00350": [
+      -39.85367202758789,
+      -34.38856887817383
+    ],
+    "V2-preference-00029": [
+      -8.697879791259766,
+      -33.353172302246094
+    ],
+    "V2-preference-00259": [
+      -22.674245834350586,
+      -30.560306549072266
+    ],
+    "V2-preference-00368": [
+      -14.82071304321289,
+      -37.081153869628906
+    ],
+    "V2-preference-00275": [
+      -32.755340576171875,
+      -33.995906829833984
+    ],
+    "V2-preference-00066": [
+      -12.364956855773926,
+      -22.600303649902344
+    ],
+    "V2-preference-00488": [
+      -13.78937816619873,
+      -42.213233947753906
+    ],
+    "V2-preference-00126": [
+      -22.87480926513672,
+      -22.51276969909668
+    ],
+    "V2-preference-00417": [
+      -11.027485847473145,
+      -57.023101806640625
+    ],
+    "V2-preference-00241": [
+      -77.776123046875,
+      -74.03622436523438
+    ],
+    "V2-preference-01035": [
+      -51.486446380615234,
+      -63.30195617675781
+    ],
+    "V2-preference-00036": [
+      -37.69626235961914,
+      -38.075897216796875
+    ],
+    "V2-preference-00373": [
+      -8.944792747497559,
+      -53.9879150390625
+    ],
+    "V2-preference-01013": [
+      -28.714101791381836,
+      -38.75652313232422
+    ],
+    "V2-preference-01522": [
+      -63.394775390625,
+      -60.19638442993164
+    ],
+    "V2-preference-01703": [
+      -36.29832077026367,
+      -39.36074447631836
+    ],
+    "V2-preference-01727": [
+      -54.266605377197266,
+      -48.18404769897461
+    ],
+    "V2-preference-00649": [
+      -60.44075012207031,
+      -67.41597747802734
+    ],
+    "V2-preference-00136": [
+      -53.58790969848633,
+      -57.25537872314453
+    ],
+    "V2-preference-00001": [
+      -102.79815673828125,
+      -100.32193756103516
+    ],
+    "V2-preference-00246": [
+      -90.15714263916016,
+      -87.81466674804688
+    ],
+    "V2-preference-00063": [
+      -88.88715362548828,
+      -85.9535903930664
+    ],
+    "V2-preference-00221": [
+      -31.174800872802734,
+      -13.715604782104492
+    ],
+    "V2-preference-00656": [
+      -41.92084503173828,
+      -38.407470703125
+    ],
+    "V2-preference-00535": [
+      -29.37049674987793,
+      -18.367090225219727
+    ],
+    "V2-preference-00367": [
+      -16.551183700561523,
+      -38.38214874267578
+    ],
+    "V2-preference-00405": [
+      -24.039653778076172,
+      -10.025917053222656
+    ],
+    "V2-preference-01328": [
+      -66.20574951171875,
+      -65.67676544189453
+    ],
+    "V2-preference-00083": [
+      -10.70241641998291,
+      -24.529539108276367
+    ],
+    "V2-preference-00093": [
+      -11.375783920288086,
+      -30.973770141601562
+    ],
+    "V2-preference-00477": [
+      -65.76072692871094,
+      -71.21263885498047
+    ],
+    "V2-preference-00163": [
+      -29.39496612548828,
+      -29.597875595092773
+    ],
+    "V2-preference-00378": [
+      -32.8267707824707,
+      -32.45438003540039
+    ],
+    "V2-preference-00053": [
+      -8.633270263671875,
+      -36.40560531616211
+    ],
+    "V2-preference-00578": [
+      -102.21205139160156,
+      -98.21326446533203
+    ],
+    "V2-preference-00874": [
+      -80.30064392089844,
+      -74.45338439941406
+    ],
+    "V2-preference-00357": [
+      -12.280463218688965,
+      -27.423099517822266
+    ],
+    "V2-preference-00295": [
+      -33.7541389465332,
+      -22.321542739868164
+    ],
+    "V2-preference-00482": [
+      -83.13447570800781,
+      -81.34662628173828
+    ],
+    "V2-preference-00502": [
+      -63.32568359375,
+      -59.00768280029297
+    ],
+    "V2-preference-01391": [
+      -53.66975021362305,
+      -47.68860626220703
+    ],
+    "V2-preference-01532": [
+      -142.80970764160156,
+      -135.642578125
+    ],
+    "V2-preference-00469": [
+      -45.577003479003906,
+      -13.638456344604492
+    ],
+    "V2-preference-00071": [
+      -27.369287490844727,
+      -12.477143287658691
+    ],
+    "V2-preference-01485": [
+      -62.080589294433594,
+      -89.29936218261719
+    ],
+    "V2-preference-00041": [
+      -25.67690086364746,
+      -14.543821334838867
+    ],
+    "V2-preference-00387": [
+      -18.62192726135254,
+      -15.016092300415039
+    ],
+    "V2-preference-00318": [
+      -20.245616912841797,
+      -20.595970153808594
+    ],
+    "V2-preference-00376": [
+      -49.684295654296875,
+      -13.041318893432617
+    ],
+    "V2-preference-00058": [
+      -15.806991577148438,
+      -47.68081283569336
+    ],
+    "V2-preference-00050": [
+      -58.3329963684082,
+      -55.534278869628906
+    ],
+    "V2-preference-00214": [
+      -53.7366943359375,
+      -18.129150390625
+    ],
+    "V2-preference-00364": [
+      -69.54491424560547,
+      -78.14567565917969
+    ],
+    "V2-preference-01215": [
+      -94.38843536376953,
+      -88.4952621459961
+    ],
+    "V2-preference-00486": [
+      -19.088699340820312,
+      -18.212358474731445
+    ],
+    "V2-preference-00519": [
+      -89.61344146728516,
+      -84.96261596679688
+    ],
+    "V2-preference-00004": [
+      -10.788488388061523,
+      -29.093177795410156
+    ],
+    "V2-preference-00164": [
+      -136.0575408935547,
+      -134.92477416992188
+    ],
+    "V2-preference-00174": [
+      -15.114816665649414,
+      -17.314218521118164
+    ],
+    "V2-preference-00302": [
+      -18.139083862304688,
+      -31.914958953857422
+    ],
+    "V2-preference-00844": [
+      -22.421945571899414,
+      -33.036521911621094
+    ],
+    "V2-preference-00464": [
+      -25.815704345703125,
+      -15.053681373596191
+    ],
+    "V2-preference-00895": [
+      -58.745201110839844,
+      -52.15101623535156
+    ],
+    "V2-preference-00347": [
+      -84.36597442626953,
+      -87.9521713256836
+    ],
+    "V2-preference-02052": [
+      -39.15301513671875,
+      -42.00956344604492
+    ],
+    "V2-preference-00269": [
+      -9.254264831542969,
+      -47.121952056884766
+    ],
+    "V2-preference-00059": [
+      -22.318456649780273,
+      -12.884360313415527
+    ],
+    "V2-preference-00867": [
+      -16.535795211791992,
+      -29.51942253112793
+    ],
+    "V2-preference-00169": [
+      -63.566715240478516,
+      -23.87316131591797
+    ],
+    "V2-preference-01199": [
+      -59.52891540527344,
+      -51.01951599121094
+    ],
+    "V2-preference-00287": [
+      -25.79068374633789,
+      -14.370580673217773
+    ],
+    "V2-preference-00442": [
+      -16.519853591918945,
+      -45.85545349121094
+    ],
+    "V2-preference-00208": [
+      -47.06716537475586,
+      -19.097816467285156
+    ],
+    "V2-preference-00069": [
+      -24.723968505859375,
+      -10.251289367675781
+    ],
+    "V2-preference-00056": [
+      -28.01553726196289,
+      -34.530982971191406
+    ],
+    "V2-preference-00052": [
+      -9.33784008026123,
+      -34.65589904785156
+    ],
+    "V2-preference-01626": [
+      -35.03900146484375,
+      -39.21603775024414
+    ],
+    "V2-preference-00466": [
+      -57.93046569824219,
+      -57.836334228515625
+    ],
+    "V2-preference-00044": [
+      -70.31524658203125,
+      -16.784067153930664
+    ],
+    "V2-preference-00152": [
+      -28.381595611572266,
+      -17.29876136779785
+    ],
+    "V2-preference-00175": [
+      -31.082014083862305,
+      -14.100360870361328
+    ],
+    "V2-preference-00120": [
+      -13.337444305419922,
+      -23.42169952392578
+    ],
+    "V2-preference-00547": [
+      -11.860931396484375,
+      -19.215648651123047
+    ],
+    "V2-preference-01603": [
+      -46.34827423095703,
+      -41.12370300292969
+    ],
+    "V2-preference-00127": [
+      -67.25491333007812,
+      -54.24102020263672
+    ],
+    "V2-preference-00713": [
+      -104.1917953491211,
+      -103.93997955322266
+    ],
+    "V2-preference-00591": [
+      -97.77153778076172,
+      -92.27485656738281
+    ],
+    "V2-preference-00166": [
+      -11.741689682006836,
+      -33.96541213989258
+    ],
+    "V2-preference-00395": [
+      -30.657302856445312,
+      -16.847543716430664
+    ],
+    "V2-preference-00280": [
+      -57.61607360839844,
+      -64.15130615234375
+    ],
+    "V2-preference-01201": [
+      -66.36090850830078,
+      -70.6776123046875
+    ],
+    "V2-preference-01854": [
+      -28.520023345947266,
+      -28.893508911132812
+    ],
+    "V2-preference-00888": [
+      -35.610321044921875,
+      -36.647056579589844
+    ],
+    "V2-preference-00789": [
+      -57.57818603515625,
+      -67.19806671142578
+    ],
+    "V2-preference-01141": [
+      -19.172809600830078,
+      -22.434877395629883
+    ],
+    "V2-preference-01592": [
+      -51.516624450683594,
+      -40.7081413269043
+    ],
+    "V2-preference-00323": [
+      -84.3686752319336,
+      -93.66117858886719
+    ],
+    "V2-preference-00215": [
+      -24.182878494262695,
+      -20.87716293334961
+    ],
+    "V2-preference-00040": [
+      -13.445133209228516,
+      -59.81626892089844
+    ],
+    "V2-preference-01076": [
+      -171.79286193847656,
+      -165.61212158203125
+    ],
+    "V2-preference-00447": [
+      -11.585395812988281,
+      -40.559288024902344
+    ],
+    "V2-preference-00585": [
+      -60.519710540771484,
+      -58.63767623901367
+    ],
+    "V2-preference-00520": [
+      -44.01565933227539,
+      -13.787385940551758
+    ],
+    "V2-preference-00137": [
+      -34.637611389160156,
+      -45.74666213989258
+    ],
+    "V2-preference-01594": [
+      -129.1888885498047,
+      -123.9387435913086
+    ],
+    "V2-preference-00479": [
+      -29.46109390258789,
+      -11.415667533874512
+    ],
+    "V2-preference-00431": [
+      -11.588534355163574,
+      -33.641963958740234
+    ],
+    "V2-preference-00170": [
+      -92.19861602783203,
+      -87.1323013305664
+    ],
+    "V2-preference-00098": [
+      -38.41059875488281,
+      -8.87267780303955
+    ],
+    "V2-preference-00382": [
+      -33.294342041015625,
+      -15.54587173461914
+    ],
+    "V2-preference-00605": [
+      -79.10905456542969,
+      -86.38018035888672
+    ],
+    "V2-preference-01368": [
+      -20.153837203979492,
+      -28.417837142944336
+    ],
+    "V2-preference-01716": [
+      -12.155464172363281,
+      -17.323028564453125
+    ],
+    "V2-preference-01364": [
+      -61.995361328125,
+      -59.35987091064453
+    ],
+    "V2-preference-00480": [
+      -25.85317611694336,
+      -17.85928726196289
+    ],
+    "V2-preference-00314": [
+      -9.272408485412598,
+      -31.812345504760742
+    ],
+    "V2-preference-01590": [
+      -86.96308135986328,
+      -84.93931579589844
+    ],
+    "V2-preference-00304": [
+      -8.501473426818848,
+      -68.09989166259766
+    ],
+    "V2-preference-00305": [
+      -48.536956787109375,
+      -49.16459274291992
+    ],
+    "V2-preference-01113": [
+      -54.68089294433594,
+      -70.71118927001953
+    ],
+    "V2-preference-00435": [
+      -8.857744216918945,
+      -9.770133018493652
+    ],
+    "V2-preference-00198": [
+      -14.046142578125,
+      -30.810848236083984
+    ],
+    "V2-preference-00131": [
+      -27.42588996887207,
+      -18.673179626464844
+    ],
+    "V2-preference-00062": [
+      -10.880337715148926,
+      -25.96925926208496
+    ],
+    "V2-preference-00410": [
+      -29.998384475708008,
+      -11.421907424926758
+    ],
+    "V2-preference-00980": [
+      -125.45912170410156,
+      -119.29335021972656
+    ],
+    "V2-preference-00313": [
+      -64.472900390625,
+      -19.610925674438477
+    ],
+    "V2-preference-00233": [
+      -19.184093475341797,
+      -15.5298433303833
+    ],
+    "V2-preference-00026": [
+      -56.03177261352539,
+      -56.70466613769531
+    ],
+    "V2-preference-00005": [
+      -8.678153991699219,
+      -31.99805450439453
+    ],
+    "V2-preference-00202": [
+      -120.23401641845703,
+      -110.1476821899414
+    ],
+    "V2-preference-00485": [
+      -24.119291305541992,
+      -44.8513069152832
+    ],
+    "V2-preference-00284": [
+      -62.637229919433594,
+      -62.960426330566406
+    ],
+    "V2-preference-00088": [
+      -8.49649429321289,
+      -59.63189697265625
+    ],
+    "V2-preference-00684": [
+      -13.11984634399414,
+      -20.485910415649414
+    ],
+    "V2-preference-00128": [
+      -36.5313606262207,
+      -33.88577651977539
+    ],
+    "V2-preference-00506": [
+      -32.39594650268555,
+      -9.733287811279297
+    ],
+    "V2-preference-00192": [
+      -26.14259910583496,
+      -16.783428192138672
+    ],
+    "V2-preference-00301": [
+      -8.690176963806152,
+      -25.88524627685547
+    ],
+    "V2-preference-00236": [
+      -142.7846221923828,
+      -132.95889282226562
+    ],
+    "V2-preference-01404": [
+      -35.13367462158203,
+      -34.49906539916992
+    ],
+    "V2-preference-00339": [
+      -17.379289627075195,
+      -31.02954864501953
+    ],
+    "V2-preference-00181": [
+      -19.013553619384766,
+      -10.387857437133789
+    ],
+    "V2-preference-00211": [
+      -48.737152099609375,
+      -43.822662353515625
+    ],
+    "V2-preference-00740": [
+      -65.37049102783203,
+      -63.004371643066406
+    ],
+    "V2-preference-00340": [
+      -19.36073875427246,
+      -11.242196083068848
+    ],
+    "V2-preference-00013": [
+      -8.555305480957031,
+      -30.239320755004883
+    ],
+    "V2-preference-00270": [
+      -21.158382415771484,
+      -27.305557250976562
+    ],
+    "V2-preference-00756": [
+      -37.14278030395508,
+      -35.984066009521484
+    ],
+    "V2-preference-00288": [
+      -16.876619338989258,
+      -19.869361877441406
+    ],
+    "V2-preference-00306": [
+      -41.47895050048828,
+      -43.2476692199707
+    ],
+    "V2-preference-00406": [
+      -34.73218536376953,
+      -38.642303466796875
+    ],
+    "V2-preference-00544": [
+      -8.495096206665039,
+      -56.048858642578125
+    ],
+    "V2-preference-00173": [
+      -8.529278755187988,
+      -35.178871154785156
+    ],
+    "V2-preference-00248": [
+      -33.90593719482422,
+      -23.409217834472656
+    ],
+    "V2-preference-00954": [
+      -30.668004989624023,
+      -31.167844772338867
+    ],
+    "V2-preference-00393": [
+      -74.7287368774414,
+      -98.78201293945312
+    ],
+    "V2-preference-00247": [
+      -52.933074951171875,
+      -75.84442138671875
+    ],
+    "V2-preference-00068": [
+      -74.4342041015625,
+      -72.276611328125
+    ],
+    "V2-preference-00077": [
+      -30.01969337463379,
+      -13.297282218933105
+    ],
+    "V2-preference-00565": [
+      -23.96285629272461,
+      -28.343658447265625
+    ],
+    "V2-preference-00199": [
+      -72.34675598144531,
+      -78.63587188720703
+    ],
+    "V2-preference-00592": [
+      -8.570371627807617,
+      -45.67707443237305
+    ],
+    "V2-preference-00613": [
+      -23.955665588378906,
+      -30.484134674072266
+    ],
+    "V2-preference-00249": [
+      -52.772918701171875,
+      -18.814790725708008
+    ],
+    "V2-preference-00281": [
+      -25.63152503967285,
+      -29.69695472717285
+    ],
+    "V2-preference-00168": [
+      -21.557342529296875,
+      -23.469619750976562
+    ],
+    "V2-preference-00213": [
+      -23.27581787109375,
+      -17.402042388916016
+    ],
+    "V2-preference-00496": [
+      -12.154027938842773,
+      -48.80647277832031
+    ],
+    "V2-preference-00311": [
+      -9.895927429199219,
+      -30.5975284576416
+    ],
+    "V2-preference-00857": [
+      -117.72603607177734,
+      -145.44512939453125
+    ],
+    "V2-preference-00087": [
+      -36.377994537353516,
+      -35.07274627685547
+    ],
+    "V2-preference-01632": [
+      -19.155899047851562,
+      -23.061105728149414
+    ],
+    "V2-preference-00184": [
+      -43.53108596801758,
+      -9.976587295532227
+    ],
+    "V2-preference-00993": [
+      -90.59815979003906,
+      -89.49552917480469
+    ],
+    "V2-preference-00283": [
+      -44.215965270996094,
+      -40.172298431396484
+    ],
+    "V2-preference-00150": [
+      -15.133123397827148,
+      -18.290477752685547
+    ],
+    "V2-preference-00346": [
+      -16.50030517578125,
+      -70.52222442626953
+    ],
+    "V2-preference-00299": [
+      -34.13572692871094,
+      -39.98275375366211
+    ],
+    "V2-preference-00054": [
+      -87.21842193603516,
+      -83.5753173828125
+    ],
+    "V2-preference-00043": [
+      -21.869464874267578,
+      -22.30719757080078
+    ],
+    "V2-preference-00452": [
+      -13.021746635437012,
+      -64.17841339111328
+    ],
+    "V2-preference-00027": [
+      -9.548272132873535,
+      -27.383853912353516
+    ],
+    "V2-preference-00353": [
+      -31.489248275756836,
+      -13.409153938293457
+    ],
+    "V2-preference-01330": [
+      -68.13105010986328,
+      -65.09883117675781
+    ],
+    "V2-preference-00439": [
+      -60.231178283691406,
+      -64.68701171875
+    ],
+    "V2-preference-01095": [
+      -37.46812438964844,
+      -39.13454818725586
+    ],
+    "V2-preference-00117": [
+      -27.76922035217285,
+      -33.67461395263672
+    ],
+    "V2-preference-00109": [
+      -57.099491119384766,
+      -65.4279556274414
+    ],
+    "V2-preference-02017": [
+      -72.7648696899414,
+      -63.96331024169922
+    ],
+    "V2-preference-00025": [
+      -21.72037124633789,
+      -59.62477111816406
+    ],
+    "V2-preference-00349": [
+      -9.423630714416504,
+      -22.90937042236328
+    ],
+    "V2-preference-00182": [
+      -22.468372344970703,
+      -32.63246154785156
+    ],
+    "V2-preference-01092": [
+      -16.93814468383789,
+      -17.916446685791016
+    ],
+    "V2-preference-00223": [
+      -21.294153213500977,
+      -35.27260971069336
+    ],
+    "V2-preference-00422": [
+      -10.524274826049805,
+      -33.1807746887207
+    ],
+    "V2-preference-01458": [
+      -82.73997497558594,
+      -95.26262664794922
+    ],
+    "V2-preference-00660": [
+      -12.354310989379883,
+      -29.299253463745117
+    ],
+    "V2-preference-00351": [
+      -32.52398681640625,
+      -19.376663208007812
+    ],
+    "V2-preference-00303": [
+      -34.920249938964844,
+      -45.00306701660156
+    ],
+    "V2-preference-00290": [
+      -87.540283203125,
+      -88.31373596191406
+    ],
+    "V2-preference-00146": [
+      -9.13347339630127,
+      -29.458759307861328
+    ],
+    "V2-preference-00220": [
+      -10.897357940673828,
+      -30.285564422607422
+    ],
+    "V2-preference-00172": [
+      -24.311159133911133,
+      -30.41742515563965
+    ],
+    "V2-preference-00402": [
+      -14.560794830322266,
+      -24.474374771118164
+    ],
+    "V2-preference-00243": [
+      -46.09141540527344,
+      -71.2581787109375
+    ],
+    "V2-preference-00577": [
+      -27.757360458374023,
+      -96.01637268066406
+    ],
+    "V2-preference-01093": [
+      -131.5124969482422,
+      -136.9793701171875
+    ],
+    "V2-preference-00470": [
+      -34.75589370727539,
+      -21.794147491455078
+    ],
+    "V2-preference-00882": [
+      -70.54546356201172,
+      -96.97100830078125
+    ],
+    "V2-preference-00143": [
+      -53.47150802612305,
+      -47.71564865112305
+    ],
+    "V2-preference-01363": [
+      -33.210357666015625,
+      -36.218544006347656
+    ],
+    "V2-preference-00361": [
+      -68.62303161621094,
+      -21.10419273376465
+    ],
+    "V2-preference-00226": [
+      -55.6848030090332,
+      -20.927444458007812
+    ],
+    "V2-preference-00423": [
+      -46.232242584228516,
+      -20.200294494628906
+    ],
+    "V2-preference-00440": [
+      -49.26853942871094,
+      -50.36746597290039
+    ],
+    "V2-preference-00111": [
+      -99.37812805175781,
+      -100.65665435791016
+    ],
+    "V2-preference-00119": [
+      -27.340984344482422,
+      -13.134574890136719
+    ],
+    "V2-preference-00658": [
+      -136.5263214111328,
+      -133.21185302734375
+    ],
+    "V2-preference-01130": [
+      -55.400699615478516,
+      -52.972267150878906
+    ],
+    "V2-preference-01980": [
+      -22.360321044921875,
+      -29.687776565551758
+    ],
+    "V2-preference-00407": [
+      -11.368017196655273,
+      -30.476478576660156
+    ],
+    "V2-preference-00251": [
+      -31.98311996459961,
+      -41.38609313964844
+    ],
+    "V2-preference-00784": [
+      -57.500667572021484,
+      -63.41038513183594
+    ],
+    "V2-preference-00237": [
+      -32.48078536987305,
+      -52.84442901611328
+    ],
+    "V2-preference-00176": [
+      -44.76475143432617,
+      -19.21958351135254
+    ],
+    "V2-preference-01089": [
+      -83.62864685058594,
+      -85.76393127441406
+    ],
+    "V2-preference-01161": [
+      -81.41902923583984,
+      -78.37440490722656
+    ],
+    "V2-preference-00336": [
+      -14.82706069946289,
+      -26.61391258239746
+    ],
+    "V2-preference-00348": [
+      -25.1575927734375,
+      -32.331844329833984
+    ],
+    "V2-preference-00551": [
+      -54.75052261352539,
+      -52.10930252075195
+    ],
+    "V2-preference-01214": [
+      -27.553726196289062,
+      -30.322771072387695
+    ],
+    "V2-preference-00212": [
+      -70.35055541992188,
+      -14.356962203979492
+    ],
+    "V2-preference-00217": [
+      -17.5417423248291,
+      -62.893272399902344
+    ],
+    "V2-preference-00278": [
+      -49.62171173095703,
+      -26.520254135131836
+    ],
+    "V2-preference-00141": [
+      -63.571434020996094,
+      -73.62583923339844
+    ],
+    "V2-preference-00197": [
+      -28.52918243408203,
+      -10.647913932800293
+    ],
+    "V2-preference-00538": [
+      -69.31710815429688,
+      -80.16002655029297
+    ],
+    "V2-preference-00694": [
+      -18.281661987304688,
+      -47.453147888183594
+    ],
+    "V2-preference-00510": [
+      -14.488142013549805,
+      -25.7397403717041
+    ],
+    "V2-preference-01457": [
+      -27.650896072387695,
+      -35.409156799316406
+    ],
+    "V2-preference-00196": [
+      -15.510802268981934,
+      -11.625602722167969
+    ],
+    "V2-preference-00558": [
+      -14.092899322509766,
+      -30.276277542114258
+    ],
+    "V2-preference-00369": [
+      -43.09541320800781,
+      -16.31703758239746
+    ],
+    "V2-preference-00015": [
+      -36.7891845703125,
+      -21.16499900817871
+    ],
+    "V2-preference-00343": [
+      -15.836697578430176,
+      -33.169830322265625
+    ],
+    "V2-preference-00107": [
+      -30.844100952148438,
+      -18.835098266601562
+    ],
+    "V2-preference-00245": [
+      -8.678808212280273,
+      -34.436683654785156
+    ],
+    "V2-preference-01472": [
+      -36.08776092529297,
+      -40.24612808227539
+    ],
+    "V2-preference-00086": [
+      -16.808855056762695,
+      -26.484439849853516
+    ],
+    "V2-preference-00239": [
+      -26.86192512512207,
+      -15.335220336914062
+    ],
+    "V2-preference-00383": [
+      -35.10125732421875,
+      -32.296730041503906
+    ],
+    "V2-preference-00490": [
+      -122.07186126708984,
+      -112.84452056884766
+    ],
+    "V2-preference-00073": [
+      -68.00077056884766,
+      -19.800230026245117
+    ],
+    "V2-preference-00424": [
+      -46.46820831298828,
+      -10.542924880981445
+    ],
+    "V2-preference-01387": [
+      -45.66154861450195,
+      -41.925559997558594
+    ],
+    "V2-preference-00436": [
+      -9.436918258666992,
+      -30.569711685180664
+    ],
+    "V2-preference-00242": [
+      -59.13935089111328,
+      -11.244386672973633
+    ],
+    "V2-preference-00400": [
+      -39.692142486572266,
+      -10.304940223693848
+    ],
+    "V2-preference-00035": [
+      -40.891937255859375,
+      -68.73603820800781
+    ],
+    "V2-preference-00334": [
+      -21.80222511291504,
+      -38.1344108581543
+    ],
+    "V2-preference-00487": [
+      -61.82188415527344,
+      -55.15137481689453
+    ],
+    "V2-preference-00494": [
+      -21.290515899658203,
+      -35.20000076293945
+    ],
+    "V2-preference-00291": [
+      -9.145306587219238,
+      -17.384525299072266
+    ],
+    "V2-preference-00413": [
+      -86.8691635131836,
+      -95.18175506591797
+    ],
+    "V2-preference-00672": [
+      -27.073013305664062,
+      -34.362586975097656
+    ],
+    "V2-preference-00289": [
+      -14.619725227355957,
+      -50.112098693847656
+    ],
+    "V2-preference-00733": [
+      -55.305965423583984,
+      -58.98349380493164
+    ],
+    "V2-preference-00498": [
+      -12.966562271118164,
+      -22.363887786865234
+    ],
+    "V2-preference-00049": [
+      -15.553665161132812,
+      -55.91888427734375
+    ],
+    "V2-preference-00386": [
+      -116.98103332519531,
+      -119.41128540039062
+    ],
+    "V2-preference-01117": [
+      -131.24034118652344,
+      -132.40951538085938
+    ],
+    "V2-preference-00064": [
+      -8.496335983276367,
+      -53.29060745239258
+    ],
+    "V2-preference-01183": [
+      -61.12500762939453,
+      -49.42323303222656
+    ],
+    "V2-preference-00091": [
+      -18.195720672607422,
+      -22.747394561767578
+    ],
+    "V2-preference-00011": [
+      -77.18727111816406,
+      -97.153564453125
+    ],
+    "V2-preference-00264": [
+      -19.612394332885742,
+      -24.334447860717773
+    ],
+    "V2-preference-00780": [
+      -14.41218376159668,
+      -20.789613723754883
+    ],
+    "V2-preference-00566": [
+      -16.9918155670166,
+      -25.262996673583984
+    ],
+    "V2-preference-00957": [
+      -28.816125869750977,
+      -37.398712158203125
+    ],
+    "V2-preference-00590": [
+      -18.129541397094727,
+      -23.75086212158203
+    ],
+    "V2-preference-00309": [
+      -25.120819091796875,
+      -41.99557113647461
+    ],
+    "V2-preference-00873": [
+      -92.15643310546875,
+      -91.22689819335938
+    ],
+    "V2-preference-00408": [
+      -13.317309379577637,
+      -25.277732849121094
+    ],
+    "V2-preference-02451": [
+      -50.569915771484375,
+      -63.028236389160156
+    ],
+    "V2-preference-01413": [
+      -27.083072662353516,
+      -33.77332305908203
+    ],
+    "V2-preference-00330": [
+      -12.496070861816406,
+      -26.977680206298828
+    ],
+    "V2-preference-00638": [
+      -16.9935302734375,
+      -29.22867202758789
+    ],
+    "V2-preference-00155": [
+      -20.579355239868164,
+      -40.04719543457031
+    ],
+    "V2-preference-00419": [
+      -84.80943298339844,
+      -90.00289154052734
+    ],
+    "V2-preference-00975": [
+      -90.70333862304688,
+      -88.71862030029297
+    ],
+    "V2-preference-00007": [
+      -60.06322479248047,
+      -52.889068603515625
+    ],
+    "V2-preference-00268": [
+      -8.829987525939941,
+      -32.526588439941406
+    ],
+    "V2-preference-00257": [
+      -20.734058380126953,
+      -17.779155731201172
+    ],
+    "V2-preference-00206": [
+      -15.415855407714844,
+      -27.667526245117188
+    ],
+    "V2-preference-00210": [
+      -79.45527648925781,
+      -80.65592956542969
+    ],
+    "V2-preference-00307": [
+      -15.05412483215332,
+      -31.472362518310547
+    ],
+    "V2-preference-00355": [
+      -20.847795486450195,
+      -21.64257049560547
+    ],
+    "V2-preference-00474": [
+      -130.30795288085938,
+      -131.26083374023438
+    ],
+    "V2-preference-01170": [
+      -23.010845184326172,
+      -33.98430252075195
+    ],
+    "V2-preference-00207": [
+      -15.105575561523438,
+      -57.825626373291016
+    ],
+    "V2-preference-00344": [
+      -65.19469451904297,
+      -63.69225311279297
+    ],
+    "V2-preference-00341": [
+      -8.729819297790527,
+      -33.805625915527344
+    ],
+    "V2-preference-00515": [
+      -10.73504638671875,
+      -31.246490478515625
+    ],
+    "V2-preference-01269": [
+      -31.59748649597168,
+      -48.632835388183594
+    ],
+    "V2-preference-00992": [
+      -72.85714721679688,
+      -69.94918823242188
+    ],
+    "V2-preference-00047": [
+      -26.53363609313965,
+      -25.22553253173828
+    ],
+    "V2-preference-01188": [
+      -13.397335052490234,
+      -13.780658721923828
+    ],
+    "V2-preference-00461": [
+      -27.903141021728516,
+      -9.27249813079834
+    ],
+    "V2-preference-00263": [
+      -30.453960418701172,
+      -31.979833602905273
+    ],
+    "V2-preference-01905": [
+      -54.031829833984375,
+      -47.855255126953125
+    ],
+    "V2-preference-00274": [
+      -16.58022689819336,
+      -41.68292236328125
+    ],
+    "V2-preference-00505": [
+      -74.4325942993164,
+      -84.32389831542969
+    ],
+    "V2-preference-00085": [
+      -68.82886505126953,
+      -72.78675079345703
+    ],
+    "V2-preference-00404": [
+      -17.20449447631836,
+      -81.22128295898438
+    ],
+    "V2-preference-00397": [
+      -134.49134826660156,
+      -137.0157928466797
+    ],
+    "V2-preference-00162": [
+      -13.298553466796875,
+      -26.527511596679688
+    ],
+    "V2-preference-00379": [
+      -14.626644134521484,
+      -19.724430084228516
+    ],
+    "V2-preference-00154": [
+      -52.83090591430664,
+      -21.113264083862305
+    ],
+    "V2-preference-00881": [
+      -116.36634826660156,
+      -114.7103042602539
+    ],
+    "V2-preference-00460": [
+      -9.346436500549316,
+      -21.257417678833008
+    ],
+    "V2-preference-00372": [
+      -13.193166732788086,
+      -13.53226375579834
+    ],
+    "V2-preference-01317": [
+      -29.671951293945312,
+      -29.315162658691406
+    ],
+    "V2-preference-00002": [
+      -9.395609855651855,
+      -34.74989318847656
+    ],
+    "V2-preference-00478": [
+      -52.52090835571289,
+      -48.738243103027344
+    ],
+    "V2-preference-00777": [
+      -83.97581481933594,
+      -84.36460876464844
+    ],
+    "V2-preference-00125": [
+      -29.28200912475586,
+      -11.261430740356445
+    ],
+    "V2-preference-01440": [
+      -18.869516372680664,
+      -35.84646987915039
+    ],
+    "V2-preference-01836": [
+      -12.04582405090332,
+      -13.331092834472656
+    ],
+    "V2-preference-00518": [
+      -29.74456214904785,
+      -19.479637145996094
+    ],
+    "V2-preference-00429": [
+      -31.751840591430664,
+      -40.688720703125
+    ],
+    "V2-preference-00255": [
+      -22.074565887451172,
+      -19.336257934570312
+    ],
+    "V2-preference-00061": [
+      -149.14561462402344,
+      -137.6427764892578
+    ],
+    "V2-preference-00325": [
+      -17.92294692993164,
+      -11.557025909423828
+    ],
+    "V2-preference-01409": [
+      -121.71138000488281,
+      -120.70183563232422
+    ],
+    "V2-preference-00354": [
+      -20.284942626953125,
+      -17.48338508605957
+    ],
+    "V2-preference-00157": [
+      -23.1385555267334,
+      -20.516399383544922
+    ],
+    "V2-preference-00121": [
+      -44.30891418457031,
+      -23.637527465820312
+    ],
+    "V2-preference-00010": [
+      -120.18961334228516,
+      -115.11139678955078
+    ],
+    "V2-preference-00032": [
+      -34.046913146972656,
+      -44.625938415527344
+    ],
+    "V2-preference-00115": [
+      -15.728812217712402,
+      -23.98883819580078
+    ],
+    "V2-preference-02355": [
+      -9.52995491027832,
+      -29.768396377563477
+    ],
+    "V2-preference-00145": [
+      -24.09516143798828,
+      -71.57856750488281
+    ],
+    "V2-preference-00006": [
+      -12.345725059509277,
+      -29.146373748779297
+    ],
+    "V2-preference-00428": [
+      -69.5588150024414,
+      -18.321128845214844
+    ],
+    "V2-preference-00238": [
+      -66.87068176269531,
+      -69.25921630859375
+    ],
+    "V2-preference-00706": [
+      -60.47151184082031,
+      -71.27334594726562
+    ],
+    "V2-preference-00981": [
+      -59.324676513671875,
+      -76.0045394897461
+    ],
+    "V2-preference-00262": [
+      -47.39257049560547,
+      -46.92021179199219
+    ],
+    "V2-preference-01320": [
+      -22.944358825683594,
+      -28.3624267578125
+    ],
+    "V2-preference-00421": [
+      -78.35465240478516,
+      -73.30130004882812
+    ],
+    "V2-preference-00151": [
+      -45.416343688964844,
+      -56.899044036865234
+    ],
+    "V2-preference-00190": [
+      -33.70536422729492,
+      -56.034637451171875
+    ],
+    "V2-preference-00009": [
+      -52.1314697265625,
+      -13.323023796081543
+    ],
+    "V2-preference-00101": [
+      -39.40133285522461,
+      -46.6632194519043
+    ],
+    "V2-preference-00144": [
+      -13.516508102416992,
+      -19.50953483581543
+    ],
+    "V2-preference-00308": [
+      -14.30885124206543,
+      -93.63824462890625
+    ],
+    "V2-preference-00356": [
+      -154.89453125,
+      -146.31149291992188
+    ],
+    "V2-preference-00514": [
+      -50.93244934082031,
+      -20.32701873779297
+    ],
+    "V2-preference-00216": [
+      -30.312793731689453,
+      -36.969383239746094
+    ],
+    "V2-preference-00113": [
+      -11.126501083374023,
+      -31.106990814208984
+    ],
+    "V2-preference-00148": [
+      -20.635419845581055,
+      -30.92683219909668
+    ],
+    "V2-preference-00277": [
+      -8.71878719329834,
+      -28.9326171875
+    ],
+    "V2-preference-01476": [
+      -28.501379013061523,
+      -31.158050537109375
+    ],
+    "V2-preference-00554": [
+      -53.00225830078125,
+      -59.69440460205078
+    ],
+    "V2-preference-00030": [
+      -17.50185775756836,
+      -20.153120040893555
+    ],
+    "V2-preference-00824": [
+      -33.301124572753906,
+      -45.22871398925781
+    ],
+    "V2-preference-00481": [
+      -56.56995391845703,
+      -28.961227416992188
+    ],
+    "V2-preference-01489": [
+      -77.93765258789062,
+      -74.00769805908203
+    ],
+    "V2-preference-00696": [
+      -18.930999755859375,
+      -42.82900619506836
+    ],
+    "V2-preference-00539": [
+      -34.01378631591797,
+      -40.59870910644531
+    ],
+    "V2-preference-00266": [
+      -47.506412506103516,
+      -16.133502960205078
+    ],
+    "V2-preference-00034": [
+      -15.873934745788574,
+      -54.940895080566406
+    ],
+    "V2-preference-00640": [
+      -8.566508293151855,
+      -59.149871826171875
+    ],
+    "V2-preference-00204": [
+      -25.191205978393555,
+      -31.33823585510254
+    ],
+    "V2-preference-00153": [
+      -12.662456512451172,
+      -71.96527862548828
+    ],
+    "V2-preference-01075": [
+      -49.56604766845703,
+      -43.66869354248047
+    ],
+    "V2-preference-00296": [
+      -34.68199920654297,
+      -21.38257598876953
+    ],
+    "V2-preference-00100": [
+      -25.44258689880371,
+      -27.713821411132812
+    ],
+    "V2-preference-01659": [
+      -8.735846519470215,
+      -10.38901424407959
+    ],
+    "V2-preference-01017": [
+      -50.83999252319336,
+      -56.980106353759766
+    ],
+    "V2-preference-00019": [
+      -27.987764358520508,
+      -29.710163116455078
+    ],
+    "V2-preference-00471": [
+      -21.03376007080078,
+      -20.18675994873047
+    ],
+    "V2-preference-00686": [
+      -14.589073181152344,
+      -29.91655158996582
+    ],
+    "V2-preference-00312": [
+      -18.872905731201172,
+      -16.240554809570312
+    ],
+    "V2-preference-00017": [
+      -20.31357192993164,
+      -16.874996185302734
+    ],
+    "V2-preference-00412": [
+      -8.614479064941406,
+      -23.193309783935547
+    ],
+    "V2-preference-00116": [
+      -63.76011276245117,
+      -16.329586029052734
+    ],
+    "V2-preference-00094": [
+      -57.590301513671875,
+      -49.32244873046875
+    ],
+    "V2-preference-00250": [
+      -58.332645416259766,
+      -22.360591888427734
+    ],
+    "V2-preference-01169": [
+      -28.1916446685791,
+      -35.560089111328125
+    ],
+    "V2-preference-00244": [
+      -9.146307945251465,
+      -32.54043960571289
+    ],
+    "V2-preference-00677": [
+      -88.08025360107422,
+      -95.08380126953125
+    ],
+    "V2-preference-01356": [
+      -12.831892013549805,
+      -12.629108428955078
+    ],
+    "V2-preference-00489": [
+      -44.60902786254883,
+      -11.418815612792969
+    ],
+    "V2-preference-00016": [
+      -35.901573181152344,
+      -11.416994094848633
+    ],
+    "V2-preference-00432": [
+      -15.651991844177246,
+      -22.46495819091797
+    ],
+    "V2-preference-00358": [
+      -80.4654541015625,
+      -82.73999786376953
+    ],
+    "V2-preference-00438": [
+      -19.841205596923828,
+      -19.070575714111328
+    ],
+    "V2-preference-00401": [
+      -34.33323287963867,
+      -18.642398834228516
+    ],
+    "V2-preference-00316": [
+      -8.699268341064453,
+      -33.40470504760742
+    ],
+    "V2-preference-00371": [
+      -27.49357795715332,
+      -51.246917724609375
+    ],
+    "V2-preference-00454": [
+      -48.53848648071289,
+      -48.70289611816406
+    ],
+    "V2-preference-00450": [
+      -119.86412811279297,
+      -119.66339874267578
+    ],
+    "V2-preference-00095": [
+      -22.68096160888672,
+      -16.299640655517578
+    ],
+    "V2-preference-00862": [
+      -78.55022430419922,
+      -70.12123107910156
+    ],
+    "V2-preference-00574": [
+      -19.9776611328125,
+      -29.185842514038086
+    ],
+    "V2-preference-00124": [
+      -15.244574546813965,
+      -16.147724151611328
+    ],
+    "V2-preference-00235": [
+      -42.70964813232422,
+      -37.145408630371094
+    ],
+    "V2-preference-00385": [
+      -19.35199737548828,
+      -64.50564575195312
+    ],
+    "V2-preference-00089": [
+      -25.893062591552734,
+      -16.88998031616211
+    ],
+    "V2-preference-00165": [
+      -21.525955200195312,
+      -10.88222599029541
+    ],
+    "V2-preference-00636": [
+      -17.290725708007812,
+      -17.06232261657715
+    ],
+    "V2-preference-00388": [
+      -15.660484313964844,
+      -23.3231258392334
+    ],
+    "V2-preference-00118": [
+      -51.90715789794922,
+      -50.40629577636719
+    ],
+    "V2-preference-00090": [
+      -110.36648559570312,
+      -111.88351440429688
+    ],
+    "V2-preference-00232": [
+      -8.494214057922363,
+      -57.289695739746094
+    ],
+    "V2-preference-00114": [
+      -16.88679313659668,
+      -21.23513412475586
+    ],
+    "V2-preference-00079": [
+      -33.363014221191406,
+      -17.774402618408203
+    ],
+    "V2-preference-00033": [
+      -11.002021789550781,
+      -56.36548614501953
+    ],
+    "V2-preference-00866": [
+      -31.1756534576416,
+      -38.67399215698242
+    ],
+    "V2-preference-00542": [
+      -27.08860969543457,
+      -39.89982604980469
+    ],
+    "V2-preference-00092": [
+      -66.60228729248047,
+      -61.62885284423828
+    ],
+    "V2-preference-01048": [
+      -53.49705505371094,
+      -48.96104431152344
+    ],
+    "V2-preference-00135": [
+      -16.763519287109375,
+      -50.337772369384766
+    ],
+    "V2-preference-00159": [
+      -102.79621887207031,
+      -106.48341369628906
+    ],
+    "V2-preference-00161": [
+      -28.301551818847656,
+      -11.570352554321289
+    ],
+    "V2-preference-00292": [
+      -20.150793075561523,
+      -10.135807037353516
+    ],
+    "V2-preference-02018": [
+      -28.636018753051758,
+      -44.70030975341797
+    ],
+    "V2-preference-00104": [
+      -80.38665008544922,
+      -77.70547485351562
+    ],
+    "V2-preference-00022": [
+      -38.39310073852539,
+      -20.73935317993164
+    ],
+    "V2-preference-00443": [
+      -13.70787239074707,
+      -23.389892578125
+    ],
+    "V2-preference-00227": [
+      -81.98631286621094,
+      -83.172607421875
+    ],
+    "V2-preference-00331": [
+      -45.762142181396484,
+      -40.31401062011719
+    ],
+    "V2-preference-01162": [
+      -51.70087814331055,
+      -51.46206283569336
+    ],
+    "V2-preference-00261": [
+      -11.324892044067383,
+      -34.206172943115234
+    ]
+  }
+}

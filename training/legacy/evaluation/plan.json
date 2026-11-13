@@ -1,0 +1,163 @@
+{
+  "design_version": 1,
+  "seed": 20261104,
+  "generation": {
+    "sampling": false,
+    "beams": 1,
+    "max_new_tokens": 192,
+    "terminal_tokens": [
+      "<|im_end|>",
+      "tokenizer.eos_token_id (if distinct)"
+    ],
+    "additional_string_stop_rules": [],
+    "kv_cache": true,
+    "selection": "Minimum synthesis export line in each predeclared family/task/evidence stratum; independent of model outputs."
+  },
+  "input_hashes": {
+    "evaluation_jsonl_sha256": "ff9659902e511944cf74c41a9a5b6f8d13782701ab7d79d2a6ee06681b929d3f",
+    "candidate_ledger_sha256": "87edb1b8090905b83062a88c9cc1b0b3758c3fb35271629720647219bb6c7d60"
+  },
+  "serialization": "Same encode_prompt and encode_response as training/legacy/train.py. No prompt truncation or added system instruction. Generation begins after assistant prefix; NLL covers all response tokens including the terminal im_end.",
+  "generation_cases": [
+    {
+      "candidate_id": "C00088",
+      "export_line": 31,
+      "family": "snapshot",
+      "level": "基础",
+      "task": "diagnose",
+      "profile": "spreadsheet",
+      "evidence": "incorrect",
+      "prompt": "我是经常用电子表格做作业的大一学生，刚开始学 Python。\n这次练习的是赋值与更新（基础）\n学习目标：追踪更新前后两个整数变量的值\n\n```python\nseats = 15\ninitial = seats\nseats *= 2\nprint(initial)\n```\n\n我预测程序会打印：30\n\n请对照我的预测找出可能出错的那一步，说明依据，再给一题带答案的复测。"
+    },
+    {
+      "candidate_id": "C00798",
+      "export_line": 25,
+      "family": "snapshot",
+      "level": "基础",
+      "task": "quiz",
+      "profile": "spreadsheet",
+      "evidence": "none",
+      "prompt": "我是经常用电子表格做作业的大一学生，刚开始学 Python。\n这次练习的是赋值与更新（基础）\n学习目标：追踪更新前后两个整数变量的值\n\n```python\nscore = 50\nprevious = score\nscore -= 5\nprint(previous)\n```\n\n请把这段程序编成一份两小题的测验：先预测原题，再做变式。把题面和核对用的答案分开。"
+    },
+    {
+      "candidate_id": "C02114",
+      "export_line": 52,
+      "family": "split_join",
+      "level": "进阶",
+      "task": "coach",
+      "profile": "spreadsheet",
+      "evidence": "correct",
+      "prompt": "我是经常用电子表格做作业的大一学生，刚开始学 Python。\n这次练习的是拆分与拼接字符串（进阶）\n学习目标：识别 split、切片和 join 各做了什么\n\n```python\nline = 'code:read:note:type:quiz:loop'\nparts = line.split(':')\npicked = parts[:-1]\nprint('_'.join(picked))\n```\n\n我预测程序会打印：code_read_note_type_quiz\n\n我只有这一次预测可以参考。请评价它，说明接下来该验证什么，再给一道有答案的复测。"
+    },
+    {
+      "candidate_id": "C02172",
+      "export_line": 11,
+      "family": "split_join",
+      "level": "进阶",
+      "task": "explain",
+      "profile": "self_taught",
+      "evidence": "none",
+      "prompt": "我做过几道 Python 练习，习惯看运行结果再改，想练习先预测。\n请带我推一遍程序，说明真正的输出和关键依据，再给一道变式和参考答案。\n\n练习主题：拆分与拼接字符串（进阶）\n学习目标：识别 split、切片和 join 各做了什么\n\n```python\nline = 'time-unit-code-file-task-read'\nparts = line.split('-')\npicked = parts[1:]\nprint('|'.join(picked))\n```"
+    },
+    {
+      "candidate_id": "C00230",
+      "export_line": 21,
+      "family": "zip_pairs",
+      "level": "挑战",
+      "task": "quiz",
+      "profile": "blocks",
+      "evidence": "incorrect",
+      "prompt": "我能看懂积木程序的执行顺序，换成 Python 后容易看漏动作。\n请出两道预测输出题，以原程序为第一题，只改一个条件作为第二题。参考答案放到最后，讲解第一题的易错处。\n\n练习主题：zip 按位置配对（挑战）\n学习目标：识别不同长度列表中没有配对的末项\n\n```python\nleft = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)\n```\n\n我预测程序会打印：230"
+    },
+    {
+      "candidate_id": "C00812",
+      "export_line": 34,
+      "family": "zip_pairs",
+      "level": "挑战",
+      "task": "diagnose",
+      "profile": "math",
+      "evidence": "correct",
+      "prompt": "我数学基础还行，读代码时常凭公式直觉猜输出。\n请核对我的预测。如果值对了，请指出支撑它的关键证据；如果不对，说明可能错在哪里。再给一道有答案的复测。\n\n练习主题：zip 按位置配对（挑战）\n学习目标：识别不同长度列表中没有配对的末项\n\n```python\nleft = [9, 2, 25]\nright = [8, 43, 24, 7]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)\n```\n\n我预测程序会打印：111"
+    }
+  ],
+  "reference_nll_cases": [
+    "C01264",
+    "C00179",
+    "C02474",
+    "C01402",
+    "C00256",
+    "C01633",
+    "C01935",
+    "C02748",
+    "C00570",
+    "C00955",
+    "C02172",
+    "C00542",
+    "C00055",
+    "C00924",
+    "C00242",
+    "C00876",
+    "C01222",
+    "C01615",
+    "C00324",
+    "C01331",
+    "C00230",
+    "C00409",
+    "C00349",
+    "C00953",
+    "C00798",
+    "C00258",
+    "C00814",
+    "C00401",
+    "C00279",
+    "C00554",
+    "C00088",
+    "C00195",
+    "C00369",
+    "C00812",
+    "C01070",
+    "C00110",
+    "C00906",
+    "C01040",
+    "C00448",
+    "C00942",
+    "C00577",
+    "C01672",
+    "C00360",
+    "C01026",
+    "C00684",
+    "C02202",
+    "C00470",
+    "C00282",
+    "C00404",
+    "C00571",
+    "C01244",
+    "C02114",
+    "C00907",
+    "C00901",
+    "C00630",
+    "C02464",
+    "C00804",
+    "C02267",
+    "C00864",
+    "C00413"
+  ],
+  "report_examples_before_generation": [
+    "C00088",
+    "C02114",
+    "C00230"
+  ],
+  "metrics": {
+    "exact_main_tag": "One unmodified line beginning with 本题输出： and the exact reference value after it. This measures literal format/reference agreement.",
+    "main_fact": "correct/wrong/unresolved: use an explicit output anchor and one unambiguous simple value; alternatively a standalone answer; no substring searching for reference numbers. Other outputs remain unresolved, not factual errors.",
+    "followup": "The prompt requests a new exercise, not the supplied reference exercise. Score reference answer only when the generated response contains that exact follow-up question or its program. Otherwise mark different_or_unverified; alternate exercises are judged qualitatively.",
+    "reference_nll": "Microaverage negative log probability over all reference-answer tokens (including im_end) across the 60 held-out prompts under teacher forcing. Auxiliary likelihood, not free-generation accuracy.",
+    "truncation": "Record stop reason, EOS token and generated length, nonempty output, and repeated-token-4gram fraction as descriptive generation diagnostics."
+  },
+  "qualitative_rubric": {
+    "task_fit": "0=no recognizable response to the requested teaching task; 1=partially fulfills it; 2=fulfills its specified parts with case-specific evidence.",
+    "reasoning": "0=no useful account of the given code, or contradicts its execution; 1=partial correct causal account; 2=correct case-specific account of the step determining the result.",
+    "followup": "0=absent, unrelated, or materially incorrect; 1=relevant but incomplete or not checkable from the response; 2=usable related exercise with a correct checkable answer. A valid alternative exercise is allowed.",
+    "scope": "Qualitative review requires reading the raw answer, requested task and reference; generation metrics do not assign these scores. Mark ambiguous observations explicitly."
+  }
+}

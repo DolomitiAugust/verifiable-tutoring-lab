@@ -1,0 +1,380 @@
+{
+  "results_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded",
+  "reviewer": "Codex independent review (not a teacher blind review)",
+  "review_date": "2026-11-07",
+  "scope": "逐条阅读11轮完整最终回答、独立参考、冻结标准及33条原始角色回复；评审者为参与预登记设计的Codex代理，不是人类教师或盲评。只评本次已观测文本，不推断真实学习效果。",
+  "interpretation_notes": [
+    "评分按教学语义，不要求逐字命中参考；有效不同变式允许。对缺失或违反具体请求的部分分别记录，不能仅因工具输出正确就判教学完成。",
+    "11轮最终回答全部为verified_template，llm_used均false；任何成功归因于执行、规则呈现和SQLite记忆，不归因于模型角色协作改善。",
+    "C03预登记理由中的“training曾认可range/配对误答”有措辞误差：training自由生成实际测的是赋值、字符串和zip，没有range题。该原文已冻结未改；此处只采用training赋值/配对失败作为跨概念风险推测，不声称已有range实测。",
+    "C05新题和C06对照题具备有效程序与正确答案，但解释完整性属于定性判断，已保留原文供主代理复核；未以这些预期partial案例凑意外失败。"
+  ],
+  "cases": [
+    {
+      "case_id": "tutor-C01",
+      "criteria": [
+        {
+          "id": "diagnosis",
+          "score": 2,
+          "reason": "回答先明确本次预测不同，再在第2行指出实际取值2、4、6且不含8，并列出累计2、6、12。结合题干已说明“把8加进去”的预测，这已准确定位错误，不要求再逐字重复评分句。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C01-T1",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出不同。下面核对真正改变结果的步骤。"
+            },
+            {
+              "turn_id": "tutor-C01-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：range(2, 8, 2) 实际取值 [2, 4, 6]；终点 8 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-C01-T1",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=12，n=6。"
+            }
+          ]
+        },
+        {
+          "id": "followup",
+          "score": 2,
+          "reason": "完整给出只把终点改为10的合法程序，并单独给出20；与独立参考相同。变式由输入公开提供、执行器核对，不能称为模型自行创作。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C01-T1",
+              "field": "final.text",
+              "text": "for n in range(2, 10, 2):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-C01-T1",
+              "field": "final.text",
+              "text": "复测参考输出：20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C02",
+      "criteria": [
+        {
+          "id": "correct_feedback",
+          "score": 2,
+          "reason": "明确认可本次yh，准确给出下标1、3；全文没有把一次作答外推为掌握，也未臆造本次错误。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C02-T1",
+              "field": "final.text",
+              "text": "你的这次预测与程序实际输出一致。"
+            },
+            {
+              "turn_id": "tutor-C02-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：word[1:5:2] 取下标 [1, 3]，得到 'yh'。"
+            }
+          ]
+        },
+        {
+          "id": "followup",
+          "score": 2,
+          "reason": "复测把起点和终点改为0、6，保留步长2，完整程序和pto正确。该程序为公开给定变式，贡献归于核验和呈现。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C02-T1",
+              "field": "final.text",
+              "text": "print(word[0:6:2])"
+            },
+            {
+              "turn_id": "tutor-C02-T1",
+              "field": "final.text",
+              "text": "复测参考输出：pto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C03",
+      "criteria": [
+        {
+          "id": "memory_use",
+          "score": 2,
+          "reason": "重建system后确实取回C01对应episode，原样引用学生“把8加进去”的旧错误；又明确指出当前终点9排除，不是空泛地声称用了记录。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "你写的预测是 '20'，核验输出为 '12'。当时你的原话是「我把 8 也加进去了，所以猜 20」。"
+            },
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：range(3, 9, 3) 实际取值 [3, 6]；终点 9 不包含在内。"
+            }
+          ]
+        },
+        {
+          "id": "current_reasoning",
+          "score": 2,
+          "reason": "当前输出9和学生预测被准确核对，累计值3→9展示3+6；历史错误与本次正确没有混淆。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "本题输出：9\n\n你的这次预测与程序实际输出一致。"
+            },
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=3，n=3。\n第 3 行（主程序）：total=9，n=6。"
+            }
+          ]
+        },
+        {
+          "id": "followup",
+          "score": 2,
+          "reason": "给出同概念range(3,12,3)完整复测和答案18，正确且可核对；为公开给定程序。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "for n in range(3, 12, 3):\n    total += n\nprint(total)"
+            },
+            {
+              "turn_id": "tutor-C03-T1",
+              "field": "final.text",
+              "text": "复测参考输出：18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C04",
+      "criteria": [
+        {
+          "id": "identity",
+          "score": 2,
+          "reason": "检查最终全文未把旧学生的预测或背景归给新学生；memory.before.topics和retrieved均为空，支持这次同名主题的身份隔离。这里只证明该测试情形，不证明所有跨学生安全性。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C04-T1",
+              "field": "final.text",
+              "text": "本题输出：12\n\n这次未提供预测，因此不记录为作答正确或错误。"
+            }
+          ]
+        },
+        {
+          "id": "unanswered",
+          "score": 2,
+          "reason": "明确说明未提供预测；after中attempts/correct/incorrect均0，unanswered为1，没有把系统答案记成学生正确或掌握。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C04-T1",
+              "field": "final.text",
+              "text": "这次未提供预测，因此不记录为作答正确或错误。"
+            }
+          ]
+        },
+        {
+          "id": "explanation_followup",
+          "score": 2,
+          "reason": "原题有2、4、6的取值和累计12，并给出终点10的完整复测及20；请求已完成。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C04-T1",
+              "field": "final.text",
+              "text": "第 2 行（主程序）：range(2, 8, 2) 实际取值 [2, 4, 6]；终点 8 不包含在内。"
+            },
+            {
+              "turn_id": "tutor-C04-T1",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：total=12，n=6。"
+            },
+            {
+              "turn_id": "tutor-C04-T1",
+              "field": "final.text",
+              "text": "复测参考输出：20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C05",
+      "criteria": [
+        {
+          "id": "evidence_based_progression",
+          "score": 2,
+          "reason": "前三轮真实预测分别6、12、18均核验正确；第4轮建议进阶→挑战，证据指向前3个episode。after仍correct=3/attempts=3，只新增unanswered=1，并明确不作掌握结论。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "这只是作答证据，不等于掌握结论。"
+            },
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "这次未提供预测，因此不记录为作答正确或错误。"
+            },
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "最近三次已核验学生预测均正确，可建议提高一级；最高级保持。"
+            }
+          ]
+        },
+        {
+          "id": "actual_harder_exercise",
+          "score": 1,
+          "reason": "确实给出含range和奇偶判断的新结构及正确输出15，满足结构升级；但解释止于变换说明“只累加奇数”，没有说明新range内哪些值通过条件以及为何合计15。按本条要求的程序、输出和解释，程序与输出完整，针对新题结果的解释仍不充分；不因与参考变式不同而扣分。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "复测题：保持 range 的起点和终点，把步长改为 1，并增加条件：只累加奇数。"
+            },
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "for practice_item in range(2, 8, 1):\n    if practice_item % 2 == 1:\n        practice_total += practice_item"
+            },
+            {
+              "turn_id": "tutor-C05-T4",
+              "field": "final.text",
+              "text": "复测参考输出：15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C06",
+      "criteria": [
+        {
+          "id": "causal_state",
+          "score": 1,
+          "reason": "逐行状态正确，且明确指出left与alias共享容器；append后copy未变也清楚可见。但切片仅描述取下标得到值，没有明确说明它创建独立列表，因而“为什么只有两者受影响”的对象分离原因尚不完整。此处不是输出错误。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C06-T1",
+              "field": "final.text",
+              "text": "第 3 行（主程序）：left[:] 取下标 [0, 1]，得到 [1, 2]；left 与 alias 指向同一容器。"
+            },
+            {
+              "turn_id": "tutor-C06-T1",
+              "field": "final.text",
+              "text": "第 4 行（主程序）：[1, 2].append(3) 后，left=[1, 2, 3]，alias=[1, 2, 3]，copy=[1, 2]；方法返回 None；left 与 alias 指向同一容器。"
+            }
+          ]
+        },
+        {
+          "id": "conceptual_followup",
+          "score": 1,
+          "reason": "常量变式仍保留别名与复制的对照，完整程序和输出正确；不因只改数值或未照抄参考而判无效。但仅说明把1改2，没有给新题中copy不跟随append变化的原因，未完整交付所请求的原因说明。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C06-T1",
+              "field": "final.text",
+              "text": "复测题：只把原第 1 行的 1 改为 2，其余不变。"
+            },
+            {
+              "turn_id": "tutor-C06-T1",
+              "field": "final.text",
+              "text": "left = [2, 2]\nalias = left\ncopy = left[:]\nalias.append(3)\nprint((left, copy))"
+            },
+            {
+              "turn_id": "tutor-C06-T1",
+              "field": "final.text",
+              "text": "复测参考输出：([2, 2, 3], [2, 2])"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C07",
+      "criteria": [
+        {
+          "id": "default_lifetime",
+          "score": 2,
+          "reason": "明确说明定义时默认参数只求值一次；第一调用后列表[1]在第二调用开始仍存在，末尾又说明a、b共享容器，足以推翻“每次新建”的误解，输出正确。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C07-T1",
+              "field": "final.text",
+              "text": "第 1 行（主程序）：定义函数；默认参数此时求值一次，保存为 [[]]。"
+            },
+            {
+              "turn_id": "tutor-C07-T1",
+              "field": "final.text",
+              "text": "第 5 行（函数内）：out=[1]，x=2。"
+            },
+            {
+              "turn_id": "tutor-C07-T1",
+              "field": "final.text",
+              "text": "第 5 行（主程序）：a=[1, 2]，b=[1, 2]；a 与 b 指向同一容器。"
+            }
+          ]
+        },
+        {
+          "id": "repair_followup",
+          "score": 0,
+          "reason": "最终回答结束于原程序打印，没有修复练习和答案。trace中request_policy.wants_followup=false、tool.followup=null：直接可观察原因是规则未识别较长的“再给一道…修复练习”请求。没有生成常量修复，不把未发生的生成或模型修复能力当成实测失败。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C07-T1",
+              "field": "final.text",
+              "text": "第 6 行（主程序）：打印 '([1, 2], [1, 2])'；a 与 b 指向同一容器。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C08",
+      "criteria": [
+        {
+          "id": "pairwise_diagnosis",
+          "score": 2,
+          "reason": "列出全部五对、末尾18未配对，并逐轮展示对应a、b和累计16、56、108、162、212，准确纠正230。虽然没有另列五个独立对和，逐对累计形式给出等价核对依据，不以固定措辞或数字排版扣分。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C08-T1",
+              "field": "final.text",
+              "text": "第 4 行（主程序）：zip 的输入长度为 [6, 5]，实际配对 [(9, 7), (24, 16), (17, 35), (32, 22), (6, 44)]；未配对尾项 [[18], []]。"
+            },
+            {
+              "turn_id": "tutor-C08-T1",
+              "field": "final.text",
+              "text": "total=212，a=6，b=44。"
+            }
+          ]
+        },
+        {
+          "id": "constrained_followup",
+          "score": 0,
+          "reason": "请求明确要求只给右列表补一个数形成第六对，实际改的是累加初值0→1，右列表仍5项。输出213对这个新程序是正确的，但没有满足指定变式条件；失败是任务约束未落实，非算错，也不是与唯一参考程序不同就失败。",
+          "quotes": [
+            {
+              "turn_id": "tutor-C08-T1",
+              "field": "final.text",
+              "text": "复测题：只把原第 3 行的 0 改为 1，其余不变。"
+            },
+            {
+              "turn_id": "tutor-C08-T1",
+              "field": "final.text",
+              "text": "right = [7, 16, 35, 22, 44]\ntotal = 1"
+            },
+            {
+              "turn_id": "tutor-C08-T1",
+              "field": "final.text",
+              "text": "复测参考输出：213"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

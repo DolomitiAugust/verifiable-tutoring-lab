@@ -1,0 +1,85 @@
+{
+  "source_review_sha256": "22a78c66d341f6661d38d2fbd6973592318c469812752d485db2f476ea477e18",
+  "summary": {
+    "base": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 24
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 18,
+        "correct": 3,
+        "wrong": 3
+      },
+      "explanation_status_counts": {
+        "wrong": 6,
+        "absent": 16,
+        "correct": 2
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-15"
+      ],
+      "eos_count": 7
+    },
+    "sft": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 19,
+        "wrong": 5
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 3,
+        "wrong": 20,
+        "correct": 1
+      },
+      "explanation_status_counts": {
+        "wrong": 23,
+        "absent": 1
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-12"
+      ],
+      "eos_count": 1
+    },
+    "dpo": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 20,
+        "wrong": 4
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 17,
+        "wrong": 7
+      },
+      "explanation_status_counts": {
+        "wrong": 15,
+        "absent": 8,
+        "correct": 1
+      },
+      "correct_output_with_wrong_explanation": [],
+      "eos_count": 1
+    },
+    "continued_sft": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "wrong": 11,
+        "unresolved": 13
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 4,
+        "wrong": 19,
+        "correct": 1
+      },
+      "explanation_status_counts": {
+        "wrong": 20,
+        "unresolved": 2,
+        "absent": 2
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-12"
+      ],
+      "eos_count": 0
+    }
+  },
+  "caution": "Unresolved is not wrong; a correct main value does not establish correct explanation, task completion, or learning benefit."
+}

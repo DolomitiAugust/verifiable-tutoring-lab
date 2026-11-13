@@ -1,0 +1,41 @@
+{
+  "kind": "Post-hoc effective-LoRA-update interpolation, no optimizer/training.",
+  "equation": "DeltaW(lambda) = (1-lambda)*DeltaW_SFT + lambda*DeltaW_DPO at each Q/V projection",
+  "fractions": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    1.0
+  ],
+  "selection": "minimum full-reference micro NLL on all 36 dev rows; tie within 1e-6 favors smaller fraction",
+  "pilot_ids": [
+    "V2-dev-00001",
+    "V2-dev-00004",
+    "V2-dev-00011",
+    "V2-dev-00008",
+    "V2-dev-00003",
+    "V2-dev-00006"
+  ],
+  "pilot_penalties": [
+    1.0,
+    1.08
+  ],
+  "max_new_tokens": 192,
+  "pilot_rule": "Inspect full text, explanation facts and unresolved outputs; fewer repetitions/EOS alone never counts as a fix. Stop if pilot has clear factual/teaching failures; no test-set tuning.",
+  "scope": "Exploratory after both prior tests were seen; dev has only 4 AST structures. Not blind and not independent confirmation.",
+  "inputs": {
+    "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\checkpoints\\selected_sft.pt": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+    "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\retry_results\\runs\\dpo\\adapter.pt": "c0f8e804afed3169ea42da1a9e90323c0bfd24ee9210778d2ad3b5543f2c2f31",
+    "synthesis\\data\\legacy\\dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "synthesis\\data\\legacy\\dev_metadata.jsonl": "233b27b37abf463842ea007b55faeb20d5b90c3e38d2ecd756c585417a3884fc",
+    "training\\remediation_20261108\\run_rescue.py": "c3c121c163ca0553ed302783ea64fbeabb151b61d310e8ae2dba10fff6864829",
+    "training\\train.py": "437a0fca48989f89d98d8ac1dcc2cc01710c324dd455a530912fbf5fc0d552cf",
+    "training\\evaluate.py": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+    "training\\data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+    "training\\base_source.json": "91f305f1cb609f87b9e1e04a6c96c8aa06c941c28d5b86c9c13a73098502b938"
+  },
+  "device": "cpu",
+  "threads": 4,
+  "seed": 20261108
+}

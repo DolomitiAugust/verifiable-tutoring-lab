@@ -1,0 +1,22 @@
+{\centering
+\vspace*{4mm}
+{\fontsize{22}{29}\selectfont\bfseries Verifiable Tutoring Lab\par}
+\vspace{3mm}{\large Executable Data, Preference Tuning, and Learner Memory\par}
+\vspace{4mm}{\small Research Report\quad 13 November 2026\par}
+}
+\vspace{6mm}
+\noindent\textbf{Abstract}\quad
+This project studies an educational language agent for introductory university Python. It connects executable data synthesis, post-training, verifiable tutoring memory and a conditional business case. The revised dataset contains 1,000 supervised demonstrations and 500 preference pairs, with separate development and evaluation records. Rule-based generation and execution checks support traceability, but do not establish instructional quality or real-student learning.
+
+The official Qwen2.5-0.5B base underwent genuine SFT followed by DPO, with a continued-SFT control. Both cloud runs are preserved. In the exploratory retry, SFT and DPO produced correct primary values on only three and four of 24 natural-language questions, respectively, often with false explanations. DPO raised reference NLL from 3.587 to 6.615. Bounded remediation did not restore reliable teaching, and further experimentation stopped.
+
+A simplified OpenMAIC-inspired controller uses three prompted roles, executable evidence and persistent SQLite memory. Two above-expectation successes and two unexpected failures reveal the benefits of identity-scoped retrieval and the limits of constrained exercise generation and empty-answer bookkeeping. Later repairs and cloud-checkpoint linkage are reported separately; tool fallback is not credited as model reasoning. The commercial analysis compares CodeGrade and Khanmigo and quantifies review-cost sensitivity. Demand, learning gains and willingness to pay remain unobserved.
+
+The study retains its unsuccessful outcomes and separates executable checks, model behavior, and conditional commercial scenarios. Recorded evidence and reproducible source accompany the report.
+
+\medskip\noindent\textbf{Keywords:} educational agents; synthetic data; SFT; DPO; verifiable memory; commercial feasibility.
+
+\begin{center}
+\includegraphics[width=0.46\linewidth]{../../assets/en/roles-memory-concept.png}\par
+{\scriptsize Conceptual role-and-memory artwork, AI-generated; not an experimental result.}
+\end{center}

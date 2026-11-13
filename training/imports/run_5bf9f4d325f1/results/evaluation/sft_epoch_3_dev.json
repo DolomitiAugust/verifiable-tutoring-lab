@@ -1,0 +1,473 @@
+{
+  "version": 2,
+  "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+  "adapter_sha256": "97e9f37e9f03d837229159aea6598172fe9f8a7d4d67f0423d567e5b986a93ac",
+  "adapter_stage": "sft",
+  "adapter_step": 3000,
+  "parent_sft_sha256": null,
+  "source_sha256": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+  "inputs_sha256": {
+    "/content/nlpproject1_v2/synthesis/data/legacy/dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "/content/nlpproject1_v2/synthesis/data/legacy/dev_metadata.jsonl": "233b27b37abf463842ea007b55faeb20d5b90c3e38d2ecd756c585417a3884fc"
+  },
+  "protocol": {
+    "generation_limit": 0,
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "reference_truncation": false,
+    "preference_note": "Sequence likelihood preference is length-sensitive; not a human preference judgement.",
+    "automatic_fact_note": "Unresolved extractions are not factual errors or zero accuracy."
+  },
+  "summary": {
+    "reference_nll": 3.3793597071511403,
+    "reference_cases": 36,
+    "reference_tokens": 1400,
+    "generation_cases": 0,
+    "stop_counts": {},
+    "preference_pairs": 0,
+    "raw_preference_accuracy": null
+  },
+  "reference_nll": [
+    {
+      "candidate_id": "V2-dev-00001",
+      "logp_sum": [
+        -8.529218673706055
+      ],
+      "response_tokens": [
+        6
+      ],
+      "mean_nll": [
+        1.4215364456176758
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00002",
+      "logp_sum": [
+        -295.0000915527344
+      ],
+      "response_tokens": [
+        46
+      ],
+      "mean_nll": [
+        6.413045468537704
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00006",
+      "logp_sum": [
+        -88.93367767333984
+      ],
+      "response_tokens": [
+        73
+      ],
+      "mean_nll": [
+        1.218269557169039
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00015",
+      "logp_sum": [
+        -105.82965850830078
+      ],
+      "response_tokens": [
+        82
+      ],
+      "mean_nll": [
+        1.2906055915646437
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00004",
+      "logp_sum": [
+        -136.76365661621094
+      ],
+      "response_tokens": [
+        40
+      ],
+      "mean_nll": [
+        3.4190914154052736
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00005",
+      "logp_sum": [
+        -278.4866943359375
+      ],
+      "response_tokens": [
+        46
+      ],
+      "mean_nll": [
+        6.054058572520381
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00003",
+      "logp_sum": [
+        -14.929384231567383
+      ],
+      "response_tokens": [
+        8
+      ],
+      "mean_nll": [
+        1.8661730289459229
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00017",
+      "logp_sum": [
+        -167.40731811523438
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        4.0831053198837655
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00010",
+      "logp_sum": [
+        -136.99070739746094
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        3.3412367657917303
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00011",
+      "logp_sum": [
+        -10.403280258178711
+      ],
+      "response_tokens": [
+        6
+      ],
+      "mean_nll": [
+        1.7338800430297852
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00013",
+      "logp_sum": [
+        -175.23118591308594
+      ],
+      "response_tokens": [
+        49
+      ],
+      "mean_nll": [
+        3.576146651287468
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00051",
+      "logp_sum": [
+        -108.21060180664062
+      ],
+      "response_tokens": [
+        51
+      ],
+      "mean_nll": [
+        2.1217765060125613
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00008",
+      "logp_sum": [
+        -180.51040649414062
+      ],
+      "response_tokens": [
+        34
+      ],
+      "mean_nll": [
+        5.3091296027688415
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00021",
+      "logp_sum": [
+        -166.66357421875
+      ],
+      "response_tokens": [
+        80
+      ],
+      "mean_nll": [
+        2.083294677734375
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00014",
+      "logp_sum": [
+        -9.52763843536377
+      ],
+      "response_tokens": [
+        6
+      ],
+      "mean_nll": [
+        1.587939739227295
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00057",
+      "logp_sum": [
+        -101.61007690429688
+      ],
+      "response_tokens": [
+        50
+      ],
+      "mean_nll": [
+        2.0322015380859373
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00009",
+      "logp_sum": [
+        -101.39125061035156
+      ],
+      "response_tokens": [
+        55
+      ],
+      "mean_nll": [
+        1.8434772838245739
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00023",
+      "logp_sum": [
+        -176.99461364746094
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        4.316941796279535
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00024",
+      "logp_sum": [
+        -15.136547088623047
+      ],
+      "response_tokens": [
+        7
+      ],
+      "mean_nll": [
+        2.1623638698032925
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00032",
+      "logp_sum": [
+        -271.6778564453125
+      ],
+      "response_tokens": [
+        46
+      ],
+      "mean_nll": [
+        5.906040357506794
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00012",
+      "logp_sum": [
+        -99.8136978149414
+      ],
+      "response_tokens": [
+        40
+      ],
+      "mean_nll": [
+        2.4953424453735353
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00029",
+      "logp_sum": [
+        -177.18881225585938
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        4.321678347703887
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00027",
+      "logp_sum": [
+        -20.240272521972656
+      ],
+      "response_tokens": [
+        7
+      ],
+      "mean_nll": [
+        2.891467503138951
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00035",
+      "logp_sum": [
+        -287.4076232910156
+      ],
+      "response_tokens": [
+        46
+      ],
+      "mean_nll": [
+        6.247991810674253
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00018",
+      "logp_sum": [
+        -104.73905181884766
+      ],
+      "response_tokens": [
+        43
+      ],
+      "mean_nll": [
+        2.435791902763899
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00038",
+      "logp_sum": [
+        -10.692337036132812
+      ],
+      "response_tokens": [
+        6
+      ],
+      "mean_nll": [
+        1.782056172688802
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00030",
+      "logp_sum": [
+        -163.17626953125
+      ],
+      "response_tokens": [
+        82
+      ],
+      "mean_nll": [
+        1.9899545064786586
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00077",
+      "logp_sum": [
+        -175.30540466308594
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        4.2757415771484375
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00020",
+      "logp_sum": [
+        -184.1978759765625
+      ],
+      "response_tokens": [
+        35
+      ],
+      "mean_nll": [
+        5.262796456473215
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00033",
+      "logp_sum": [
+        -16.476167678833008
+      ],
+      "response_tokens": [
+        8
+      ],
+      "mean_nll": [
+        2.059520959854126
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00036",
+      "logp_sum": [
+        -178.47653198242188
+      ],
+      "response_tokens": [
+        68
+      ],
+      "mean_nll": [
+        2.6246548820944393
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00098",
+      "logp_sum": [
+        -174.3820037841797
+      ],
+      "response_tokens": [
+        41
+      ],
+      "mean_nll": [
+        4.2532196044921875
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00026",
+      "logp_sum": [
+        -177.0187225341797
+      ],
+      "response_tokens": [
+        34
+      ],
+      "mean_nll": [
+        5.206433015711167
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00039",
+      "logp_sum": [
+        -15.231160163879395
+      ],
+      "response_tokens": [
+        7
+      ],
+      "mean_nll": [
+        2.175880023411342
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00041",
+      "logp_sum": [
+        -284.74664306640625
+      ],
+      "response_tokens": [
+        47
+      ],
+      "mean_nll": [
+        6.058439214178857
+      ]
+    },
+    {
+      "candidate_id": "V2-dev-00060",
+      "logp_sum": [
+        -111.78357696533203
+      ],
+      "response_tokens": [
+        46
+      ],
+      "mean_nll": [
+        2.4300777601159136
+      ]
+    }
+  ],
+  "generation": [],
+  "preferences": [],
+  "runtime": {
+    "device": "cuda",
+    "dtype": "float32",
+    "torch": "2.14.1+cu130",
+    "seconds": 19.655232139999953
+  }
+}

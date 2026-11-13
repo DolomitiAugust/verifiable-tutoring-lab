@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    {
+      "epoch": 1,
+      "checkpoint": "/content/nlpproject1_v2/retry_results/checkpoints/sft_epoch_1.pt",
+      "checkpoint_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+      "dev_nll": 2.8672262069157193
+    },
+    {
+      "epoch": 2,
+      "checkpoint": "/content/nlpproject1_v2/retry_results/checkpoints/sft_epoch_2.pt",
+      "checkpoint_sha256": "572c360ebe7dcf64e060f640754a1ab8f4c74c5a89ed981e5fc51ad79f978918",
+      "dev_nll": 3.3245308780670166
+    },
+    {
+      "epoch": 3,
+      "checkpoint": "/content/nlpproject1_v2/retry_results/checkpoints/sft_epoch_3.pt",
+      "checkpoint_sha256": "535fc40b8b4953cd52930101e766c53b529d75c9aad7a2388f5622235bf8e0bd",
+      "dev_nll": 3.629325201170785
+    }
+  ],
+  "selected": {
+    "epoch": 1,
+    "checkpoint": "/content/nlpproject1_v2/retry_results/checkpoints/sft_epoch_1.pt",
+    "checkpoint_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+    "dev_nll": 2.8672262069157193
+  }
+}

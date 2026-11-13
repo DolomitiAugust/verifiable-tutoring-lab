@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "train.py": "437a0fca48989f89d98d8ac1dcc2cc01710c324dd455a530912fbf5fc0d552cf",
+    "evaluate.py": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+    "data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+    "base_source.json": "91f305f1cb609f87b9e1e04a6c96c8aa06c941c28d5b86c9c13a73098502b938",
+    "run_retry.py": "33f7eaefbd9488a13bdc32bd9ac9634b9bebef3381e5ff452bee63f7a0a36906"
+  },
+  "dataset": {
+    "audit/candidates.jsonl": "c3f13d0416c69c17514602651bd1f8cda7261cf67a3641b0bd1a7064f05b2d62",
+    "dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "dev_metadata.jsonl": "233b27b37abf463842ea007b55faeb20d5b90c3e38d2ecd756c585417a3884fc",
+    "evaluation.jsonl": "ff9659902e511944cf74c41a9a5b6f8d13782701ab7d79d2a6ee06681b929d3f",
+    "independent_test.jsonl": "86b1376a7b55515c5fcd57a6b0018900aa48c4cb78fd2301f321468cc896c54d",
+    "independent_test_metadata.jsonl": "d683c7fad438ff15094b2c8c039afbe3f8c9eb687eb9b93d0cf2f24411382c04",
+    "preference.jsonl": "72ebaac846744c05b7cffb52879fd3f050805dbcdc8b7614d734eb87ffdb80f1",
+    "preference_eval.jsonl": "49561cf8a17af7dd4355ec9d6147945d0fd3b8fdad3ee6a07428168c97be6e34",
+    "preference_eval_metadata.jsonl": "6949d78db15c715b4a23cb3fdbf05a0fdcda616a0cc433e19adb75abada97b39",
+    "sft.jsonl": "b76286fa1f0ce5750caf7f7b99dc8ec49e3390b37661e026290c83373d8b3b12",
+    "stats.json": "a0fef9a824cd214ee57fafc2fb8223586c9e769289a978c065177c763d80a649",
+    "split_manifest.json": "dba0a36d7cb4b2f4455ddb1283b877dc321fd6cd538bc1da3da8226c1593392c",
+    "independent_test_manifest.json": "3daf0da01beee624512a3dcb90d78c701650b8bfda351a232d674246b128e20e"
+  },
+  "model_files": {
+    "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+    "config.json": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+  },
+  "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+  "model_revision": "e332bac62ed3c70fed5412a1cb5883c36efc4015",
+  "plan_sha256": "45186c543c2a9f8b2d0e81f916a1c3849e970206a73874341b01b97f198dd85a"
+}

@@ -1,0 +1,187 @@
+{
+  "version": "synthesis-v2",
+  "seed": 2026110701,
+  "heldout_families": [
+    "snapshot",
+    "split_join",
+    "zip_pairs"
+  ],
+  "development_families": [
+    "boolean_logic",
+    "string_count",
+    "while_counter"
+  ],
+  "training_families": [
+    "accumulate",
+    "alias",
+    "any_all",
+    "boundary",
+    "branch_order",
+    "default_arg",
+    "dict_comprehension",
+    "dictionary",
+    "division",
+    "enumerate",
+    "filter",
+    "function_return",
+    "index",
+    "list_comprehension",
+    "loop_control",
+    "loop_else",
+    "nested_pairs",
+    "precedence",
+    "range_sum",
+    "recursion",
+    "set_unique",
+    "slice",
+    "sorted_key",
+    "unpack"
+  ],
+  "authorship": "Codex-authored deterministic programs and templates; no external model API, teacher ratings or student observations.",
+  "candidate_count": 8240,
+  "decisions": {
+    "selected": 1560,
+    "overlapping_program": 629,
+    "same_output_transfer": 65,
+    "quota_surplus": 5850,
+    "evaluation_only": 136
+  },
+  "selected": {
+    "evaluation": {
+      "count": 60,
+      "families": {
+        "split_join": 20,
+        "snapshot": 20,
+        "zip_pairs": 20
+      },
+      "tasks": {
+        "coach": 15,
+        "explain": 16,
+        "quiz": 13,
+        "diagnose": 16
+      },
+      "program_structures": 18,
+      "response_chars_median": 365.0
+    },
+    "sft": {
+      "count": 1000,
+      "families": {
+        "accumulate": 42,
+        "alias": 42,
+        "any_all": 41,
+        "boundary": 41,
+        "branch_order": 42,
+        "dict_comprehension": 42,
+        "dictionary": 42,
+        "division": 41,
+        "default_arg": 42,
+        "enumerate": 42,
+        "filter": 41,
+        "loop_control": 42,
+        "function_return": 41,
+        "index": 42,
+        "list_comprehension": 42,
+        "loop_else": 41,
+        "nested_pairs": 42,
+        "range_sum": 42,
+        "recursion": 41,
+        "unpack": 42,
+        "precedence": 42,
+        "set_unique": 42,
+        "slice": 42,
+        "sorted_key": 41
+      },
+      "tasks": {
+        "diagnose": 250,
+        "explain": 250,
+        "transfer": 250,
+        "predict": 250
+      },
+      "program_structures": 145,
+      "response_chars_median": 65.0
+    },
+    "preference": {
+      "count": 500,
+      "families": {
+        "accumulate": 21,
+        "alias": 21,
+        "enumerate": 22,
+        "boundary": 21,
+        "dictionary": 22,
+        "division": 21,
+        "dict_comprehension": 21,
+        "loop_control": 21,
+        "recursion": 21,
+        "branch_order": 22,
+        "filter": 21,
+        "default_arg": 21,
+        "set_unique": 22,
+        "loop_else": 21,
+        "unpack": 21,
+        "index": 22,
+        "nested_pairs": 21,
+        "slice": 21,
+        "list_comprehension": 21,
+        "precedence": 22,
+        "function_return": 21,
+        "any_all": 11,
+        "sorted_key": 21,
+        "range_sum": 21
+      },
+      "tasks": {
+        "explain": 129,
+        "predict": 128,
+        "diagnose": 121,
+        "transfer": 122
+      },
+      "program_structures": 121,
+      "response_chars_median": 64.0
+    },
+    "dev": {
+      "count": 36,
+      "families": {
+        "boolean_logic": 4,
+        "string_count": 16,
+        "while_counter": 16
+      },
+      "tasks": {
+        "predict": 9,
+        "diagnose": 9,
+        "explain": 9,
+        "transfer": 9
+      },
+      "program_structures": 4,
+      "response_chars_median": 52.0
+    },
+    "preference_eval": {
+      "count": 100,
+      "families": {
+        "snapshot": 33,
+        "zip_pairs": 34,
+        "split_join": 33
+      },
+      "tasks": {
+        "diagnose": 25,
+        "explain": 26,
+        "predict": 25,
+        "transfer": 24
+      },
+      "program_structures": 20,
+      "response_chars_median": 94.0
+    }
+  },
+  "preference_reasons": {
+    "factual_error": 250,
+    "instruction_mismatch": 250
+  },
+  "sha256": {
+    "dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "dev_metadata.jsonl": "233b27b37abf463842ea007b55faeb20d5b90c3e38d2ecd756c585417a3884fc",
+    "evaluation.jsonl": "83e018cfbfc3fe1703271b73435e20f75b937b6a4afa3e07b27de2cf8c11776c",
+    "preference.jsonl": "72ebaac846744c05b7cffb52879fd3f050805dbcdc8b7614d734eb87ffdb80f1",
+    "preference_eval.jsonl": "49561cf8a17af7dd4355ec9d6147945d0fd3b8fdad3ee6a07428168c97be6e34",
+    "preference_eval_metadata.jsonl": "6949d78db15c715b4a23cb3fdbf05a0fdcda616a0cc433e19adb75abada97b39",
+    "sft.jsonl": "b76286fa1f0ce5750caf7f7b99dc8ec49e3390b37661e026290c83373d8b3b12",
+    "audit/candidates.jsonl": "c3f13d0416c69c17514602651bd1f8cda7261cf67a3641b0bd1a7064f05b2d62"
+  }
+}

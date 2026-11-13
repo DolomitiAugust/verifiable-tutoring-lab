@@ -1,0 +1,89 @@
+{
+  "frozen_at_utc": "2026-11-08T06:35:13.538656+00:00",
+  "design": {
+    "source_sha256": {
+      "build_suite.py": "08d0e25a4e57f04cfd2cf519c7249688ab2bcdd9e59bf39274a8f31bf9f01612",
+      "constraints.py": "47e8a826245a9cfdf502383f538a0e1a9bf450faa09a82ee926a6a6e76a3417a",
+      "engine.py": "9e944615722a666a831f9bd47530839a21ee2bdea5d67ce263ce7a2f2059d2da",
+      "historical_sources.json": "99bf94db197689df2fe332fb03ac7cabc5efd323d0f924f8bfdf0be8fff3f28e",
+      "memory.py": "a53f1dc5a628c8250c33ed8434d72b22cc3fa5fb9dc8452834672e229d9b335c",
+      "model_backend.py": "137fe4b8af1205a294f3c619db19844cfd7de00b8f6401b8facb07b2d897d21e",
+      "prompts.json": "cd1696fcf81619df0625c536a479ef53b7b66699560fa06be2d77ee6f424ad54",
+      "run_experiment.py": "16701df47149599ec2df2b1bb27586e193e0f450fc38a49b9ed2a4bf5da64a28",
+      "system.py": "719aac8b5a9ca288190d7f0d41cb87fd89aae67db91e0cc9b7fe490e7f372306",
+      "test_revision.py": "b051266a444b4a51130648c83573b01efefa2b28b51de2224cd17af1968ddf20",
+      "__init__.py": "75efa6c59796532f693c2bf598473f0247551aa5fc3903c890de57ef23dd280c"
+    },
+    "cases_sha256": "1b7c6c27678470d859e3a97a9deb29f3a83de0bf092f4b6be8c566f8572b32a6",
+    "mode": "multi",
+    "subset": "paired",
+    "case_ids": [
+      "tutor-C01",
+      "tutor-C02",
+      "tutor-C03",
+      "tutor-C07",
+      "tutor-C08",
+      "tutor-S02"
+    ],
+    "turn_count": 6,
+    "role_budgets": {
+      "planner": 64,
+      "teacher": 192,
+      "reviewer": 96
+    },
+    "threads": 6,
+    "identity": {
+      "kind": "sft",
+      "model_path": "training\\legacy\\model\\base",
+      "adapter_path": "training\\retry_imports\\retry_048f9a92c0ef\\retry_results\\checkpoints\\selected_sft.pt",
+      "adapter_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7"
+    },
+    "references": [
+      {
+        "turn_id": "tutor-C01-T1",
+        "main_answer": "12"
+      },
+      {
+        "turn_id": "tutor-C02-T1",
+        "main_answer": "yh"
+      },
+      {
+        "turn_id": "tutor-C03-T1",
+        "main_answer": "9"
+      },
+      {
+        "turn_id": "tutor-C07-T1",
+        "main_answer": "([1, 2], [1, 2])"
+      },
+      {
+        "turn_id": "tutor-C08-T1",
+        "main_answer": "212"
+      },
+      {
+        "turn_id": "tutor-S02-T1",
+        "main_answer": ""
+      }
+    ],
+    "evaluation": {
+      "automatic": [
+        "main output against independent CPython",
+        "student submission/status",
+        "constraint-compliant executable practice",
+        "cross-session recall and isolation",
+        "memory counters"
+      ],
+      "qualitative_scale": {
+        "0": "missing or incorrect",
+        "1": "partial",
+        "2": "complete and correct"
+      },
+      "complete_success": "All necessary automatic checks AND every predeclared qualitative item equal 2. Unreviewed is not success.",
+      "llm_metric": "Literal model explanation adopted after gates; planning labels and tool facts do not count as LLM teaching success.",
+      "paired_comparison": "Compare multi and single on the six prespecified cases, not unequal full-suite totals.",
+      "equivalent_followup": "Output need not equal old reference if independent execution and the request's AST constraint pass.",
+      "counterfactual_memory": "tool_no_memory intentionally cannot recall prior history; do not call missing recall an implementation error.",
+      "business_claim": "No student learning benefit or general failure rate inferred."
+    },
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+  }
+}

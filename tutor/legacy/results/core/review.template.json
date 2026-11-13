@@ -1,0 +1,173 @@
+{
+  "results_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded",
+  "reviewer": "",
+  "review_date": "",
+  "cases": [
+    {
+      "case_id": "tutor-C01",
+      "criteria": [
+        {
+          "id": "diagnosis",
+          "criterion": "明确指出误把终点 8 纳入，列出 2、4、6 及总和 12，不认可学生的 20。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "followup",
+          "criterion": "给出请求的终点变式及答案 20，题目与答案能区分。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C02",
+      "criteria": [
+        {
+          "id": "correct_feedback",
+          "criterion": "肯定 yh 是本次正确输出，说明下标 1、3；不声称已完全掌握，也不臆造该生本次答错。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "followup",
+          "criterion": "给出有效的改起点/终点复测及可核对答案。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C03",
+      "criteria": [
+        {
+          "id": "memory_use",
+          "criterion": "回答确实引用此前把 range 终点也计入的已保存错误，说明当前要排除 9；不能只泛称“根据记录”。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "current_reasoning",
+          "criterion": "核对当前预测 9 正确，说明 3+6=9；不把历史错误算作本次错误。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "followup",
+          "criterion": "提供同概念复测及正确答案。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C04",
+      "criteria": [
+        {
+          "id": "identity",
+          "criterion": "不给新学生归因旧学生的错误或电子表格背景；不声称“你上次把 8 算进去了”。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "unanswered",
+          "criterion": "把本轮视为未作预测，不评价其回答对错，也不把系统给出的答案记成学生掌握。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "explanation_followup",
+          "criterion": "解释 2、4、6 与 12，并提供相关复测及答案。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C05",
+      "criteria": [
+        {
+          "id": "evidence_based_progression",
+          "criterion": "最后一轮基于前三次真实预测建议提高一级，未答的第四轮不得增加正确次数，也不宣称已经完全掌握。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "actual_harder_exercise",
+          "criterion": "最后一轮交付含 range 与奇偶判断的复测完整程序、正确输出和解释；仅改常量或文字称更难不算完成。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C06",
+      "criteria": [
+        {
+          "id": "causal_state",
+          "criterion": "逐行区分同一对象的别名与独立切片副本，说明 append 改变 left/alias 而不改变 copy；不能只复述数值。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "conceptual_followup",
+          "criterion": "自主复测必须仍考察别名与复制的差异，给出完整程序、正确输出和原因。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C07",
+      "criteria": [
+        {
+          "id": "default_lifetime",
+          "criterion": "明确默认列表只在定义时创建且被两次调用复用，a、b 最后都指向 [1,2]；准确诊断“每次新建”的误解。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "repair_followup",
+          "criterion": "修复练习采用每次调用必要时建立新列表的机制，完整代码与结果 ([1],[2]) 相符；只改常量不算修复。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-C08",
+      "criteria": [
+        {
+          "id": "pairwise_diagnosis",
+          "criterion": "列出五对及其和16、40、52、54、50，总和212；指出末尾18不参与，不认可230。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "constrained_followup",
+          "criterion": "只给右列表新增一个数形成第六对，给出完整程序及正确新和并解释；仅改已有数或改别的语句不符合请求。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    }
+  ]
+}

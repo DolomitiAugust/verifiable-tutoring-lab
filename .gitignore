@@ -1,0 +1,32 @@
+# Environments and generated runtime state
+.venv/
+.runtime/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Local model weights and fresh runs (recorded JSON evidence is tracked)
+models/
+checkpoints/
+outputs/
+reports/generated/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+# Build products and OS files
+.build/
+.qa/
+*.aux
+*.toc
+*.out
+*.xdv
+*.synctex.gz
+.DS_Store
+Thumbs.db

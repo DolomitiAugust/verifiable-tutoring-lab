@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "model_calls": 0,
+  "new_model_training": false,
+  "record_check_count": 42,
+  "authored_reference_programs_executed": 16480,
+  "source_dataset_validator_checks": 11234,
+  "unit_test_count": 71,
+  "regenerated_jsonl_files_byte_identical": 8,
+  "checksums_note": "Historical checksums in saved records describe original pre-deidentification artifacts. Published source/data paths and metadata are repackaged; current release integrity uses the release manifest.",
+  "source_changes": "Semantic directory/module names, portable output paths, privacy cleanup and shared controller modules. Numeric observations, real failed audit and full model response records retained.",
+  "unique_retry_full_text_review_preserved": true
+}

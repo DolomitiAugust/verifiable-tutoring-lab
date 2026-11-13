@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="459.212598pt" height="223.2pt" viewBox="0 0 459.212598 223.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 223.2 
+L 459.212598 223.2 
+L 459.212598 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 41.25566 103.350528 
+L 65.281663 103.350528 
+Q 69.690104 103.350528 69.690104 101.207808 
+L 69.690104 83.423232 
+Q 69.690104 81.280512 65.281663 81.280512 
+L 41.25566 81.280512 
+Q 36.847219 81.280512 36.847219 83.423232 
+L 36.847219 101.207808 
+Q 36.847219 103.350528 41.25566 103.350528 
+z
+" clip-path="url(#p2622865acc)" style="fill: #ffffff; stroke: #0072b2; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 47.405435 91.603066 
+C 47.905239 91.603066 48.38464 91.506549 48.738054 91.334772 
+C 49.091469 91.162995 49.290043 90.929982 49.290043 90.687053 
+C 49.290043 90.444123 49.091469 90.211111 48.738054 90.039334 
+C 48.38464 89.867557 47.905239 89.77104 47.405435 89.77104 
+C 46.905631 89.77104 46.42623 89.867557 46.072816 90.039334 
+C 45.719401 90.211111 45.520826 90.444123 45.520826 90.687053 
+C 45.520826 90.929982 45.719401 91.162995 46.072816 91.334772 
+C 46.42623 91.506549 46.905631 91.603066 47.405435 91.603066 
+z
+" clip-path="url(#p2622865acc)" style="fill: #203a4c; stroke: #203a4c; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 59.131888 91.603066 
+C 59.631692 91.603066 60.111093 91.506549 60.464507 91.334772 
+C 60.817922 91.162995 61.016496 90.929982 61.016496 90.687053 
+C 61.016496 90.444123 60.817922 90.211111 60.464507 90.039334 
+C 60.111093 89.867557 59.631692 89.77104 59.131888 89.77104 
+C 58.632084 89.77104 58.152683 89.867557 57.799268 90.039334 
+C 57.445854 90.211111 57.247279 90.444123 57.247279 90.687053 
+C 57.247279 90.929982 57.445854 91.162995 57.799268 91.334772 
+C 58.152683 91.506549 58.632084 91.603066 59.131888 91.603066 
+z
+" clip-path="url(#p2622865acc)" style="fill: #203a4c; stroke: #203a4c; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 53.268661 77.252198 
+C 53.823999 77.252198 54.356667 77.144957 54.74935 76.954094 
+C 55.142033 76.763231 55.362671 76.504328 55.362671 76.234406 
+C 55.362671 75.964485 55.142033 75.705582 54.74935 75.514719 
+C 54.356667 75.323855 53.823999 75.216614 53.268661 75.216614 
+C 52.713324 75.216614 52.180656 75.323855 51.787973 75.514719 
+C 51.39529 75.705582 51.174652 75.964485 51.174652 76.234406 
+C 51.174652 76.504328 51.39529 76.763231 51.787973 76.954094 
+C 52.180656 77.144957 52.713324 77.252198 53.268661 77.252198 
+z
+" clip-path="url(#p2622865acc)" style="fill: #0072b2; stroke: #0072b2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 107.933329 102.600576 
+L 289.561096 102.600576 
+Q 294.851225 102.600576 294.851225 100.029312 
+L 294.851225 56.746368 
+Q 294.851225 54.175104 289.561096 54.175104 
+L 107.933329 54.175104 
+Q 102.6432 54.175104 102.6432 56.746368 
+L 102.6432 100.029312 
+Q 102.6432 102.600576 107.933329 102.600576 
+z
+" clip-path="url(#p2622865acc)" style="fill: #f4f7f8; stroke: #0072b2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 107.933329 173.310336 
+L 289.561096 173.310336 
+Q 294.851225 173.310336 294.851225 170.739072 
+L 294.851225 129.598848 
+Q 294.851225 127.027584 289.561096 127.027584 
+L 107.933329 127.027584 
+Q 102.6432 127.027584 102.6432 129.598848 
+L 102.6432 170.739072 
+Q 102.6432 173.310336 107.933329 173.310336 
+z
+" clip-path="url(#p2622865acc)" style="fill: #f4f7f8; stroke: #e69f00; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 81.519385 89.297873 
+Q 90.742253 84.815104 98.959574 80.82108 
+" clip-path="url(#p2622865acc)" style="fill: none; stroke: #203a4c; stroke-linecap: round"/>
+    <path d="M 94.487719 80.770892 
+L 98.959574 80.82108 
+L 96.23631 84.368451 
+z
+" clip-path="url(#p2622865acc)" style="fill: #203a4c; stroke: #203a4c; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 297.731564 79.4592 
+Q 308.95614 79.4592 319.062682 79.4592 
+" clip-path="url(#p2622865acc)" style="fill: none; stroke: #203a4c; stroke-linecap: round"/>
+    <path d="M 315.062682 77.4592 
+L 319.062682 79.4592 
+L 315.062682 81.4592 
+z
+" clip-path="url(#p2622865acc)" style="fill: #203a4c; stroke: #203a4c; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 332.763817 117.599616 
+L 435.039647 117.599616 
+Q 440.329776 117.599616 440.329776 115.028352 
+L 440.329776 56.746368 
+Q 440.329776 54.175104 435.039647 54.175104 
+L 332.763817 54.175104 
+Q 327.473688 54.175104 327.473688 56.746368 
+L 327.473688 115.028352 
+Q 327.473688 117.599616 332.763817 117.599616 
+z
+" clip-path="url(#p2622865acc)" style="fill: #ffffff; stroke: #e69f00; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 48.243039 96.386688 
+L 58.294284 96.386688 
+" clip-path="url(#p2622865acc)" style="fill: none; stroke: #203a4c; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 53.268661 82.1376 
+L 53.268661 77.252198 
+" clip-path="url(#p2622865acc)" style="fill: none; stroke: #0072b2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #203a4c" x="18.001134" y="20.040633" transform="rotate(-0 18.001134 20.040633)">The optimizer can win its comparison while both answers lose probability</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(34.912411 148.039312)">Optimizer</text>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(32.02081 156.437671)">(metaphor)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(134.644713 76.116215)">Chosen score falls: −37.761 nat</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(132.099088 85.074465)">Rejected score falls: −59.936 nat</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(139.885338 147.897335)">96 / 100 final logged updates</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(111.784713 156.855585)">Both scores below the frozen SFT reference</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(336.376107 79.13661)">A larger relative margin</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(344.328607 88.09486)">can lower DPO loss.</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #203a4c" transform="translate(336.314232 97.05311)">It does not certify facts.</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #667680" transform="translate(97.206221 199.606568)">Measured: mean sequence-log-probability changes in the last 100 updates.</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #667680" transform="translate(100.024815 207.445037)">Illustrative robot; no claim that total log-probability is an accuracy metric.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2622865acc">
+   <rect x="9.184252" y="4.464" width="440.844094" height="214.272"/>
+  </clipPath>
+ </defs>
+</svg>

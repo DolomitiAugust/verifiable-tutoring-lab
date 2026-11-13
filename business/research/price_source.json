@@ -1,0 +1,14 @@
+{
+  "sources": [{
+    "id": "business-P01", "organization": "阿里云",
+    "title": "qwen-plus 模型信息",
+    "url": "https://help.aliyun.com/zh/model-studio/qwen-plus",
+    "published_or_updated": "页面未显示可核实的更新时间；动态产品文档",
+    "accessed_date": "2026-11-07",
+    "source_class": "官方价格文档",
+    "locator": "模型价格 / 华北2（北京） / 输入<=128k / 输入、输出（非思考）",
+    "short_quote": "输入<=128k",
+    "facts": ["实时非思考输入0.8元/百万tokens、输出2元/百万tokens；不计缓存、Batch或促销折扣。"],
+    "limitations": ["仅提供未来部署情景的API单价参照，不等于training微调模型，也没有在本项目实际调用。", "tokens、重试率、质量、延迟、运维与人工复核需求都是另列假设。", "单价可能变化；采购与部署前需重新核实。"]
+  }]
+}

@@ -1,0 +1,821 @@
+{
+  "signature": {
+    "stage": "dpo",
+    "base_id": "Qwen/Qwen2.5-0.5B",
+    "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+    "sft_sha256": "7f677590ce0413a2b22f2898984b598063aa8bd17f95d4174d05f7e064190b4d",
+    "dataset_hashes": {
+      "audit/candidates.jsonl": "87edb1b8090905b83062a88c9cc1b0b3758c3fb35271629720647219bb6c7d60",
+      "evaluation.jsonl": "ff9659902e511944cf74c41a9a5b6f8d13782701ab7d79d2a6ee06681b929d3f",
+      "preference.jsonl": "a7e356c362d4510b659531c51ca049bdcaadbec5c88ef4b486c4b39b306d5565",
+      "sft.jsonl": "0bc2ae582cfb965a49ba51293b86159417a36b61560d337fcc3c0e3cc48f48eb"
+    },
+    "chat_format": "training-chatml-v1:user+assistant; no BOS/system; completion includes im_end",
+    "training_sources": {
+      "train.py": "b846b9cd51a44d8e9e1097109687a20b3c05c8685a2ad1c74bb4923d1935e4fe",
+      "data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14"
+    },
+    "dtype": "float32",
+    "device": "cpu",
+    "threads": 6,
+    "seed": 20261104,
+    "settings": {
+      "rank": 8,
+      "alpha": 16.0,
+      "last_layers": 4
+    },
+    "batch_size": 1,
+    "lr": 0.0002,
+    "beta": 0.1,
+    "grad_clip": 1.0,
+    "head_chunk": 32,
+    "checkpoint_head": true,
+    "max_tokens": 1536,
+    "limit": 64,
+    "selection": [
+      {
+        "candidate_id": "C03449",
+        "export_line": 452,
+        "family": "branch_order",
+        "task": "coach",
+        "level": "进阶",
+        "prompt_tokens": 148,
+        "response_tokens": [
+          189,
+          205
+        ]
+      },
+      {
+        "candidate_id": "C00763",
+        "export_line": 349,
+        "family": "range_sum",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 116,
+        "response_tokens": [
+          203,
+          112
+        ]
+      },
+      {
+        "candidate_id": "C03419",
+        "export_line": 228,
+        "family": "loop_control",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 140,
+        "response_tokens": [
+          200,
+          78
+        ]
+      },
+      {
+        "candidate_id": "C03168",
+        "export_line": 97,
+        "family": "slice",
+        "task": "coach",
+        "level": "基础",
+        "prompt_tokens": 105,
+        "response_tokens": [
+          167,
+          137
+        ]
+      },
+      {
+        "candidate_id": "C01768",
+        "export_line": 213,
+        "family": "default_arg",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 129,
+        "response_tokens": [
+          214,
+          120
+        ]
+      },
+      {
+        "candidate_id": "C01355",
+        "export_line": 396,
+        "family": "recursion",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 137,
+        "response_tokens": [
+          278,
+          196
+        ]
+      },
+      {
+        "candidate_id": "C00400",
+        "export_line": 211,
+        "family": "default_arg",
+        "task": "coach",
+        "level": "进阶",
+        "prompt_tokens": 121,
+        "response_tokens": [
+          186,
+          135
+        ]
+      },
+      {
+        "candidate_id": "C02210",
+        "export_line": 143,
+        "family": "recursion",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 131,
+        "response_tokens": [
+          263,
+          229
+        ]
+      },
+      {
+        "candidate_id": "C00562",
+        "export_line": 71,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 123,
+        "response_tokens": [
+          206,
+          158
+        ]
+      },
+      {
+        "candidate_id": "C00166",
+        "export_line": 259,
+        "family": "slice",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 102,
+        "response_tokens": [
+          157,
+          194
+        ]
+      },
+      {
+        "candidate_id": "C03723",
+        "export_line": 173,
+        "family": "index",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 117,
+        "response_tokens": [
+          197,
+          220
+        ]
+      },
+      {
+        "candidate_id": "C03423",
+        "export_line": 210,
+        "family": "index",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 119,
+        "response_tokens": [
+          209,
+          210
+        ]
+      },
+      {
+        "candidate_id": "C00883",
+        "export_line": 485,
+        "family": "boundary",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 108,
+        "response_tokens": [
+          189,
+          195
+        ]
+      },
+      {
+        "candidate_id": "C00247",
+        "export_line": 201,
+        "family": "range_sum",
+        "task": "coach",
+        "level": "进阶",
+        "prompt_tokens": 125,
+        "response_tokens": [
+          210,
+          172
+        ]
+      },
+      {
+        "candidate_id": "C00756",
+        "export_line": 51,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 164,
+        "response_tokens": [
+          184,
+          60
+        ]
+      },
+      {
+        "candidate_id": "C01626",
+        "export_line": 187,
+        "family": "loop_control",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 134,
+        "response_tokens": [
+          211,
+          204
+        ]
+      },
+      {
+        "candidate_id": "C00104",
+        "export_line": 249,
+        "family": "precedence",
+        "task": "coach",
+        "level": "基础",
+        "prompt_tokens": 97,
+        "response_tokens": [
+          185,
+          140
+        ]
+      },
+      {
+        "candidate_id": "C00160",
+        "export_line": 248,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 159,
+        "response_tokens": [
+          214,
+          149
+        ]
+      },
+      {
+        "candidate_id": "C00501",
+        "export_line": 276,
+        "family": "filter",
+        "task": "coach",
+        "level": "进阶",
+        "prompt_tokens": 157,
+        "response_tokens": [
+          236,
+          208
+        ]
+      },
+      {
+        "candidate_id": "C01199",
+        "export_line": 397,
+        "family": "slice",
+        "task": "coach",
+        "level": "基础",
+        "prompt_tokens": 107,
+        "response_tokens": [
+          168,
+          163
+        ]
+      },
+      {
+        "candidate_id": "C00951",
+        "export_line": 76,
+        "family": "slice",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 101,
+        "response_tokens": [
+          187,
+          193
+        ]
+      },
+      {
+        "candidate_id": "C02657",
+        "export_line": 461,
+        "family": "alias",
+        "task": "quiz",
+        "level": "进阶",
+        "prompt_tokens": 120,
+        "response_tokens": [
+          301,
+          309
+        ]
+      },
+      {
+        "candidate_id": "C01608",
+        "export_line": 424,
+        "family": "dictionary",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 185,
+        "response_tokens": [
+          328,
+          256
+        ]
+      },
+      {
+        "candidate_id": "C01583",
+        "export_line": 129,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 114,
+        "response_tokens": [
+          196,
+          140
+        ]
+      },
+      {
+        "candidate_id": "C00859",
+        "export_line": 434,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 155,
+        "response_tokens": [
+          190,
+          118
+        ]
+      },
+      {
+        "candidate_id": "C00485",
+        "export_line": 107,
+        "family": "enumerate",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 140,
+        "response_tokens": [
+          266,
+          239
+        ]
+      },
+      {
+        "candidate_id": "C03219",
+        "export_line": 154,
+        "family": "branch_order",
+        "task": "coach",
+        "level": "进阶",
+        "prompt_tokens": 146,
+        "response_tokens": [
+          196,
+          199
+        ]
+      },
+      {
+        "candidate_id": "C00164",
+        "export_line": 238,
+        "family": "alias",
+        "task": "quiz",
+        "level": "进阶",
+        "prompt_tokens": 137,
+        "response_tokens": [
+          348,
+          243
+        ]
+      },
+      {
+        "candidate_id": "C03564",
+        "export_line": 128,
+        "family": "alias",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 130,
+        "response_tokens": [
+          274,
+          180
+        ]
+      },
+      {
+        "candidate_id": "C01312",
+        "export_line": 371,
+        "family": "division",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 109,
+        "response_tokens": [
+          246,
+          197
+        ]
+      },
+      {
+        "candidate_id": "C03502",
+        "export_line": 374,
+        "family": "loop_control",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 146,
+        "response_tokens": [
+          243,
+          179
+        ]
+      },
+      {
+        "candidate_id": "C00881",
+        "export_line": 145,
+        "family": "index",
+        "task": "coach",
+        "level": "基础",
+        "prompt_tokens": 110,
+        "response_tokens": [
+          169,
+          148
+        ]
+      },
+      {
+        "candidate_id": "C00372",
+        "export_line": 257,
+        "family": "precedence",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 93,
+        "response_tokens": [
+          147,
+          116
+        ]
+      },
+      {
+        "candidate_id": "C00101",
+        "export_line": 448,
+        "family": "slice",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 100,
+        "response_tokens": [
+          189,
+          147
+        ]
+      },
+      {
+        "candidate_id": "C01392",
+        "export_line": 463,
+        "family": "dictionary",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 183,
+        "response_tokens": [
+          237,
+          191
+        ]
+      },
+      {
+        "candidate_id": "C00231",
+        "export_line": 91,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 109,
+        "response_tokens": [
+          179,
+          159
+        ]
+      },
+      {
+        "candidate_id": "C03713",
+        "export_line": 382,
+        "family": "loop_control",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 146,
+        "response_tokens": [
+          264,
+          297
+        ]
+      },
+      {
+        "candidate_id": "C01684",
+        "export_line": 313,
+        "family": "nested_pairs",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 162,
+        "response_tokens": [
+          216,
+          188
+        ]
+      },
+      {
+        "candidate_id": "C00854",
+        "export_line": 500,
+        "family": "loop_control",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 166,
+        "response_tokens": [
+          346,
+          267
+        ]
+      },
+      {
+        "candidate_id": "C01592",
+        "export_line": 480,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 140,
+        "response_tokens": [
+          230,
+          161
+        ]
+      },
+      {
+        "candidate_id": "C03738",
+        "export_line": 152,
+        "family": "boundary",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 118,
+        "response_tokens": [
+          207,
+          233
+        ]
+      },
+      {
+        "candidate_id": "C00206",
+        "export_line": 330,
+        "family": "nested_pairs",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 164,
+        "response_tokens": [
+          192,
+          63
+        ]
+      },
+      {
+        "candidate_id": "C01652",
+        "export_line": 112,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 123,
+        "response_tokens": [
+          192,
+          175
+        ]
+      },
+      {
+        "candidate_id": "C03338",
+        "export_line": 37,
+        "family": "recursion",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 132,
+        "response_tokens": [
+          200,
+          200
+        ]
+      },
+      {
+        "candidate_id": "C00611",
+        "export_line": 234,
+        "family": "recursion",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 129,
+        "response_tokens": [
+          269,
+          203
+        ]
+      },
+      {
+        "candidate_id": "C00065",
+        "export_line": 272,
+        "family": "filter",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 155,
+        "response_tokens": [
+          193,
+          163
+        ]
+      },
+      {
+        "candidate_id": "C03335",
+        "export_line": 497,
+        "family": "branch_order",
+        "task": "explain",
+        "level": "进阶",
+        "prompt_tokens": 149,
+        "response_tokens": [
+          204,
+          200
+        ]
+      },
+      {
+        "candidate_id": "C00736",
+        "export_line": 30,
+        "family": "boundary",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 124,
+        "response_tokens": [
+          157,
+          152
+        ]
+      },
+      {
+        "candidate_id": "C00151",
+        "export_line": 252,
+        "family": "boundary",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 119,
+        "response_tokens": [
+          159,
+          102
+        ]
+      },
+      {
+        "candidate_id": "C02111",
+        "export_line": 492,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 92,
+        "response_tokens": [
+          160,
+          194
+        ]
+      },
+      {
+        "candidate_id": "C03921",
+        "export_line": 20,
+        "family": "precedence",
+        "task": "quiz",
+        "level": "基础",
+        "prompt_tokens": 97,
+        "response_tokens": [
+          191,
+          192
+        ]
+      },
+      {
+        "candidate_id": "C00495",
+        "export_line": 77,
+        "family": "boundary",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 123,
+        "response_tokens": [
+          186,
+          154
+        ]
+      },
+      {
+        "candidate_id": "C00207",
+        "export_line": 16,
+        "family": "filter",
+        "task": "diagnose",
+        "level": "进阶",
+        "prompt_tokens": 160,
+        "response_tokens": [
+          179,
+          176
+        ]
+      },
+      {
+        "candidate_id": "C01893",
+        "export_line": 181,
+        "family": "division",
+        "task": "explain",
+        "level": "基础",
+        "prompt_tokens": 103,
+        "response_tokens": [
+          210,
+          177
+        ]
+      },
+      {
+        "candidate_id": "C00362",
+        "export_line": 437,
+        "family": "index",
+        "task": "coach",
+        "level": "基础",
+        "prompt_tokens": 135,
+        "response_tokens": [
+          224,
+          137
+        ]
+      },
+      {
+        "candidate_id": "C00580",
+        "export_line": 221,
+        "family": "division",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 110,
+        "response_tokens": [
+          207,
+          117
+        ]
+      },
+      {
+        "candidate_id": "C02255",
+        "export_line": 24,
+        "family": "index",
+        "task": "diagnose",
+        "level": "基础",
+        "prompt_tokens": 119,
+        "response_tokens": [
+          148,
+          159
+        ]
+      },
+      {
+        "candidate_id": "C01336",
+        "export_line": 22,
+        "family": "nested_pairs",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 171,
+        "response_tokens": [
+          282,
+          312
+        ]
+      },
+      {
+        "candidate_id": "C03048",
+        "export_line": 443,
+        "family": "dictionary",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 162,
+        "response_tokens": [
+          194,
+          192
+        ]
+      },
+      {
+        "candidate_id": "C00662",
+        "export_line": 472,
+        "family": "enumerate",
+        "task": "coach",
+        "level": "挑战",
+        "prompt_tokens": 143,
+        "response_tokens": [
+          190,
+          196
+        ]
+      },
+      {
+        "candidate_id": "C01861",
+        "export_line": 144,
+        "family": "range_sum",
+        "task": "quiz",
+        "level": "进阶",
+        "prompt_tokens": 129,
+        "response_tokens": [
+          268,
+          260
+        ]
+      },
+      {
+        "candidate_id": "C00022",
+        "export_line": 456,
+        "family": "nested_pairs",
+        "task": "explain",
+        "level": "挑战",
+        "prompt_tokens": 152,
+        "response_tokens": [
+          178,
+          182
+        ]
+      },
+      {
+        "candidate_id": "C00269",
+        "export_line": 18,
+        "family": "nested_pairs",
+        "task": "quiz",
+        "level": "挑战",
+        "prompt_tokens": 160,
+        "response_tokens": [
+          315,
+          219
+        ]
+      },
+      {
+        "candidate_id": "C00716",
+        "export_line": 126,
+        "family": "recursion",
+        "task": "diagnose",
+        "level": "挑战",
+        "prompt_tokens": 131,
+        "response_tokens": [
+          213,
+          106
+        ]
+      }
+    ]
+  },
+  "steps_requested": 64,
+  "base_revision": "e332bac62ed3c70fed5412a1cb5883c36efc4015",
+  "base_files_sha256": {
+    "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+    "config.json": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+  },
+  "sft_checkpoint": "training\\legacy\\runs\\sft\\adapter.pt",
+  "source_rows": 500,
+  "skipped_length_before_limit": [],
+  "trainable_parameters": 90112,
+  "model_parameters_including_lora": 494122880,
+  "torch": "2.14.0+cpu",
+  "transformers": "4.57.6"
+}

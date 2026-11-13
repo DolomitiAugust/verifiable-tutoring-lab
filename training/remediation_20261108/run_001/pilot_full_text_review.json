@@ -1,0 +1,394 @@
+{
+  "review_type": "full_text_factual_review",
+  "reviewer": "Codex separate data-diagnosis agent",
+  "scope": "Non-blind technical review of all 12 complete raw responses; same project participated in reference authorship. Not human/external review, and no automatic proxy labels were used as truth.",
+  "rubric": {
+    "primary": "Unique discernible program output; correct/wrong/unresolved are separate.",
+    "contradictions": "Competing explicit claims for the original output remain unresolved unless clearly retracted; do not pick the first/last/frequent matching value.",
+    "explanation": "Independent factual status: correct/wrong/absent/unresolved. Off-topic material and incomplete protocol are retained rather than scored as successful teaching.",
+    "termination": "EOS or shorter/reduced repetition is not a factual or instructional pass."
+  },
+  "source_plan_sha256": "a38c0fcef7be54b34ab1ee89442a6f02426a7f90054deae84c698005850e10da",
+  "sources": {
+    "pilot_penalty_1.0.json": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+    "pilot_penalty_1.08.json": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474"
+  },
+  "summary": {
+    "pilot_penalty_1.0.json": {
+      "cases": 6,
+      "primary_output_counts": {
+        "correct": 0,
+        "wrong": 4,
+        "unresolved": 2
+      },
+      "explanation_status_counts": {
+        "wrong": 5,
+        "absent": 1
+      },
+      "contradictory_output_cases": 2,
+      "eos_count": 1,
+      "clear_factual_failure_present": true,
+      "meets_preregistered_stop_condition": true
+    },
+    "pilot_penalty_1.08.json": {
+      "cases": 6,
+      "primary_output_counts": {
+        "correct": 0,
+        "wrong": 4,
+        "unresolved": 2
+      },
+      "explanation_status_counts": {
+        "wrong": 4,
+        "absent": 2
+      },
+      "contradictory_output_cases": 2,
+      "eos_count": 3,
+      "clear_factual_failure_present": true,
+      "meets_preregistered_stop_condition": true
+    }
+  },
+  "rows": [
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00001",
+      "task": "predict",
+      "judgement": "unresolved",
+      "expected_answer": "False",
+      "independent_reference_check": "False and False 为 False，print 写出文本 False。",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "evidence_excerpts": [
+        "本题输出：False %",
+        "所以 print(a and b) 输出 True。"
+      ],
+      "explanation_evidence_excerpts": [
+        "b 不为 False。执行到 b or a 时，结果为 True。",
+        "执行 a or b 后，b 为 True。"
+      ],
+      "rationale": "全文既明确写原程序输出False，又明确写print(a and b)输出True，未可靠消解冲突，故主输出未判定。b实际始终False，False or False也为False，解释存在直接事实错误。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "95308a4226a7958ca0f01d7d0245ec16c51b2c40f6c4211e488a55be4f11bda5",
+      "raw_response": "本题输出：False %\n真值为 False。 从右往左比较。b 不为 False。执行到 b or a 时，结果为 True。 所以 print(a and b) 输出 True。\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n本题输出：False %\n.twimguser\n本题输出：False %\n本题解释：a 和 b 都为 False。执行 a or b 后，b 为 True。 所以 print(a and b) 输出 False 。LIBINT\n本题输出：False %\n本题解释：a 和 b 都为 False。 从右往左比较。b 不为 False。执行 a or b 后，b 为 True。 所以 print",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：False %"
+    },
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00004",
+      "task": "explain",
+      "judgement": "unresolved",
+      "expected_answer": "False",
+      "independent_reference_check": "True and False 为 False，print 写出文本 False。",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "evidence_excerpts": [
+        "本题输出：Falseolerance: False and False",
+        "本题输出：True\n本题输出：True_ACCEPTING"
+      ],
+      "explanation_evidence_excerpts": [
+        "本题输出：Trueolerance: False or False"
+      ],
+      "rationale": "同一回应多次把本题输出写成False和True，不能按首次或末次数值择优。它把True也作为本题输出，并混合与输入不符的False/False操作数，存在事实错误和无关真值演算。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "65e6ec31fdecb680cd82b113dcf87a4b826a29e66dd910d15b714d7a38636961",
+      "raw_response": "本题输出：Falseolerance: False and False\nFalse and False = False\n本题输出：Falseolerance: True and False\nTrue and True = True\n本题输出：Trueolerance: False or False\nFalse or False = False\n本题输出：Falseolerance: False or True\nFalse or True = True\n本题输出：True\n本题输出：True_ACCEPTING 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：Falseolerance: False and False"
+    },
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00011",
+      "task": "predict",
+      "judgement": "wrong",
+      "expected_answer": "6",
+      "independent_reference_check": "在 aabbbbbab 中逐字符计数 b，共6个。",
+      "interpreted_answer": "3",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：3NotificationCenter: 无",
+        "'aabbbbbab' 中 'b' 的个数是 3。"
+      ],
+      "explanation_evidence_excerpts": [
+        "'aabbbbbab' 中 'b' 的个数是 3。"
+      ],
+      "rationale": "唯一可辨识的程序输出断言为3，参考为6。全文还反复断言字符串只有3个b，计数解释直接错误；末尾附加无关评分/平均数内容不构成更正。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "e80dcc94ec8c286ad1f08a8ac3701850aeb0a9daec36f7e4df8c052e4846176b",
+      "raw_response": "本题输出：3NotificationCenter: 无\n本题输出：3NotificationCenter: 无\n'aabbbbbab' 中 'b' 的个数是 3。国家重点是 'b'，出现 3 次。MemoryWarning: 无\n本题输出：3MemoryWarning: 无'label'：无\n本题输出：3'label'：无\n文本中 'b' 的个数是 3。MemoryWarning: 无'label'：无\n本题输出：3MemoryWarning: 无'label'：无\n本题输出：3'label'：无\n本题共四个测试用例。PostalCodes：[1, 2, 3]，平均数是 2。MemoryWarning: 无'label'：无\n本题输出：3MemoryWarning: 无'label'：无'label'：无\n本题输出：3'label'：无'label'：无'label'：",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：3NotificationCenter: 无"
+    },
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00008",
+      "task": "explain",
+      "judgement": "wrong",
+      "expected_answer": "4",
+      "independent_reference_check": "在 babbab 中逐字符计数 b，共4个。",
+      "interpreted_answer": "3",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "字符 'b' 出现 3 次。",
+        "本题输出：3NotificationCenter: No more characters to count."
+      ],
+      "explanation_evidence_excerpts": [
+        "会忽略首尾省略的字符，所以仅用 count 会得到 3。"
+      ],
+      "rationale": "给出唯一输出3，而原字符串含4个b；解释声称count忽略首尾字符，规则错误，随后出现大量无关重复。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "5eb0d4c368b95bfa21c15b8d8f43685cce6830ff7fb9489955c476ee0e0c0355",
+      "raw_response": "字符 'b' 出现 3 次。 같다 会忽略首尾省略的字符，所以仅用 count 会得到 3。\n本题输出：3NotificationCenter: No more characters to count. Titles are not counted..hxx\n本题输出：3регирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегирегиреги",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "字符 'b' 出现 3 次。"
+    },
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00003",
+      "task": "predict",
+      "judgement": "wrong",
+      "expected_answer": "112",
+      "independent_reference_check": "循环取值 [1,6,11,16,21,26,31]，和为112；到36时停止。",
+      "interpreted_answer": "125",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：125----------</ocratic"
+      ],
+      "explanation_evidence_excerpts": [],
+      "rationale": "唯一输出125与独立计算112不符。没有可辨识的程序解释；虽然以结束符停止，仍是事实错误。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "dbfd4af03d166644c414f31d8f0c61c8765b9dfb89422fd44b4e195a6770c072",
+      "raw_response": "本题输出：125----------</ocratic",
+      "stop_reason": "eos",
+      "generated_tokens_including_terminal": 10,
+      "evidence_excerpt": "本题输出：125----------</ocratic"
+    },
+    {
+      "source_file": "pilot_penalty_1.0.json",
+      "source_sha256": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+      "penalty": 1.0,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00006",
+      "task": "explain",
+      "judgement": "wrong",
+      "expected_answer": "231",
+      "independent_reference_check": "循环取值 [1,5,9,13,17,21,25,29,33,37,41]，和为231；到45时停止。",
+      "interpreted_answer": "129",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：129",
+        "迭代到 49。加上 1 之前已经加上的 128，总和为 129。"
+      ],
+      "explanation_evidence_excerpts": [
+        "迭代到 49。加上 1 之前已经加上的 128，总和为 129。"
+      ],
+      "rationale": "唯一主输出129错误。原循环在i到45时停止，最后参与累加的是41；原文从49起编造增量和累计过程，解释亦错。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "3f2f13c5ec906727b9604840ee8ce96033d40fa5e2a171c731428d6a312c9d88",
+      "raw_response": "本题输出：129\n迭代到 49。加上 1 之前已经加上的 128，总和为 129。DonaldTrump 49 时，i 只加 1，total 为 129。DonaldTrump 49 + 4 = 53 时，i 加 4，total 为 129。DonaldTrump 49 + 8 = 57 时，i 加 8，total 为 129。DonaldTrump 49 + 12 = 61 时，i 加 12，total 为 129。DonaldTrump 49 + 16 = 65 时，i 加 16，total 为 129。DonaldTrump 49 + 20 = 69 时，i 加 20，total ",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：129"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00001",
+      "task": "predict",
+      "judgement": "unresolved",
+      "expected_answer": "False",
+      "independent_reference_check": "False and False 为 False，print 写出文本 False。",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "evidence_excerpts": [
+        "本题输出：False %",
+        "本题输出：0 %"
+      ],
+      "explanation_evidence_excerpts": [
+        "False 与任何数都 True。",
+        "本题考查实参和虚参。a=True，b=False。"
+      ],
+      "rationale": "全文反复把本题输出写成False与0，未消解冲突。虽然False在Python数值比较中等于0，print(False)的实际文本仍是False，不能把两者当作同一输出字符串；输入a=False也被改写成a=True，解释错误。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "5ab144192d3d01801cdab0e1a30815f5adc179dd6fc552dac85504ead84cb017",
+      "raw_response": "本题输出：False %\n真数和假数都为 False。比较的是 True 和 False。False 与任何数都 True。 0 只比 False。 1 只比 True。 3 与 2 都是 False。 0.5 × 0.5 = 0.25，所以 print(0.25) 。الطائفuser\n本题输出：0 %\n本题输出：False %\n本题考查实参和虚参。a=True，b=False。a or b equals True。 0.5 × 0.5 = 0.25，所以 print(0.25) 。الطائفuser\n本题输出：0 %\n本题输出：False %\n本题输出：False %\n本题走法：0 + 0.5 = 0.5 CPC: 89.67%RITE\n本题知识点：",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：False %"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00004",
+      "task": "explain",
+      "judgement": "unresolved",
+      "expected_answer": "False",
+      "independent_reference_check": "True and False 为 False，print 写出文本 False。",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "evidence_excerpts": [
+        "本题输出：False:UIAlertuser",
+        "本题输出：True:UIAlertuser"
+      ],
+      "explanation_evidence_excerpts": [
+        "bear 读作“害怕”。"
+      ],
+      "rationale": "既写False也写True作为本题输出，未可靠消解冲突；末尾False和以结束符停止不能抹掉先前的明确矛盾断言。局部True与False得到False的规则正确，但夹入错误的bear释义和无关“走开”文本，不是完整可靠的程序解释。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "a1619beecde5ac58e791cc46cb1650cdab1196754cd217ffed9877eea2dcd8ee",
+      "raw_response": "本题输出：Falseolerance: False and False\nTrue 和 False 对的是 False。bear 读作“害怕”。本题输出：False:UIAlertuser\n本题输出：True:UIAlertuser\n本题输出：Falseolerance: False and False游戏副本user\n本题输出：False:UIAlertuser\n本题输出：False:UIAlertuser\n走开！MemoryWarning\n本题输出：False:UIAlertuser\n走开！MemoryWarning\n走开！MemoryWarning\n走开！MemoryWarning\n答案是：False:UIAlertuser",
+      "stop_reason": "eos",
+      "generated_tokens_including_terminal": 105,
+      "evidence_excerpt": "本题输出：False:UIAlertuser"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00011",
+      "task": "predict",
+      "judgement": "wrong",
+      "expected_answer": "6",
+      "independent_reference_check": "在 aabbbbbab 中逐字符计数 b，共6个。",
+      "interpreted_answer": "3",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：3NotificationCenter: 无",
+        "本题输出：3региNewPropage=18"
+      ],
+      "explanation_evidence_excerpts": [],
+      "rationale": "唯一程序输出断言为3，参考为6；额外18出现在无关Propage字段，不作为本题答案。没有计数解释，“已确认评分”也无可核验依据。结束符停止没有修正答案。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "781f3e538fc14a6f4a20e9d67ea94896fa83bb16d85c0c7ac79b7726c457bb42",
+      "raw_response": "本题输出：3NotificationCenter: 无\n本题输出：3региNewPropage=18\n已确认评分",
+      "stop_reason": "eos",
+      "generated_tokens_including_terminal": 26,
+      "evidence_excerpt": "本题输出：3NotificationCenter: 无"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00008",
+      "task": "explain",
+      "judgement": "wrong",
+      "expected_answer": "4",
+      "independent_reference_check": "在 babbab 中逐字符计数 b，共4个。",
+      "interpreted_answer": "3",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "字符 'b' 出现 3 次，应取前 3 个。",
+        "本题输出：3OMATIC"
+      ],
+      "explanation_evidence_excerpts": [
+        "解析：count 用完后会自动清零。"
+      ],
+      "rationale": "主输出3错误，参考为4。count用完自动清零的规则不存在，后面复制其他列表和重复也没有更正原题。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "afbf0b73b0a9ff2324320dba198369d7b60a5ed39b9b31946402f14a9db5dc7c",
+      "raw_response": "字符 'b' 出现 3 次，应取前 3 个。 难度分控制着。 本题输出：3OMATIC\n本题输出：3OMATIC\n解析：count 用完后会自动清零。本题输出：3OMATIC:UIAlertuser\n（附）计数器的另一种写法bearbabab.count('b') [1, 2, 0] [1, 2, 0] ['b'] ['b'] ['b'] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1, 2, 0] [1",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "字符 'b' 出现 3 次，应取前 3 个。"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00003",
+      "task": "predict",
+      "judgement": "wrong",
+      "expected_answer": "112",
+      "independent_reference_check": "循环取值 [1,6,11,16,21,26,31]，和为112；到36时停止。",
+      "interpreted_answer": "248",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：248----------</ocratic"
+      ],
+      "explanation_evidence_excerpts": [],
+      "rationale": "唯一输出248与参考112不符。没有可辨识的解释；短回答和结束符均不是事实正确证据。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "832307e176d5a89febbc579c456cfa1ed769d08af22395f46496bfbae2897b67",
+      "raw_response": "本题输出：248----------</ocratic",
+      "stop_reason": "eos",
+      "generated_tokens_including_terminal": 10,
+      "evidence_excerpt": "本题输出：248----------</ocratic"
+    },
+    {
+      "source_file": "pilot_penalty_1.08.json",
+      "source_sha256": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474",
+      "penalty": 1.08,
+      "fraction": 0.0,
+      "candidate_id": "V2-dev-00006",
+      "task": "explain",
+      "judgement": "wrong",
+      "expected_answer": "231",
+      "independent_reference_check": "循环取值 [1,5,9,13,17,21,25,29,33,37,41]，和为231；到45时停止。",
+      "interpreted_answer": "283",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "evidence_excerpts": [
+        "本题输出：283",
+        "迭代到 49。加上之前累积的值得到 283。"
+      ],
+      "explanation_evidence_excerpts": [
+        "迭代到 49。",
+        "Python 2 仅支持整数和小数。"
+      ],
+      "rationale": "唯一输出283错误，参考为231。原循环在45停止而非49，解释还混入错误的Python版本类型限制、无关异常和伪代码路径，未形成正确推导。",
+      "full_raw_response_read": true,
+      "raw_response_sha256": "5354e4c37945f2fb9a6359b25c91d87c680612f1c4a29d77a8ea43edb08add5c",
+      "raw_response": "本题输出：283\n迭代到 49。加上之前累积的值得到 283。MemoryWarning：Python 2 仅支持整数和小数。.infinity 和 -float.inf 可以作为结束条件。.infinity == -float.inf 时，total 已经写入。誓愿：冒号右侧是 49，末端是 +4；末端是 +4 时，累计值为 53；末端是 49 时，累计值为 283。OMATIC:error: while True is not replaced by break. at /home/user/leetcode/python3/testcase/leet/guide.py:67, in <generator> return next(self) else: return end TypeError: unhashable type 'int' in list comprehensionDUCTILE: 缺失参数\n本题输出：283OMATIC:error: while True is not replaced by break.",
+      "stop_reason": "max_new_tokens",
+      "generated_tokens_including_terminal": 192,
+      "evidence_excerpt": "本题输出：283"
+    }
+  ],
+  "decision": {
+    "stop": true,
+    "extend_to_test_set": false,
+    "reason": "Both fixed-dev pilots contain clear wrong string counts and loop sums, plus contradictory Boolean outputs and false explanation rules. Penalty1.08 increases EOS from1/6 to3/6 but resolves no primary output as correct. The preregistered stop rule is satisfied; this pilot does not establish a repair."
+  },
+  "overall_primary_output_counts": {
+    "correct": 0,
+    "wrong": 8,
+    "unresolved": 4
+  },
+  "boundary_note": "Unresolved cases are not counted as wrong. Zero correct labels in this descriptive pilot is not a claim of universal zero true accuracy."
+}

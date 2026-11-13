@@ -1,0 +1,160 @@
+{
+  "audit_kind": "supplement_design_and_independent_reference_before_system_run",
+  "created_at_utc": "2026-11-07T03:27:58.931663+00:00",
+  "reviewer": "Codex supplementary audit agent; read frozen runner/exporter and core results, did not pretest supplement system",
+  "suite_sha256": "589fa61561c9d647ad9d1897b7aa3210d89d865ef6435fc0fe66be3aae217de9",
+  "design_note_sha256": "e7b8276c15b84be4c1f6d76746ec86f02766c59690007dfdd4dfbdd695e7d6ed",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "case_count": 4,
+  "turn_count": 6,
+  "reference_program_count": 12,
+  "all_reference_programs_passed": true,
+  "all_student_statuses_passed": true,
+  "system_pretest_run": false,
+  "model_called": false,
+  "standards_review": {
+    "accepted_for_freeze": true,
+    "reason": "四例均为常规能力的邻近边界；S01负步长、S02显式空字符串预测的complete是根据core正向range/切片和状态区分作出的合理但未经证明的外推。S02请求明确表示预测空字符串，JSON空字符串不同于null，计为正确已答是通常语义；该要求未依赖已知故障。S03/S04新记忆组合预期partial，未高估。全部给定复测，无已知自主变式失败的重用。",
+    "empty_prediction_note": "空字符串学生预测与未提供预测的None/null必须区分；本次主程序原始stdout为单个换行。",
+    "frozen_expectations": {
+      "tutor-S01": "complete",
+      "tutor-S02": "complete",
+      "tutor-S03": "partial",
+      "tutor-S04": "partial"
+    }
+  },
+  "independent_reference_checks": [
+    {
+      "turn_id": "tutor-S01-T1",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "d936bd492c55057fa5455e205314d04a9c7f5094b16246658cb621c68c5099a5",
+          "stdout": "18\n",
+          "answer_without_line_endings": "18",
+          "expected": "18",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "8c45b6ce23a6650ea0c74269996547baf32fbf725657495ec379adc7212fec36",
+          "stdout": "20\n",
+          "answer_without_line_endings": "20",
+          "expected": "20",
+          "passed": true
+        }
+      },
+      "student_answer": "20",
+      "student_status": "incorrect",
+      "status_passed": true
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "0e7b657aa60e8306d6f3e1df848ab3d8460f5648ccd91ee9e32952b31cc44a79",
+          "stdout": "\n",
+          "answer_without_line_endings": "",
+          "expected": "",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "f4b810aee017f7677d2d0a47305cafcce29db241a172c19ebc95226147858b30",
+          "stdout": "yth\n",
+          "answer_without_line_endings": "yth",
+          "expected": "yth",
+          "passed": true
+        }
+      },
+      "student_answer": "",
+      "student_status": "correct",
+      "status_passed": true
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "f4b810aee017f7677d2d0a47305cafcce29db241a172c19ebc95226147858b30",
+          "stdout": "yth\n",
+          "answer_without_line_endings": "yth",
+          "expected": "yth",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "452f828ea1851d4773e72f5c918ee88e2e7187aef9977938f5dafeaa86e6fd66",
+          "stdout": "pyt\n",
+          "answer_without_line_endings": "pyt",
+          "expected": "pyt",
+          "passed": true
+        }
+      },
+      "student_answer": "pyt",
+      "student_status": "incorrect",
+      "status_passed": true
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "bf2b451d5a183a63f013761a85eed1db521eda34b80ef54713cdbe634d101aed",
+          "stdout": "15\n",
+          "answer_without_line_endings": "15",
+          "expected": "15",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "a99f1b3cee3338a2d6209b278fa6022ae435709b1aec9006e8a2282be40ce39f",
+          "stdout": "18\n",
+          "answer_without_line_endings": "18",
+          "expected": "18",
+          "passed": true
+        }
+      },
+      "student_answer": "15",
+      "student_status": "correct",
+      "status_passed": true
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "d936bd492c55057fa5455e205314d04a9c7f5094b16246658cb621c68c5099a5",
+          "stdout": "18\n",
+          "answer_without_line_endings": "18",
+          "expected": "18",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "8c45b6ce23a6650ea0c74269996547baf32fbf725657495ec379adc7212fec36",
+          "stdout": "20\n",
+          "answer_without_line_endings": "20",
+          "expected": "20",
+          "passed": true
+        }
+      },
+      "student_answer": "18",
+      "student_status": "correct",
+      "status_passed": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "reference_programs": {
+        "main": {
+          "program_sha256": "8a296b632693c65abb1435f98bbd29f24cb7d4797e4d892246d489994b4db789",
+          "stdout": "24\n",
+          "answer_without_line_endings": "24",
+          "expected": "24",
+          "passed": true
+        },
+        "followup": {
+          "program_sha256": "1a8517856231a70acb9e548c447dfd074b05ca77e8ebf8a9f126a52e6724fe89",
+          "stdout": "28\n",
+          "answer_without_line_endings": "28",
+          "expected": "28",
+          "passed": true
+        }
+      },
+      "student_answer": "24",
+      "student_status": "correct",
+      "status_passed": true
+    }
+  ]
+}

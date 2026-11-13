@@ -1,0 +1,29 @@
+{
+  "stage": "sft",
+  "steps": 500,
+  "selected": 1000,
+  "unique_training_examples": 500,
+  "total_response_tokens_processed": 23981,
+  "training_step_seconds": 44.141,
+  "adapter_delta_l2": 0.2575706995952652,
+  "sha256": "dc441f4eae1a5b6f2f77107266f066b45098d39240d12deafe7ba043aef9bc41",
+  "parent_sft_sha256": "1e828ca88cb44b5474a28182e4c0b3f5061a4d169641f783b30c31de4d2d8797",
+  "first_training_batch_before": {
+    "step": 1,
+    "ids": [
+      "V2-sft-00092"
+    ],
+    "loss": 1.5554496049880981,
+    "response_tokens": 81,
+    "answer_nll": 1.5554496049880981,
+    "grad_norm_before_clip": 10.446725845336914,
+    "adapter_step_l2": 0.006001221749299285,
+    "adapter_delta_from_stage_start_l2": 0.006001221749299285,
+    "seconds": 2.078
+  },
+  "same_training_batch_after": {
+    "loss": 1.3529269695281982,
+    "response_tokens": 81,
+    "answer_nll": 1.3529269695281982
+  }
+}

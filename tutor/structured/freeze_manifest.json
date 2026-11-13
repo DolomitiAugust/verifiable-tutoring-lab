@@ -1,0 +1,46 @@
+{
+  "frozen_at_utc": "2026-11-07T06:03:18.017132+00:00",
+  "source_sha256": {
+    "build_fixtures.py": "13af4caae6e7eeb5edd2b90ae09d4aaab132e98416310bb259780f2828a5cebd",
+    "cases.counterexample.json": "b506dd479a93d4267a79fc80ea038a5458ed365493f065d24976f2c83f0e4e42",
+    "cases.regression.json": "1b7c6c27678470d859e3a97a9deb29f3a83de0bf092f4b6be8c566f8572b32a6",
+    "constraints.py": "47e8a826245a9cfdf502383f538a0e1a9bf450faa09a82ee926a6a6e76a3417a",
+    "contracts.py": "1afc7fb7123bd36d2ccfdb5e849a92bd6041c9a30879616039862d5422560426",
+    "engine.py": "9e944615722a666a831f9bd47530839a21ee2bdea5d67ce263ce7a2f2059d2da",
+    "experiment_design.json": "5f72dc79211f6584ec71c9f701868e62365d0cecb543f1417080d77c1c4869a0",
+    "memory.py": "a53f1dc5a628c8250c33ed8434d72b22cc3fa5fb9dc8452834672e229d9b335c",
+    "model_backend.py": "137fe4b8af1205a294f3c619db19844cfd7de00b8f6401b8facb07b2d897d21e",
+    "prompts.clean.json": "fc01027e45db01af992a8cfbdf0501cbacd5aea2c97aa19e130f2297eeacee56",
+    "prompts.guarded.json": "c11e0cd556a1f6feebeae222337c3059739918d9366f7fc4f8a0a4677f071c03",
+    "run_experiment.py": "4b3c4643011da458976783759cb08e1978e4f5e9a9a0142b8c700056c1cdb649",
+    "system.py": "c9d48b91e0ad3c82082287aab455473a40549fad167de06c7595cc3e45c9680f",
+    "test_prompt_revision.py": "2b542be4d51ed656a86dadcfbc7cb56dae4523388f7c4849b4e8e711bfc18c52",
+    "__init__.py": "75efa6c59796532f693c2bf598473f0247551aa5fc3903c890de57ef23dd280c"
+  },
+  "plan_sha256": {
+    "results/exploratory_clean_freeform/plan.json": "2fa3df70205ff737fd0e722cc207bf24b6cec2c15ac31430aa4268702612a842",
+    "results/exploratory_guarded_quotes/plan.json": "ed771aaa9a09af8f97ef2780ac229085fab9576fddc6b523e0684fcb87664736",
+    "results/prospective_clean_freeform/plan.json": "f137e970eeb774b5baa1bb71b512b190ecc8a19c21b0e9d9778972abe959f053",
+    "results/prospective_guarded_quotes/plan.json": "5f64ea9faa71a95c163fb36172d5bd88c78b6073b27e0956c6bbf0eb24ec22cc"
+  },
+  "original_source_sha256": {
+    "system.py": "719aac8b5a9ca288190d7f0d41cb87fd89aae67db91e0cc9b7fe490e7f372306",
+    "prompts.json": "cd1696fcf81619df0625c536a479ef53b7b66699560fa06be2d77ee6f424ad54",
+    "engine.py": "9e944615722a666a831f9bd47530839a21ee2bdea5d67ce263ce7a2f2059d2da",
+    "memory.py": "a53f1dc5a628c8250c33ed8434d72b22cc3fa5fb9dc8452834672e229d9b335c",
+    "constraints.py": "47e8a826245a9cfdf502383f538a0e1a9bf450faa09a82ee926a6a6e76a3417a",
+    "model_backend.py": "137fe4b8af1205a294f3c619db19844cfd7de00b8f6401b8facb07b2d897d21e",
+    "run_experiment.py": "16701df47149599ec2df2b1bb27586e193e0f450fc38a49b9ed2a4bf5da64a28",
+    "cases.v2.json": "1b7c6c27678470d859e3a97a9deb29f3a83de0bf092f4b6be8c566f8572b32a6"
+  },
+  "baseline_prompt_copy_exact": true,
+  "regression_case_copy_exact": true,
+  "unit_tests": {
+    "count": 18,
+    "passed": 18,
+    "failed": 0,
+    "backend": "scripted only",
+    "command": "python -m unittest tutor.structured.test_prompt_revision -v"
+  },
+  "model_calls_during_build": 0
+}

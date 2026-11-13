@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "checks": {
+    "published_sha256": 8,
+    "count_sft": 1,
+    "pointers_sft": 1,
+    "export_matches_ledger": 1696,
+    "main_program_exec": 1696,
+    "transfer_program_exec": 1696,
+    "program_in_prompt": 1696,
+    "chosen_answer": 1696,
+    "chosen_transfer_answer": 405,
+    "informative_transfer": 405,
+    "count_preference": 1,
+    "pointers_preference": 1,
+    "distinct_pair": 600,
+    "negative_answer_matches_documented_type": 600,
+    "instruction_pair_direction": 300,
+    "instruction_pair_negative": 300,
+    "count_evaluation": 1,
+    "pointers_evaluation": 1,
+    "count_dev": 1,
+    "pointers_dev": 1,
+    "count_preference_eval": 1,
+    "pointers_preference_eval": 1,
+    "no_program_overlap": 10,
+    "no_prompt_overlap": 10,
+    "family_separation": 6,
+    "frozen_v1_bridge": 1,
+    "natural_file_hash": 2,
+    "natural_count": 1,
+    "natural_reference_execution": 24,
+    "natural_no_exact_program_overlap": 24,
+    "natural_export_match": 24,
+    "natural_gold_marker": 24
+  },
+  "errors": [],
+  "cross_split_program_overlap": {
+    "sft/preference": 0,
+    "sft/evaluation": 0,
+    "sft/dev": 0,
+    "sft/preference_eval": 0,
+    "preference/evaluation": 0,
+    "preference/dev": 0,
+    "preference/preference_eval": 0,
+    "evaluation/dev": 0,
+    "evaluation/preference_eval": 0,
+    "dev/preference_eval": 0
+  },
+  "comparison": {
+    "sft": {
+      "v1": {
+        "n": 1000,
+        "response_chars_median": 306.0,
+        "response_chars_mean": 324.085,
+        "program_structures_same_ast_metric": 105,
+        "length_only_accuracy": null,
+        "chosen_shorter": 0,
+        "equal_length": 0,
+        "legacy_marker_chosen": 0,
+        "legacy_marker_rejected": 0
+      },
+      "v2": {
+        "n": 1000,
+        "response_chars_median": 65.0,
+        "response_chars_mean": 62.209,
+        "program_structures_same_ast_metric": 145,
+        "length_only_accuracy": null,
+        "chosen_shorter": 0,
+        "equal_length": 0,
+        "legacy_marker_chosen": 0,
+        "legacy_marker_rejected": 0
+      }
+    },
+    "preference": {
+      "v1": {
+        "n": 500,
+        "response_chars_median": 296.0,
+        "response_chars_mean": 316.006,
+        "program_structures_same_ast_metric": 98,
+        "length_only_accuracy": 0.559,
+        "chosen_shorter": 220,
+        "equal_length": 1,
+        "legacy_marker_chosen": 0,
+        "legacy_marker_rejected": 179
+      },
+      "v2": {
+        "n": 500,
+        "response_chars_median": 64.0,
+        "response_chars_mean": 62.23,
+        "program_structures_same_ast_metric": 121,
+        "length_only_accuracy": 0.5,
+        "chosen_shorter": 167,
+        "equal_length": 166,
+        "legacy_marker_chosen": 0,
+        "legacy_marker_rejected": 0
+      }
+    }
+  },
+  "reason_summary": {
+    "factual_error": {
+      "n": 250,
+      "response_chars_median": 78.0,
+      "response_chars_mean": 85.228,
+      "program_structures_same_ast_metric": 103,
+      "length_only_accuracy": 0.488,
+      "chosen_shorter": 45,
+      "equal_length": 166,
+      "legacy_marker_chosen": 0,
+      "legacy_marker_rejected": 0
+    },
+    "instruction_mismatch": {
+      "n": 250,
+      "response_chars_median": 41.0,
+      "response_chars_mean": 39.232,
+      "program_structures_same_ast_metric": 91,
+      "length_only_accuracy": 0.512,
+      "chosen_shorter": 122,
+      "equal_length": 0,
+      "legacy_marker_chosen": 0,
+      "legacy_marker_rejected": 0
+    }
+  },
+  "independence": "Auditor does not import curriculum/generation code. Program execution supplies fact checks; semantic teaching quality is not independently rated.",
+  "limits": [
+    "Deterministic synthetic data; no real students or teacher blind ratings.",
+    "Only predefined legacy markers and length shortcut were measured; other shortcuts may remain.",
+    "Instruction-mismatch pairs intentionally test explicit concise-vs-explanation requirements.",
+    "No causal claim about model/learning improvement until downstream controlled evaluation."
+  ]
+}

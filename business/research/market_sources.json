@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "access_date": "2026-11-07",
+  "scope": "business teacher references, official context, independent learning evidence and privacy design constraints",
+  "source_count": 10,
+  "sources": [
+    {
+      "id": "business-M01",
+      "title": "2025年全国教育事业发展统计公报",
+      "publisher": "中华人民共和国教育部",
+      "url": "https://www.moe.gov.cn/jyb_sjzl/sjzl_fztjgb/202607/t20260706_1442870.html",
+      "fallback_url": "https://jyt.hlj.gov.cn/jyt/c110518/202608/c00_31969727.shtml",
+      "published": "2026-07-06",
+      "fallback_published": "2026-08-25",
+      "accessed": "2026-11-07",
+      "source_type": "official_statistics",
+      "verification": "教育部页面搜索结果全文可读；直接open重定向循环；黑龙江省教育厅转载正文完整核对，第六节及注[25]。",
+      "facts": [
+        "2025年全国高等学校3167所；各种形式高等教育在学总规模4872.57万人。",
+        "在学总规模包括研究生、本专科、成人、网络、自考等形式，不等于Python初学者人数。"
+      ],
+      "short_quote": "全国共有高等学校3167所。",
+      "location": "第六节 高等教育；注[1]、[25]",
+      "limitations": "仅说明教育总体规模。不能作为本项目TAM、SAM、付费客户或采购意愿；统计不含港澳台。"
+    },
+    {
+      "id": "business-M02",
+      "title": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting",
+      "authors": "Greg Kestin, Kelly Miller, Anna Klales, Timothy Milbourne, Gregorio Ponti",
+      "publisher": "Scientific Reports 15, 17458",
+      "url": "https://www.nature.com/articles/s41598-025-97652-6",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179260/",
+      "doi": "10.1038/s41598-025-97652-6",
+      "published": "2025-06-03",
+      "accessed": "2026-11-07",
+      "source_type": "peer_reviewed_original_RCT",
+      "verification": "出版商open因认证重定向失败；PMC原文Results、Methods、Limitations完整核对。",
+      "facts": [
+        "哈佛物理课程233名选课者中194人符合纳入条件；两周两课交叉设计，表面张力和流体流动。",
+        "论文报告AI即时后测优于课堂主动学习；线性回归效应量0.63，分位数估计0.73–1.3标准差；后者不是95%置信区间。"
+      ],
+      "short_quote": "Of the 233 enrolled students, 194 were eligible for inclusion in the study.",
+      "location": "Results / Methods: Study population / Context, limitations, and future directions",
+      "limitations": "专家逐题提示、预写答案、GPT-4与教学支架；单课程两课、非中国Python课程；不能证明本项目效果、长期保持、付费或教师工时收益。"
+    },
+    {
+      "id": "business-M03",
+      "title": "Generative AI without guardrails can harm learning: Evidence from high school mathematics",
+      "authors": "Hamsa Bastani, Osbert Bastani, Alp Sungu, Haosen Ge, Özge Kabakcı, Rei Mariman",
+      "publisher": "PNAS 122(26), e2422633122",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2422633122",
+      "fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/",
+      "doi": "10.1073/pnas.2422633122",
+      "published_online": "2025-06-25",
+      "issue_date": "2025-07-01",
+      "accessed": "2026-11-07",
+      "source_type": "peer_reviewed_original_RCT",
+      "verification": "PMC原文实验设计与Table 1核对。",
+      "facts": [
+        "土耳其一所高中，近1000名9至11年级学生，四次90分钟活动；按班分配。Table 1的2848是重复学生-课次观测，不是独立学生数。",
+        "无辅助考试GPT Base相对对照估计为-0.054（0至1量表）；对照均值0.321，约相对下降17%。GPT Tutor估计-0.004，未检出相对对照显著提升。"
+      ],
+      "short_quote": "comprising nearly 1,000 students",
+      "location": "Experiment design; Table 1; paragraph following Table 1",
+      "limitations": "高中数学、单校短期，不能直接迁移本项目；提示保护降低负面影响，不等于证明本项目或所有AI辅导提高成绩。17%是相对变化，不是17个百分点。"
+    },
+    {
+      "id": "business-M04",
+      "title": "中华人民共和国个人信息保护法",
+      "publisher": "中国人大网；中央网信办转载",
+      "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "published": "2021-08-20",
+      "effective": "2021-11-01",
+      "accessed": "2026-11-07",
+      "source_type": "official_statute",
+      "verification": "中央网信办全文核对第6、13、19、21、46、47、55条。",
+      "facts": [
+        "第6条最小必要；第13条要求确定合法处理依据；第19条最短必要保存期限；第21条规定委托处理约定及监督。",
+        "第46、47条涉及更正和删除；第55条规定委托处理等情形的事前影响评估。"
+      ],
+      "short_quote": "个人信息处理者应当对其个人信息处理活动负责",
+      "location": "第6、13、19、21、46、47、55条",
+      "limitations": "仅列设计与合同审查事项，未完成合规评估。学生ID去标识化不自动等于匿名化；校内部署不能自动认定合规；具体合法依据、跨境与采购要求需按实际部署和学校制度审查。"
+    },
+    {
+      "id": "business-T01",
+      "title": "How to write a business plan",
+      "publisher": "Accelerate Cambridge, Cambridge Judge Business School",
+      "url": "https://www.jbs.cam.ac.uk/wp-content/uploads/2020/08/how-to-write-a-business-plan.pdf",
+      "published": "2013-10",
+      "accessed": "2026-11-07",
+      "source_type": "reference_planning_guide",
+      "verification": "11页PDF可访问；封面/页脚为October 2013，URL中的2020不是文献年份。",
+      "facts": [
+        "指南框架包括产品、市场与竞品、营销、运营、管理、财务及风险/回报/退出。",
+        "财务叙述要求明确假设、敏感性、现金需要与悲观场景；用于组织结构，不能证明本项目商业需求。"
+      ],
+      "short_quote": "Key assumptions underpinning your forecasts.",
+      "location": "PDF p3框架；p5–6市场竞品；p9财务",
+      "limitations": "旧版通用创业指南，其成功率等历史数字不作为当前市场事实引用。"
+    },
+    {
+      "id": "business-T02",
+      "title": "老师指定知乎链接（正文未核实）",
+      "publisher": "知乎",
+      "url": "https://zhuanlan.zhihu.com/p/21845926",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_reference_unavailable",
+      "verification": "web open 403 Forbidden",
+      "facts": [],
+      "short_quote": null,
+      "limitations": "不可声称读过或从其正文引用；仅保留原始链接和失败记录。"
+    },
+    {
+      "id": "business-T03",
+      "title": "老师指定融资路演知乎链接（正文未核实）",
+      "publisher": "知乎",
+      "url": "https://zhuanlan.zhihu.com/p/24545659",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "teacher_reference_unavailable",
+      "verification": "web open 403 Forbidden",
+      "facts": [],
+      "short_quote": null,
+      "limitations": "不可声称读过或从其正文引用；仅保留原始链接和失败记录。"
+    },
+    {
+      "id": "business-T04",
+      "title": "Product Hunt – The best new products in tech.",
+      "publisher": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "reference_idea_directory",
+      "verification": "web open可读取首页",
+      "facts": [
+        "提供产品发布和发现目录。"
+      ],
+      "short_quote": null,
+      "limitations": "浏览灵感，未将榜单、投票或发布数量视作付费意愿、收入、市场份额。"
+    },
+    {
+      "id": "business-T05",
+      "title": "中国独立开发者项目列表",
+      "publisher": "1c7 and contributors",
+      "url": "https://github.com/1c7/chinese-independent-developer",
+      "published": null,
+      "accessed": "2026-11-07",
+      "source_type": "reference_idea_directory",
+      "verification": "web open可读取GitHub仓库",
+      "facts": [
+        "独立开发者项目列表，用于产品发现。"
+      ],
+      "short_quote": null,
+      "limitations": "未逐项验证其产品商业数据；不据此推导市场需求或收入。"
+    },
+    {
+      "id": "business-T06",
+      "title": "How to Start a Business: Essential Steps and Key Considerations",
+      "publisher": "Investopedia",
+      "authors": "Elysse Bell",
+      "url": "https://www.investopedia.com/how-to-start-a-business-7970202",
+      "updated": "2026-03-31",
+      "accessed": "2026-11-07",
+      "source_type": "reference_general_guide",
+      "verification": "web open可读标题、日期与正文。",
+      "facts": [
+        "通用创业流程参考，涵盖市场研究、计划与资金。"
+      ],
+      "short_quote": null,
+      "limitations": "二手通用指南，且有美国商业语境；不用于验证中国高校采购规则或本项目商业可行性。"
+    }
+  ],
+  "classification": {
+    "observed_project_results": "本文件不新增也不替代synthesis–tutor实验结论。",
+    "external_evidence": "上述统计、原始研究、官方法条是外部证据。",
+    "commercial_hypotheses": "高校Python需求、学校付费、节省工时、转化率、定价、续费与市场规模须实地验证。"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "audit_version": "1.0",
+  "audited_at_utc": "2026-11-07T04:10:52.513621+00:00",
+  "reviewer": "independent child agent business_competitors",
+  "scope": "只读business_assumptions.json、model_business.py和results/business_outputs.json；未导入或执行原计算脚本；只写本审计文件。",
+  "method": "采用Decimal从假设独立重建单位经济、25个敏感性格点、3组共36个月现金行与汇总，金额容差1e-8。",
+  "source_sha256": {
+    "business_assumptions.json": "67fd52464bb70d5d66979fb040dc800ff34216ea3232e5d3bab810852cd0ba52",
+    "model_business.py": "a63684321323addc42fc268b9af63cb62767e474daa9f400dc56f510789a99b4",
+    "business_outputs.json": "58e68547057478a2e661efb7d7741b419f87fc0c2f284eb74330f23ab27057b3"
+  },
+  "checks_count": 521,
+  "arithmetic_pass": true,
+  "failed_checks": [],
+  "independent_units": {
+    "downside": {
+      "enrolments": 600.0,
+      "turns": 108000.0,
+      "revenue": 54000.0,
+      "api": 972.0,
+      "review": 40500.0,
+      "review_hours": 450.0,
+      "onboarding": 10800.0,
+      "cloud": 1800.0,
+      "recurring_delivery": 43272.0,
+      "first_year_delivery": 54072.0,
+      "first_year_contribution": -72.0,
+      "gross_margin": -0.0013333333333333333,
+      "contribution_after_cac": -15072.0,
+      "new_contracts_to_cover_annual_fixed": null,
+      "first_year_contracts_before_cac": null,
+      "new_contracts_to_cover_fixed_and_launch": null
+    },
+    "reference": {
+      "enrolments": 600.0,
+      "turns": 72000.0,
+      "revenue": 72000.0,
+      "api": 427.68,
+      "review": 6480.0,
+      "review_hours": 72.0,
+      "onboarding": 7200.0,
+      "cloud": 1200.0,
+      "recurring_delivery": 8107.68,
+      "first_year_delivery": 15307.68,
+      "first_year_contribution": 56692.32,
+      "gross_margin": 0.7873933333333333,
+      "contribution_after_cac": 48692.32,
+      "new_contracts_to_cover_annual_fixed": 13,
+      "first_year_contracts_before_cac": 11,
+      "new_contracts_to_cover_fixed_and_launch": 15
+    },
+    "upside": {
+      "enrolments": 600.0,
+      "turns": 60000.0,
+      "revenue": 90000.0,
+      "api": 340.2,
+      "review": 1800.0,
+      "review_hours": 20.0,
+      "onboarding": 5400.0,
+      "cloud": 1000.0,
+      "recurring_delivery": 3140.2,
+      "first_year_delivery": 8540.2,
+      "first_year_contribution": 81459.8,
+      "gross_margin": 0.9051088888888889,
+      "contribution_after_cac": 75459.8,
+      "new_contracts_to_cover_annual_fixed": 8,
+      "first_year_contracts_before_cac": 8,
+      "new_contracts_to_cover_fixed_and_launch": 10
+    }
+  },
+  "independent_cash": [
+    {
+      "collection_lag_months": 1,
+      "recognized_revenue": 108000.0,
+      "cash_receipts": 216000.0,
+      "cash_out": 757761.52,
+      "closing_cash": 458238.48,
+      "minimum_month_end_cash": 458238.48,
+      "year_end_arr": 216000.0,
+      "billed_uncollected_by_year_end": 0.0
+    },
+    {
+      "collection_lag_months": 3,
+      "recognized_revenue": 108000.0,
+      "cash_receipts": 144000.0,
+      "cash_out": 757761.52,
+      "closing_cash": 386238.48,
+      "minimum_month_end_cash": 386238.48,
+      "year_end_arr": 216000.0,
+      "billed_uncollected_by_year_end": 72000.0
+    },
+    {
+      "collection_lag_months": 6,
+      "recognized_revenue": 108000.0,
+      "cash_receipts": 72000.0,
+      "cash_out": 757761.52,
+      "closing_cash": 314238.48,
+      "minimum_month_end_cash": 314238.48,
+      "year_end_arr": 216000.0,
+      "billed_uncollected_by_year_end": 144000.0
+    }
+  ],
+  "derived_boundaries": {
+    "full_annual_contracts_excluding_launch": 13,
+    "full_annual_contracts_including_launch": 15,
+    "first_calendar_year_contract_service_months": 18,
+    "first_calendar_year_recurring_delivery_cny": 12161.52,
+    "first_calendar_year_revenue_less_modeled_cash_expenses_cny": -649761.52,
+    "reference_zero_contribution_review_fraction": 0.17028493827160493
+  },
+  "findings": [
+    {
+      "id": "B1",
+      "status": "needs_report_qualification",
+      "topic": "静态盈亏平衡",
+      "finding": "13份指每份完整履约12个月，扣一次获客和导入后，覆盖60万元年度固定支出；含10万元启动费则15份。不能套用于4/7/10月签约的日历首年，后者只有18个合同服务月。"
+    },
+    {
+      "id": "B2",
+      "status": "needs_report_qualification",
+      "topic": "ARR、收入、现金",
+      "finding": "21.6万元是情景年末年化合同规模，10.8万元是按12个月均摊的日历首年收入。账期1/3/6月对应回款21.6/14.4/7.2万元。均非实际客户、合同和收入。按月分摊是模型假设，未核验会计履约义务。"
+    },
+    {
+      "id": "B3",
+      "status": "resolved_in_assumptions",
+      "topic": "CAC与固定工资",
+      "finding": "新版明确CAC只含额外获客现金费，不含已经列入固定成本的工资；外包复核和导入也与固定工资互斥。给定口径下未见重复计算。需继续称增量获客费，不能冒充全成本行业CAC。"
+    },
+    {
+      "id": "B4",
+      "status": "needs_report_qualification",
+      "topic": "贡献率字段",
+      "finding": "gross_margin字段实际为扣列示直接交付及导入费用后的首年贡献率，没有分配固定工资、研发和总部成本。报告宜称首年直接贡献率，避免称已验证的SaaS毛利率。新版已移除等效CAC回收月数，避免误读为实际回本期。"
+    },
+    {
+      "id": "B5",
+      "status": "resolved_in_assumptions",
+      "topic": "买方时间估值",
+      "finding": "新版独立设置90元/小时买方时间估值假设，不再直接挪用供应商工资。800小时/年或80分钟/选课人次算术正确，但不是已测ROI或可兑现薪资节省；需计入客户培训、接入和复核增加时间。"
+    },
+    {
+      "id": "B6",
+      "status": "passed_arithmetic_with_limits",
+      "topic": "tokens与人工",
+      "finding": "输入/输出tokens已经是3角色总和，未重复乘3；只对API成本施加重试系数。tokens、复核率和时间未经tutor之外真实服务校准，不能由API低成本推导可靠服务。未对重试和人工异常处理联动建模。"
+    },
+    {
+      "id": "B7",
+      "status": "needs_report_qualification",
+      "topic": "季节性与服务容量",
+      "finding": "课程两学期使用却将费用均摊12个月；固定团队容量与单位成本按线性假设，未计学期高峰、并发、阶梯扩员、续约与流失。不能据静态13份推断当前团队已可服务13校或首年盈利。"
+    },
+    {
+      "id": "B8",
+      "status": "needs_report_qualification",
+      "topic": "资金与利润",
+      "finding": "100万元期初假设融资下三种账期的月末现金均为正，只说明该模型12个月月末资金未耗尽。收入减列示现金费用为-649761.52元（非规范会计净利润）。未验证月中最低现金、后12个月义务、融资可得性。"
+    },
+    {
+      "id": "B9",
+      "status": "model_simplification",
+      "topic": "获客支出时点",
+      "finding": "模型把获客费和导入费均在上线月付现；现实售前支出通常提前发生。该时点偏乐观，应披露，并在签真实合同后按付款计划更新。"
+    }
+  ],
+  "conclusion": "独立核算521项全部通过。仅验证给定假设下算术；不证明需求、定价、学习效果、真实成本或盈利。报告须保留贡献率、账期与全年合同等效规模的边界。"
+}

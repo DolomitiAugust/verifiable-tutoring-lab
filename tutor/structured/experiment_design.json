@@ -1,0 +1,33 @@
+{
+  "version": "tutor-prompt-revision-v3",
+  "motivation": "Observed frozen v2 outputs copied teacher answer/status examples; reviewers approved contradictory drafts. Frozen v2 evidence is preserved.",
+  "arms": {
+    "clean_freeform": "Remove all concrete answer and approval examples. Keep v2 freeform adoption gates. Share a corrected default-argument fact card with the guarded arm.",
+    "guarded_quotes": "Same corrected facts; no concrete examples. Teacher selects one or two exact tool-fact quotes. Strict JSON, schema, current answer/status, plan evidence and quote fidelity gates. Reviewer receives raw facts and draft but no deterministic-check answers, and its separate comparisons are independently checked."
+  },
+  "shared_fix": "Default value None is not a mutable container; only a verified exact entry guard supports claiming a fresh container per omitted-argument call. This changes facts as well as prompts, so comparisons with v2 are not a pure prompt-only ablation.",
+  "suite_roles": {
+    "cases.regression.json": "All old cases are exploratory regression, because prior outputs informed repair. Do not relabel them new unexpected outcomes.",
+    "cases.counterexample.json": "Eight prospectively frozen, model-unseen stress probes based on known failure mechanisms. No model results are used in their authorship."
+  },
+  "budgets": {"planner": 64, "teacher": 192, "reviewer": 96},
+  "decode": {"do_sample": false, "num_beams": 1, "seed": 20261107},
+  "model": "Use the existing pinned official Qwen2.5-0.5B-Instruct as a diagnostic, not as the SFT checkpoint or an independently trained agent.",
+  "planned_runs": [
+    {"suite": "cases.counterexample.json", "arm": "clean_freeform", "mode": "multi", "subset": "all"},
+    {"suite": "cases.counterexample.json", "arm": "guarded_quotes", "mode": "multi", "subset": "all"},
+    {"suite": "cases.regression.json", "arm": "clean_freeform", "mode": "multi", "subset": "paired", "label": "exploratory regression"},
+    {"suite": "cases.regression.json", "arm": "guarded_quotes", "mode": "multi", "subset": "paired", "label": "exploratory regression"}
+  ],
+  "primary_descriptive_measures": [
+    "raw teacher answer and student-status agreement",
+    "raw reviewer approval of a deterministically invalid draft (false approval), even if blocked before delivery",
+    "independent reviewer-contract validity",
+    "adopted freeform model prose, separately from selected tool quotes",
+    "case-specific qualitative correctness after reading actual outputs",
+    "tokens, latency and stop reason"
+  ],
+  "success_policy": "Do not infer success from JSON validity, rejection of a bad draft, or tool-only fallback. Retain raw failures, refusals and truncations.",
+  "immutability": "Freeze source/prompts/cases hashes before model runs; new revisions and new output directories are required for any change.",
+  "not_performed_here": "No real model inference or model-quality result; root schedules actual runs. Scripted unit tests only establish software behavior."
+}

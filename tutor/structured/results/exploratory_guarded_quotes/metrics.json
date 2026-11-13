@@ -1,0 +1,41 @@
+{
+  "case_count": 6,
+  "turn_count": 6,
+  "real_model_calls": 18,
+  "generated_tokens": 1435,
+  "role_adoption": {
+    "planner": {
+      "accepted": 0,
+      "calls": 6
+    },
+    "teacher": {
+      "accepted": 0,
+      "calls": 6
+    },
+    "reviewer": {
+      "accepted": 0,
+      "calls": 6
+    }
+  },
+  "final_llm_used": 0,
+  "model_freeform_prose_used": 0,
+  "model_selected_tool_quotes": 0,
+  "teacher_parsed_count": 0,
+  "teacher_call_count": 6,
+  "teacher_current_answer_matches": 0,
+  "teacher_current_status_matches": 0,
+  "raw_reviewer_false_approval_count": 0,
+  "raw_reviewer_false_approval_turns": [],
+  "final_sources": {
+    "verified_template": 6
+  },
+  "automatic_passed": 70,
+  "automatic_total": 70,
+  "stop_reasons": {
+    "eos": 15,
+    "max_new_tokens": 3
+  },
+  "qualitative_status": "unreviewed",
+  "complete_case_success_claim": null,
+  "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+}

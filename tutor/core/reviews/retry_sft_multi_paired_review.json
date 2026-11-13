@@ -1,0 +1,307 @@
+{
+  "review_kind": "Non-blind technical review by Codex of all 18 raw role outputs and all six final replies; no independent teacher judgement.",
+  "result_sha256": "606c91861ded9a70c483dfbe706365f9a2447b6a6e1f1f9a7f92c3fccfa8ae01",
+  "historical_result_sha256": "47bf47815caba648a83127e9647357da8bf2479e82d8b45985e21ba07baae0b8",
+  "summary": {
+    "case_count": 6,
+    "turn_count": 6,
+    "real_model_calls": 18,
+    "generated_tokens": 1914,
+    "role_adoption": {
+      "planner": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "teacher": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "reviewer": {
+        "accepted": 0,
+        "calls": 6
+      }
+    },
+    "final_llm_used": 0,
+    "final_sources": {
+      "verified_template": 6
+    },
+    "automatic_passed": 70,
+    "automatic_total": 70,
+    "stop_reasons": {
+      "max_new_tokens": 15,
+      "eos": 3
+    },
+    "qualitative_status": "unreviewed",
+    "complete_case_success_claim": null,
+    "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+  },
+  "elapsed_seconds_including_load": 202.53592170000047,
+  "generation_seconds": 164.3625,
+  "reviews": [
+    {
+      "case_id": "tutor-C01",
+      "turn_id": "tutor-C01-T1",
+      "reference": {
+        "main_answer": "12",
+        "student_status": "incorrect",
+        "explanation": "range(2,8,2) 只取 2、4、6；8 是排除的终点，2+4+6=12。学生多加 8 得到 20。",
+        "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+        "followup_answer": "20"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "复制局部正确range事实，但夹杂未提供的F2=[1,3,5]，不是完整规划JSON。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[12]веща\nF1= [2, 4, 6]，F2= [1, 3, 5]。F1终点 8 不包括。实际执行输出为 [12]，和为 12。F2终点 8"
+        },
+        "teacher": {
+          "assessment": "range取值正确，却把实际结果改成学生猜测20并声称与猜测一致；后续复制输入且截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。实际执行结果为 [20]，与猜测一致。\n本题输出：[20]<Student_answer: 20, verified_answer: 20, student_status: incorrect, facts: [{id: F1, topic: range, text: range(2, 8, 2) 依次取 [2, 4, 6]}, {id: F2, topic: execution, text: 实际执行输出为 '12'；代码中的赋值、运算与控制流按执行顺序决定此输出。}]ContentSize: 128\n本题输出：[20]<Student_answer: 20, verified_answer: 20, student_status: incorrect, facts: [{id: F1, topic: range,"
+        },
+        "reviewer": {
+          "assessment": "继续宣称输出20，与工具答案12矛盾，没有可用评审决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[20]\n第 1 步：range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。\n第 2 步：range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。实际执行输出为 [20]，与猜测一致。\n本"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": null
+    },
+    {
+      "case_id": "tutor-C02",
+      "turn_id": "tutor-C02-T1",
+      "reference": {
+        "main_answer": "yh",
+        "student_status": "correct",
+        "explanation": "起点 1、步长 2、终点 5 排除，取下标 1、3，字符 y、h；一次正确预测不能证明掌握。",
+        "followup_code": "word = 'python'\nprint(word[0:6:2])",
+        "followup_answer": "pto"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "复制当前切片事实，但JSON缺尾且含本题输出前缀。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"topics\": [\"slice\", \"execution\"], \"facts\": [{\"id\": \"F1\", \"topic\": \"slice\", \"text\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}, {\"id\": \"F2"
+        },
+        "teacher": {
+          "assessment": "将字符串答案yh写为示例9；冒号和执行顺序说明无关且混乱。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "eos",
+          "raw_quote": "本题输出：[9]\n冒号后的是学生的预测。冒号前的是学生的执行。冒号后的是学生的预测。冒号的顺序决定了学生的执行。 执行结果：[9]。示例仅输出一个。"
+        },
+        "reviewer": {
+          "assessment": "局部包含正确yh/正确状态，随后复制输入并截断，不是评审协议。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"verified_answer\": [\"yh\"], \"student_status\": \"correct\"}\n输入：{\"program\": \"word = 'python'\\nprint(word[1:5:2])\", \"request\": \"我的预测是 yh。请先核对，再说明取了哪些下标，不能因为一次答对就说我已掌握。给一道改起点和终点的复测及答案。\", \"background\": \"做过积木编程，容易"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": null
+    },
+    {
+      "case_id": "tutor-C03",
+      "turn_id": "tutor-C03-T1",
+      "reference": {
+        "main_answer": "9",
+        "student_status": "correct",
+        "explanation": "本题 range 只取 3、6，总和 9；此前 tutor-C01 把排除的终点 8 纳入，当前仍应检查终点 9 不被取到。",
+        "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)",
+        "followup_answer": "18"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "混用9及输入复制，未给出合约规划。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[9]\n本步输出：9\n本题输出不含“topics”和“history”。 参考答案：[9] 输入：{\"program\":\"total = 0\\nfor n in range(3, 9, 3):\\n    total += n\\nprint(total"
+        },
+        "teacher": {
+          "assessment": "先答9，随后错误把range(3,9,3)枚举为[3,6,9]并求和18；同时说终点不包括，内部矛盾。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：9\nrange(3, 9, 3) = [3, 6, 9]，终点 9 不包括。累加器 total = 3 + 6 + 9 = 18。\n本步输出：9\n本题输出：18\n本题考点：范围\n本步输出：3\nrange(3, 9, 3) = [3, 6, 9]，终点 9 不包括。累加器 total = 3 + 6 + 9 = 18。\n示例输出：18\n示动：range(3, 9, 3) = [3, 6, 9]，终点 9 不包括。累加器 total = 3 + 6 + 9 = 18。\n本步输出：18\n本题输出：18\n本题"
+        },
+        "reviewer": {
+          "assessment": "复述错误18及错误range枚举，没有检查或合约决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：18\n本步输出：18\n本题考点：range(3, 9, 3) = [3, 6, 9]，终点 9 不包括。累加器 total = 3 + 6 + 9 = 18。\n示例输出：18 示动：range(3, 9, 3) = [3, 6, 9]，终点 9"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": false,
+        "teacher": false,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": null
+    },
+    {
+      "case_id": "tutor-C07",
+      "turn_id": "tutor-C07-T1",
+      "reference": {
+        "main_answer": "([1, 2], [1, 2])",
+        "student_status": "incorrect",
+        "explanation": "默认列表在函数定义时创建一次，两次未显式提供 out 的调用复用它；a 与 b 都引用同一列表，第二次 append 后 a 也显示 [1,2]。",
+        "followup_code": "def collect(x, out=None):\n    if out == None:\n        out = []\n    out.append(x)\n    return out\na = collect(1)\nb = collect(2)\nprint((a, b))",
+        "followup_answer": "([1], [2])"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "把原题共享结果与修复后独立列表、字符串列表混在一起，且把函数变量类型说成tuple。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[([1], [2]), (['1', '2'], ['1', '2'])]веща\n对象共享。调用时会使用默认值。f = collect(1) 和 f = collect(2) 会得到相同的结果。f 的类型为 tuple。f"
+        },
+        "teacher": {
+          "assessment": "局部两个列表值正确，但省略元组形状，复制并重复输入，没有提交规定字段或解释默认对象共享机制。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[1, 2] [1, 2]\n请求：{\"program\": \"def collect(x, out=[]):\\n    out.append(x)\\n    return out\", \"request\": \"我以为每次调用都有新的空列表，所以猜 [1, 2]。请解释默认列表何时创建、a 和 b 为什么会相互影响，再给一道只改默认参数处理方式的修复练习及答案。\"}，背景是学过函数参数，但尚未理解对象共享。学生回答：[1, 2], [1, 2]。本题输出：[1, 2] [1, 2] 本题输出：[1, 2] [1, 2] 本题输出：[1, 2] [1, 2] 本题输出：[1, 2] [1, 2] 本"
+        },
+        "reviewer": {
+          "assessment": "把a、b分别说成[1]、[2]，混淆原共享默认程序与修复程序。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "eos",
+          "raw_quote": "本题输出：[1, 2] [1, 2]\n本题知识点：列表的 append() 方法\na = collect(1) → [1] b = collect(2) → [2] 打印 (a, b)"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": "C07修复变式的None仍被旧工具事实卡误述为共享默认可变容器。"
+    },
+    {
+      "case_id": "tutor-C08",
+      "turn_id": "tutor-C08-T1",
+      "reference": {
+        "main_answer": "212",
+        "student_status": "incorrect",
+        "explanation": "zip 只产生五对，和分别为16、40、52、54、50，合计212；左列表末尾18没有搭档，不能再加入。",
+        "followup_code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44, 6]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+        "followup_answer": "236"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "原题输出212及五对zip事实正确；但未形成规划JSON。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：212\n正步走。 按 zip 按较短列表结束。配对为 [(9, 7), (24, 16), (17, 35), (32, 22), (6, 44)]"
+        },
+        "teacher": {
+          "assessment": "答案212正确，却插入未请求的break代码；复测参考在230和212间重复变化，未给出可靠解释或协议回应。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：212\nleft = [9, 24, 17, 32, 6, 18]，right = [7, 16, 35, 22, 44]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\n    if len(left) == len(right):\n        break\nprint(total)\n本题输出：212\n变式参考输出：230\n本题输出：212\n变式参考输出：230\n变式提示 输出 212\n变式参考输出：212\n变式参考输出：212\n变式提示：len(left) == len(right) ；break 时 left 和 right 相同\n变式参考输出：212\n本题输出：212\n"
+        },
+        "reviewer": {
+          "assessment": "重复212/230等数字，无有效审查结论。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：212\n变式参考输出：230\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：212\n变式参考输出：21"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": null
+    },
+    {
+      "case_id": "tutor-S02",
+      "turn_id": "tutor-S02-T1",
+      "reference": {
+        "main_answer": "",
+        "student_status": "correct",
+        "explanation": "切片默认步长为正1，起点4已在终点1右侧，因此没有任何下标被选中，切片为长度0的空字符串；print 输出一个换行。该生明确作了空字符串预测，属于本次正确作答，不是未作答。给定复测选下标1、2、3，得到yth。",
+        "followup_code": "word = 'python'\nprint(word[1:4])",
+        "followup_answer": "yth"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "把切片题focus写为range并加入额外字段、重复与非JSON前缀。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"focus\": \"range\", \"evidence_id\": \"F1\", \"verified_answer\": \"空字符串\"}веща\n本条输出不完整。 参考答案：{\"focus\": \"range\", \"evidence_id\": \"F1\", \"verified_answer\": \"空字符串\"}веща"
+        },
+        "teacher": {
+          "assessment": "把空切片答案写为9；将python下标写[4,5,6]并声称拼起来是9，事实错误且重复截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：[9]\n变量 'python' 的下标为 [4, 5, 6]，求起始索引为 4 的部分。起始索引为 4 的部分是 [4, 5, 6]，拼起来是 [9]。 本题输出：[9]<Student_answer>-thumbnails: 100% 1.5s\n本题输出：[9]<Student_answer>-thumbnails: 100% 1.5s\n本题输出：[9]<Student_answer>-thumbnails: 100% 1.5s\n本题输出：[9]<Student_answer>-thumbnails: 100% 1.5s\n本题输出：[9]<Student_answer>-thumbnails: 100% 1.5s\n本题输出：[9]<Student_answer>-thumbnails: "
+        },
+        "reviewer": {
+          "assessment": "把verified_answer写为布尔true，复制错误下标和9，无有效决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "eos",
+          "raw_quote": "本题输出：{\"verified_answer\":true,\"student_status\":\"correct\"}\n变量 'python' 的下标为 [4, 5, 6]，求起始索引为 4 的部分。起始索引为 4 的部分是 [4, 5, 6]，拼起来是 [9]。 本题输出：[9]"
+        }
+      },
+      "input_equal_to_first_sft": true,
+      "final_text_equal_to_first_sft": true,
+      "full_role_prompt_equal_to_first_sft": {
+        "planner": true,
+        "teacher": true,
+        "reviewer": false
+      },
+      "final_source": "verified_template",
+      "known_final_defect": null
+    }
+  ],
+  "limits": [
+    "training selected SFT source and tensor checks passed independently; this tutor diagnostic does not establish DPO audit success.",
+    "Six already observed tasks; exploratory paired regression, not blind evaluation.",
+    "Same original controller, role prompts, budgets, tokenizer serialization, base weights and task inputs; dynamic history IDs and model-generated plan/draft content may differ.",
+    "70/70 checks evaluate deterministic engineering and fallback, not complete teaching success.",
+    "No student learning benefit or general multi-agent superiority is inferred."
+  ]
+}

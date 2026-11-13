@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "epoch": 1,
+      "checkpoint": "/content/nlpproject1_v2/results/checkpoints/sft_epoch_1.pt",
+      "dev_nll": 2.644899927548
+    },
+    {
+      "epoch": 2,
+      "checkpoint": "/content/nlpproject1_v2/results/checkpoints/sft_epoch_2.pt",
+      "dev_nll": 3.070906735828945
+    },
+    {
+      "epoch": 3,
+      "checkpoint": "/content/nlpproject1_v2/results/checkpoints/sft_epoch_3.pt",
+      "dev_nll": 3.3793597071511403
+    }
+  ],
+  "selected": {
+    "epoch": 1,
+    "checkpoint": "/content/nlpproject1_v2/results/checkpoints/sft_epoch_1.pt",
+    "dev_nll": 2.644899927548
+  }
+}

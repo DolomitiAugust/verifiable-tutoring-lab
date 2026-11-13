@@ -1,0 +1,22 @@
+{
+  "seed": 2026110701,
+  "frozen_before_training": true,
+  "policy": {
+    "sft": "training only",
+    "preference": "training only",
+    "dev": "epoch selection by NLL only; 3 new families absent from training",
+    "evaluation": "unchanged v1 bridge test; never train or tune",
+    "preference_eval": "100 new pairs from frozen test families; final evaluation only"
+  },
+  "sha256": {
+    "dev.jsonl": "dc48241119b9a3162bb9f261bea5ef744adb43b2ff3dcc878be79802ec455cea",
+    "dev_metadata.jsonl": "233b27b37abf463842ea007b55faeb20d5b90c3e38d2ecd756c585417a3884fc",
+    "evaluation.jsonl": "83e018cfbfc3fe1703271b73435e20f75b937b6a4afa3e07b27de2cf8c11776c",
+    "preference.jsonl": "72ebaac846744c05b7cffb52879fd3f050805dbcdc8b7614d734eb87ffdb80f1",
+    "preference_eval.jsonl": "49561cf8a17af7dd4355ec9d6147945d0fd3b8fdad3ee6a07428168c97be6e34",
+    "preference_eval_metadata.jsonl": "6949d78db15c715b4a23cb3fdbf05a0fdcda616a0cc433e19adb75abada97b39",
+    "sft.jsonl": "b76286fa1f0ce5750caf7f7b99dc8ec49e3390b37661e026290c83373d8b3b12",
+    "audit/candidates.jsonl": "c3f13d0416c69c17514602651bd1f8cda7261cf67a3641b0bd1a7064f05b2d62",
+    "stats.json": "05360989c424b6ea14a5fd75a1fd5f58abf0bb2e5cf06921e1ccc4f94c7e488f"
+  }
+}

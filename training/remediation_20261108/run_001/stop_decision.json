@@ -1,0 +1,42 @@
+{
+  "decision": "Stop bounded remediation; no new Colab run, no new test-set pass, no claimed model repair.",
+  "interpolation_dev_nll": [
+    {
+      "fraction": 0.0,
+      "dev_nll": 2.8672147383008686
+    },
+    {
+      "fraction": 0.05,
+      "dev_nll": 2.944695006779262
+    },
+    {
+      "fraction": 0.1,
+      "dev_nll": 3.028952318600246
+    },
+    {
+      "fraction": 0.25,
+      "dev_nll": 3.323667758532933
+    },
+    {
+      "fraction": 1.0,
+      "dev_nll": 5.929158180100577
+    }
+  ],
+  "selected_fraction": 0.0,
+  "decoding_counts": {
+    "1.0": {
+      "eos": 1,
+      "max_new_tokens": 5,
+      "generated_tokens": 970
+    },
+    "1.08": {
+      "eos": 3,
+      "max_new_tokens": 3,
+      "generated_tokens": 717
+    }
+  },
+  "deployment": "Do not promote final DPO checkpoint as a reliable teacher; keep it as a measured research outcome. The SFT parent is also not established as reliable. Existing verifier/template safeguards remain necessary.",
+  "stopping_reason": "Fixed six-dev pilot still shows obvious factual errors and contradictory outputs under both decoding policies. Fewer tokens or EOS do not constitute a semantic repair.",
+  "predeclared_plan_sha256": "a38c0fcef7be54b34ab1ee89442a6f02426a7f90054deae84c698005850e10da",
+  "further_work": "Task/reason-balanced preferences, broader SFT and dev coverage, shorter checkpoint intervals and monitored/anchored DPO would require a separate new training study; not executed or guaranteed here."
+}

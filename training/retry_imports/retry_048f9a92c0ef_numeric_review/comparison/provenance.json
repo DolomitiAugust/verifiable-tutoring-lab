@@ -1,0 +1,16 @@
+{
+  "audit": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\audit.json",
+  "audit_sha256": "e070f975f954f5864dad272f4dd92626ba866dd99a90cf9cd774e917d62f5dfe",
+  "review_sha256": "8b5343674ffdd50446c163d13b34f8d95c086bc87eb1a07b9c38184aa2c666db",
+  "cases": {
+    "natural": 24,
+    "bridge": 60
+  },
+  "runs_per_setting": 1,
+  "design": "Paired within-case DPO-SFT NLL delta box/points and output-verdict counts; no seed confidence intervals or learning-effect claim.",
+  "outputs": [
+    "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\comparison\\all_answers_comparison.html",
+    "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\comparison\\per_case_reference_nll.csv"
+  ],
+  "figure": "report\\figures\\training-retry-comparison.pdf"
+}

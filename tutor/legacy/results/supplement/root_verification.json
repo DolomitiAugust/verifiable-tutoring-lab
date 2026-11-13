@@ -1,0 +1,156 @@
+{
+  "artifact_consistency_passed": true,
+  "core_files_unchanged": 11,
+  "same_frozen_implementation": true,
+  "results_sha256": "4c00c831fa1ab18851a1c60568a3ec05b2b5c8bf368bde1f70dad189f247ca16",
+  "case_count": 4,
+  "turn_count": 6,
+  "real_model_calls": 18,
+  "calls": [
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "planner",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "teacher",
+      "new_tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "accepted": false
+    }
+  ],
+  "independently_executed_followups": [
+    {
+      "turn_id": "tutor-S01-T1",
+      "stdout": "20"
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "stdout": "yth"
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "stdout": "pyt"
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "stdout": "18"
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "stdout": "20"
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "stdout": "28"
+    }
+  ],
+  "sqlite_events": 6,
+  "sqlite_summary_groups": 4,
+  "empty_prediction_observations": [
+    {
+      "turn_id": "tutor-S02-T1",
+      "reference_status": "correct",
+      "system_status": "unanswered",
+      "request": "我的预测是空字符串，也就是只打印一个空行。请核对并说明为什么没有取到字符，给一道复测及答案。"
+    }
+  ],
+  "interpretation": "Consistency checks can pass while a teaching task fails. System counters are checked against its recorded status, not silently corrected to the reference."
+}

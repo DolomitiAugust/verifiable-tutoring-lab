@@ -1,0 +1,8 @@
+review_fraction,annual_review_hours,annual_review_cost_cny,contribution_after_incremental_cac_cny,contracts_covering_fixed
+0.0,0.0,0.0,55172.32,11
+0.02,72.0,6480.0,48692.32,13
+0.05,180.0,16200.0,38972.32,16
+0.1,360.0,32400.0,22772.32,27
+0.2,720.0,64800.0,-9627.679999999993,
+0.5,1800.0,162000.0,-106827.68,
+1.0,3600.0,324000.0,-268827.68,

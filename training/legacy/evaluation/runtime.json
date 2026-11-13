@@ -1,0 +1,14 @@
+{
+  "plan_sha256": "fb258678afc3ea3d49025ee28b7136982cf3ee0310267497be6bef8214924aee",
+  "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "threads": 6,
+  "seed": 20261104,
+  "max_new_tokens": 192,
+  "terminal_ids": [
+    151645,
+    151643
+  ],
+  "reference_nll_enabled": true
+}

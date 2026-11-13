@@ -1,0 +1,5 @@
+{
+  "effective_update_interpolation_endpoint_and_midpoint_checks": 5,
+  "passed": true,
+  "scope": "Small tensor mechanics only; no inference-quality claim."
+}

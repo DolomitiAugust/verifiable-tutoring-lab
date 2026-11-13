@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper,oneside,openany]{report}
+\usepackage{fontspec,xeCJK,geometry,xcolor,graphicx,amsmath,amssymb,array,booktabs,tabularx,fancyhdr,float,placeins,needspace,hyperref,fvextra}
+\geometry{left=25mm,right=23mm,top=22mm,bottom=22mm,headheight=15pt,headsep=6mm}
+\setmainfont{Times New Roman}\setsansfont{Segoe UI}\setmonofont{Consolas}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}\setCJKsansfont{Microsoft YaHei}\setCJKmonofont{Microsoft YaHei}
+\definecolor{navy}{HTML}{203A4C}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy,bookmarksnumbered=true,pdftitle={可核验教学智能体研究：数据、偏好优化与记忆},pdfauthor={Verifiable Tutoring Lab}}
+\renewcommand{\contentsname}{目录}\renewcommand{\bibname}{参考文献}\renewcommand{\figurename}{图}\renewcommand{\tablename}{表}
+\setcounter{tocdepth}{1}\setcounter{secnumdepth}{2}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small 可核验教学智能体研究}\fancyhead[R]{\small 研究报告与学习注释}\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{2em}\setlength{\parskip}{3pt}\linespread{1.1}
+\setlength{\emergencystretch}{3em}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\setlength{\textfloatsep}{11pt}\setlength{\intextsep}{10pt}\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.08}\renewcommand{\floatpagefraction}{0.8}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}\renewcommand{\arraystretch}{1.14}\raggedbottom
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,breaklines=true,breakanywhere=true,breaksymbolleft={\tiny\texttt{>}},breaksymbolright={}}
+\newcommand{\filepath}[1]{\path{#1}}
+\newcommand{\sourcefilename}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\chapterprefix}{第\thechapter 章}
+\makeatletter
+\def\@makechapterhead#1{\vspace*{2mm}{\parindent\z@\raggedright\normalfont{\small\sffamily\color{navy}\chapterprefix\par}\vskip5pt\Large\bfseries #1\par\nobreak\vskip10pt}}
+\def\@makeschapterhead#1{\vspace*{2mm}{\parindent\z@\raggedright\Large\bfseries #1\par\nobreak\vskip10pt}}
+\makeatother
+\begin{document}
+\pagenumbering{roman}
+\input{frontmatter.tex}
+\clearpage{\small\linespread{0.98}\selectfont\setlength{\parskip}{0pt}\tableofcontents}
+\clearpage\pagenumbering{arabic}
+\chapter{可执行约束下的数据合成与筛选}\label{ch:data}\input{chapters/data.tex}\FloatBarrier
+\chapter{监督微调与偏好优化}\label{ch:training}\input{chapters/training.tex}\FloatBarrier
+\chapter{可核验的教学智能体与学习者记忆}\label{ch:agents}\input{chapters/agents.tex}\FloatBarrier
+\chapter{应用场景、竞争与商业可行性}\label{ch:business}\input{chapters/feasibility.tex}\FloatBarrier
+\input{references.tex}
+\appendix\renewcommand{\chapterprefix}{附录\thechapter}
+\chapter{证据与复现}\label{app:repro}\input{artifacts.tex}\FloatBarrier
+\chapter{研究来源与局限}\label{app:prompts}\input{disclosure.tex}
+\end{document}

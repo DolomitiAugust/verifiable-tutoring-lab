@@ -1,0 +1,29 @@
+{
+  "base": "Qwen/Qwen2.5-0.5B",
+  "epochs": 3,
+  "seed": 20261107,
+  "adapter": {
+    "rank": 16,
+    "alpha": 32,
+    "last_layers": 8
+  },
+  "sft_learning_rate": 0.0002,
+  "dpo_learning_rate": 1e-05,
+  "beta": 0.1,
+  "scheduler": "constant (same verified optimizer as v1)",
+  "batch_size": 1,
+  "sft_selection": "lowest reference NLL on separate dev.jsonl after each full epoch; ties choose earlier epoch",
+  "control": "same SFT parent, learning rate, batch size and number of additional optimizer updates as DPO; response tokens and wall time are not identical",
+  "generation": {
+    "max_new_tokens": 384,
+    "sampling": false,
+    "limit": 24
+  },
+  "device": "cuda",
+  "dtype": "float32",
+  "script_sha256": {
+    "train.py": "437a0fca48989f89d98d8ac1dcc2cc01710c324dd455a530912fbf5fc0d552cf",
+    "evaluate.py": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+    "run_cloud.py": "01d14890361524e92e0790f564fe2d46eae178424b918d3285ab582ae8e9869f"
+  }
+}

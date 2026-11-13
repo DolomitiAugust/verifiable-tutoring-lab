@@ -1,0 +1,91 @@
+{
+  "scope": "Descriptive diagnostics; no single-factor causal attribution.",
+  "runs": {
+    "first": {
+      "dpo_log_sha256": "671291198c23b41daecfe9e0dd5b3d900d77523eb990d72f6900eb9fbb26a820",
+      "steps": 500,
+      "last_100_both_logps_below_frozen_reference": 84,
+      "last_100_mean_chosen_logp_change": -8.54986439704895,
+      "last_100_mean_rejected_logp_change": -13.064775753021241,
+      "final_logged_step": {
+        "step": 500,
+        "ids": [
+          "V2-preference-00261"
+        ],
+        "loss": 0.16042952239513397,
+        "response_tokens": 39,
+        "policy_chosen_logp": -15.36943244934082,
+        "policy_rejected_logp": -55.736846923828125,
+        "reference_chosen_logp": -11.324892044067383,
+        "reference_rejected_logp": -34.206172943115234,
+        "policy_logratio": 40.36741638183594,
+        "ref_logratio": 22.88128089904785,
+        "relative_margin": 17.486135482788086,
+        "dpo_scaled_margin": 1.7486135959625244,
+        "grad_norm_before_clip": 9.815032958984375,
+        "adapter_step_l2": 0.0012809942297627788,
+        "adapter_delta_from_stage_start_l2": 0.26592359803938104,
+        "seconds": 0.103
+      },
+      "dev_epoch_nll": [
+        2.644899927548,
+        3.070906735828945,
+        3.3793597071511403
+      ]
+    },
+    "retry": {
+      "dpo_log_sha256": "dd1c688c68e0c462e02d652c1881bf8b0089333031eafef40e764da163294f87",
+      "steps": 500,
+      "last_100_both_logps_below_frozen_reference": 96,
+      "last_100_mean_chosen_logp_change": -37.76095517158508,
+      "last_100_mean_rejected_logp_change": -59.93609582901001,
+      "final_logged_step": {
+        "step": 500,
+        "ids": [
+          "V2-preference-00261"
+        ],
+        "loss": 0.021438471972942352,
+        "response_tokens": 39,
+        "policy_chosen_logp": -20.569416046142578,
+        "policy_rejected_logp": -79.5677490234375,
+        "reference_chosen_logp": -12.506498336791992,
+        "reference_rejected_logp": -33.1865348815918,
+        "policy_logratio": 58.99833297729492,
+        "ref_logratio": 20.680036544799805,
+        "relative_margin": 38.31829833984375,
+        "dpo_scaled_margin": 3.831829786300659,
+        "grad_norm_before_clip": 5.952128887176514,
+        "adapter_step_l2": 0.002479959614942486,
+        "adapter_delta_from_stage_start_l2": 0.4247337460887261,
+        "seconds": 0.148
+      },
+      "dev_epoch_nll": [
+        2.8672262069157193,
+        3.3245308780670166,
+        3.629325201170785
+      ]
+    }
+  },
+  "implementation_checks": {
+    "response_labels": "prompt labels=-100, response labels active with causal shift",
+    "eos": "encode_response appends atomic im_end",
+    "dpo": "negative logsigmoid(beta*((chosen-rejected)-(reference_chosen-reference_rejected)))",
+    "sft_selection": "minimum dev NLL among epochs 1,2,3; no intermediate sub-epoch SFT selection",
+    "dpo_selection": "fixed 500 steps; no intermediate DPO dev checkpoints or early stopping in the frozen original run",
+    "code_sha256": {
+      "train.py": "437a0fca48989f89d98d8ac1dcc2cc01710c324dd455a530912fbf5fc0d552cf",
+      "data_io.py": "7244f386d764a950fa530998bb9b0eea52cd818687c60a6620a4842380a05a14",
+      "run_retry.py": "33f7eaefbd9488a13bdc32bd9ac9634b9bebef3381e5ff452bee63f7a0a36906"
+    }
+  },
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2305.18290",
+      "kind": "original DPO paper; relative likelihood objective"
+    },
+    {
+      "url": "https://huggingface.co/docs/trl/dpo_trainer",
+      "kind": "official trainer documentation; loss and score diagnostics; accessed 2026-11-08"
+    }
+  ]
+}

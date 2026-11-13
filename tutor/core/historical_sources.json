@@ -1,0 +1,8 @@
+{
+  "tutor/legacy/system.py": "831a690e167b0cd21230f7612970081befdd60fe29b8a2dc38c3bb04d26782f1",
+  "tutor/legacy/memory.py": "0b2e22670ceae3bae97fb95204ef67063245751c3885b6d199b62d896c7853c4",
+  "tutor/legacy/cases.json": "95301e99cfaf1454337d24678dba1235ddfa9f349cdece82dc94272b0a5d2633",
+  "tutor/legacy/cases.supplement.json": "589fa61561c9d647ad9d1897b7aa3210d89d865ef6435fc0fe66be3aae217de9",
+  "tutor/legacy/prompts.json": "3060983af2b231c509362764a8df05959b112989ef7175cdefe32f4da10bad52",
+  "tutor/legacy/model_backend.py": "ffa43446c0a84db1cb48b6a8f54c350e6b24d2b0c67dfff8d5343904034748f6"
+}

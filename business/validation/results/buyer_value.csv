@@ -1,0 +1,6 @@
+net_minutes_saved_per_enrolment,assumed_teacher_time_value_cny,assumed_price_cny,value_minus_price_cny
+10,15.0,120,-105.0
+20,30.0,120,-90.0
+40,60.0,120,-60.0
+80,120.0,120,0.0
+120,180.0,120,60.0

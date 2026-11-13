@@ -1,0 +1,13 @@
+{
+  "results_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded",
+  "selection_type": "post_run_illustrative_selection_with_all_eight_cases_retained",
+  "selected": [
+    "tutor-C03",
+    "tutor-C04",
+    "tutor-C07",
+    "tutor-C08"
+  ],
+  "reason": "C03/C04 are first two unexpected successes. C07 illustrates request-recognition omission; C08 illustrates violation of the requested program transformation. C07 is an anticipated limitation, not relabelled as unexpected.",
+  "strict_two_unexpected_success_two_unexpected_failure_met": false,
+  "missing_unexpected_failure_cases": 1
+}

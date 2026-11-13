@@ -1,0 +1,4 @@
+id,label,enrolments,turns,revenue,api,review,review_hours,onboarding,cloud,recurring_delivery,first_year_delivery,first_year_contribution,gross_margin,contribution_after_cac,new_contracts_to_cover_annual_fixed,first_year_contracts_before_cac,new_contracts_to_cover_fixed_and_launch
+downside,压力情景,600,108000,54000,972.0,40500.0,450.0,10800,1800,43272.0,54072.0,-72.0,-0.0013333333333333333,-15072.0,,,
+reference,基准假设,600,72000,72000,427.68000000000006,6480.0,72.0,7200,1200,8107.68,15307.68,56692.32,0.7873933333333333,48692.32,13,11,15
+upside,效率改善情景,600,60000,90000,340.2,1800.0,20.0,5400,1000,3140.2,8540.2,81459.8,0.905108888888889,75459.8,8,8,10

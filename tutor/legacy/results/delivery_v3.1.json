@@ -1,0 +1,21 @@
+{
+  "version": "3.1",
+  "pages": 37,
+  "core_files_preserved": 11,
+  "pdf_sha256": "9c56f51cefe1919ce30859dac440dc1bc301585c2e5967ce06a00858abbf9cdd",
+  "html_sha256": "5f39f9dec0821d04114576d9cb773025996684fbe7bea58de803a4e96517f60b",
+  "archive": "report/archive/v3.0",
+  "combined": "tutor/legacy/results/combined.json",
+  "showcase": {
+    "unexpected_success": [
+      "tutor-C03",
+      "tutor-C04"
+    ],
+    "unexpected_failure": [
+      "tutor-C08",
+      "tutor-S02"
+    ]
+  },
+  "visual_check": "all pages rendered; new case and updated appendix inspected using Poppler; no clipping or overlap",
+  "unresolved_references": 0
+}

@@ -1,0 +1,83 @@
+{
+  "frozen_at_utc": "2026-11-06T17:13:12.539303+00:00",
+  "design": {
+    "suite_sha256": "95301e99cfaf1454337d24678dba1235ddfa9f349cdece82dc94272b0a5d2633",
+    "case_count": 8,
+    "turn_count": 11,
+    "generation": {
+      "max_new_tokens": 256,
+      "do_sample": false,
+      "threads": 6,
+      "all_roles_same_limit": true
+    },
+    "reference_python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "references": [
+      {
+        "fixture_turn_id": "tutor-C01-T1",
+        "main_answer": "12",
+        "reference_followup_answer": "20",
+        "student_status": "incorrect"
+      },
+      {
+        "fixture_turn_id": "tutor-C02-T1",
+        "main_answer": "yh",
+        "reference_followup_answer": "pto",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-C03-T1",
+        "main_answer": "9",
+        "reference_followup_answer": "18",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-C04-T1",
+        "main_answer": "12",
+        "reference_followup_answer": "20",
+        "student_status": "unanswered"
+      },
+      {
+        "fixture_turn_id": "tutor-C05-T1",
+        "main_answer": "6",
+        "reference_followup_answer": "10",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-C05-T2",
+        "main_answer": "12",
+        "reference_followup_answer": "20",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-C05-T3",
+        "main_answer": "18",
+        "reference_followup_answer": "30",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-C05-T4",
+        "main_answer": "12",
+        "reference_followup_answer": "12",
+        "student_status": "unanswered"
+      },
+      {
+        "fixture_turn_id": "tutor-C06-T1",
+        "main_answer": "([1, 2, 3], [1, 2])",
+        "reference_followup_answer": "([1, 2], [1, 2])",
+        "student_status": "unanswered"
+      },
+      {
+        "fixture_turn_id": "tutor-C07-T1",
+        "main_answer": "([1, 2], [1, 2])",
+        "reference_followup_answer": "([1], [2])",
+        "student_status": "incorrect"
+      },
+      {
+        "fixture_turn_id": "tutor-C08-T1",
+        "main_answer": "212",
+        "reference_followup_answer": "236",
+        "student_status": "incorrect"
+      }
+    ]
+  }
+}

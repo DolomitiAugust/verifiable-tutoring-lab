@@ -1,0 +1,27 @@
+{
+  "version": "exploratory-retry-2",
+  "base": "Qwen/Qwen2.5-0.5B",
+  "epochs": 3,
+  "seed": 20261107,
+  "adapter": {
+    "rank": 16,
+    "alpha": 32,
+    "last_layers": 24
+  },
+  "sft_learning_rate": 0.0001,
+  "dpo_learning_rate": 1e-05,
+  "beta": 0.1,
+  "batch_size": 1,
+  "device": "cuda",
+  "dtype": "float32",
+  "threads": 4,
+  "evaluation_status": "exploratory; chosen after observing first-run test outputs; not a blind test",
+  "selection": "minimum 36-case dev NLL after three complete SFT epochs; ties choose earlier epoch",
+  "control": "500 added updates and shared parent; tokens and compute are not matched",
+  "generation": {
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "cases": 24
+  },
+  "final_evaluation_required": true
+}

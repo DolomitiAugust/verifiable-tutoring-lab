@@ -1,0 +1,270 @@
+{
+  "review_kind": "Non-blind technical review by Codex of all 18 raw role outputs and six final replies; not teacher judgement.",
+  "result_sha256": "5d5824adf63c55e5b647fc1562ffb4b85d6ea1a94305253f499507033ae6f168",
+  "summary": {
+    "case_count": 6,
+    "turn_count": 6,
+    "real_model_calls": 18,
+    "generated_tokens": 2112,
+    "role_adoption": {
+      "planner": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "teacher": {
+        "accepted": 0,
+        "calls": 6
+      },
+      "reviewer": {
+        "accepted": 0,
+        "calls": 6
+      }
+    },
+    "final_llm_used": 0,
+    "model_freeform_prose_used": 0,
+    "model_selected_tool_quotes": 0,
+    "teacher_parsed_count": 0,
+    "teacher_call_count": 6,
+    "teacher_current_answer_matches": 0,
+    "teacher_current_status_matches": 0,
+    "raw_reviewer_false_approval_count": 0,
+    "raw_reviewer_false_approval_turns": [],
+    "final_sources": {
+      "verified_template": 6
+    },
+    "automatic_passed": 70,
+    "automatic_total": 70,
+    "stop_reasons": {
+      "max_new_tokens": 18
+    },
+    "qualitative_status": "unreviewed",
+    "complete_case_success_claim": null,
+    "interpretation": "Descriptive regression checks; generated prose still requires criterion-based review."
+  },
+  "elapsed_seconds_including_load": 188.40936789999978,
+  "generation_seconds": 179.0448,
+  "reviews": [
+    {
+      "case_id": "tutor-C01",
+      "turn_id": "tutor-C01-T1",
+      "reference": {
+        "main_answer": "12",
+        "student_status": "incorrect",
+        "explanation": "range(2,8,2) 只取 2、4、6；8 是排除的终点，2+4+6=12。学生多加 8 得到 20。",
+        "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+        "followup_answer": "20"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "复制range正确事实，但用topic/id而非focus/evidence_id，随后重复截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"topic\": \"range\", \"id\": \"F1\", \"text\": \"range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。\"}\n本题输出：{ \"topic\": \"execution"
+        },
+        "teacher": {
+          "assessment": "答案12正确；学生错答20的状态写为非协议corrected，复制额外输入字段并截断，缺少有效解释与证据引用。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"12\", \"status\": \"corrected\", \"verified_answer\": \"12\", \"student_status\": \"corrected\", \"facts\": [{\"id\": \"F1\", \"topic\": \"range\", \"text\": \"range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。\"}], \"topics\": [\"range\", \"execution\"], \"history\": [], \"plan\": {\"focus\": \"range\", \"evidence_id\": \"F1\"}}\n本题输出：{\"answer\": \"12\", \"status\": \"corrected\", \"verified_answer\": \"12\", \"student_status\": \"corrected\", \"facts\": [{\"id\": \"F1\", \"topic\": \"range\", \"text\": \"range(2, 8, 2) 依次取 [2, 4, "
+        },
+        "reviewer": {
+          "assessment": "复制教师草稿而非给出approved/reason，且截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"12\", \"status\": \"corrected\", \"verified_answer\": \"12\", \"student_status\": \"corrected\", \"facts\": [{\"id\": \"F1\", \"topic\": \"range\", \"text\": \"range(2, 8, 2) 依次取 [2, 4, 6]，终点 8 不包括在内。\"}]}\n本题输出：{\"answer\": \"1"
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C02",
+      "turn_id": "tutor-C02-T1",
+      "reference": {
+        "main_answer": "yh",
+        "student_status": "correct",
+        "explanation": "起点 1、步长 2、终点 5 排除，取下标 1、3，字符 y、h；一次正确预测不能证明掌握。",
+        "followup_code": "word = 'python'\nprint(word[0:6:2])",
+        "followup_answer": "pto"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "下标[1,3]和yh正确，但格式不符且截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"topic\": \"slice\", \"id\": \"F1\", \"text\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\" }\n本题输出：{ \"topic\": \"execution\", \"id\": \"F"
+        },
+        "teacher": {
+          "assessment": "局部answer=yh、status=correct和下标说明正确，但evidence_ids为空；重复多个对象及本题输出前缀使整段不可解析。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\", \"evidence_ids\": []} 即可。\n本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\", \"evidence_ids\": []} 即可。\n本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\", \"evidence_ids\": []} 即可。\n本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \""
+        },
+        "reviewer": {
+          "assessment": "复制教师内容而非评审决定。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}\n本题输出：{\"answer\": \"yh\", \"status\": \"correct\", \"explanation\": \"word[1:5:2] 取下标 [1, 3]，结果 'yh'。\"}\n本题输出："
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C03",
+      "turn_id": "tutor-C03-T1",
+      "reference": {
+        "main_answer": "9",
+        "student_status": "correct",
+        "explanation": "本题 range 只取 3、6，总和 9；此前 tutor-C01 把排除的终点 8 纳入，当前仍应检查终点 9 不被取到。",
+        "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)",
+        "followup_answer": "18"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "正确复述range事实但缺少协议字段，截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"topic\": \"range\", \"text\": \"range(3, 9, 3) 依次取 [3, 6]，终点 9 不包括在内。\" }\n本题输出：{ \"topic\": \"execution\", \"text\": \"实际执行输出为"
+        },
+        "teacher": {
+          "assessment": "局部答案9和状态正确，随后大段复制事实及历史；没有形成完整合约输出。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"9\", \"status\": \"correct\", \"verified_answer\": \"9\", \"student_status\": \"correct\", \"facts\": [{\"id\": \"F1\", \"topic\": \"range\", \"text\": \"range(3, 9, 3) 依次取 [3, 6]，终点 9 不包括在内。\"}], \"topics\": [\"range\"], \"history\": [{\"episode_id\": \"c1c291954ddb43d992080527c667e4e4\", \"student_answer\": \"20\", \"status\": \"incorrect\", \"verified_answer\": \"12\", \"request\": \"我把 8 也加进去了，所以猜 20。请指出错在第几步，列出实际取值与和，再出一道只改终点的复测，并把答案"
+        },
+        "reviewer": {
+          "assessment": "连续输出9、12、20和计数数字，无有效评审。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：9\n本题输出：12\n本题输出：20\n本题输出：3。\n本题输出：4。\n本题输出：5。\n本题输出：6。\n本题输出：7。\n本题输出：8。\n本题输出：9。\n本题输出：10。\n本题输出：11。\n本题输出：12。\n本题输出：13。\n本题输出：14"
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-C07",
+      "turn_id": "tutor-C07-T1",
+      "reference": {
+        "main_answer": "([1, 2], [1, 2])",
+        "student_status": "incorrect",
+        "explanation": "默认列表在函数定义时创建一次，两次未显式提供 out 的调用复用它；a 与 b 都引用同一列表，第二次 append 后 a 也显示 [1,2]。",
+        "followup_code": "def collect(x, out=None):\n    if out == None:\n        out = []\n    out.append(x)\n    return out\na = collect(1)\nb = collect(2)\nprint((a, b))",
+        "followup_answer": "([1], [2])"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "把共享程序的a/b错误写成[1]/[2]；出现无关词和重复。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"a\": [1], \"b\": [2] }\na = [1] b = [2]ystateroma本题输出：{ \"a\": [1], \"b\": [2] }\nhydrateshydrateshydrateshydrateshydrateshydrateshydrateshydrates"
+        },
+        "teacher": {
+          "assessment": "把原题共享结果错误写成([1],[2])，状态corrected，并编造append总创建新列表的代码注释。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"answer\": \"([1], [2])\", \"status\": \"corrected\", \"explanation\": \"a 和 b 会相互影响。\" }\n输入：{ \"program\": \"def collect(x, out=[]):\\n    out.append(x) # append always creates a new list, so it's saved in a local variable\\n    return out\", \"request\": \"I'm not sure how a and b are related. Can you explain what happens when [1] and [2] are passed in?\" }\n输出：{ \"answer\": \"([1], [2])\", \"status\": \"corrected\", \"explanation\": \"a 和 b 会相互影响。\" }\n本题输出：{ \"answer\": \"([1], [2])\", \"status\": \"corrected\", \"explanation\": \"a 和 b 会相互影"
+        },
+        "reviewer": {
+          "assessment": "复制错误答案和编造注释，没有独立审查。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"answer\": \"([1], [2])\", \"status\": \"corrected\", \"explanation\": \"a 和 b 会相互影响。\" }\n输入：{ \"program\": \"def collect(x, out=[]): # append always creates a new list, so it's saved in a local variable # return out\", \"request\": \"I'm not sure how a and b are related. Can you explain what happens when [1]"
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": true
+    },
+    {
+      "case_id": "tutor-C08",
+      "turn_id": "tutor-C08-T1",
+      "reference": {
+        "main_answer": "212",
+        "student_status": "incorrect",
+        "explanation": "zip 只产生五对，和分别为16、40、52、54、50，合计212；左列表末尾18没有搭档，不能再加入。",
+        "followup_code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44, 6]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+        "followup_answer": "236"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "正确复述zip的五对事实，但未完成合约结构。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"topic\": \"zip\", \"text\": \"zip 按较短列表结束，配对为 [(9, 7), (24, 16), (17, 35), (32, 22), (6, 44)]"
+        },
+        "teacher": {
+          "assessment": "局部答案212、incorrect、未配对尾项18正确；后续无关while/for方法与输入复制导致截断，不是完整教学回应。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"212\", \"status\": \"incorrect\", \"explanation\": \"未配对尾项 [[18], []]\"}\n输入：{ \"program\": \"left = [9, 24, 17, 32, 6, 18] \\nright = [7, 16, 35, 22, 44] \\ntotal = 0 \\nfor a, b in zip(left, right) : \\n    total += a + b \\nprint(total)\"}\n方法一：使用“while”和“for”计数器\n输入：{ \"program\": \"left = [9, 24, 17, 32, 6, 18] \\nright = [7, 16, 35, 22, 44] \\"
+        },
+        "reviewer": {
+          "assessment": "复制教师草稿并截断，没有approved/reason。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"212\", \"status\": \"incorrect\", \"explanation\": \"未配对尾项 [18] [ ]\"}\n输入：{ \"program\": \"left = [9, 24, 17, 32, 6, 18] \\\\nright = [7, 16, 35, 22, 44] }AtPath: [18,"
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    },
+    {
+      "case_id": "tutor-S02",
+      "turn_id": "tutor-S02-T1",
+      "reference": {
+        "main_answer": "",
+        "student_status": "correct",
+        "explanation": "切片默认步长为正1，起点4已在终点1右侧，因此没有任何下标被选中，切片为长度0的空字符串；print 输出一个换行。该生明确作了空字符串预测，属于本次正确作答，不是未作答。给定复测选下标1、2、3，得到yth。",
+        "followup_code": "word = 'python'\nprint(word[1:4])",
+        "followup_answer": "yth"
+      },
+      "role_review": {
+        "planner": {
+          "assessment": "正确复述空下标与空输出，但结构不符且截断。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{ \"topic\": \"slice\", \"text\": \"word[4:1] 取下标 []，结果 ''。\" }\n本题输出：{ \"id\": \"F1\", \"topic\": \"slice\", \"text\": \"word[4:1] 取下标"
+        },
+        "teacher": {
+          "assessment": "把空字符串输出写为表达式word[4:1]，随后重复无关词。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"word[4:1]\", \"status\": \"correct\", \"verified_answer\": \"word[4:1]\"}\n本题输出：{\"answer\": \"word[4:1]\", \"status\": \"correct\", \"verified_answer\": \"word[4:1]\"}hydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrusus"
+        },
+        "reviewer": {
+          "assessment": "继续复制错误答案word[4:1]与无关词。",
+          "accepted": false,
+          "parsed": null,
+          "stop_reason": "max_new_tokens",
+          "raw_quote": "本题输出：{\"answer\": \"word[4:1]\", \"status\": \"correct\", \"verified_answer\": \"word[4:1]\"}\n本题输出：{\"answer\": \"word[4:1]\", \"status\": \"correct\", \"verified_answer\": \"word[4:1]\"}hydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususquehydrususque"
+        }
+      },
+      "final_source": "verified_template",
+      "none_followup_tool_card_correct": null
+    }
+  ],
+  "limits": [
+    "Exploratory repeated six cases.",
+    "All formal teacher parsed counts are zero; that does not mean every raw fact is wrong.",
+    "Automatic engineering checks do not assess complete teaching quality.",
+    "Clean prompts, tool None card and original gates jointly differ from the original pipeline; this is not a single-variable prompt ablation."
+  ]
+}

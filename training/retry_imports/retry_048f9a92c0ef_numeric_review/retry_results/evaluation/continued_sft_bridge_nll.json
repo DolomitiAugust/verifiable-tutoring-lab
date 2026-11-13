@@ -1,0 +1,760 @@
+{
+  "version": 2,
+  "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+  "adapter_sha256": "3db7849be9e0fe3a6412555903c9be3c11282a88526e4849a68d4eb3f9179e7c",
+  "adapter_stage": "sft",
+  "adapter_step": 500,
+  "parent_sft_sha256": "f64be07a6e153c4cc759316aa8df8dcc35ad0c75f591873086c07512f3fd06c7",
+  "source_sha256": "515f21b4277794cbd7ee1e9317a8e02ad077651f467993c09e5f8e8c92934450",
+  "inputs_sha256": {
+    "/content/nlpproject1_v2/synthesis/data/legacy/evaluation.jsonl": "ff9659902e511944cf74c41a9a5b6f8d13782701ab7d79d2a6ee06681b929d3f"
+  },
+  "protocol": {
+    "generation_limit": 0,
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "reference_truncation": false,
+    "preference_note": "Sequence likelihood preference is length-sensitive; not a human preference judgement.",
+    "automatic_fact_note": "Unresolved extractions are not factual errors or zero accuracy."
+  },
+  "summary": {
+    "reference_nll": 4.35695689585252,
+    "reference_cases": 60,
+    "reference_tokens": 13437,
+    "generation_cases": 0,
+    "stop_counts": {},
+    "preference_pairs": 0,
+    "raw_preference_accuracy": null
+  },
+  "reference_nll": [
+    {
+      "candidate_id": "evaluation:0001",
+      "logp_sum": [
+        -1068.82470703125
+      ],
+      "response_tokens": [
+        259
+      ],
+      "mean_nll": [
+        4.126736320583976
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0002",
+      "logp_sum": [
+        -1140.9169921875
+      ],
+      "response_tokens": [
+        257
+      ],
+      "mean_nll": [
+        4.439365728356031
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0003",
+      "logp_sum": [
+        -1375.7906494140625
+      ],
+      "response_tokens": [
+        313
+      ],
+      "mean_nll": [
+        4.395497282473043
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0004",
+      "logp_sum": [
+        -805.4690551757812
+      ],
+      "response_tokens": [
+        164
+      ],
+      "mean_nll": [
+        4.911396677901105
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0005",
+      "logp_sum": [
+        -799.75341796875
+      ],
+      "response_tokens": [
+        231
+      ],
+      "mean_nll": [
+        3.462136008522727
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0006",
+      "logp_sum": [
+        -1061.576416015625
+      ],
+      "response_tokens": [
+        248
+      ],
+      "mean_nll": [
+        4.280550064579133
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0007",
+      "logp_sum": [
+        -860.8251342773438
+      ],
+      "response_tokens": [
+        185
+      ],
+      "mean_nll": [
+        4.653108833931588
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0008",
+      "logp_sum": [
+        -964.72412109375
+      ],
+      "response_tokens": [
+        203
+      ],
+      "mean_nll": [
+        4.752335571890394
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0009",
+      "logp_sum": [
+        -816.6229248046875
+      ],
+      "response_tokens": [
+        183
+      ],
+      "mean_nll": [
+        4.462420354123975
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0010",
+      "logp_sum": [
+        -822.2042846679688
+      ],
+      "response_tokens": [
+        175
+      ],
+      "mean_nll": [
+        4.6983101981026785
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0011",
+      "logp_sum": [
+        -839.0985107421875
+      ],
+      "response_tokens": [
+        206
+      ],
+      "mean_nll": [
+        4.073293741466929
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0012",
+      "logp_sum": [
+        -796.1104736328125
+      ],
+      "response_tokens": [
+        208
+      ],
+      "mean_nll": [
+        3.8274542001577525
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0013",
+      "logp_sum": [
+        -744.3865356445312
+      ],
+      "response_tokens": [
+        166
+      ],
+      "mean_nll": [
+        4.484256238822478
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0014",
+      "logp_sum": [
+        -733.1941528320312
+      ],
+      "response_tokens": [
+        170
+      ],
+      "mean_nll": [
+        4.31290678136489
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0015",
+      "logp_sum": [
+        -1077.843505859375
+      ],
+      "response_tokens": [
+        225
+      ],
+      "mean_nll": [
+        4.790415581597222
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0016",
+      "logp_sum": [
+        -1172.8642578125
+      ],
+      "response_tokens": [
+        220
+      ],
+      "mean_nll": [
+        5.331201171875
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0017",
+      "logp_sum": [
+        -885.9385986328125
+      ],
+      "response_tokens": [
+        196
+      ],
+      "mean_nll": [
+        4.520094890983737
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0018",
+      "logp_sum": [
+        -1000.6819458007812
+      ],
+      "response_tokens": [
+        238
+      ],
+      "mean_nll": [
+        4.204545990759585
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0019",
+      "logp_sum": [
+        -986.7977294921875
+      ],
+      "response_tokens": [
+        208
+      ],
+      "mean_nll": [
+        4.744219853327825
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0020",
+      "logp_sum": [
+        -905.847900390625
+      ],
+      "response_tokens": [
+        206
+      ],
+      "mean_nll": [
+        4.397319904808859
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0021",
+      "logp_sum": [
+        -1059.5982666015625
+      ],
+      "response_tokens": [
+        298
+      ],
+      "mean_nll": [
+        3.555698881213297
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0022",
+      "logp_sum": [
+        -774.6525268554688
+      ],
+      "response_tokens": [
+        190
+      ],
+      "mean_nll": [
+        4.077118562397204
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0023",
+      "logp_sum": [
+        -763.88525390625
+      ],
+      "response_tokens": [
+        185
+      ],
+      "mean_nll": [
+        4.129109480574324
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0024",
+      "logp_sum": [
+        -1164.7315673828125
+      ],
+      "response_tokens": [
+        253
+      ],
+      "mean_nll": [
+        4.603682084517046
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0025",
+      "logp_sum": [
+        -931.038330078125
+      ],
+      "response_tokens": [
+        211
+      ],
+      "mean_nll": [
+        4.41250393401955
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0026",
+      "logp_sum": [
+        -868.11376953125
+      ],
+      "response_tokens": [
+        223
+      ],
+      "mean_nll": [
+        3.892886858884529
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0027",
+      "logp_sum": [
+        -799.2830200195312
+      ],
+      "response_tokens": [
+        191
+      ],
+      "mean_nll": [
+        4.184727853505399
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0028",
+      "logp_sum": [
+        -807.9345092773438
+      ],
+      "response_tokens": [
+        188
+      ],
+      "mean_nll": [
+        4.297523985517786
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0029",
+      "logp_sum": [
+        -1130.4554443359375
+      ],
+      "response_tokens": [
+        230
+      ],
+      "mean_nll": [
+        4.915023671025815
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0030",
+      "logp_sum": [
+        -1137.863525390625
+      ],
+      "response_tokens": [
+        223
+      ],
+      "mean_nll": [
+        5.102527019688901
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0031",
+      "logp_sum": [
+        -744.2327270507812
+      ],
+      "response_tokens": [
+        175
+      ],
+      "mean_nll": [
+        4.252758440290179
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0032",
+      "logp_sum": [
+        -1031.6136474609375
+      ],
+      "response_tokens": [
+        239
+      ],
+      "mean_nll": [
+        4.316375093978818
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0033",
+      "logp_sum": [
+        -1172.853759765625
+      ],
+      "response_tokens": [
+        259
+      ],
+      "mean_nll": [
+        4.528392894847973
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0034",
+      "logp_sum": [
+        -1034.444580078125
+      ],
+      "response_tokens": [
+        227
+      ],
+      "mean_nll": [
+        4.557024581841961
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0035",
+      "logp_sum": [
+        -1063.593505859375
+      ],
+      "response_tokens": [
+        212
+      ],
+      "mean_nll": [
+        5.016950499336675
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0036",
+      "logp_sum": [
+        -855.7616577148438
+      ],
+      "response_tokens": [
+        181
+      ],
+      "mean_nll": [
+        4.727964959750518
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0037",
+      "logp_sum": [
+        -777.1824340820312
+      ],
+      "response_tokens": [
+        186
+      ],
+      "mean_nll": [
+        4.178400183236727
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0038",
+      "logp_sum": [
+        -989.7830200195312
+      ],
+      "response_tokens": [
+        230
+      ],
+      "mean_nll": [
+        4.303404434867527
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0039",
+      "logp_sum": [
+        -895.01953125
+      ],
+      "response_tokens": [
+        200
+      ],
+      "mean_nll": [
+        4.47509765625
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0040",
+      "logp_sum": [
+        -1052.5489501953125
+      ],
+      "response_tokens": [
+        274
+      ],
+      "mean_nll": [
+        3.8414195262602644
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0041",
+      "logp_sum": [
+        -1089.2008056640625
+      ],
+      "response_tokens": [
+        305
+      ],
+      "mean_nll": [
+        3.571150182505123
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0042",
+      "logp_sum": [
+        -1254.6680908203125
+      ],
+      "response_tokens": [
+        296
+      ],
+      "mean_nll": [
+        4.238743550068623
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0043",
+      "logp_sum": [
+        -801.0188598632812
+      ],
+      "response_tokens": [
+        177
+      ],
+      "mean_nll": [
+        4.525530281713453
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0044",
+      "logp_sum": [
+        -1073.0587158203125
+      ],
+      "response_tokens": [
+        273
+      ],
+      "mean_nll": [
+        3.930618006667811
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0045",
+      "logp_sum": [
+        -1145.5347900390625
+      ],
+      "response_tokens": [
+        218
+      ],
+      "mean_nll": [
+        5.254746743298452
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0046",
+      "logp_sum": [
+        -1069.5452880859375
+      ],
+      "response_tokens": [
+        277
+      ],
+      "mean_nll": [
+        3.861174325219991
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0047",
+      "logp_sum": [
+        -888.3629150390625
+      ],
+      "response_tokens": [
+        208
+      ],
+      "mean_nll": [
+        4.270975553072416
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0048",
+      "logp_sum": [
+        -865.3480224609375
+      ],
+      "response_tokens": [
+        164
+      ],
+      "mean_nll": [
+        5.276512332078887
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0049",
+      "logp_sum": [
+        -784.3634033203125
+      ],
+      "response_tokens": [
+        197
+      ],
+      "mean_nll": [
+        3.9815401183772208
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0050",
+      "logp_sum": [
+        -1027.4779052734375
+      ],
+      "response_tokens": [
+        228
+      ],
+      "mean_nll": [
+        4.506482040672972
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0051",
+      "logp_sum": [
+        -1367.8629150390625
+      ],
+      "response_tokens": [
+        293
+      ],
+      "mean_nll": [
+        4.668474112761306
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0052",
+      "logp_sum": [
+        -1128.5576171875
+      ],
+      "response_tokens": [
+        262
+      ],
+      "mean_nll": [
+        4.307471821326335
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0053",
+      "logp_sum": [
+        -736.7988891601562
+      ],
+      "response_tokens": [
+        189
+      ],
+      "mean_nll": [
+        3.8984068209532077
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0054",
+      "logp_sum": [
+        -1095.4849853515625
+      ],
+      "response_tokens": [
+        269
+      ],
+      "mean_nll": [
+        4.07243488978276
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0055",
+      "logp_sum": [
+        -1161.8284912109375
+      ],
+      "response_tokens": [
+        261
+      ],
+      "mean_nll": [
+        4.451450157896312
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0056",
+      "logp_sum": [
+        -839.6403198242188
+      ],
+      "response_tokens": [
+        222
+      ],
+      "mean_nll": [
+        3.782163602811796
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0057",
+      "logp_sum": [
+        -900.1524658203125
+      ],
+      "response_tokens": [
+        208
+      ],
+      "mean_nll": [
+        4.32765608567458
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0058",
+      "logp_sum": [
+        -1293.495849609375
+      ],
+      "response_tokens": [
+        333
+      ],
+      "mean_nll": [
+        3.884371920748874
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0059",
+      "logp_sum": [
+        -1147.8531494140625
+      ],
+      "response_tokens": [
+        212
+      ],
+      "mean_nll": [
+        5.41440164817954
+      ]
+    },
+    {
+      "candidate_id": "evaluation:0060",
+      "logp_sum": [
+        -960.114990234375
+      ],
+      "response_tokens": [
+        209
+      ],
+      "mean_nll": [
+        4.59385162791567
+      ]
+    }
+  ],
+  "generation": [],
+  "preferences": [],
+  "runtime": {
+    "device": "cuda",
+    "dtype": "float32",
+    "torch": "2.14.1+cu130",
+    "seconds": 26.287393118000182
+  }
+}

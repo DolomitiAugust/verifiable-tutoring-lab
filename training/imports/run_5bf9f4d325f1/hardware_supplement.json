@@ -1,0 +1,7 @@
+{
+  "result_archive_sha256": "5bf9f4d325f1eeaa95c60488b2dcdf285653e8e27e5a35b2b3caf192a4f2fbad",
+  "reported_gpu_model": "Tesla T4",
+  "source": "User reported the Colab first-cell GPU model to the root agent on 2026-11-07",
+  "zip_evidence": "CUDA execution configuration and torch 2.14.1+cu130 are recorded; no nvidia-smi output or GPU model file exists in the ZIP",
+  "verification": "GPU model is user-reported, not independently demonstrated by the result ZIP; original audit remains unchanged."
+}

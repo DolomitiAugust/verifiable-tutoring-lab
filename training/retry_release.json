@@ -1,0 +1,34 @@
+{
+  "release_script_sha256": "33f7eaefbd9488a13bdc32bd9ac9634b9bebef3381e5ff452bee63f7a0a36906",
+  "cell_sha256": "5bad9e453a39af0bdb27264067ed8e2e39007489882f84c49dc0b4d940935d56",
+  "validation": {
+    "tests_run": 16,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "run_retry_sha256": "33f7eaefbd9488a13bdc32bd9ac9634b9bebef3381e5ff452bee63f7a0a36906",
+    "actual_evidence_source_sha256": "29e4c84b028672e26a75c37b3e9a2831a329c8b2d42583de590929072d85fd88",
+    "smoke_adapter_sha256": "323b36667eedf0f731b2e138ac8325310177d2850d6f732beabce61830b85b80",
+    "note": "Fault-injected copies are transient test fixtures; original measured outputs are not modified."
+  },
+  "smoke": {
+    "device": "cpu",
+    "threads": 2,
+    "steps": 1,
+    "intact_dataset_selected": 1000,
+    "updated_parameters": 1081344,
+    "response_tokens": 81,
+    "training_step_seconds": 1.797,
+    "adapter_sha256": "323b36667eedf0f731b2e138ac8325310177d2850d6f732beabce61830b85b80",
+    "scope": "one optimizer step only; not full retry training and no GPU execution"
+  },
+  "first_input_zip_sha256": "8e303e9c07bbfa340bee2dd11548785fd0f1f21fbccb2e5e70c0d64d93c9f774",
+  "first_result_zip_sha256": "5bf9f4d325f1eeaa95c60488b2dcdf285653e8e27e5a35b2b3caf192a4f2fbad",
+  "limitations": [
+    "Follow-up uses already observed test sets and is exploratory, not blind.",
+    "The CPU smoke validates first-step mechanics only; GPU availability, total runtime and improved quality are unproven.",
+    "Resume fails closed on incomplete immutable artifact/hash publication or mismatches; no automatic repair."
+  ],
+  "previous_cell_sha256": "b808cd0af32dee6f667ed29bc3e2428f113f4656a71c6c8c686eb9d84121e5ce",
+  "wrapper_revision": "colab_upload_fix_validation.json (2026-11-08; content-based upload identification)"
+}

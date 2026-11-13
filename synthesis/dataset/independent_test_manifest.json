@@ -1,0 +1,12 @@
+{
+  "count": 24,
+  "reference_execution_checks": 24,
+  "errors": [],
+  "frozen_before_observing_model_outputs": true,
+  "author_scope": "Same Codex author as project; different construction from generator, not an external or human evaluation.",
+  "test_role": "Natural-expression probes. Familiar concepts are allowed; this is not family-level OOD testing.",
+  "sha256": {
+    "independent_test.jsonl": "86b1376a7b55515c5fcd57a6b0018900aa48c4cb78fd2301f321468cc896c54d",
+    "independent_test_metadata.jsonl": "d683c7fad438ff15094b2c8c039afbe3f8c9eb687eb9b93d0cf2f24411382c04"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "pdf": "verifiable-tutoring-lab_研究报告.pdf",
+  "pdf_pages": 73,
+  "pdf_sha256": "fc3012888c8db3ac0d8b93de8301a071f4b92431fe6d9f7537d3b1ac0da9e703",
+  "source_plan_sha256": "a38c0fcef7be54b34ab1ee89442a6f02426a7f90054deae84c698005850e10da",
+  "raw_outputs_sha256": {
+    "pilot_penalty_1.0.json": "05d7e23ad93b4177dc8072438e556045407eb82d76455c51c35802852d8e0020",
+    "pilot_penalty_1.08.json": "2b046bacaf1f1604e6d687ae2894efb796a35c2186f96a591de3661fd70ed474"
+  },
+  "full_text_review_sha256": "ad29fe3a499c86cbf89fe7db96cd9a7c8edc088744a356053aea1b1790982b8a",
+  "stop_decision_sha256": "0420fcfed33c3f2670faaa50e4c0b3180286b80e85c21309a2b38f02a6c840e4",
+  "historical_80_unchanged": true,
+  "original_inputs_unchanged": true,
+  "new_optimizer_steps": 0,
+  "new_cloud_runs": 0,
+  "dev_reference_evaluations": 180,
+  "pilot_generations": 12,
+  "new_test_set_evaluations": 0,
+  "status": "bounded_attempt_failed_stopped",
+  "pdf_checks": "73 pages, no off-page text or unresolved references; cover and added sections visually inspected",
+  "temporary_scripts": "No disposable script file written; all retained Python files reproduce diagnosis or the bounded experiment."
+}

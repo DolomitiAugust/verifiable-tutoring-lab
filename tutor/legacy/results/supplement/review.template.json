@@ -1,0 +1,104 @@
+{
+  "results_sha256": "4c00c831fa1ab18851a1c60568a3ec05b2b5c8bf368bde1f70dad189f247ca16",
+  "reviewer": "",
+  "review_date": "",
+  "cases": [
+    {
+      "case_id": "tutor-S01",
+      "criteria": [
+        {
+          "id": "descending_diagnosis",
+          "criterion": "明确本次20不正确，说明负步长使取值依次为8、6、4，终点2排除，总和18；不能把负步长当成空范围或递增范围。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "provided_followup",
+          "criterion": "呈现给定的 range(8,0,-2) 完整复测程序和独立可辨认的答案20；不要求自主出题。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S02",
+      "criteria": [
+        {
+          "id": "explicit_empty_prediction",
+          "criterion": "明确认可学生的空字符串预测正确，并说明原题打印空行或空字符串；不能把显式空字符串预测当成未提供预测。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "empty_slice_reason",
+          "criterion": "说明默认正步长下从4向右无法在排除的终点1之前选到字符，因此没有取到字符；不能凭空选下标4、3、2。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "provided_followup",
+          "criterion": "呈现给定 word[1:4] 完整复测程序及答案yth。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S03",
+      "criteria": [
+        {
+          "id": "new_topic_feedback",
+          "criterion": "第一轮正确诊断切片起点按1计数的错误，给出下标1、2、3与yth，以及给定复测pyt。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "relevant_old_memory",
+          "criterion": "第二轮确实引用该生先前range把终点2也计入、把18答成20的具体错误，并联系当前应排除终点3；只泛称有记录或只引用切片错误不足。允许同时提及其他历史，但不能把它当成range旧错因。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "current_and_followup",
+          "criterion": "第二轮认可本次15正确，列出9、6及其和，并呈现给定复测程序与答案18；历史错误不能改写本次状态。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    },
+    {
+      "case_id": "tutor-S04",
+      "criteria": [
+        {
+          "id": "first_visit_isolation",
+          "criterion": "第一轮准确认可18并说明8、6、4；不把旧学生的终点误答20、切片错误或学习背景归给新学生；给出给定复测与答案20。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "own_correct_history",
+          "criterion": "第二轮确实引用该生自己的上次预测18与核验18或同等具体正确事实，结合当前10、8、6及24；不得引用另一学生的错误来描述他。仅泛称有历史不足。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        },
+        {
+          "id": "second_followup_calibration",
+          "criterion": "第二轮给出给定复测程序及答案28；不把两次正确预测外推为全面掌握。",
+          "score": null,
+          "reason": "",
+          "quotes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "design_sha256": "fb258678afc3ea3d49025ee28b7136982cf3ee0310267497be6bef8214924aee",
+  "generation_cases": [
+    "C00088",
+    "C00798",
+    "C02114",
+    "C02172",
+    "C00230",
+    "C00812"
+  ],
+  "reference_cases": 60,
+  "nll_tie_absolute_tolerance": 1e-09,
+  "stages": {
+    "base": {
+      "source_result_sha256": "9a9c6c10dfed8281562b9207dc89b12b4b8f414ee34fa1b074150fc77b5ece52",
+      "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+      "checkpoint": {
+        "adapter": null,
+        "sha256": null,
+        "parent_sft_sha256": null
+      },
+      "generation": {
+        "n": 6,
+        "strict_main_tag_hits": 0,
+        "has_main_tag": 0,
+        "nonempty": 6,
+        "main_fact_counts": {
+          "correct": 0,
+          "wrong": 0,
+          "unresolved": 6
+        },
+        "reference_followup_counts": {
+          "different_or_unverified": 6
+        },
+        "stop_counts": {
+          "max_new_tokens": 6
+        }
+      },
+      "reference_nll": {
+        "overall": {
+          "examples": 60,
+          "answer_tokens_including_im_end": 13437,
+          "nll_sum": 44016.55172153376,
+          "mean_nll_per_answer_token": 3.275772249872275
+        },
+        "by_family": {
+          "snapshot": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4003,
+            "nll_sum": 13573.545095920563,
+            "mean_nll_per_answer_token": 3.3908431416239226
+          },
+          "split_join": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4800,
+            "nll_sum": 15452.990778043866,
+            "mean_nll_per_answer_token": 3.219373078759139
+          },
+          "zip_pairs": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4634,
+            "nll_sum": 14990.015847569332,
+            "mean_nll_per_answer_token": 3.2347897815212194
+          }
+        }
+      }
+    },
+    "sft": {
+      "source_result_sha256": "93a6be5988370dec7b21d7fd118110f26eed7d37b3fff916ec65be829bd74afb",
+      "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+      "checkpoint": {
+        "adapter": "training\\legacy\\runs\\sft\\adapter.pt",
+        "sha256": "7f677590ce0413a2b22f2898984b598063aa8bd17f95d4174d05f7e064190b4d",
+        "parent_sft_sha256": null
+      },
+      "generation": {
+        "n": 6,
+        "strict_main_tag_hits": 0,
+        "has_main_tag": 3,
+        "nonempty": 6,
+        "main_fact_counts": {
+          "correct": 0,
+          "wrong": 2,
+          "unresolved": 4
+        },
+        "reference_followup_counts": {
+          "different_or_unverified": 6
+        },
+        "stop_counts": {
+          "max_new_tokens": 5,
+          "eos": 1
+        }
+      },
+      "reference_nll": {
+        "overall": {
+          "examples": 60,
+          "answer_tokens_including_im_end": 13437,
+          "nll_sum": 33699.693369071,
+          "mean_nll_per_answer_token": 2.507977477790504
+        },
+        "by_family": {
+          "snapshot": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4003,
+            "nll_sum": 10287.505903720856,
+            "mean_nll_per_answer_token": 2.5699490141695867
+          },
+          "split_join": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4800,
+            "nll_sum": 11914.902227461338,
+            "mean_nll_per_answer_token": 2.4822712973877787
+          },
+          "zip_pairs": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4634,
+            "nll_sum": 11497.285237888806,
+            "mean_nll_per_answer_token": 2.4810714799069498
+          }
+        }
+      }
+    },
+    "dpo": {
+      "source_result_sha256": "4afd81a924c1aa84dd2abadea52663409e5cbee6937d0d7d6590755694a9c687",
+      "base_hash": "e1389f6ed94c79cc21740d47da6843c1bcffd4290578b9ce2470d83e83133cc0",
+      "checkpoint": {
+        "adapter": "training\\legacy\\runs\\dpo\\adapter.pt",
+        "sha256": "68981e60e11196a0f1ddd222ba9effe353bb44048b367fb2b971481b85709c51",
+        "parent_sft_sha256": "7f677590ce0413a2b22f2898984b598063aa8bd17f95d4174d05f7e064190b4d"
+      },
+      "generation": {
+        "n": 6,
+        "strict_main_tag_hits": 0,
+        "has_main_tag": 2,
+        "nonempty": 6,
+        "main_fact_counts": {
+          "correct": 0,
+          "wrong": 0,
+          "unresolved": 6
+        },
+        "reference_followup_counts": {
+          "different_or_unverified": 6
+        },
+        "stop_counts": {
+          "max_new_tokens": 6
+        }
+      },
+      "reference_nll": {
+        "overall": {
+          "examples": 60,
+          "answer_tokens_including_im_end": 13437,
+          "nll_sum": 35795.69390937127,
+          "mean_nll_per_answer_token": 2.6639647175240957
+        },
+        "by_family": {
+          "snapshot": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4003,
+            "nll_sum": 10863.247686386108,
+            "mean_nll_per_answer_token": 2.7137765891546612
+          },
+          "split_join": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4800,
+            "nll_sum": 12769.542001605034,
+            "mean_nll_per_answer_token": 2.6603212503343823
+          },
+          "zip_pairs": {
+            "examples": 20,
+            "answer_tokens_including_im_end": 4634,
+            "nll_sum": 12162.90422138013,
+            "mean_nll_per_answer_token": 2.624709585968953
+          }
+        }
+      }
+    }
+  },
+  "paired_nll": {
+    "base_to_sft": {
+      "lower_nll_cases": 60,
+      "tied_cases": 0,
+      "higher_nll_cases": 0,
+      "micro_delta_second_minus_first": -0.7677947720817713,
+      "median_per_case_delta": -0.7960085004656186,
+      "range_per_case_delta": [
+        -1.112242581709376,
+        -0.2821278380573009
+      ]
+    },
+    "sft_to_dpo": {
+      "lower_nll_cases": 0,
+      "tied_cases": 0,
+      "higher_nll_cases": 60,
+      "micro_delta_second_minus_first": 0.15598723973359174,
+      "median_per_case_delta": 0.1471939880528088,
+      "range_per_case_delta": [
+        0.018866448653371393,
+        0.3090381405570293
+      ]
+    },
+    "base_to_dpo": {
+      "lower_nll_cases": 60,
+      "tied_cases": 0,
+      "higher_nll_cases": 0,
+      "micro_delta_second_minus_first": -0.6118075323481795,
+      "median_per_case_delta": -0.682656205799973,
+      "range_per_case_delta": [
+        -0.9499369420503316,
+        -0.10062628957553876
+      ]
+    }
+  }
+}

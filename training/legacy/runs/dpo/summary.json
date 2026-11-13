@@ -1,0 +1,43 @@
+{
+  "stage": "dpo",
+  "steps": 64,
+  "selected": 64,
+  "unique_training_examples": 64,
+  "total_response_tokens_processed": 25212,
+  "training_step_seconds": 210.718,
+  "adapter_delta_l2": 0.7557571040686807,
+  "sha256": "68981e60e11196a0f1ddd222ba9effe353bb44048b367fb2b971481b85709c51",
+  "parent_sft_sha256": "7f677590ce0413a2b22f2898984b598063aa8bd17f95d4174d05f7e064190b4d",
+  "first_training_batch_before": {
+    "step": 1,
+    "ids": [
+      "C03449"
+    ],
+    "loss": 0.6931471824645996,
+    "response_tokens": 394,
+    "policy_chosen_logp": -404.069091796875,
+    "policy_rejected_logp": -811.0360107421875,
+    "reference_chosen_logp": -404.069091796875,
+    "reference_rejected_logp": -811.0360107421875,
+    "policy_logratio": 406.9669189453125,
+    "ref_logratio": 406.9669189453125,
+    "relative_margin": 0.0,
+    "dpo_scaled_margin": 0.0,
+    "grad_norm_before_clip": 42.761940002441406,
+    "adapter_step_l2": 0.060027252337305916,
+    "adapter_delta_from_stage_start_l2": 0.060027252337305916,
+    "seconds": 3.246
+  },
+  "same_training_batch_after": {
+    "loss": 3.378899293693394e-08,
+    "response_tokens": 394,
+    "policy_chosen_logp": -396.05462646484375,
+    "policy_rejected_logp": -975.0528564453125,
+    "reference_chosen_logp": -404.069091796875,
+    "reference_rejected_logp": -811.0360107421875,
+    "policy_logratio": 578.9982299804688,
+    "ref_logratio": 406.9669189453125,
+    "relative_margin": 172.03131103515625,
+    "dpo_scaled_margin": 17.2031307220459
+  }
+}

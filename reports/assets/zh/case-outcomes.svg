@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="459.212598pt" height="212.598425pt" viewBox="0 0 459.212598 212.598425" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 212.598425 
+L 459.212598 212.598425 
+L 459.212598 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 17.450079 106.979528 
+L 216.748346 106.979528 
+Q 220.422047 106.979528 220.422047 103.305827 
+L 220.422047 50.955591 
+Q 220.422047 47.28189 216.748346 47.28189 
+L 17.450079 47.28189 
+Q 13.776378 47.28189 13.776378 50.955591 
+L 13.776378 103.305827 
+Q 13.776378 106.979528 17.450079 106.979528 
+z
+" clip-path="url(#p6494e00c14)" style="fill: #ffffff; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 242.464252 106.979528 
+L 441.76252 106.979528 
+Q 445.43622 106.979528 445.43622 103.305827 
+L 445.43622 50.955591 
+Q 445.43622 47.28189 441.76252 47.28189 
+L 242.464252 47.28189 
+Q 238.790551 47.28189 238.790551 50.955591 
+L 238.790551 103.305827 
+Q 238.790551 106.979528 242.464252 106.979528 
+z
+" clip-path="url(#p6494e00c14)" style="fill: #ffffff; stroke: #009e73; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 17.450079 175.861417 
+L 216.748346 175.861417 
+Q 220.422047 175.861417 220.422047 172.187717 
+L 220.422047 119.83748 
+Q 220.422047 116.16378 216.748346 116.16378 
+L 17.450079 116.16378 
+Q 13.776378 116.16378 13.776378 119.83748 
+L 13.776378 172.187717 
+Q 13.776378 175.861417 17.450079 175.861417 
+z
+" clip-path="url(#p6494e00c14)" style="fill: #ffffff; stroke: #e69f00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 242.464252 175.861417 
+L 441.76252 175.861417 
+Q 445.43622 175.861417 445.43622 172.187717 
+L 445.43622 119.83748 
+Q 445.43622 116.16378 441.76252 116.16378 
+L 242.464252 116.16378 
+Q 238.790551 116.16378 238.790551 119.83748 
+L 238.790551 172.187717 
+Q 238.790551 175.861417 242.464252 175.861417 
+z
+" clip-path="url(#p6494e00c14)" style="fill: #ffffff; stroke: #e69f00; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11.2px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #263746" x="229.606299" y="16.860753" transform="rotate(-0 229.606299 16.860753)">四个案例：对照原先冻结的预期</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7.9px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #62727c" x="229.606299" y="33.402043" transform="rotate(-0 229.606299 33.402043)">预期完成程度 → 实际完成程度；保留历史结果</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.35px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #263746" x="117.099213" y="60.143291" transform="rotate(-0 117.099213 60.143291)">C03  跨实例记忆</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #0072b2" x="117.099213" y="74.741708" transform="rotate(-0 117.099213 74.741708)">部分 → 完整</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(74.474213 89.434274)">重建系统后取回旧错因，</text>
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(89.974213 98.485305)">核对新题事实。</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.35px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #263746" x="342.113386" y="60.143291" transform="rotate(-0 342.113386 60.143291)">C04  学生隔离</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #009e73" x="342.113386" y="74.741708" transform="rotate(-0 342.113386 74.741708)">部分 → 完整</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(299.488386 89.434274)">新学生不读取他人记录，</text>
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(303.363386 98.485305)">未作答状态保持正确。</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 8.35px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #263746" x="117.099213" y="129.025181" transform="rotate(-0 117.099213 129.025181)">C08  定向变式</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #e69f00" x="117.099213" y="143.623597" transform="rotate(-0 117.099213 143.623597)">完整 → 未完整</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(70.599213 158.316163)">程序可执行，但改错位置：</text>
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(70.599213 167.367195)">改累计值，而非补齐列表。</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 8.35px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #263746" x="342.113386" y="129.025181" transform="rotate(-0 342.113386 129.025181)">S02  有效空预测</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #e69f00" x="342.113386" y="143.623597" transform="rotate(-0 342.113386 143.623597)">完整 → 未完整</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(291.738386 158.316163)">空输出正确，却把有效空预测</text>
+    <text style="font-size: 7.75px; font-family: 'Microsoft YaHei'; fill: #263746" transform="translate(311.113386 167.367195)">记录成了未作答。</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.4px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #62727c" x="229.606299" y="193.512536" transform="rotate(-0 229.606299 193.512536)">成功来源是工具、模板与记忆，不代表模型协作能力得到提升。</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 7.4px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #62727c" x="229.606299" y="206.370489" transform="rotate(-0 229.606299 206.370489)">C07 仍保留“预期局限”标签；没有改标签来凑案例。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6494e00c14">
+   <rect x="0" y="0" width="459.212598" height="212.598425"/>
+  </clipPath>
+ </defs>
+</svg>

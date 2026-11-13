@@ -1,0 +1,120 @@
+{
+  "purpose": "Local copies for checking the cited public sources; source_ledger.json records the substantive web verification independently. Retrieval failure is not fabricated as a successful snapshot.",
+  "files": [
+    {
+      "source_id": "business-T01",
+      "requested_url": "https://www.jbs.cam.ac.uk/wp-content/uploads/2020/08/how-to-write-a-business-plan.pdf",
+      "accessed_at": "2026-11-07T04:20:27.258374+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://www.jbs.cam.ac.uk/wp-content/uploads/2020/08/how-to-write-a-business-plan.pdf",
+      "content_type": "application/pdf",
+      "path": "research\\snapshots\\cambridge_business_plan_2013.pdf",
+      "bytes": 195776,
+      "sha256": "6f15243464f20da11b328e7c95d6d29945be1a9d1d50184d610b688ec5942b9b"
+    },
+    {
+      "source_id": "R1",
+      "requested_url": "https://arxiv.org/pdf/2401.11314v2",
+      "accessed_at": "2026-11-07T04:20:27.258712+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2401.11314v2",
+      "content_type": "application/pdf",
+      "path": "research\\snapshots\\codeaid_2401.11314v2.pdf",
+      "bytes": 3413572,
+      "sha256": "23259ff11db2e8d6ae834ce5a3450856568233a8b2fecfc08fa129411586582b"
+    },
+    {
+      "source_id": "K1",
+      "requested_url": "https://khanmigo.ai/pricing",
+      "accessed_at": "2026-11-07T04:20:27.259798+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://khanmigo.ai/pricing",
+      "content_type": "text/html; charset=utf-8",
+      "path": "research\\snapshots\\khanmigo_pricing.html",
+      "bytes": 22509,
+      "sha256": "338ffa26bc53be0c17b434c8608af903d17a5fe6c6b35b9634fc7a5388a64093"
+    },
+    {
+      "source_id": "C1",
+      "requested_url": "https://www.codegrade.com/pricing",
+      "accessed_at": "2026-11-07T04:20:27.260386+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://www.codegrade.com/pricing",
+      "content_type": "text/html; charset=utf-8",
+      "path": "research\\snapshots\\codegrade_pricing.html",
+      "bytes": 98205,
+      "sha256": "8ef27f44cb269a989e46bebaadb8f800717b924e4b0871b9e91c352bd9d53a61"
+    },
+    {
+      "source_id": "C3",
+      "requested_url": "https://help.codegrade.com/setup-assignment/other-features/ai-assistant",
+      "accessed_at": "2026-11-07T04:20:27.937797+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://help.codegrade.com/setup-assignment/other-features/ai-assistant",
+      "content_type": "text/html; charset=utf-8",
+      "path": "research\\snapshots\\codegrade_ai_help.html",
+      "bytes": 540310,
+      "sha256": "fb7b1201c7cfe80f9ae6b8373f68544efe30756d7c163f2a7b0f2a30d95d693a"
+    },
+    {
+      "source_id": "business-P01",
+      "requested_url": "https://help.aliyun.com/zh/model-studio/qwen-plus",
+      "accessed_at": "2026-11-07T04:20:28.490364+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://help.aliyun.com/zh/model-studio/qwen-plus",
+      "content_type": "text/html;charset=UTF-8",
+      "path": "research\\snapshots\\qwen_plus_price.html",
+      "bytes": 218483,
+      "sha256": "4d63a4b77b3e1deed3a465ce9f78a282a1b7fcacae427965455a0e14539f2eb3"
+    },
+    {
+      "source_id": "business-M02",
+      "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179260/",
+      "accessed_at": "2026-11-07T04:20:28.498015+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179260/",
+      "content_type": "text/html; charset=utf-8",
+      "path": "research\\snapshots\\kestin_rct_fulltext.html",
+      "bytes": 164391,
+      "sha256": "a6dfbad77f5e28e6b9796775cdab033723e5b4304e29e532fe76cbde0a4ec474"
+    },
+    {
+      "source_id": "business-M03",
+      "requested_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/",
+      "accessed_at": "2026-11-07T04:20:29.504461+00:00",
+      "status": "not_archived",
+      "error": "Browser challenge; not saved as source evidence"
+    },
+    {
+      "source_id": "business-M04",
+      "requested_url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "accessed_at": "2026-11-07T04:20:29.523799+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "content_type": "text/html; charset=utf-8",
+      "path": "research\\snapshots\\pipl_official.html",
+      "bytes": 60221,
+      "sha256": "50b62bb9868648fe0417d8757a8cff62641eba6d879403f363d771f8c6d3acff"
+    },
+    {
+      "source_id": "business-M01",
+      "requested_url": "https://jyt.hlj.gov.cn/jyt/c110518/202608/c00_31969727.shtml",
+      "accessed_at": "2026-11-07T04:20:29.730998+00:00",
+      "status": "downloaded",
+      "http_status": 200,
+      "final_url": "https://jyt.hlj.gov.cn/jyt/c110518/202608/c00_31969727.shtml",
+      "content_type": "text/html",
+      "path": "research\\snapshots\\education_statistics_official_reprint.html",
+      "bytes": 73399,
+      "sha256": "d1958b5354c1366709148c215a73c835a97e7463103004169380c91a45f02b50"
+    }
+  ]
+}

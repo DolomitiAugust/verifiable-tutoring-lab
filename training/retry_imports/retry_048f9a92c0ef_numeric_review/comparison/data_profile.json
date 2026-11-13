@@ -1,0 +1,100 @@
+{
+  "source": "training\\retry_imports\\retry_048f9a92c0ef_numeric_review\\comparison\\per_case_reference_nll.csv",
+  "n_rows": 336,
+  "n_cols": 5,
+  "columns": {
+    "stage": {
+      "type": "unknown",
+      "n_total": 336,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "test_set": {
+      "type": "unknown",
+      "n_total": 336,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "case_id": {
+      "type": "unknown",
+      "n_total": 336,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "nll": {
+      "type": "continuous",
+      "n_total": 336,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 336,
+      "mean": 4.603060771866782,
+      "median": 4.264460309899372,
+      "sd": 1.4971796571907232,
+      "min": 1.2504326956612724,
+      "max": 10.163030624389648,
+      "skewness": 0.8500832575029381,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 7,
+      "outlier_lo": 0.8183360840800749,
+      "outlier_hi": 8.000763137498383,
+      "needs_log_axis": "False"
+    },
+    "reference_tokens": {
+      "type": "unknown",
+      "n_total": 336,
+      "n_null": 0,
+      "missing_rate": 0.0
+    }
+  },
+  "correlation": null,
+  "group_summary": {
+    "by": [
+      "stage",
+      "test_set"
+    ],
+    "n_groups": 8,
+    "min_n_per_group": 24,
+    "max_n_per_group": 60,
+    "median_n_per_group": 42,
+    "small_groups_flag": false,
+    "tiny_groups_flag": false,
+    "per_group_counts": [
+      [
+        "('base', 'bridge_nll')",
+        60
+      ],
+      [
+        "('base', 'independent')",
+        24
+      ],
+      [
+        "('continued_sft', 'bridge_nll')",
+        60
+      ],
+      [
+        "('continued_sft', 'independent')",
+        24
+      ],
+      [
+        "('dpo', 'bridge_nll')",
+        60
+      ],
+      [
+        "('dpo', 'independent')",
+        24
+      ],
+      [
+        "('sft', 'bridge_nll')",
+        60
+      ],
+      [
+        "('sft', 'independent')",
+        24
+      ]
+    ]
+  },
+  "warnings": [],
+  "suggestions": [
+    "单个连续变量 nll → 直方图 / KDE / 箱线图看分布"
+  ]
+}

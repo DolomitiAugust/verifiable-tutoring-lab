@@ -1,0 +1,263 @@
+{
+  "all_passed": true,
+  "results_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded",
+  "verified_source_files": 6,
+  "case_count": 8,
+  "turn_count": 11,
+  "real_model_calls": 33,
+  "model_calls": [
+    {
+      "turn_id": "tutor-C01-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C01-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C01-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C02-T1",
+      "role": "planner",
+      "tokens": 34,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C02-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C02-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C03-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C03-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C03-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C04-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C04-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C04-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T2",
+      "role": "planner",
+      "tokens": 38,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T2",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T2",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T3",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T3",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T3",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T4",
+      "role": "planner",
+      "tokens": 38,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T4",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C05-T4",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C06-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C06-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C06-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C07-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C07-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C07-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C08-T1",
+      "role": "planner",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C08-T1",
+      "role": "teacher",
+      "tokens": 256,
+      "accepted": false
+    },
+    {
+      "turn_id": "tutor-C08-T1",
+      "role": "reviewer",
+      "tokens": 256,
+      "accepted": false
+    }
+  ],
+  "actual_followups_independently_executed": [
+    {
+      "turn_id": "tutor-C01-T1",
+      "output": "20",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C02-T1",
+      "output": "pto",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C03-T1",
+      "output": "18",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C04-T1",
+      "output": "20",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C05-T1",
+      "output": "10",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C05-T2",
+      "output": "20",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C05-T3",
+      "output": "30",
+      "origin": "provided_program"
+    },
+    {
+      "turn_id": "tutor-C05-T4",
+      "output": "15",
+      "origin": "ast_conditional_sum_fallback"
+    },
+    {
+      "turn_id": "tutor-C06-T1",
+      "output": "([2, 2, 3], [2, 2])",
+      "origin": "ast_constant_fallback"
+    },
+    {
+      "turn_id": "tutor-C08-T1",
+      "output": "213",
+      "origin": "ast_constant_fallback"
+    }
+  ],
+  "sqlite_episode_count": 11,
+  "sqlite_summary_rows": 7,
+  "interpretation": "Artifact consistency and actual program outputs, not a teaching-quality score."
+}

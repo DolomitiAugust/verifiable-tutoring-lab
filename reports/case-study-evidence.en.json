@@ -1,0 +1,144 @@
+{
+  "kind": "Historical case evidence with English translations; no new model output or new execution",
+  "translation_policy": "English text translates recorded Chinese material. Original strings are retained. Excerpt omissions are marked, and final-response translations cover complete recorded final text.",
+  "cases": [
+    {
+      "case_id": "tutor-C03",
+      "batch": "core",
+      "pre_run_expectation_original": {
+        "completion": "partial",
+        "rationale": "training study 小模型曾认可 range/配对误答；跨实例取回事实后能否把旧错因和新题依据正确结合，基线预期仅部分完成。"
+      },
+      "historical_classification": "above-expectation success",
+      "task_description_en": "After rebuilding the system object, use this learner's saved history to explain the previous endpoint mistake, check the current prediction 9 for the sum over range(3, 9, 3), and provide the supplied same-concept follow-up and its answer.",
+      "original_inputs": {
+        "student_id": "student_range_a",
+        "topic": "range 终点与步长",
+        "code": "total = 0\nfor n in range(3, 9, 3):\n    total += n\nprint(total)",
+        "student_answer": "9",
+        "request": "这是另一次会话。我记不清上次错在哪里。请结合你保存的记录说明我应重点核对什么，核对本次的 9，并再出一道同概念复测及答案。",
+        "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)"
+      },
+      "original_reference": {
+        "main_answer": "9",
+        "student_status": "correct",
+        "explanation": "本题 range 只取 3、6，总和 9；此前 tutor-C01 把排除的终点 8 纳入，当前仍应检查终点 9 不被取到。",
+        "followup_code": "total = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)",
+        "followup_answer": "18"
+      },
+      "reference_description_en": "Current output 9 = 3 + 6, with endpoint 9 excluded. Earlier prediction 20 incorrectly included endpoint 8 where the verified output was 12. The supplied follow-up range(3, 12, 3) outputs 18. Retain one correct and one incorrect attempt.",
+      "model_teacher_original_full": "  1. 从给定的学生反馈中，检查每个误解或错误的来源。如果误解或错误与学生预测有关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或错误相关的预测。如果误解或错误与预测无关，可以检查与误解或",
+      "model_teacher_excerpt_en": "From the provided student feedback, check the source of each misconception or error. If a misconception or error relates to the student prediction, check the related prediction. [This instruction then repeats.]",
+      "final_response_original_full": "上次同一概念的记录中，你的预测与实际输出不一致。你写的预测是 '20'，核验输出为 '12'。当时你的原话是「我把 8 也加进去了，所以猜 20」。这只是作答证据，不等于掌握结论。\n\n本题输出：9\n\n你的这次预测与程序实际输出一致。\n\n按实际执行记录核对：\n\n第 1 行（主程序）：total=0。\n第 2 行（主程序）：range(3, 9, 3) 实际取值 [3, 6]；终点 9 不包含在内。\n第 3 行（主程序）：total=3，n=3。\n第 3 行（主程序）：total=9，n=6。\n第 4 行（主程序）：打印 '9'。\n\n复测题：对照给定复测程序预测输出，并说明变化的一步。\n\n```python\ntotal = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)\n```\n\n复测参考输出：18",
+      "final_response_en_full_translation": "In the previous record on the same concept, your prediction differed from actual output. Your prediction was '20' and the verified output was '12'. Your earlier words were: 'I included 8, so I guessed 20.' This is response evidence, not a mastery conclusion.\n\nOutput: 9\n\nYour current prediction matches actual program output.\n\nCheck against the recorded execution:\n\nLine 1 (main program): total=0.\nLine 2 (main program): range(3, 9, 3) takes actual values [3, 6]; endpoint 9 is excluded.\nLine 3 (main program): total=3, n=3.\nLine 3 (main program): total=9, n=6.\nLine 4 (main program): print '9'.\n\nFollow-up: predict the output of the supplied follow-up program and explain the changed step.\n\n```python\ntotal = 0\nfor n in range(3, 12, 3):\n    total += n\nprint(total)\n```\n\nFollow-up reference output: 18",
+      "final_content_source": "verified_template",
+      "model_explanation_adopted": false,
+      "source_path": "tutor/legacy/results/core/results.json",
+      "source_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded"
+    },
+    {
+      "case_id": "tutor-C04",
+      "batch": "core",
+      "pre_run_expectation_original": {
+        "completion": "partial",
+        "rationale": "复用同一主题和同一程序容易诱发对话历史混用；预期能完成讲解，但能否同时保留身份隔离和未作答状态需实际检验。"
+      },
+      "historical_classification": "above-expectation success",
+      "task_description_en": "A new learner has not submitted a prediction. Explain the sum over range(2, 8, 2), provide the supplied follow-up range(2, 10, 2), and do not treat another learner's records as this learner's history.",
+      "original_inputs": {
+        "student_id": "student_range_new",
+        "topic": "range 终点与步长",
+        "code": "total = 0\nfor n in range(2, 8, 2):\n    total += n\nprint(total)",
+        "student_answer": null,
+        "request": "这是我第一次来，我还没有给出预测。请从头解释循环取值并给一道复测，别把别人的答题记录当成我的。",
+        "background": "擅长数学推导，没有电子表格学习背景。",
+        "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)"
+      },
+      "original_reference": {
+        "main_answer": "12",
+        "student_status": "unanswered",
+        "explanation": "本题依次取 2、4、6，和为 12；新学生没有既往作答，也未提供本次预测，不能记为正确或错误。",
+        "followup_code": "total = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)",
+        "followup_answer": "20"
+      },
+      "reference_description_en": "Original output 12 = 2 + 4 + 6. Follow-up output 20 = 2 + 4 + 6 + 8. No history is retrieved; attempts and correct counts remain zero and unanswered increments by one.",
+      "model_teacher_original_full": "  1. 从给定的代码中提取与题目有关的执行过程。\n  2. 根据执行过程，确定预测的正确或错误。\n  3. 根据预测，为给定的值生成一个解释。\n  4. 根据预测，为给定的值生成一个后续代码片段。\n  5. 根据预测，为给定的值生成一个变式。\n  6. 根据预测，为给定的值生成一个后续代码片段。\n  7. 根据预测，为给定的值生成一个变式。\n  8. 根据预测，为给定的值生成一个后续代码片段。\n  9. 根据预测，为给定的值生成一个变式。\n  10. 根据预测，为给定的值生成一个后续代码片段。\n  11. 根据预测，为给定的值生成一个变式。\n  12. 根据预测，为给定的值生成一个后续代码片段。\n  13. 根据预测，为给定的值生成一个变式。\n  1",
+      "model_teacher_excerpt_en": "Extract the execution process relevant to the problem from the provided code. Determine whether the prediction is correct or incorrect. Generate an explanation and a follow-up snippet based on the prediction. [The follow-up instructions then repeat.]",
+      "final_response_original_full": "本题输出：12\n\n这次未提供预测，因此不记录为作答正确或错误。\n\n按实际执行记录核对：\n\n第 1 行（主程序）：total=0。\n第 2 行（主程序）：range(2, 8, 2) 实际取值 [2, 4, 6]；终点 8 不包含在内。\n第 3 行（主程序）：total=2，n=2。\n第 3 行（主程序）：total=6，n=4。\n第 3 行（主程序）：total=12，n=6。\n第 4 行（主程序）：打印 '12'。\n\n复测题：对照给定复测程序预测输出，并说明变化的一步。\n\n```python\ntotal = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)\n```\n\n复测参考输出：20",
+      "final_response_en_full_translation": "Output: 12\n\nNo prediction was provided on this turn, so it is not recorded as a correct or incorrect attempt.\n\nCheck against the recorded execution:\n\nLine 1 (main program): total=0.\nLine 2 (main program): range(2, 8, 2) takes actual values [2, 4, 6]; endpoint 8 is excluded.\nLine 3 (main program): total=2, n=2.\nLine 3 (main program): total=6, n=4.\nLine 3 (main program): total=12, n=6.\nLine 4 (main program): print '12'.\n\nFollow-up: predict the output of the supplied follow-up program and explain the changed step.\n\n```python\ntotal = 0\nfor n in range(2, 10, 2):\n    total += n\nprint(total)\n```\n\nFollow-up reference output: 20",
+      "final_content_source": "verified_template",
+      "model_explanation_adopted": false,
+      "source_path": "tutor/legacy/results/core/results.json",
+      "source_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded"
+    },
+    {
+      "case_id": "tutor-C08",
+      "batch": "core",
+      "pre_run_expectation_original": {
+        "completion": "complete",
+        "rationale": "该题的旧模型错误已在 training study 记录；现在有执行、审阅与教学请求约束，预期整套系统应纠正 230 并完成明确的补数变式。"
+      },
+      "historical_classification": "unexpected failure",
+      "task_description_en": "Explain why prediction 230 is incorrect, list each zip pair contribution and the unmatched element. Then create a second problem by appending only one number to the right list; provide complete code, its answer and an explanation of the change.",
+      "original_inputs": {
+        "student_id": "student_zip",
+        "topic": "zip 不等长配对",
+        "code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+        "student_answer": "230",
+        "request": "请解释为什么我算出的 230 不对，逐对列出求和，说明没有配对的元素。再只给右列表补一个数，设计第二题，附完整程序和答案并讲解变化。",
+        "background": "熟悉积木顺序，但容易忽略循环的终止条件。"
+      },
+      "original_reference": {
+        "main_answer": "212",
+        "student_status": "incorrect",
+        "explanation": "zip 只产生五对，和分别为16、40、52、54、50，合计212；左列表末尾18没有搭档，不能再加入。",
+        "followup_code": "left = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44, 6]\ntotal = 0\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)",
+        "followup_answer": "236"
+      },
+      "reference_description_en": "The five contributions 16, 40, 52, 54 and 50 total 212; left-tail 18 is unmatched. Appending 6 to the right list is one valid follow-up and yields 236. Another append is acceptable if it preserves the requested edit and its verified answer.",
+      "model_teacher_original_full": "  1. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  2. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  3. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  4. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  5. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  6. 从学生预测中检查是否正确：核对学生预测，确保它们与实际执行一致。检查每个子任务的预测，确保它们与实际结果一致。\n  7. 从学生预测中检查是否正确：核对学生预测，确保它们与实际",
+      "model_teacher_excerpt_en": "Check correctness from the student prediction: verify the student predictions and ensure consistency with actual execution. Check the prediction for each subtask and ensure consistency with actual results. [This instruction then repeats.]",
+      "final_response_original_full": "本题输出：212\n\n你的这次预测与程序实际输出不同。下面核对真正改变结果的步骤。\n\n按实际执行记录核对：\n\n第 1 行（主程序）：left=[9, 24, 17, 32, 6, 18]。\n第 2 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]。\n第 3 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=0。\n第 4 行（主程序）：zip 的输入长度为 [6, 5]，实际配对 [(9, 7), (24, 16), (17, 35), (32, 22), (6, 44)]；未配对尾项 [[18], []]。\n第 5 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=16，a=9，b=7。\n第 5 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=56，a=24，b=16。\n第 5 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=108，a=17，b=35。\n第 5 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=162，a=32，b=22。\n第 5 行（主程序）：left=[9, 24, 17, 32, 6, 18]，right=[7, 16, 35, 22, 44]，total=212，a=6，b=44。\n第 6 行（主程序）：打印 '212'。\n\n复测题：只把原第 3 行的 0 改为 1，其余不变。\n\n```python\nleft = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44]\ntotal = 1\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)\n```\n\n复测参考输出：213",
+      "final_response_en_full_translation": "Output: 212\n\nYour current prediction differs from actual program output. The steps that determine the result are checked below.\n\nCheck against the recorded execution:\n\nLine 1 (main program): left=[9, 24, 17, 32, 6, 18].\nLine 2 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44].\nLine 3 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=0.\nLine 4 (main program): zip input lengths are [6, 5]; actual pairs [(9, 7), (24, 16), (17, 35), (32, 22), (6, 44)]; unpaired tails [[18], []].\nLine 5 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=16, a=9, b=7.\nLine 5 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=56, a=24, b=16.\nLine 5 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=108, a=17, b=35.\nLine 5 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=162, a=32, b=22.\nLine 5 (main program): left=[9, 24, 17, 32, 6, 18], right=[7, 16, 35, 22, 44], total=212, a=6, b=44.\nLine 6 (main program): print '212'.\n\nFollow-up: change only the 0 on original line 3 to 1; leave everything else unchanged.\n\n```python\nleft = [9, 24, 17, 32, 6, 18]\nright = [7, 16, 35, 22, 44]\ntotal = 1\nfor a, b in zip(left, right):\n    total += a + b\nprint(total)\n```\n\nFollow-up reference output: 213",
+      "final_content_source": "verified_template",
+      "model_explanation_adopted": false,
+      "source_path": "tutor/legacy/results/core/results.json",
+      "source_sha256": "7adb5b0595e4d1591fa93804762905a0c10d97abff13502e46131af926a00ded"
+    },
+    {
+      "case_id": "tutor-S02",
+      "batch": "supplement",
+      "pre_run_expectation_original": {
+        "completion": "complete",
+        "rationale": "core C02 已完整核对切片及学生正确预测，C04 已区分未预测与已预测。本例是常规正步长空切片，学生在请求中明确预测为空字符串，且 student_answer 使用空字符串而非 null，合理预期仍能完整核对。core 未覆盖空输出，因此此预期是有限外推而非已知结论。"
+      },
+      "historical_classification": "unexpected failure",
+      "task_description_en": "The learner explicitly predicts an empty string, meaning only a blank printed line, for word=\"python\" and word[4:1]. Check that prediction, explain why no character is selected, and give the supplied word[1:4] follow-up and answer.",
+      "original_inputs": {
+        "student_id": "student_supp_slice_a",
+        "topic": "字符串切片",
+        "code": "word = 'python'\nprint(word[4:1])",
+        "student_answer": "",
+        "request": "我的预测是空字符串，也就是只打印一个空行。请核对并说明为什么没有取到字符，给一道复测及答案。",
+        "followup_code": "word = 'python'\nprint(word[1:4])",
+        "background": "已认识字符串下标，从0开始计数。"
+      },
+      "original_reference": {
+        "main_answer": "",
+        "student_status": "correct",
+        "explanation": "切片默认步长为正1，起点4已在终点1右侧，因此没有任何下标被选中，切片为长度0的空字符串；print 输出一个换行。该生明确作了空字符串预测，属于本次正确作答，不是未作答。给定复测选下标1、2、3，得到yth。",
+        "followup_code": "word = 'python'\nprint(word[1:4])",
+        "followup_answer": "yth"
+      },
+      "reference_description_en": "The default step is positive one; no index is selected from start 4 before stop 1. Raw stdout is one newline and normalized output is the empty string. The explicit empty prediction is correct: attempts and correct increment, unanswered does not. Follow-up output is yth.",
+      "model_teacher_original_full": "  1. 从学生请求中，提取 '字符串切片' 与 'python' 的下标。\n  2. 从下标中，取下标 [4:1]，得到 'python'。\n  3. 打印 'python'。\n  4. 从下标 [1:4]，得到 'python'。\n  5. 从下标 [1:4]，得到 'python'。\n  6. 从下标 [1:4]，得到 'python'。\n  7. 从下标 [1:4]，得到 'python'。\n  8. 从下标 [1:4]，得到 'python'。\n  9. 从下标 [1:4]，得到 'python'。\n  10. 从下标 [1:4]，得到 'python'。\n  11. 从下标 [1:4]，得到 'python'。\n  12. 从下标 [1:4]，得到 'python'。\n  13. 从下标 [1:4]，得到 'python'。\n  1",
+      "model_teacher_excerpt_en": "From the student request, extract string slicing and the indices of python. Take slice [4:1] and obtain python. Print python. Take slice [1:4] and obtain python. [The wrong follow-up value then repeats.]",
+      "final_response_original_full": "本题输出：\n\n这次未提供预测，因此不记录为作答正确或错误。\n\n按实际执行记录核对：\n\n第 1 行（主程序）：word='python'。\n第 2 行（主程序）：word[4:1] 取下标 []，得到 ''。\n第 2 行（主程序）：打印 ''。\n\n复测题：对照给定复测程序预测输出，并说明变化的一步。\n\n```python\nword = 'python'\nprint(word[1:4])\n```\n\n复测参考输出：yth",
+      "final_response_en_full_translation": "Output: \n\nNo prediction was provided on this turn, so it is not recorded as a correct or incorrect attempt.\n\nCheck against the recorded execution:\n\nLine 1 (main program): word='python'.\nLine 2 (main program): word[4:1] selects indices [], producing ''.\nLine 2 (main program): print ''.\n\nFollow-up: predict the output of the supplied follow-up program and explain the changed step.\n\n```python\nword = 'python'\nprint(word[1:4])\n```\n\nFollow-up reference output: yth",
+      "final_content_source": "verified_template",
+      "model_explanation_adopted": false,
+      "source_path": "tutor/legacy/results/supplement/results.json",
+      "source_sha256": "4c00c831fa1ab18851a1c60568a3ec05b2b5c8bf368bde1f70dad189f247ca16"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "fraction": 0.0,
+  "dev_nll": 2.8672147383008686,
+  "rule": "minimum full-reference micro NLL on all 36 dev rows; tie within 1e-6 favors smaller fraction"
+}

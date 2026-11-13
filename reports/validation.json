@@ -1,0 +1,271 @@
+{
+  "schema": "verifiable-tutoring-report-validation-v1",
+  "date": "2026-11-13",
+  "new_model_experiments": false,
+  "reports": [
+    {
+      "file": "reports/research-report.en.pdf",
+      "language": "en",
+      "pages": 36,
+      "sha256": "d7fdb5cfe4fa319e381f2f6d2cce305a8ff2212bcb8b98fa2906dc4fb218bdbd",
+      "figures": 14,
+      "tables": 16,
+      "references": 32,
+      "graphics_exist": true,
+      "undefined_refs": [],
+      "undefined_citations": [],
+      "text_outside_page": [],
+      "replacement_glyph": false,
+      "unresolved_markers": false,
+      "embedded_files": 0,
+      "metadata": {
+        "format": "PDF 1.5",
+        "title": "Verifiable Tutoring Lab: Executable Data, Preference Tuning, and Learner Memory",
+        "author": "Verifiable Tutoring Lab",
+        "subject": "",
+        "keywords": "",
+        "creator": "LaTeX with hyperref",
+        "producer": "xdvipdfmx (0.1)",
+        "creationDate": "D:20261113133602-00'00'",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      },
+      "all_pages_contact_sheet_reviewed": true,
+      "visual_review": "All pages reviewed as contact sheets; title, chapter transitions, scientific figures, tables and appendices checked. No visible clipping, overlap, or identity information."
+    },
+    {
+      "file": "reports/research-report.zh-CN.pdf",
+      "language": "zh",
+      "pages": 31,
+      "sha256": "979490433de8c0fb4031b9e69ae694b5f9631976e8e43d27ced52261efdbb439",
+      "figures": 14,
+      "tables": 16,
+      "references": 32,
+      "graphics_exist": true,
+      "undefined_refs": [],
+      "undefined_citations": [],
+      "text_outside_page": [],
+      "replacement_glyph": false,
+      "unresolved_markers": false,
+      "embedded_files": 0,
+      "metadata": {
+        "format": "PDF 1.5",
+        "title": "可核验教学智能体研究：数据、偏好优化与记忆",
+        "author": "Verifiable Tutoring Lab",
+        "subject": "",
+        "keywords": "",
+        "creator": "LaTeX with hyperref",
+        "producer": "xdvipdfmx (0.1)",
+        "creationDate": "D:20261113133608-00'00'",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      },
+      "all_pages_contact_sheet_reviewed": true,
+      "visual_review": "All pages reviewed as contact sheets; title, chapter transitions, scientific figures, tables and appendices checked. No visible clipping, overlap, or identity information."
+    }
+  ],
+  "repository_evidence_paths": [
+    {
+      "path": "synthesis/",
+      "exists": true
+    },
+    {
+      "path": "synthesis_legacy/",
+      "exists": true
+    },
+    {
+      "path": "data/legacy/",
+      "exists": true
+    },
+    {
+      "path": "training/",
+      "exists": true
+    },
+    {
+      "path": "tutor/",
+      "exists": true
+    },
+    {
+      "path": "business/",
+      "exists": true
+    },
+    {
+      "path": "reports/assets/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/research/source_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "synthesis/",
+      "exists": true
+    },
+    {
+      "path": "synthesis_legacy/",
+      "exists": true
+    },
+    {
+      "path": "data/legacy/",
+      "exists": true
+    },
+    {
+      "path": "training/",
+      "exists": true
+    },
+    {
+      "path": "tutor/",
+      "exists": true
+    },
+    {
+      "path": "business/",
+      "exists": true
+    },
+    {
+      "path": "reports/assets/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/research/source_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/research/source_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/results/core/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/results/supplement/",
+      "exists": true
+    },
+    {
+      "path": "reports/case-study-evidence.en.json",
+      "exists": true
+    },
+    {
+      "path": "tutor/core/",
+      "exists": true
+    },
+    {
+      "path": "tutor/rendering/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/",
+      "exists": true
+    },
+    {
+      "path": "tutor/core/",
+      "exists": true
+    },
+    {
+      "path": "tutor/structured/",
+      "exists": true
+    },
+    {
+      "path": "tutor/fence/",
+      "exists": true
+    },
+    {
+      "path": "business/",
+      "exists": true
+    },
+    {
+      "path": "business/validation/",
+      "exists": true
+    },
+    {
+      "path": "training/retry_imports/retry_048f9a92c0ef_numeric_review/comparison/",
+      "exists": true
+    },
+    {
+      "path": "training/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/research/source_manifest.json",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/results/core/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/results/supplement/",
+      "exists": true
+    },
+    {
+      "path": "reports/case-study-evidence.en.json",
+      "exists": true
+    },
+    {
+      "path": "tutor/core/",
+      "exists": true
+    },
+    {
+      "path": "training/",
+      "exists": true
+    },
+    {
+      "path": "tutor/rendering/",
+      "exists": true
+    },
+    {
+      "path": "tutor/legacy/",
+      "exists": true
+    },
+    {
+      "path": "tutor/core/",
+      "exists": true
+    },
+    {
+      "path": "tutor/structured/",
+      "exists": true
+    },
+    {
+      "path": "tutor/fence/",
+      "exists": true
+    },
+    {
+      "path": "business/",
+      "exists": true
+    },
+    {
+      "path": "business/validation/",
+      "exists": true
+    },
+    {
+      "path": "training/retry_imports/retry_048f9a92c0ef_numeric_review/comparison/",
+      "exists": true
+    },
+    {
+      "path": "training/",
+      "exists": true
+    }
+  ],
+  "diagram_source_variants_checked": 8,
+  "diagram_source_layout_findings": [],
+  "published_figures_per_language": 14,
+  "scientific_tables_per_language": 15,
+  "evidence_index_tables_per_language": 1,
+  "reference_entries_per_language": 32,
+  "privacy": "Regenerated from de-identified TeX; neutral author metadata; no attachments. Original local reports were not edited.",
+  "passed": true,
+  "additional_redraw_source_checks": {
+    "training_figures": 2,
+    "business_figures": 3,
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "commands_successful": 4,
+    "model_calls": 0,
+    "committed_report_assets_overwritten": false,
+    "generated_variants_layout_may_differ": true
+  }
+}

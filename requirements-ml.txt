@@ -1,0 +1,9 @@
+# Reference versions from recorded model environments, not needed for record inspection.
+# Select the PyTorch wheel appropriate for your OS/CUDA before installation.
+# The retry hardware record reports torch 2.14.1+cu130.
+torch==2.14.1
+transformers==4.57.6
+tokenizers==0.22.2
+safetensors==0.8.0
+huggingface-hub==0.36.2
+requests==2.34.2

@@ -1,0 +1,29 @@
+{
+  "stage": "sft",
+  "steps": 128,
+  "selected": 1000,
+  "unique_training_examples": 128,
+  "total_response_tokens_processed": 27415,
+  "training_step_seconds": 234.345,
+  "adapter_delta_l2": 7.293826628432015,
+  "sha256": "7f677590ce0413a2b22f2898984b598063aa8bd17f95d4174d05f7e064190b4d",
+  "parent_sft_sha256": null,
+  "first_training_batch_before": {
+    "step": 1,
+    "ids": [
+      "C00363"
+    ],
+    "loss": 3.201502799987793,
+    "response_tokens": 252,
+    "answer_nll": 3.201502799987793,
+    "grad_norm_before_clip": 0.21357564628124237,
+    "adapter_step_l2": 0.1447826017028069,
+    "adapter_delta_from_stage_start_l2": 0.1447826017028069,
+    "seconds": 1.81
+  },
+  "same_training_batch_after": {
+    "loss": 2.4605047702789307,
+    "response_tokens": 252,
+    "answer_nll": 2.4605047702789307
+  }
+}

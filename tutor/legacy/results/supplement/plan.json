@@ -1,0 +1,53 @@
+{
+  "frozen_at_utc": "2026-11-07T03:28:12.813541+00:00",
+  "design": {
+    "suite_sha256": "589fa61561c9d647ad9d1897b7aa3210d89d865ef6435fc0fe66be3aae217de9",
+    "case_count": 4,
+    "turn_count": 6,
+    "generation": {
+      "max_new_tokens": 256,
+      "do_sample": false,
+      "threads": 6,
+      "all_roles_same_limit": true
+    },
+    "reference_python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "references": [
+      {
+        "fixture_turn_id": "tutor-S01-T1",
+        "main_answer": "18",
+        "reference_followup_answer": "20",
+        "student_status": "incorrect"
+      },
+      {
+        "fixture_turn_id": "tutor-S02-T1",
+        "main_answer": "",
+        "reference_followup_answer": "yth",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-S03-T1",
+        "main_answer": "yth",
+        "reference_followup_answer": "pyt",
+        "student_status": "incorrect"
+      },
+      {
+        "fixture_turn_id": "tutor-S03-T2",
+        "main_answer": "15",
+        "reference_followup_answer": "18",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-S04-T1",
+        "main_answer": "18",
+        "reference_followup_answer": "20",
+        "student_status": "correct"
+      },
+      {
+        "fixture_turn_id": "tutor-S04-T2",
+        "main_answer": "24",
+        "reference_followup_answer": "28",
+        "student_status": "correct"
+      }
+    ]
+  }
+}

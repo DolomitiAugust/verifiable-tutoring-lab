@@ -1,0 +1,3418 @@
+{
+  "review_type": "full_text_factual_review",
+  "reviewer": "Codex separate base-model reviewer and trained-model reviewer",
+  "review_scope": "Model-assisted full-text review; not a human, external, or blind assessment. Same project authored references. Primary output verdict and explanation factual status are distinct.",
+  "rubric": {
+    "primary_target": "Unique discernible output of the original program; factual explanation is scored separately.",
+    "correct": "The response explicitly or unambiguously gives the reference output.",
+    "wrong": "A unique discernible asserted output differs from the reference.",
+    "unresolved": "No identifiable final output, only copied input, ambiguous role of a number, or unresolved competing output claims.",
+    "explanation_status": "correct=provided explanatory claims have no identified false fact, even if incomplete; wrong=at least one direct factual or program-semantic error; absent=no explanatory answer; unresolved=meaning cannot be reliably determined.",
+    "exclusions": "No substring hit rule, no equation of formatting failure with factual error, no credit for a number only in copied code or student prediction, no claim of overall teaching efficacy."
+  },
+  "source_result_sha256": {
+    "sft": "49e18834ef6c93b5e3877ff08b667ef7977408ac4102edc01ee8a4e671fecaa0",
+    "dpo": "74533a79f08bfb0aac1760c2286154010e7c65c217034cd5b704e91f7e70d2da",
+    "continued_sft": "4b1faaa7574e038fbce17e3601c291ac4c43bc48e0e55e9172a16c9afa5f6938",
+    "base": "29e4c84b028672e26a75c37b3e9a2831a329c8b2d42583de590929072d85fd88"
+  },
+  "source_reviews": {
+    "training\\independent_base_review.json": "dc6543ab3179c94e8538fba32451fdc911a1474f6aa3f9b50131ab2b9ae9cbd4",
+    "training\\imports\\run_5bf9f4d325f1\\trained_models_full_text_review.json": "b495e80f107af8a2810ea95dd5f41daf4f91d7cecec30c4789cc2cced4143ad6"
+  },
+  "audit_sha256": "85c6b61e6f1d0ae5030c1dd36cb489200e59560e19133b82bed91abf5232de50",
+  "summary": {
+    "base": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 24
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 18,
+        "correct": 3,
+        "wrong": 3
+      },
+      "explanation_status_counts": {
+        "wrong": 6,
+        "absent": 16,
+        "correct": 2
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-15"
+      ],
+      "eos_count": 7
+    },
+    "sft": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 19,
+        "wrong": 5
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 3,
+        "wrong": 20,
+        "correct": 1
+      },
+      "explanation_status_counts": {
+        "wrong": 23,
+        "absent": 1
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-12"
+      ],
+      "eos_count": 1
+    },
+    "dpo": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "unresolved": 20,
+        "wrong": 4
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 17,
+        "wrong": 7
+      },
+      "explanation_status_counts": {
+        "wrong": 15,
+        "absent": 8,
+        "correct": 1
+      },
+      "correct_output_with_wrong_explanation": [],
+      "eos_count": 1
+    },
+    "continued_sft": {
+      "cases": 24,
+      "safe_automatic_counts": {
+        "wrong": 11,
+        "unresolved": 13
+      },
+      "full_text_main_output_counts": {
+        "unresolved": 4,
+        "wrong": 19,
+        "correct": 1
+      },
+      "explanation_status_counts": {
+        "wrong": 20,
+        "unresolved": 2,
+        "absent": 2
+      },
+      "correct_output_with_wrong_explanation": [
+        "V2-NATURAL-12"
+      ],
+      "eos_count": 0
+    }
+  },
+  "rows": [
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-01",
+      "judgement": "unresolved",
+      "evidence_excerpt": "你提供的代码看起来是正确的，它将 `wallet` 的值减去 18 并将结果存储在 `saved` 变量中。然后，它将 `saved` 的值减去 18 并将结果存储在 `wallet` 变量中。最后，它打印 `saved` 的值。",
+      "expected_answer": "137",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "rationale": "未给出原题的可辨数值输出。137只在改写代码中出现，不能据此认定答对；解释把减18写成saved的赋值，实际saved在更新前保存137。随后建议del再读取变量，且称值被删除却仍存在，解释直接错误。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "c9d95b48006ed9bd88a40fe48f943123838bc9aa41641583c06627515135db4e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 115,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-02",
+      "judgement": "unresolved",
+      "evidence_excerpt": "我在处理树木标签。这里只截了哪些名字？最后连起来的文本是什么？请直接用这个例子解释。\n```python\nlabel = 'oak|pine|elm|ash'\nparts = label.split('|')\nprint('/'.join(parts[1:3]))\n```erable\n我在处理树木标签。这里只截了哪些名字？最后连起来的文本是什么？请直接用这个例子解释。\n```python\nlabel = 'oak|p",
+      "expected_answer": "pine/elm",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "全文重复问题与原题代码并夹杂erable，没有报告连接后的字符串。题面中的pine、elm及斜杠运算不等于明确给出pine/elm。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "0df89a5b40f5bf8d3acc188fba518fdb49ec53ee508907cf7c18f1aae0aac288",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-03",
+      "judgement": "unresolved",
+      "evidence_excerpt": "第三个数107去哪了？请解释配对为什么结束，并给出最后的输出。\n```python\na = [101, 103, 107]\nb = [2, 4]\nprint(sum(x - y for x, y in zip(a, b)))\n```íveis\n第三个数107去哪了？请解释配对为什么结束，并给出最后的输出。\n```python\na = [101, 103, 107]\nb = [2, 4]\nprint(sum(x - y",
+      "expected_answer": "198",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "全文重复题面与代码，没有给出相加结果或解释zip停止条件。107、101、103等都属于复制输入，不能作为模型输出答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "697333ed93e1fa4c6cb9508ff546c91e7f6300d193ac48d60f96773a21ef2e05",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-04",
+      "judgement": "correct",
+      "evidence_excerpt": "这段代码的输出是 3，表示 `second` 列表的长度为 3。这是因为 `first` 列表已经包含了 `149`，因此 `second` 列表的长度是 3。",
+      "expected_answer": "3",
+      "interpreted_answer": "3",
+      "explanation_status": "correct",
+      "rationale": "明确报告原题输出3，与参考相同。所说first包含149、second长度3符合当前程序；没有展开两个名称共享同一列表的机制，因此解释仅部分充分，不等于完整教学表现。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "22f324ce21e1512f2faea8f081c1d5cdbfed20954cffb83a1fc18df905a9c6c9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 80,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "explanation_scope": "factually compatible but does not explicitly explain aliasing",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "这段代码的输出是 3，表示 `second` 列表的长度为 3。这是因为 `first` 列表已经包含了 `149`，因此 `second` 列表的长度是 3。"
+        ]
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-05",
+      "judgement": "unresolved",
+      "evidence_excerpt": "切片的作用是将一个列表中的元素复制到另一个列表中，而不需要创建一个新的列表。",
+      "expected_answer": "2",
+      "interpreted_answer": null,
+      "explanation_status": "wrong",
+      "rationale": "没有给出打印长度。解释称切片不需要创建新列表，与first[:]会创建浅复制列表相反；不能因解释错误就把未给出的主输出计为错误。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "485dd068daee730444d4172fdeb0c6078ed8c20b631f5a529895806edde8d6c9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 38,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-06",
+      "judgement": "unresolved",
+      "evidence_excerpt": "111\n```python\ntotal = 0\nfor n in range(101, 111, 3):\n    total += n\nprint(total)\n```полнение\n```python\ntotal = 0\nfor n in range(101, 111, 3):\n    total += n\nprint(total)\n```полнение\n```python\ntotal = 0\nfor n in",
+      "expected_answer": "422",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "开头孤立的111之后持续重复原题代码，没有把111明确指认为总和或原题输出。111又是题面正在询问是否纳入的边界数，存在指代歧义；保守记无法判定，不把边界数强行当最终答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "225de9b2f70b9413e3b4ac7f06345a4f821956cc3e457f57f759f816a237034d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "ambiguity": "Isolated 111 could refer to the boundary under discussion, not a clearly asserted sum.",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-07",
+      "judgement": "unresolved",
+      "evidence_excerpt": "```python\ntotal = 0\nfor n in range(118, 107, -4):\n    total += n\nprint(total)\n```íveis\n步长是负数时我总会漏一项。这里会跑哪几轮，最终输出多少？\n```python\ntotal = 0\nfor n in range(118, 107, -4):\n    total += n\nprint(total)\n```íveis\n步长是负数时我",
+      "expected_answer": "342",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "只重复负步长range代码及问题，没有列出118、114、110三个参与值，也没有报告总和342。复制的range参数不是答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "c6958654d274a7a9d3e4716e229ce09e0d8243d320f86aeb0ef6fbb356a19f78",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-08",
+      "judgement": "unresolved",
+      "evidence_excerpt": "分数刚好等于门槛时会进入哪个分支？请解释并给出输出。\n```python\nscore = 143\nif score > 143:\n    bonus = 12\nelse:\n    bonus = 7\nprint(bonus)\n```(UIAlertActionButton)",
+      "expected_answer": "7",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "仅复制问题和条件代码，随后出现无关片段。7与12均在原题分支中，模型未选择分支或报告输出，不能按包含正确数字判断。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "9014824cdd9305f2a74a8a7f91bccd02f54e5c66b6ab537245ec73422697aa48",
+      "evidence_char_start": 0,
+      "evidence_char_end": 137,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-09",
+      "judgement": "correct",
+      "evidence_excerpt": "输出值为11。",
+      "expected_answer": "11",
+      "interpreted_answer": "11",
+      "explanation_status": "absent",
+      "rationale": "明确陈述输出值为11，符合137整除12。用户要求不讲解，因此解释缺失不是该题任务失败。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "d5875076a14f9ab87d4a0fc97043c9995bd464036d674c635713b884a33410ed",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "输出值为11。"
+        ]
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-10",
+      "judgement": "unresolved",
+      "evidence_excerpt": "这里我应该报完整组数还是剩下的数量？请结合137和12说明。\n```python\nprint(137 % 12)\n```itory\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssistant\nAssi",
+      "expected_answer": "5",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "复制余数问题与原题代码，随后重复Assistant。没有给出余数5，也没有解释商与余数的区别。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "60a0a9084f330d03e02be3afa69e8cf36d93f0202ea7e9f08589cceff5521ff9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-11",
+      "judgement": "unresolved",
+      "evidence_excerpt": "请纠正这个理解，并写出实际输出。\n```python\nword = 'strawberry'\nprint(word[1:8:2])\n```iente\nientes\n请纠正这个理解，并写出实际输出。\n```python\nword = 'strawberry'\nprint(word[1:8:2])\n```iente\nientes\n请纠正这个理解，并写出实际输出。\n```python\nword = 'strawberry'",
+      "expected_answer": "tabr",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "持续复制切片代码及要求解释的句子，并夹杂无关词片段，没有给出切片字符串tabr。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "19cb356ef1a1e09f087e8da0dc92564ce3b91f1c27ebeb75e51126e7ddb297c8",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-12",
+      "judgement": "unresolved",
+      "evidence_excerpt": "负下标从哪里开始数？这段程序拿的是哪一项，输出是什么？\n```python\nvalues = [173, 179, 181, 191]\nprint(values[-2])\n```(UIAlertAction\n负下标从哪里开始数？这段程序拿的是哪一项，输出是什么？\n```python\nvalues = [173, 179, 181, 191]\nprint(values[-2])\n```(UIAlertAction\n负下",
+      "expected_answer": "181",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "重复输入列表及负下标代码，没有把181指出为所取元素。列表中包含181不能代替模型明确作答。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "604738854defd7e3c7375742f3191c3abafde62744ec26940026e763734499ce",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-13",
+      "judgement": "unresolved",
+      "evidence_excerpt": "这里有两个筛选条件。我能不能先把所有数字加2？请按正确顺序解释结果。\n```python\nvalues = [12, 15, 18, 21]\nprint([x + 2 for x in values if x % 3 == 0 and x > 15])\n```íveis\n这里有两个筛选条件。我能不能先把所有数字加2？请按正确顺序解释结果。\n```python\nvalues = [12, 15, 18, 21]\npri",
+      "expected_answer": "[20, 23]",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "全文重复列表推导题目及代码，没有明确给出筛选后的结果列表或说明运算顺序。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "ccc2498c1e705e1b295836209a977df574997b6e72366945a218b8a40604fcdf",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-14",
+      "judgement": "wrong",
+      "evidence_excerpt": "总结一下，这段代码的目的是计算给定列表 `items` 中出现次数最多的元素的数量。通过使用 `set` 数据结构去除重复元素，然后使用 `len` 函数来计算出现次数最多的元素的数量，最终得到的结果是 `6`。",
+      "expected_answer": "3",
+      "interpreted_answer": "6",
+      "explanation_status": "wrong",
+      "rationale": "结尾明确报告最终结果6，而len(set(items))为3。解释同时把集合大小误说成出现次数最多的元素数量；虽含去重的正确描述，结论与程序事实仍直接冲突。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "933116877eafff8886f49e5c5afeda8e21500f4b8dfbf91839e826b4f9feeb7a",
+      "evidence_char_start": 513,
+      "evidence_char_end": 619,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-15",
+      "judgement": "correct",
+      "evidence_excerpt": "在函数 `adjust` 中，`x` 的值在每次调用时都会增加 7。因此，当调用 `adjust(123)` 时，`x` 的值将变为 130（123 + 7）。然后，函数 `adjust` 会将 `x` 的值乘以 2，得到 260（130 * 2）。因此，调用 `adjust(123)` 之后，`x` 的值将变为 260。",
+      "expected_answer": "260",
+      "interpreted_answer": "260",
+      "explanation_status": "wrong",
+      "rationale": "原文把123+7算为130，再将130乘2得到260，最终数值可唯一识别且正确。但最后断言调用之后x变成260不正确：return x*2返回乘积，并未把局部x重新赋值为260。输出正确与解释错误分开记录。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "0c21f087c68454bc05fc944ad50423d5bcac268e0c64b0e237e68a6b4439ece1",
+      "evidence_char_start": 0,
+      "evidence_char_end": 162,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "在函数 `adjust` 中，`x` 的值在每次调用时都会增加 7。因此，当调用 `adjust(123)` 时，`x` 的值将变为 130（123 + 7）。然后，函数 `adjust` 会将 `x` 的值乘以 2，得到 260（130 * 2）。因此，调用 `adjust(123)` 之后，`x` 的值将变为 260。"
+        ]
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-16",
+      "judgement": "unresolved",
+      "evidence_excerpt": "第一次调用时box会重新变成空列表，所以猜1。实际是什么？请说明。\n```python\ndef add(x, box=[]):\n    box.append(x)\n    return len(box)\nadd(127)\nprint(add(131))\n```erable\n我以为第二次调用时box会重新变成空列表，所以猜1。实际是什么？请说明。\n```python\ndef add(x, box=[]):\n    bo",
+      "expected_answer": "2",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "主要重复学生猜1的提问和默认参数代码，没有回答第二次调用的实际输出。这里的1处于复制的学生猜测/问题中，不可当作模型最终答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "5e78764cac923a831764e90c60b884cc301175bec1cf2931290820a64e1069d7",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-17",
+      "judgement": "unresolved",
+      "evidence_excerpt": "这个循环每次加的是次数1还是数值2？请只围绕red解释最终结果。\n```python\ncounts = {}\nfor key in ['red', 'blue', 'red', 'red']:\n    counts[key] = counts.get(key, 0) + 2\nprint(counts['red'])\n```íveis\n这个循环每次加的是次数1还是数值2？请只围绕red解释最终结果。\n```python",
+      "expected_answer": "6",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "只重复计数字典代码与1或2的比较提问，没有解释red被访问三次或报告最后的6。输入中的1、2不是可辨主答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "c73396865342b05216085007ece090086b1d6f0ca827a60b24212da9c119afee",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-18",
+      "judgement": "unresolved",
+      "evidence_excerpt": "请解释一下这段代码的含义。\n```python\npairs = 0\nfor x in [2, 5, 9]:\n    for y in [3, 7]:\n        if x < y:\n            pairs += 1\nprint(pairs)\n``区管委会\n请解释一下这段代码的含义。\n```python\npairs = 0\nfor x in [2, 5, 9]:\n    for y in [3, 7]:",
+      "expected_answer": "3",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "重复请求解释及双层循环代码，没有筛选通过的组合或总数。列表元素3和循环增量1都不是报告的输出。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "177439c1d2104e1e109564e4f20cc7260f666fc6921ca9612cff1358f8f33013",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-19",
+      "judgement": "wrong",
+      "evidence_excerpt": "输出结果将是：\n```\n103\n```\n因为 `continue` 语句跳过了 `for` 循环中的 `x = 101` 和 `x = 102`，然后继续执行 `for` 循环中的 `x = 103` 和 `x = 104`，最终输出结果为 `103`。",
+      "expected_answer": "204",
+      "interpreted_answer": "103",
+      "explanation_status": "wrong",
+      "rationale": "在输出代码块和结尾两次明确写103，答案唯一但错误，实际保留101与103、总和204。解释错误地说跳过101和102再执行103和104，违背偶数continue分支。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "d6fba0d845c01b9f4f462692a4b72187f99fe2dd4a5fc20ba3d03b64da44a655",
+      "evidence_char_start": 288,
+      "evidence_char_end": 415,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-20",
+      "judgement": "unresolved",
+      "evidence_excerpt": "103会先加进总数再停止吗？请检查执行顺序并回答。\n```python\ntotal = 0\nfor x in [101, 102, 103, 104]:\n    if x == 103:\n        break\n    total += x\nprint(total)\n```(UIAlertAction)\n103会先加进总数再停止吗？请检查执行顺序并回答。\n```python\ntotal = 0\nfor x in ",
+      "expected_answer": "203",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "重复询问103是否先加再停止及原题代码，没有作答或报出203。题面中的103不能被提取为模型的总和答案。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "5cb10f63197ddf9618b616dfa00dc013ca4bfca30ba7fd084dea3877f5ce9691",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-21",
+      "judgement": "unresolved",
+      "evidence_excerpt": "你可以使用递归来实现这个算法。递归是一种编程范式，其中函数调用自身。",
+      "expected_answer": "14",
+      "interpreted_answer": null,
+      "explanation_status": "correct",
+      "rationale": "没有展开climb(4)返回链或报告14，故主输出无法判定。关于递归是函数调用自身的泛化说明本身正确，但只是通用定义，未完成本题所需过程解释。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "6eae7ae55e334cd43b74172f2bd2820486c373c739a186d10efda4c08ae61628",
+      "evidence_char_start": 0,
+      "evidence_char_end": 34,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "explanation_scope": "generic_definition_only; no task-specific unfolding",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-22",
+      "judgement": "unresolved",
+      "evidence_excerpt": "start=4是跳过前四个单词吗？请说明它真正改变了什么，以及最终结果。\n```python\ntotal = 0\nfor i, word in enumerate(['sun', 'moon', 'star'], start=4):\n    total += i\nprint(total)\n```íveis\nstart=4是跳过前四个单词吗？请说明它真正改变了什么，以及最终结果。\n```python\ntotal = 0",
+      "expected_answer": "15",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "反复复制enumerate起点问题与代码，没有解释编号从4开始或给出4+5+6=15。题面中的4不应被当作结果。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "c89747a6d438cf07b3733e99401ca0629461698cbc2f747fe9f20247456900a3",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-23",
+      "judgement": "unresolved",
+      "evidence_excerpt": "plum和kiwi长度一样，谁应该在前？请给出完整结果，并解释依据。\n```python\nwords = ['fig', 'apricot', 'plum', 'kiwi']\nprint(sorted(words, key=len))\n```erable\nAssistant: plum和kiwi长度一样，谁应该在前？请给出完整结果，并解释依据。\n```python\nwords = ['fig', 'apricot',",
+      "expected_answer": "['fig', 'plum', 'kiwi', 'apricot']",
+      "interpreted_answer": null,
+      "explanation_status": "absent",
+      "rationale": "反复复制原始words列表和排序问题，没有给出排序结果。原始列表不是模型报告的排序后列表，也未解释稳定排序。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": false,
+      "raw_response_sha256": "ddf0f4277905f909f75aaff71f3ae70bd1dd91c31f99fe62f88858500b7929bf",
+      "evidence_char_start": 0,
+      "evidence_char_end": 210,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "max_new_tokens",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "base",
+      "candidate_id": "V2-NATURAL-24",
+      "judgement": "wrong",
+      "evidence_excerpt": "输出结果为：\n\n```\n123\n```\n\n这表示第4个斐波那契数列的值是123。",
+      "expected_answer": "103",
+      "interpreted_answer": "123",
+      "explanation_status": "wrong",
+      "rationale": "输出代码块明确给出123，结尾再次确认123，实际逐轮值为15、43、103。将该更新公式称为斐波那契并声称把值存储在列表中均不符合题面。",
+      "contradictory": false,
+      "contradictory_scope": "No competing explicit final output claims in this response.",
+      "explanation_contradicts_program": true,
+      "raw_response_sha256": "b3e276e298b11b1b877eadcb590646e4102addab9886e22c36a00d48275ba00c",
+      "evidence_char_start": 250,
+      "evidence_char_end": 290,
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "stop_reason": "eos",
+      "full_raw_response_read": true,
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      }
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-01",
+      "judgement": "unresolved",
+      "expected_answer": "137",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：49\n比较的是 wallet 和 saved。wallet 从 137 减去 18，得到 119。这张电脑的内存是 119 个字节。\n退回的 saved 是 119，这张电脑的内存是 119 - 18 = 101。\n本题输出：101ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertie",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "先报49，随后报101并称saved为119，多个主答案相互冲突。",
+      "raw_response_sha256": "59410778ebb4e6f04b12e147c197cee39cafb4846bcb24f2d4019b74666fd4c3",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "49",
+          "101ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "49",
+          "101ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-02",
+      "judgement": "wrong",
+      "expected_answer": "pine/elm",
+      "interpreted_answer": "/oak|pine|elm|ash",
+      "evidence_excerpt": "本题输出：/oak|pine|elm|ash",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "错误保留整串并称切片保留oak、pine。",
+      "raw_response_sha256": "4d79ec1ecfe95cb3d26c1aefbf07c64c92342eef8247d45b4592a734bd32c14a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 22,
+      "stop_reason": "eos",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "/oak|pine|elm|ash"
+        ],
+        "expected": "pine/elm",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "/oak|pine|elm|ash"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-03",
+      "judgement": "wrong",
+      "expected_answer": "198",
+      "interpreted_answer": "45",
+      "evidence_excerpt": "本题输出：45",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "引入第三次配对和题面没有的c列表，主答案稳定为45。",
+      "raw_response_sha256": "60f02c458abfe1b0fb38c55512a9972f4754c8ec75645704913e63953dca6721",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "45",
+          "45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "45",
+          "45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出：45<LM：本题输出"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-04",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "追加一项后的长度被说成4，应为3。",
+      "raw_response_sha256": "39076dccfd459699ea1246db0e60246fb4c0698b7571c3dfdaeebdaf75ce6432",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "4",
+          "4uthnan本题输出：4>manualbian本题输出：4>manualbianмедицинск: 131 139 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic:"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "4uthnan本题输出：4>manualbian本题输出：4>manualbianмедицинск: 131 139 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic: 131 139 149 149>manualbianoptic:"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-05",
+      "judgement": "wrong",
+      "expected_answer": "2",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "把切片复制解释成不存在的循环，主答案为4。",
+      "raw_response_sha256": "ca5390ac7e1ef7e8872a0a0c2250277372b5025d3b597664cb072131ac7cbef7",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "4",
+          "4togroupmatetogroupmate"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "4togroupmatetogroupmate"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-06",
+      "judgement": "wrong",
+      "expected_answer": "422",
+      "interpreted_answer": "104",
+      "evidence_excerpt": "本题输出：104",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "列出的101、104、107、110正确，但其和误报104。",
+      "raw_response_sha256": "704112c5daeb473d74ca0cf12a261886c73dd7e14e5f7575bb8cfa3db2b1d4f2",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "104",
+          "104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出："
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "104",
+          "104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出：104loses本题输出："
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-07",
+      "judgement": "wrong",
+      "expected_answer": "342",
+      "interpreted_answer": "107",
+      "evidence_excerpt": "本题输出：107",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "错误包含106且把和写成107。",
+      "raw_response_sha256": "f57de6bacd2a23996bfc2dc08bb5e6fc71a426c5fc3ab60e245a2ed0c22e4dc0",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "107",
+          "107 инвестициustestteriorususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususus"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "107",
+          "107 инвестициustestteriorususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususususus"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-08",
+      "judgement": "unresolved",
+      "expected_answer": "7",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：12\n比较的是 143 > 143，它是 True。程序走 Else 分支，所得的 bonus 取 7。\n变式参考输出：12\n比 143 > 143 更精确，它是 143 > 143。程序走 If 分支，所得的 score 取 143。\n变式参考输出：143\n比 143 > 143 更精确，它是 143 > 143。程序走 If 分支，所得的 score 取 143。\n本题输出：143togroupmate\n本题输出：143togroupmatetogroupmate\n本题输出：143togroupmate\n变式参考输出：143togroupmate\n本题输出：143togroupmate\n变式参考输出：143togroupmate\n本题输出：143togroupmate\n变式参考输出：143togroupmate\n本题输出：143togroupmate\n变式参考输出：143togroupmate\n本题输出：143togroupmate\n变式参考输出：143togroupmat",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "主输出先为12、后为143，说明中又给else的7；无法唯一判定。",
+      "raw_response_sha256": "b8d11191f53dcf5fb417d3fea1cbba7b64e93280a322e78599be3620b4f06b27",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "12",
+          "143togroupmate",
+          "143togroupmatetogroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "12",
+          "143togroupmate",
+          "143togroupmatetogroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate",
+          "143togroupmate"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-09",
+      "judgement": "wrong",
+      "expected_answer": "11",
+      "interpreted_answer": "10",
+      "evidence_excerpt": "本题输出：10",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "明确声称137//12=10，应为11。",
+      "raw_response_sha256": "744d7b571f56e7ea998cf9f563276972cbc5b03e7082fc4cc3136e52d43e8595",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "10"
+        ],
+        "expected": "11",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-10",
+      "judgement": "wrong",
+      "expected_answer": "5",
+      "interpreted_answer": "10",
+      "evidence_excerpt": "本题输出：10",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "明确说余数10，应为5。",
+      "raw_response_sha256": "941b05213ca346f9c02b703ff9a406116f175d185b90656c258640142e4bba6f",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "10",
+          "10ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "10",
+          "10ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-11",
+      "judgement": "wrong",
+      "expected_answer": "tabr",
+      "interpreted_answer": "straw",
+      "evidence_excerpt": "本题输出：straw",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "将切片下标和字典混淆，主输出反复为straw。",
+      "raw_response_sha256": "dedaad17cf7811dfd96fdc8bf7b15b13104c6f350c0f008821bf986bffb6c197",
+      "evidence_char_start": 0,
+      "evidence_char_end": 10,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "straw",
+          "straw，终点 8。这个终点与下标 [1, 3] 相同。这条字典的键依次为 [0, 1, 2, 3, 4, 5]，依次得到 [0, 1, 3, 5, 7, 9]，最后是 [0, 1, 3, 5, 7, 9]。",
+          "straw，终点 8。",
+          "straw，终点 8。这个终点与下标 [1, 3] 相同。这条字典的键依次为 [0, 1, 2, 3, 4, 5]，依次得到 [0, 1, 3, 5, 7, 9]，最后是 [0, 1, 3, 5, 7, 9]。loses reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "straw",
+          "straw，终点 8。这个终点与下标 [1, 3] 相同。这条字典的键依次为 [0, 1, 2, 3, 4, 5]，依次得到 [0, 1, 3, 5, 7, 9]，最后是 [0, 1, 3, 5, 7, 9]",
+          "straw，终点 8",
+          "straw，终点 8。这个终点与下标 [1, 3] 相同。这条字典的键依次为 [0, 1, 2, 3, 4, 5]，依次得到 [0, 1, 3, 5, 7, 9]，最后是 [0, 1, 3, 5, 7, 9]。loses reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer reducer"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-12",
+      "judgement": "correct",
+      "expected_answer": "181",
+      "interpreted_answer": "181",
+      "evidence_excerpt": "本题输出：181",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出一致为181；但“负下标从-2开始”等解释错误。",
+      "raw_response_sha256": "d5956b210e9147a394479a6b18072e15fec53e40911483d898a59199cd20ad5a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "181",
+          "181<LMURNS：-2。",
+          "181<LMURNS：-2。",
+          "181<LMURNS：-2。",
+          "181<LMURNS：-2。",
+          "181<LMURNS：-2。",
+          "181<LMURNS：-2。"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "181",
+          "181<LMURNS：-2",
+          "181<LMURNS：-2",
+          "181<LMURNS：-2",
+          "181<LMURNS：-2",
+          "181<LMURNS：-2",
+          "181<LMURNS：-2"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-13",
+      "judgement": "wrong",
+      "expected_answer": "[20, 23]",
+      "interpreted_answer": "[25, 30, 35]",
+      "evidence_excerpt": "本题输出：[25, 30, 35] rotterdamus",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "错误保留并输出[25,30,35]，应为[20,23]。",
+      "raw_response_sha256": "6fe79cd0ba1567e70f3bbcddf14063982b7387b82de320121fbdc0d806bd1255",
+      "evidence_char_start": 0,
+      "evidence_char_end": 29,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[25, 30, 35] rotterdamus",
+          "[25, 30, 35] rotterdamus。",
+          "[25, 30, 35] rotterdamus。"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "[25, 30, 35] rotterdamus",
+          "[25, 30, 35] rotterdamus",
+          "[25, 30, 35] rotterdamus"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-14",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "称set返回元组且主输出4。",
+      "raw_response_sha256": "0a56ec87564881e0fd9e11ebb853faa54e9968ffddf0ad5e0f65947200b89ad8",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "4"
+        ],
+        "expected": "3",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "4"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-15",
+      "judgement": "wrong",
+      "expected_answer": "260",
+      "interpreted_answer": "108",
+      "evidence_excerpt": "本题输出：108",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "本题输出标签一致为108；返回252等说明也不符合260。",
+      "raw_response_sha256": "df1e6ee6daffbe53df355e1d3b4bb6777ada7e82029c9bc7a1574d59247c7253",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "108",
+          "108"
+        ],
+        "expected": "260",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "108",
+          "108"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-16",
+      "judgement": "unresolved",
+      "expected_answer": "2",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：[127, 131]，其中 [127, 131] 是两次加操作的结果。你依次用 append 和 len(box)，box 会更新一次。end result，依次 append 和 len(box)，box 会更新两次。\n变式参考输出：[127, 131, 131]，其中 [127, 131, 131] 是三次加操作的结果。\n本题输出：[127, 131, 131]，其中 [127, 131, 131] 是三次加操作的结果。\n变式参考输出：[127, 131, 131, 131]，其中 [127, 131, 131, 131] 是四次加操作的结果。\n本题输出：[127, 131, 131, 131]，其中 [127, 131, 131, 131] 是四次加操作的结果。\n变式参考输出：[127, 131, 131, 131, 131]，其中 [127, 131, 131, 131, 131] 是五次加操作的结果。\n本题输出：[127, 131, 131, 131, 131]，其中",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出多次给长度不同的列表，且把列表内容混作len输出。",
+      "raw_response_sha256": "38dd2bb97edae6da104b71ec1d40c75771ba0feff9f11bc7e5074788bd254ec9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[127, 131]，其中 [127, 131] 是两次加操作的结果。你依次用 append 和 len(box)，box 会更新一次。end result，依次 append 和 len(box)，box 会更新两次。",
+          "[127, 131, 131]，其中 [127, 131, 131] 是三次加操作的结果。",
+          "[127, 131, 131, 131]，其中 [127, 131, 131, 131] 是四次加操作的结果。",
+          "[127, 131, 131, 131, 131]，其中 [127, 131, 131, 131, 131] 是五次加操作的结果。"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "[127, 131]，其中 [127, 131] 是两次加操作的结果。你依次用 append 和 len(box)，box 会更新一次。end result，依次 append 和 len(box)，box 会更新两次",
+          "[127, 131, 131]，其中 [127, 131, 131] 是三次加操作的结果",
+          "[127, 131, 131, 131]，其中 [127, 131, 131, 131] 是四次加操作的结果",
+          "[127, 131, 131, 131, 131]，其中 [127, 131, 131, 131, 131] 是五次加操作的结果"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-17",
+      "judgement": "wrong",
+      "expected_answer": "6",
+      "interpreted_answer": "[1, 2, 2, 3]",
+      "evidence_excerpt": "本题输出：[1, 2, 2, 3]",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出是列表；虽说明中出现6，但没有把6作为主输出，解释计数也错误。",
+      "raw_response_sha256": "c3cb7d6f6de3f477dc37493d5669fef7f7f31bd3a58beb09d00281fba84c3943",
+      "evidence_char_start": 0,
+      "evidence_char_end": 17,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[1, 2, 2, 3]",
+          "[1, 2, 2, 3]ROME本题输出：[1, 2, 2, 3]ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "[1, 2, 2, 3]",
+          "[1, 2, 2, 3]ROME本题输出：[1, 2, 2, 3]ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-18",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出4且将嵌套比较混为除法。",
+      "raw_response_sha256": "5c79530e8affb76917f3682a4a1173ca4c4557b66b1187500adb1216eba5424b",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "4",
+          "4togroupmatetogroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果。",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "4togroupmatetogroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互不兼容的。因此，有 4 对结果",
+          "4togroupmate，是三个相同的键依次取，k=1，l=2。这些键的顺序互换，也是互"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-19",
+      "judgement": "wrong",
+      "expected_answer": "204",
+      "interpreted_answer": "414",
+      "evidence_excerpt": "本题输出：414",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出414，奇偶筛选的说明错误。",
+      "raw_response_sha256": "db2c9f17fe6847f349fdf16c1af136335919660a6358ecbe91caed4aa1523f62",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "414",
+          "414<LM缩小的是 104。循环每次都添加下一个数，最后得到 414。"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "414",
+          "414<LM缩小的是 104。循环每次都添加下一个数，最后得到 414"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-20",
+      "judgement": "wrong",
+      "expected_answer": "203",
+      "interpreted_answer": "44",
+      "evidence_excerpt": "本题输出：44",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出44，错误声称循环迭代4次。",
+      "raw_response_sha256": "b64700716162b0df2d2456a735c6b5ec43ba9980886879f02eef9541c866949f",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "44",
+          "44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocs"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "44",
+          "44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocsusocateocsusocate本题输出：44ocsusocate本题输出：44ocsusocate本题输出：44ocs"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-21",
+      "judgement": "wrong",
+      "expected_answer": "14",
+      "interpreted_answer": "12",
+      "evidence_excerpt": "本题输出：12",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出12，递归展开从错误的climb(4)=4开始。",
+      "raw_response_sha256": "8b2c92f0f619c6a29580a1f08f0142c7a04c6b1a3f50cd10ee4e7cfc0c2caa95",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "12",
+          "12",
+          "12탉本题输出：12DDevice września本题输出：12DDevice탉本题输出：12DDeviceWebService탉本题输出：12DDeviceWebServiceWebService탉本题输出：12DDeviceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebService"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "12",
+          "12",
+          "12탉本题输出：12DDevice września本题输出：12DDevice탉本题输出：12DDeviceWebService탉本题输出：12DDeviceWebServiceWebService탉本题输出：12DDeviceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebServiceWebService"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-22",
+      "judgement": "wrong",
+      "expected_answer": "15",
+      "interpreted_answer": "10",
+      "evidence_excerpt": "本题输出：10",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出10，enumerate的求和说明错误。",
+      "raw_response_sha256": "7d6af53cafdcf02381094257ead12f34425a1cc11e116863979c66913e90a1fe",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "10"
+        ],
+        "expected": "15",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-23",
+      "judgement": "wrong",
+      "expected_answer": "['fig', 'plum', 'kiwi', 'apricot']",
+      "interpreted_answer": "['fig', 'apricot', 'plum', 'kiwi']",
+      "evidence_excerpt": "本题输出：['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "主列表保持原顺序，后续为重复乱码，没有可靠排序依据。",
+      "raw_response_sha256": "4ac88c2257fc9425483137674108c2ab5ebd74f5a194beccd927cb8aa6457104",
+      "evidence_char_start": 0,
+      "evidence_char_end": 180,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'pl"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'plum', 'kiwi']ROME：[1, 2, 3, 4]DataProvider：['fig', 'apricot', 'pl"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "sft",
+      "candidate_id": "V2-NATURAL-24",
+      "judgement": "wrong",
+      "expected_answer": "103",
+      "interpreted_answer": "114",
+      "evidence_excerpt": "本题输出：114",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出114，解释改成除法和错误中间值。",
+      "raw_response_sha256": "d00c1a6c0c02da22fdcc6aa09194f30a8e1857d2e8be21725743e1597a6276cc",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "114",
+          "114ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "114",
+          "114ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-01",
+      "judgement": "unresolved",
+      "expected_answer": "137",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：79\n比较的是 wallet 和 saved。wallet 未变小，而是减少 18。输出了 79，它跟saved一样。\n本题输出：80本题输出：79本题输出：80本题输出：79本zoekenos本题输出：79应用查看OptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptions",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "多个本题输出79、80、15相互冲突。",
+      "raw_response_sha256": "a5efb23126c161c1e5b36eae7ed026535ce067edd75344f3be88a020e7098dc5",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "79",
+          "80本题输出：79本题输出：80本题输出：79本zoekenos本题输出：79应用查看OptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuNamedQueryName: 15",
+          "15应用查看OptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenu"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "79",
+          "80本题输出：79本题输出：80本题输出：79本zoekenos本题输出：79应用查看OptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuNamedQueryName: 15",
+          "15应用查看OptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenuOptionsMenu"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-02",
+      "judgement": "wrong",
+      "expected_answer": "pine/elm",
+      "interpreted_answer": "/amel|ash|elm|ash...",
+      "evidence_excerpt": "本章下笔：分割整体。本题输出：/amel|ash|elm|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash|ash",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "明确输出前缀不是pine/elm，后续反复拼接ash。",
+      "raw_response_sha256": "23e89ceae71fecafd0fd6301b197f505156c02324466277e5c30ee70788dcb4e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 180,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "no_unambiguous_anchor"
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": []
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-03",
+      "judgement": "unresolved",
+      "expected_answer": "198",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：47\n除以 3 结果是 14，最后得到 14 × 2 = 28。>>()本题输出：28DDevice:C:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出47与28冲突，说明引入无关除法。",
+      "raw_response_sha256": "5ff8f2d5c17d2ba299d6cde1488ddfd0d6404e7a74eb7bd1106d02ae28d5fee5",
+      "evidence_char_start": 0,
+      "evidence_char_end": 401,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "47"
+        ],
+        "expected": "198",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "47"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-04",
+      "judgement": "unresolved",
+      "expected_answer": "3",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：4\n比较的是长度和内容，first 是 [131, 139]，它只保留第一个和最后一个数字。加上 [149] 之后，它变成 [131, 139, 149]，长度为 3。\n本题输出：3uth本题输出：4本题输出：3uth本题输出：4ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertier",
+      "explanation_status": "correct",
+      "contradictory_outputs": true,
+      "rationale": "本题输出4和3交替；追加后first长度3的说明片段正确，但未说明别名共享。",
+      "raw_response_sha256": "3a165ec022d2a52fe61afad090cbdb2a74cdb598ae53ae549ae4498a8f8db70a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "4",
+          "3uth本题输出：4本题输出：3uth本题输出：4ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "3uth本题输出：4本题输出：3uth本题输出：4ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-05",
+      "judgement": "unresolved",
+      "expected_answer": "2",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：4\n第一重循环依次得到 [151, 157] 和 [163]，再把后者追加到前一循环的列表中，最后省略；第二个重环救省略；结果是 [151, 157, 163]，共有 3 项。\n本题输出：3 sourceMapping：[]ordauthqueordaitionmateyeathermiugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugu",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "先报4后报3，且把复制列表误当多重循环。",
+      "raw_response_sha256": "4466a3abc87f2e377052fb157d32f52a053dd8625f3cf5aa802b7979020cce30",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "4",
+          "3 sourceMapping：[]ordauthqueordaitionmateyeathermiugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugug"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "3 sourceMapping：[]ordauthqueordaitionmateyeathermiugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugug"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-06",
+      "judgement": "unresolved",
+      "expected_answer": "422",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：74\n除以 3 余 1。该范围依次取 [101, 110]，循环每次加 3。最后加到 74，得到 48。\n本题输出：48ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertie",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "先报74后报48，范围与求和说明均错误。",
+      "raw_response_sha256": "d08d50edde171b182793fe3d2546deec6590cfb723680e1117725999c6da3c1d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "74",
+          "48ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "74",
+          "48ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-07",
+      "judgement": "unresolved",
+      "expected_answer": "342",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：77\n本题输出：80\n本题输出：83本题输出：86本题输出：90本题输出：93本题输出：96本题输出：100本题输出：103本题输出：106本题输出：109本题输出：112本题输出：115本题输出：118本酬Providers：100本DataProvider：100本 überh善本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输",
+      "explanation_status": "absent",
+      "contradictory_outputs": true,
+      "rationale": "本题输出从77不断变化至100等，没有唯一最终答案。",
+      "raw_response_sha256": "0365ac1a067b4f2ce58eabb4a25c0f791b3f982553516abe5b296d7fdee42559",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "77",
+          "80",
+          "83本题输出：86本题输出：90本题输出：93本题输出：96本题输出：100本题输出：103本题输出：106本题输出：109本题输出：112本题输出：115本题输出：118本酬Providers：100本DataProvider：100本 überh善本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：1"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "77",
+          "80",
+          "83本题输出：86本题输出：90本题输出：93本题输出：96本题输出：100本题输出：103本题输出：106本题输出：109本题输出：112本题输出：115本题输出：118本酬Providers：100本DataProvider：100本 überh善本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：100本RITE本题输出：100本VAS本题输出：1"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-08",
+      "judgement": "unresolved",
+      "expected_answer": "7",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：12\n把下标 5 的值赋给变量 c。它依次得到 [1, 2, 3, 4, 5] [6, 7, 8, 9, 10] [11, 12, 13, 14, 15]，循环返回。\n本题输出：15powiedźertiuthermiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出12、15冲突，说明为不相关的下标循环。",
+      "raw_response_sha256": "f9073e13cfefe63c8793d4a5421535ecd781c2c4885912b349ce8225049bedcc",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "12",
+          "15powiedźertiuthermiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "12",
+          "15powiedźertiuthermiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-09",
+      "judgement": "wrong",
+      "expected_answer": "11",
+      "interpreted_answer": "7",
+      "evidence_excerpt": "本题输出：7",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "两处输出均为7，应为11，没有解释。",
+      "raw_response_sha256": "9eac352e54530ef38ab2ee84b1f8134d3a8ac8a4cf9b49325eaee288f7b896d3",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "eos",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "7",
+          "7 rotterdamus"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "7",
+          "7 rotterdamus"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-10",
+      "judgement": "unresolved",
+      "expected_answer": "5",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：7\n本题输出：10\n本题输出：17powiedźURNS：2\n本题输出：18powiedźURNS：3DDevice:0powiedźURNS：4powiedźURNS：5powiedźURNS：6powiedźURNS：7powiedźURNS：8powiedźURNS：9powiedźURNS：10powiedźURNS：11powiedźURNS：12powiedźURNS：13powiedźURNS：14powiedźURNS：15powiedźURNS：16powiedźURNS：17powiedźURNS：18powiedźURNS：19powiedźURNS：20powiedźURNS：21powiedźURNS：22powiedźURNS：23powiedźURNS：24powiedźURNS：25powiedźURNS：26powiedźURNS：27powiedźURNS：28powiedźURNS：29powiedźURNS：30powiedźURNS：3",
+      "explanation_status": "absent",
+      "contradictory_outputs": true,
+      "rationale": "主答案7、10、17、18等相互冲突；后续编号不能视作答案。",
+      "raw_response_sha256": "8e01eed55f49bfbd50111e968b60ebf19d31b20980b89c569e9bd35653cdbb4d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "7",
+          "10",
+          "17powiedźURNS：2",
+          "18powiedźURNS：3DDevice:0powiedźURNS：4powiedźURNS：5powiedźURNS：6powiedźURNS：7powiedźURNS：8powiedźURNS：9powiedźURNS：10powiedźURNS：11powiedźURNS：12powiedźURNS：13powiedźURNS：14powiedźURNS：15powiedźURNS：16powiedźURNS：17powiedźURNS：18powiedźURNS：19powiedźURNS：20powiedźURNS：21powiedźURNS：22powiedźURNS：23powiedźURNS：24powiedźURNS：25powiedźURNS：26powiedźURNS：27powiedźURNS：28powiedźURNS：29powiedźURNS：30powiedźURNS：31powiedźURNS：32powiedźURNS：33powiedźURNS：34powiedźURNS：35powiedźURNS：36powiedźURNS：37powiedźURNS：38powiedźURNS：39powiedźURNS：40powiedźURNS：41powiedźURNS：42powiedźURNS：43powiedźURNS：44powiedźURNS：45powiedźURNS：46powiedźURNS：47powiedźURNS：48powiedźURNS：49powiedźURNS：50powiedźURNS：51powiedźURNS：52powiedźURNS：53powiedźURNS：54powiedźURNS：55powiedźURNS：56powiedźURNS：57powiedźURNS：58powiedźURNS：59powiedźURNS：60powiedźURNS：61powiedźURNS：62powiedźURNS：63powiedźURNS：64powiedźURNS：65powiedźURNS：66powiedźURNS：67powiedźURNS：68powiedźURNS：69powiedźURNS：70powiedźURNS：71powiedźURNS：72powiedźURNS：73powiedźURNS："
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "7",
+          "10",
+          "17powiedźURNS：2",
+          "18powiedźURNS：3DDevice:0powiedźURNS：4powiedźURNS：5powiedźURNS：6powiedźURNS：7powiedźURNS：8powiedźURNS：9powiedźURNS：10powiedźURNS：11powiedźURNS：12powiedźURNS：13powiedźURNS：14powiedźURNS：15powiedźURNS：16powiedźURNS：17powiedźURNS：18powiedźURNS：19powiedźURNS：20powiedźURNS：21powiedźURNS：22powiedźURNS：23powiedźURNS：24powiedźURNS：25powiedźURNS：26powiedźURNS：27powiedźURNS：28powiedźURNS：29powiedźURNS：30powiedźURNS：31powiedźURNS：32powiedźURNS：33powiedźURNS：34powiedźURNS：35powiedźURNS：36powiedźURNS：37powiedźURNS：38powiedźURNS：39powiedźURNS：40powiedźURNS：41powiedźURNS：42powiedźURNS：43powiedźURNS：44powiedźURNS：45powiedźURNS：46powiedźURNS：47powiedźURNS：48powiedźURNS：49powiedźURNS：50powiedźURNS：51powiedźURNS：52powiedźURNS：53powiedźURNS：54powiedźURNS：55powiedźURNS：56powiedźURNS：57powiedźURNS：58powiedźURNS：59powiedźURNS：60powiedźURNS：61powiedźURNS：62powiedźURNS：63powiedźURNS：64powiedźURNS：65powiedźURNS：66powiedźURNS：67powiedźURNS：68powiedźURNS：69powiedźURNS：70powiedźURNS：71powiedźURNS：72powiedźURNS：73powiedźURNS："
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-11",
+      "judgement": "unresolved",
+      "expected_answer": "tabr",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：straw\n本题输出：tr\n本题输出：wr\n本题输出：er本题输出：erELLOW本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出：er\n本题输出",
+      "explanation_status": "absent",
+      "contradictory_outputs": true,
+      "rationale": "主答案straw、tr、wr、er冲突，未说明前者被明确撤回。",
+      "raw_response_sha256": "ba3f37eeb2dfecfd10431c82dc586db882a74bdbf3d4a9d20cf634225876603e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "straw",
+          "tr",
+          "wr",
+          "er本题输出：erELLOW本题输出：er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "straw",
+          "tr",
+          "wr",
+          "er本题输出：erELLOW本题输出：er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er",
+          "er"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-12",
+      "judgement": "unresolved",
+      "expected_answer": "181",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：181\n本题输出：181 инвестициouviersque\n本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：19",
+      "explanation_status": "absent",
+      "contradictory_outputs": true,
+      "rationale": "181与173、179、191均冠以本题输出，不能仅取正确片段。",
+      "raw_response_sha256": "42fb69546a5c72a42690f28a47f791d0b69102ddc889e4ed1d7d5d0687b0835e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "181",
+          "181 инвестициouviersque",
+          "173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：18"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "181",
+          "181 инвестициouviersque",
+          "173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：181 инвестициouviersqueerti本题输出：173ELLOW本题输出：179魔法师和本题输出：191togroupmate本题输出：18"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-13",
+      "judgement": "wrong",
+      "expected_answer": "[20, 23]",
+      "interpreted_answer": "[25, 30, 35]",
+      "evidence_excerpt": "本题输出：[25, 30, 35]",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "一致输出错误列表，并错误声称25满足整除3。",
+      "raw_response_sha256": "f5c11ffdb659ad64ff4b71d0921c54d21a5c6c52b8abf6662ff6811e19a73d78",
+      "evidence_char_start": 0,
+      "evidence_char_end": 17,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[25, 30, 35]",
+          "[25, 30, 35]ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "[25, 30, 35]",
+          "[25, 30, 35]ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-14",
+      "judgement": "unresolved",
+      "expected_answer": "3",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：7\n比较的是 set [211, 223, 211, 227, 223, 211]，它只保留了 [211, 223, 211, 227, 223]，重复的只保留一次，其他都保留； len() 返回长度，得到 5。\n本题输出：6本题输出：5本题输出：8本题输出：4本题输出：3本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本题输出：3togroup本酬：7togroup本酬：7togroup本酬：5togroup本酬：8togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togrou",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "7、6、5、8、4、3等主答案冲突，出现3不构成可靠作答。",
+      "raw_response_sha256": "e0770b50d0fe9ac0bea5eb13bac53a74bfad09e58be0a9bfe96faf4eef1cba1d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "7",
+          "6本题输出：5本题输出：8本题输出：4本题输出：3本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本题输出：3togroup本酬：7togroup本酬：7togroup本酬：5togroup本酬：8togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "7",
+          "6本题输出：5本题输出：8本题输出：4本题输出：3本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本题输出：3togroup本酬：7togroup本酬：7togroup本酬：5togroup本酬：8togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup本题输出：8togroup本题输出：4togroup本酬：7togroup本题输出：7togroup本题输出：5togroup"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-15",
+      "judgement": "unresolved",
+      "expected_answer": "260",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：747\n实参：123\n参数依次是 [123, 7, 2]，返回 247。\n本题输出：247\n本题输出：747lander本题输出：747lander本题输出：247DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDe",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "747与247多次作为主答案交替。",
+      "raw_response_sha256": "5cf0fb59a4ff7c26f6382cb4b264745819b2082a14b524c086983f8d46420dea",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "747",
+          "247",
+          "747lander本题输出：747lander本题输出：247DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出："
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "747",
+          "247",
+          "747lander本题输出：747lander本题输出：247DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出：747DDevice本题输出：247DDevice本题输出："
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-16",
+      "judgement": "wrong",
+      "expected_answer": "2",
+      "interpreted_answer": "[127, 131]",
+      "evidence_excerpt": "本题输出：[127, 131]",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "输出列表而不是len返回的整数2，默认列表解释也错误。",
+      "raw_response_sha256": "35a508a98bbdcf1f90e4d534119141b3a265d908e5cb1e64d9ca6c60c646f2aa",
+      "evidence_char_start": 0,
+      "evidence_char_end": 15,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "[127, 131]"
+        ],
+        "expected": "2",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "[127, 131]"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-17",
+      "judgement": "wrong",
+      "expected_answer": "6",
+      "interpreted_answer": "[1, 2, 3, 4]",
+      "evidence_excerpt": "本题输出：[1, 2, 3, 4]",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主答案列表而非6，错误描述get返回键。",
+      "raw_response_sha256": "b55842719ba01efee0680f88a41b15eb59d8d20dc589e1416bc2809ccb6b406f",
+      "evidence_char_start": 0,
+      "evidence_char_end": 17,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[1, 2, 3, 4]",
+          "[1, 2, 3, 4] Carey改良版： counts = {} 对下标未取用的键赋值，依次计数； get 返回未取用的键； + 2 依次加； | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "[1, 2, 3, 4]",
+          "[1, 2, 3, 4] Carey改良版： counts = {} 对下标未取用的键赋值，依次计数； get 返回未取用的键； + 2 依次加； | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-18",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出4，说明给出无关的除以5余4。",
+      "raw_response_sha256": "88c161c63081e006b5c5768d85f86fe064a720bcfab62876a3a9a7dfb6b06e6a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "4"
+        ],
+        "expected": "3",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "4"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-19",
+      "judgement": "unresolved",
+      "expected_answer": "204",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：429\n比较的是 [101, 102, 103, 104]，其中偶数是 [102, 104]，循环它们的顺序是 [101, 103]，不满足继续条件，total=329。\n本题输出：329lander/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "429和329都标为本题输出。",
+      "raw_response_sha256": "51673ed4f7fba1da1d7889ae0e2d9807533242395bf2e705c177bc1835b5ed73",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "429",
+          "329lander/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "429",
+          "329lander/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin/gin"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-20",
+      "judgement": "unresolved",
+      "expected_answer": "203",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：77\n循环终点 103 == 103 依次加进总数 3 + 4 + 5 + 6 = 18。漏加了 [101, 102]，总数是 3 + 4 + 5 = 12。\n本题输出：18ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertier",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出77与18冲突，break顺序说明错误。",
+      "raw_response_sha256": "5f66ed0b7194c6942604ffa57ffeae3a5a0c983f73a01984c158a3d3cf595cc7",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "77",
+          "18ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "77",
+          "18ertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertiertierti"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-21",
+      "judgement": "unresolved",
+      "expected_answer": "14",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：70\n到此，返回 2 + 3 = 5。它依次加了 4 个。沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80\n本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。\n本题输出：80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出70与80交替，递归结果说明不成立。",
+      "raw_response_sha256": "aa323a9f4ed1d0e89aeaef9befd471a536e92637f804a0c48868b42fb0dec565",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "70",
+          "80",
+          "70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7。",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "70",
+          "80",
+          "70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的贡献是 [2, 5]，最后是 7",
+          "80lander本题输出：70lander本题输出：70AtPath: [2, 5]，沿途的"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-22",
+      "judgement": "unresolved",
+      "expected_answer": "15",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：7\n省略；读作：8\n省略；读作：9本题输出：10本题输出：11本题输出：12本zoekenos本题输出：13本题输出：14本zoekenos本题输出：15本zoekenos本题输出：16本zoekenos本题输出：17本zoekenos本题输出：18本zoekenos本题输出：19本zoekenos本题输出：20本zoekenos本题输出：21本zoekenos本题输出：22本zoekenos本题输出：23本zoekenos本题输出：24本zoekenos本题输出：25本zoekenos本题输出：26本zoekenos本题输出：27本zoekenos本题输出：28本zoekenos本题输出：29本zoekenos本题输出：30本zoekenos本题输出：31本zoekenos本题输出：32本zoekenos本题输出：33本zoekenos本题输出：34本zoekenos本题输出：35本zoekenos本题输出：36本zoekenos本题输出：37本zoekenos本题输出：38",
+      "explanation_status": "absent",
+      "contradictory_outputs": true,
+      "rationale": "从7到50等连续值都标为本题输出，15只是其中一项。",
+      "raw_response_sha256": "fdc402cf42494336cedc20a64b713d6c3ebc0cb48a897b93392138a74ba1c898",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "7"
+        ],
+        "expected": "15",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "7"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-23",
+      "judgement": "wrong",
+      "expected_answer": "['fig', 'plum', 'kiwi', 'apricot']",
+      "interpreted_answer": "['fig', 'apricot', 'plum', 'kiwi']",
+      "evidence_excerpt": "本题输出：['fig', 'apricot', 'plum', 'kiwi']lander",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "主输出保持原序，不符合按长度排序。",
+      "raw_response_sha256": "ce84c4085bbd8bb88445eec6b70f1cf0b106008517f4bd4f2e56df5e9ff5462e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 45,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "['fig', 'apricot', 'plum', 'kiwi']lander",
+          "‘“fig’；‘apricot’；‘plum’；‘kiwi’’bian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "['fig', 'apricot', 'plum', 'kiwi']lander",
+          "‘“fig’；‘apricot’；‘plum’；‘kiwi’’bian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian'utherbian"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "dpo",
+      "candidate_id": "V2-NATURAL-24",
+      "judgement": "unresolved",
+      "expected_answer": "103",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：74\n循环次数：3\n会返回 [2, 4, 8]，依次取 2 × 2 + 11 = 25，4 × 2 + 13 = 33，8 × 2 + 17 = 43。本题输出：74\n本题输出：25\n循环次数：2\n本题输出：33\n循环次数：1\n本题输出：43本题输出：74本息和为 74。marshallerertiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiu",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "本题输出74、25、33、43冲突，并列出错误递推算式。",
+      "raw_response_sha256": "4d2df4bae06d9670c918d146452ce775196bc112c2bae7f4e0c5c9b3fd6fa893",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "74",
+          "25",
+          "33",
+          "43本题输出：74本息和为 74。marshallerertiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuth"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "74",
+          "25",
+          "33",
+          "43本题输出：74本息和为 74。marshallerertiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuthermiuth"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-01",
+      "judgement": "unresolved",
+      "expected_answer": "137",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：119\n比较的是 wallet 和 saved。wallet 从 137 减去 18，得到 117。这张电脑的内存只用到 117 个字节，所以 saved 只要跟着这张电脑的内存就跟着变小。\n本题输出：119\n省略号的结果是 117。wallet 和 saved 相同，所以 print 出来的结果是 117。\n本题输出：119\n在wallet 和 saved 相同的情况下，print 出来的结果是 117。这张电脑的内存只用到 117 个字节，所以 saved 只要跟着这张电脑的内存就跟着变小。\n本题输出：119\n省略号的结果是 117。wallet 和 saved 相同，所以 print 出来的结果是 117。\n本题输出：119\n在wallet 和 saved 相同的情况下，print 出来的结果是 117。这张电脑的内存只用到 117 个字节，所以 saved 只要跟着这张电脑的内存就跟着变小。\n本题输出：119\n省略号的结果是 117。wallet 和 saved 相同，",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "标签重复119，但明确说print结果117，存在主答案冲突。",
+      "raw_response_sha256": "c58bd219c4732b3c055d86e1b3bd2bcae84d6e3fbe90c7acd18d62e5739fb73a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119"
+        ],
+        "expected": "137",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119",
+          "119"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-02",
+      "judgement": "wrong",
+      "expected_answer": "pine/elm",
+      "interpreted_answer": "/oak|pine|elm|ash",
+      "evidence_excerpt": "本题输出：/oak|pine|elm|ash",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "反复报整串且错误解释切片。",
+      "raw_response_sha256": "ca4660cb7155aed084d0fca5007110dc4a96130589f7e2141a74db1188b43b5d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 22,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "/oak|pine|elm|ash"
+        ],
+        "expected": "pine/elm",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "/oak|pine|elm|ash"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-03",
+      "judgement": "unresolved",
+      "expected_answer": "198",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：100\n除以 2 和 4 后，a[0] + a[1] = 101 + 103 = 204。同理，b[0] + b[1] = 2 + 4 = 6。所以 sum([204, 6]) = 210。\n本题输出：210thagonisuser\nELLOWROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROM",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "标签100与210冲突，把相减改成相加。",
+      "raw_response_sha256": "8e5b135aa8e61c2b4fda2fca914c0e37e83a9790778f0b13d2104c697ebdba03",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "100",
+          "210thagonisuser"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "100",
+          "210thagonisuser"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-04",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出4，说明把列表共享与不存在的循环混淆。",
+      "raw_response_sha256": "e0225ccdcb2f42f17a9c52d4aa30990f14367675c559c8d4e90c1564d70fe88a",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "4"
+        ],
+        "expected": "3",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "4"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-05",
+      "judgement": "wrong",
+      "expected_answer": "2",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出4，切片复制说明错误。",
+      "raw_response_sha256": "666418e16281679c079da9b552b9df0d27a65a4cf789c66fa78bd75f5b4b57e9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "4",
+          "4togroupmate",
+          "4togroupmate",
+          "4togroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "4togroupmate",
+          "4togroupmate",
+          "4togroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4togroupmatetogroupmate",
+          "4"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-06",
+      "judgement": "wrong",
+      "expected_answer": "422",
+      "interpreted_answer": "104",
+      "evidence_excerpt": "本题输出：104",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "列出正确range成员却错误说累计104。",
+      "raw_response_sha256": "2ad6503c67d7c2eab8c2befc2b70efcecc28ad7799ecbcef1bf64966b4e22f39",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "104",
+          "104DDevice：range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELES"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "104",
+          "104DDevice：range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELESwap:range(101, 111, 3) [101, 104, 107, 110]ROMELES"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-07",
+      "judgement": "wrong",
+      "expected_answer": "342",
+      "interpreted_answer": "107",
+      "evidence_excerpt": "本题输出：107",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出107，解释为无关余数。",
+      "raw_response_sha256": "4d36be4e1217df2904c8849ae886181574e69da011517c863c1a3836d5493f94",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "107",
+          "107"
+        ],
+        "expected": "342",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "107",
+          "107"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-08",
+      "judgement": "wrong",
+      "expected_answer": "7",
+      "interpreted_answer": "12",
+      "evidence_excerpt": "本题输出：12",
+      "explanation_status": "unresolved",
+      "contradictory_outputs": false,
+      "rationale": "仅有明确错误主输出12及未完成的143列表片段，解释无法可靠解析。",
+      "raw_response_sha256": "77bb7bc39bde5c4143613b74e01daa38102e01bebdde46028fe62956bfce805f",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "12"
+        ],
+        "expected": "7",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "12"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-09",
+      "judgement": "wrong",
+      "expected_answer": "11",
+      "interpreted_answer": "10",
+      "evidence_excerpt": "本题输出：10",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出10，虽出现正确余数5但整除商仍错。",
+      "raw_response_sha256": "70e34d4b62e645da53c24eabdfb0be186b391297ec6504473c938fed30ebc678",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "10"
+        ],
+        "expected": "11",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-10",
+      "judgement": "unresolved",
+      "expected_answer": "5",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：10\n137 % 12 = 5。舍弃余数，取完整组数。 比较题意，137 为 12 个 11，不掉省；12 为 12 个 10，掉省；所以打印 5。应用查看输出，就剩 10 个 10。togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatepowiedźertihydrator；togroupmatep",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "主标签10，但又明确说“所以打印5”，未消除冲突。",
+      "raw_response_sha256": "9b2ac288b85512c15f445c5a04ec1985cc7de4c90c24f0760b367eb2ca15766d",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "10"
+        ],
+        "expected": "5",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-11",
+      "judgement": "unresolved",
+      "expected_answer": "tabr",
+      "interpreted_answer": null,
+      "evidence_excerpt": "本题输出：straw\n把各位置的字符依次从下标 1 开始，以步长 2 次。取下标 3 和 4，它们的字符是 'o' 和 'r'，互换后是 'o' + 'r' = str。\n本题输出：str\n本题输出：straght\n本题输出：straghter\nilanResearch Contributor本题输出：lanResearch Contributor\n本题输出：lanResearch Contributorachting本题输出：lanResearch Contributorachtingachting\n本题输出：lanResearch Contributorachtingachtingachting\n本题输出：lanResearch Contributorachtingachtingachtingachting\n本题输出：lanResearch Contributorachtingachtingachtingachtingachting\n本题输出：lanResearch Contributorachtingachtingachtingachtingachtingachting\n本题输出：lanResearch Contributorachtingachtingachtingachtingachtingachting\n本题输出：lanh",
+      "explanation_status": "wrong",
+      "contradictory_outputs": true,
+      "rationale": "主输出从straw、str变为lanResearch Contributor等多种字符串。",
+      "raw_response_sha256": "dabd8e10ef6d6f9a8895a42ea6738df10de5d95ff6b724d13f2a2eaf8e813df4",
+      "evidence_char_start": 0,
+      "evidence_char_end": 450,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "straw",
+          "str",
+          "straght",
+          "straghter",
+          "lanResearch Contributorachting本题输出：lanResearch Contributorachtingachting",
+          "lanResearch Contributorachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "straw",
+          "str",
+          "straght",
+          "straghter",
+          "lanResearch Contributorachting本题输出：lanResearch Contributorachtingachting",
+          "lanResearch Contributorachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting",
+          "lanResearch Contributorachtingachtingachtingachtingachtingachtingachting"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-12",
+      "judgement": "correct",
+      "expected_answer": "181",
+      "interpreted_answer": "181",
+      "evidence_excerpt": "本题输出：181",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主答案181一致，DDevice等后续数字未标成主答案；负下标说明错误。",
+      "raw_response_sha256": "80cf636a714502e07ef581631c206c70121cc5971fd99518c8b7fba8d1583e64",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "181",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17。",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17DDevice：20。",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17。"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "181",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17DDevice：20",
+          "181DDevice：2。ROME：1。ROME：2。ROME：3。ROME：4DDevice：4。ROME：5DDevice：6。ROME：7DDevice：8。ROME：9DDevice：11。ROME：12DDevice：17"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-13",
+      "judgement": "wrong",
+      "expected_answer": "[20, 23]",
+      "interpreted_answer": "[25, 30, 35]",
+      "evidence_excerpt": "本题输出：[25, 30, 35] rotterdamus",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主列表错误，并把输出值称为满足原值筛选的输入。",
+      "raw_response_sha256": "66a47f6a9f65c1689dd98ce2e5a0280bc3c2fd07d4882f86e369a5c7a8921cd1",
+      "evidence_char_start": 0,
+      "evidence_char_end": 29,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[25, 30, 35] rotterdamus"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "[25, 30, 35] rotterdamus"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-14",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主标签4，解释中又错误称有5个；主标签没有改写为其他值。",
+      "raw_response_sha256": "493d1cd46242fe86afb84af979a965968cf4443beb5f04f1d6a2bafedc0cf94e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "4"
+        ],
+        "expected": "3",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "4"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-15",
+      "judgement": "wrong",
+      "expected_answer": "260",
+      "interpreted_answer": "108",
+      "evidence_excerpt": "本题输出：108",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主标签始终108，返回246的说明也错误。",
+      "raw_response_sha256": "cb9f1218363b119be844371f5bcfb5a0c913e58c6df0d4d18806ae64cb0c84d6",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108"
+        ],
+        "expected": "260",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108",
+          "108"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-16",
+      "judgement": "wrong",
+      "expected_answer": "2",
+      "interpreted_answer": "[127, 131]",
+      "evidence_excerpt": "本题输出：[127, 131] rotterdamus",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "反复给列表内容，未给len返回的整数2。",
+      "raw_response_sha256": "c76040a30ee91463fd847bc363f174f7850e747ec943e93ec58e3a75a5c0efdc",
+      "evidence_char_start": 0,
+      "evidence_char_end": 27,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131] rotterdamus",
+          "[127, 131"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-17",
+      "judgement": "wrong",
+      "expected_answer": "6",
+      "interpreted_answer": "{red: 4, blue: 2}",
+      "evidence_excerpt": "本题输出：{red: 4, blue: 2}książkaye",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出字典而非red数值6，red次数也算错。",
+      "raw_response_sha256": "b0563221aab0eb216e398caa05fb9c321f8ba9dbd1ece4ec213ce25009878fb6",
+      "evidence_char_start": 0,
+      "evidence_char_end": 31,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "{red: 4, blue: 2}książkaye",
+          "{red: 4, blue: 2}ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "{red: 4, blue: 2}książkaye",
+          "{red: 4, blue: 2}ROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-18",
+      "judgement": "wrong",
+      "expected_answer": "3",
+      "interpreted_answer": "4",
+      "evidence_excerpt": "本题输出：4",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出4，解释为无关除法。",
+      "raw_response_sha256": "3146d90d2529e53a12113e28055aef660530a92a76ed39cb243ac799618e39df",
+      "evidence_char_start": 0,
+      "evidence_char_end": 6,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "4",
+          "4togrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "4",
+          "4togrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup",
+          "4togrouptogrouptogrouptogroup"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-19",
+      "judgement": "wrong",
+      "expected_answer": "204",
+      "interpreted_answer": "414",
+      "evidence_excerpt": "本题输出：414",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "明确称414为正确答案，continue筛选说明不成立。",
+      "raw_response_sha256": "b6c6e0d6032dd96f5f6cacb5b3673abbf8820f4e816b444290daa4981cb7549e",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "414"
+        ],
+        "expected": "204",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "414"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-20",
+      "judgement": "wrong",
+      "expected_answer": "203",
+      "interpreted_answer": "104",
+      "evidence_excerpt": "本题输出：104",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "反复报104，错误声称每次迭代都累加。",
+      "raw_response_sha256": "d4baf68b83fe77f31478c2b25f1cbbe013b69e77a7a188aebb571690f12f179b",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "104",
+          "104，循环的条件是 x == 103，这样每次加入总和，最后得到 104。AtPathmatepowiedźferance：比较的是执行顺序，得到 104。AtPathmatepowiedźferance：比较的是执行顺序，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 10"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "104",
+          "104，循环的条件是 x == 103，这样每次加入总和，最后得到 104。AtPathmatepowiedźferance：比较的是执行顺序，得到 104。AtPathmatepowiedźferance：比较的是执行顺序，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 104。FetchRequest：比较的是结果，得到 104。AtPathmatepowiedźferance：比较的是结果，得到 10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-21",
+      "judgement": "wrong",
+      "expected_answer": "14",
+      "interpreted_answer": "12",
+      "evidence_excerpt": "本题输出：12",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出12，递归停止与累加说明错误。",
+      "raw_response_sha256": "f7e3abda3fba9fe8c1a713885201010ab143e5cbe6ddedb6bce2c1ff8c9e7786",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "conflicting_values",
+        "fragments": [
+          "12",
+          "12AtPathROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "12",
+          "12AtPathROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROMEROME"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-22",
+      "judgement": "wrong",
+      "expected_answer": "15",
+      "interpreted_answer": "10",
+      "evidence_excerpt": "本题输出：10",
+      "explanation_status": "wrong",
+      "contradictory_outputs": false,
+      "rationale": "主输出10，并明确错误赞同start=4跳过四个单词。",
+      "raw_response_sha256": "fb03a6a3d4d1f659d8962905bfcccf12960e746caf69c7170cbfbd337022dac7",
+      "evidence_char_start": 0,
+      "evidence_char_end": 7,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "unresolved",
+        "values": [
+          "10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10，省略了省略号。变式参考输出：10",
+          "10"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-23",
+      "judgement": "wrong",
+      "expected_answer": "['fig', 'plum', 'kiwi', 'apricot']",
+      "interpreted_answer": "['fig', 'apricot', 'plum', 'kiwi']",
+      "evidence_excerpt": "本题输出：['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi'] überhuil: 'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apric",
+      "explanation_status": "absent",
+      "contradictory_outputs": false,
+      "rationale": "主输出原序；另列变式不能替代原题排序答案。",
+      "raw_response_sha256": "e4520ff2fe8de6f961175570859a8903d74440da68fc0c10b700eb69b3b664f9",
+      "evidence_char_start": 0,
+      "evidence_char_end": 180,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "unresolved",
+        "reason": "parse_failure",
+        "fragments": [
+          "['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi'] überhuil: 'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi',"
+        ]
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "['fig', 'apricot', 'plum', 'kiwi']DataProvider：['fig', 'apricot', 'plum', 'kiwi'] überhuil: 'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi', 'plum'] überhuil：'plum'assauger；变式参考输出：['fig', 'apricot', 'kiwi', 'plum']DataProvider：['fig', 'apricot', 'kiwi',"
+        ]
+      },
+      "full_raw_response_read": true
+    },
+    {
+      "stage": "continued_sft",
+      "candidate_id": "V2-NATURAL-24",
+      "judgement": "wrong",
+      "expected_answer": "103",
+      "interpreted_answer": "114",
+      "evidence_excerpt": "本题输出：114",
+      "explanation_status": "unresolved",
+      "contradictory_outputs": false,
+      "rationale": "明确主标签为114，后续孤立200和长数字串不足以解释递推。",
+      "raw_response_sha256": "9c7780e5ab18976d0c2df10a9176c796c1d74151558fae9ca23766d8b4138452",
+      "evidence_char_start": 0,
+      "evidence_char_end": 8,
+      "stop_reason": "max_new_tokens",
+      "safe_value_extraction": {
+        "status": "wrong",
+        "source": "explicit_main_tag",
+        "fragments": [
+          "114"
+        ],
+        "expected": "103",
+        "note": "Value comparison permits container whitespace differences; original strict extraction is preserved."
+      },
+      "automatic_main_fact_extraction": {
+        "status": "wrong",
+        "values": [
+          "114"
+        ]
+      },
+      "full_raw_response_read": true
+    }
+  ]
+}

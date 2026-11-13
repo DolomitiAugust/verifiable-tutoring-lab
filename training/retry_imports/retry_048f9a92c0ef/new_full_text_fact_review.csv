@@ -1,0 +1,97 @@
+stage,candidate_id,judgement,expected_answer,interpreted_answer,explanation_status,rationale,raw_response_sha256
+base,V2-NATURAL-01,unresolved,137,,wrong,未给出原题的可辨数值输出。137只在改写代码中出现，不能据此认定答对；解释把减18写成saved的赋值，实际saved在更新前保存137。随后建议del再读取变量，且称值被删除却仍存在，解释直接错误。,c9d95b48006ed9bd88a40fe48f943123838bc9aa41641583c06627515135db4e
+base,V2-NATURAL-02,unresolved,pine/elm,,absent,全文重复问题与原题代码并夹杂erable，没有报告连接后的字符串。题面中的pine、elm及斜杠运算不等于明确给出pine/elm。,0df89a5b40f5bf8d3acc188fba518fdb49ec53ee508907cf7c18f1aae0aac288
+base,V2-NATURAL-03,unresolved,198,,absent,全文重复题面与代码，没有给出相加结果或解释zip停止条件。107、101、103等都属于复制输入，不能作为模型输出答案。,697333ed93e1fa4c6cb9508ff546c91e7f6300d193ac48d60f96773a21ef2e05
+base,V2-NATURAL-04,correct,3,3,correct,明确报告原题输出3，与参考相同。所说first包含149、second长度3符合当前程序；没有展开两个名称共享同一列表的机制，因此解释仅部分充分，不等于完整教学表现。,22f324ce21e1512f2faea8f081c1d5cdbfed20954cffb83a1fc18df905a9c6c9
+base,V2-NATURAL-05,unresolved,2,,wrong,没有给出打印长度。解释称切片不需要创建新列表，与first[:]会创建浅复制列表相反；不能因解释错误就把未给出的主输出计为错误。,485dd068daee730444d4172fdeb0c6078ed8c20b631f5a529895806edde8d6c9
+base,V2-NATURAL-06,unresolved,422,,absent,开头孤立的111之后持续重复原题代码，没有把111明确指认为总和或原题输出。111又是题面正在询问是否纳入的边界数，存在指代歧义；保守记无法判定，不把边界数强行当最终答案。,225de9b2f70b9413e3b4ac7f06345a4f821956cc3e457f57f759f816a237034d
+base,V2-NATURAL-07,unresolved,342,,absent,只重复负步长range代码及问题，没有列出118、114、110三个参与值，也没有报告总和342。复制的range参数不是答案。,c6958654d274a7a9d3e4716e229ce09e0d8243d320f86aeb0ef6fbb356a19f78
+base,V2-NATURAL-08,unresolved,7,,absent,仅复制问题和条件代码，随后出现无关片段。7与12均在原题分支中，模型未选择分支或报告输出，不能按包含正确数字判断。,9014824cdd9305f2a74a8a7f91bccd02f54e5c66b6ab537245ec73422697aa48
+base,V2-NATURAL-09,correct,11,11,absent,明确陈述输出值为11，符合137整除12。用户要求不讲解，因此解释缺失不是该题任务失败。,d5875076a14f9ab87d4a0fc97043c9995bd464036d674c635713b884a33410ed
+base,V2-NATURAL-10,unresolved,5,,absent,复制余数问题与原题代码，随后重复Assistant。没有给出余数5，也没有解释商与余数的区别。,60a0a9084f330d03e02be3afa69e8cf36d93f0202ea7e9f08589cceff5521ff9
+base,V2-NATURAL-11,unresolved,tabr,,absent,持续复制切片代码及要求解释的句子，并夹杂无关词片段，没有给出切片字符串tabr。,19cb356ef1a1e09f087e8da0dc92564ce3b91f1c27ebeb75e51126e7ddb297c8
+base,V2-NATURAL-12,unresolved,181,,absent,重复输入列表及负下标代码，没有把181指出为所取元素。列表中包含181不能代替模型明确作答。,604738854defd7e3c7375742f3191c3abafde62744ec26940026e763734499ce
+base,V2-NATURAL-13,unresolved,"[20, 23]",,absent,全文重复列表推导题目及代码，没有明确给出筛选后的结果列表或说明运算顺序。,ccc2498c1e705e1b295836209a977df574997b6e72366945a218b8a40604fcdf
+base,V2-NATURAL-14,wrong,3,6,wrong,结尾明确报告最终结果6，而len(set(items))为3。解释同时把集合大小误说成出现次数最多的元素数量；虽含去重的正确描述，结论与程序事实仍直接冲突。,933116877eafff8886f49e5c5afeda8e21500f4b8dfbf91839e826b4f9feeb7a
+base,V2-NATURAL-15,correct,260,260,wrong,原文把123+7算为130，再将130乘2得到260，最终数值可唯一识别且正确。但最后断言调用之后x变成260不正确：return x*2返回乘积，并未把局部x重新赋值为260。输出正确与解释错误分开记录。,0c21f087c68454bc05fc944ad50423d5bcac268e0c64b0e237e68a6b4439ece1
+base,V2-NATURAL-16,unresolved,2,,absent,主要重复学生猜1的提问和默认参数代码，没有回答第二次调用的实际输出。这里的1处于复制的学生猜测/问题中，不可当作模型最终答案。,5e78764cac923a831764e90c60b884cc301175bec1cf2931290820a64e1069d7
+base,V2-NATURAL-17,unresolved,6,,absent,只重复计数字典代码与1或2的比较提问，没有解释red被访问三次或报告最后的6。输入中的1、2不是可辨主答案。,c73396865342b05216085007ece090086b1d6f0ca827a60b24212da9c119afee
+base,V2-NATURAL-18,unresolved,3,,absent,重复请求解释及双层循环代码，没有筛选通过的组合或总数。列表元素3和循环增量1都不是报告的输出。,177439c1d2104e1e109564e4f20cc7260f666fc6921ca9612cff1358f8f33013
+base,V2-NATURAL-19,wrong,204,103,wrong,在输出代码块和结尾两次明确写103，答案唯一但错误，实际保留101与103、总和204。解释错误地说跳过101和102再执行103和104，违背偶数continue分支。,d6fba0d845c01b9f4f462692a4b72187f99fe2dd4a5fc20ba3d03b64da44a655
+base,V2-NATURAL-20,unresolved,203,,absent,重复询问103是否先加再停止及原题代码，没有作答或报出203。题面中的103不能被提取为模型的总和答案。,5cb10f63197ddf9618b616dfa00dc013ca4bfca30ba7fd084dea3877f5ce9691
+base,V2-NATURAL-21,unresolved,14,,correct,没有展开climb(4)返回链或报告14，故主输出无法判定。关于递归是函数调用自身的泛化说明本身正确，但只是通用定义，未完成本题所需过程解释。,6eae7ae55e334cd43b74172f2bd2820486c373c739a186d10efda4c08ae61628
+base,V2-NATURAL-22,unresolved,15,,absent,反复复制enumerate起点问题与代码，没有解释编号从4开始或给出4+5+6=15。题面中的4不应被当作结果。,c89747a6d438cf07b3733e99401ca0629461698cbc2f747fe9f20247456900a3
+base,V2-NATURAL-23,unresolved,"['fig', 'plum', 'kiwi', 'apricot']",,absent,反复复制原始words列表和排序问题，没有给出排序结果。原始列表不是模型报告的排序后列表，也未解释稳定排序。,ddf0f4277905f909f75aaff71f3ae70bd1dd91c31f99fe62f88858500b7929bf
+base,V2-NATURAL-24,wrong,103,123,wrong,输出代码块明确给出123，结尾再次确认123，实际逐轮值为15、43、103。将该更新公式称为斐波那契并声称把值存储在列表中均不符合题面。,b3e276e298b11b1b877eadcb590646e4102addab9886e22c36a00d48275ba00c
+sft,V2-NATURAL-01,wrong,137,119,wrong,将wallet减18后的119当作saved输出；saved仍应保留137。,b5e2648d16e183784a5611c47e51043789c718b08fe803f1e88c0c0360ecd417
+sft,V2-NATURAL-02,wrong,pine/elm,oak|elm,wrong,将split和切片结果说成oak、elm，且连接符错误；应为pine/elm。,d5438ad0d6ea485d30c8f169eaf20bec0c0f455fa07b9f285d2e16dc27d1c520
+sft,V2-NATURAL-03,wrong,198,104,wrong,主输出104；zip配对的两项差应各为99，总和198，解释中的累加结果也错误。,95873f8b3f6301646666204b27168c830f0ae754c82c6b8d92a024ecaeafe269
+sft,V2-NATURAL-04,unresolved,3,,wrong,主标签及len(second)==3正确，但同一解释又明确称修改后second长度为4；关于同一打印量有未消解冲突。,c1f7f52d7cf734a61681f068f61222cea554b0563e1aa4049d072ec20b470790
+sft,V2-NATURAL-05,wrong,2,3,wrong,错误声称浅复制的second也包含163；原列表追加不影响复制列表，应输出2。,50d315da6bd304c1cb0141d76333068069ea31bfe358721fa0dd8e0578ee8ff2
+sft,V2-NATURAL-06,wrong,422,333,wrong,把range逐项累加说成除3取余并得到333；正确参与项101、104、107、110，和422。,4166bf2a497371db86aabeb47a9a88129989f00c0af824dd9aba7cb4a0ba6c38
+sft,V2-NATURAL-07,wrong,342,100,wrong,把负步长range说成一组10到28的数，输出100；实际118、114、110求和342。,87f473863c44c6446b6571dd0e1d4c213a1bd84579acbf0c67a6e12106b2a2ab
+sft,V2-NATURAL-08,unresolved,7,,correct,主标签两次称12，而正文正确指出143>143为False、走else并给奖金7；同一输出量12/7冲突。正文分支推理本身正确，不能据此判整答正确。,d7c5bf0deb73bc9814e00954b6a41beb13e64885d44a7f360169c0a98d8bfdd4
+sft,V2-NATURAL-09,correct,11,11,wrong,明确且一致输出11；附加解释却说137除12无余数，实际余数5。题目还要求无需讲解。,a9e6b7ad2573e52fdbd580ae896f28628b1d4d33ad83625c4c5d302d404d60f0
+sft,V2-NATURAL-10,wrong,5,1,wrong,一致输出1，并将137除12余数误说为1；实际137=12*11+5。,84520f9ae7ab66a78e898f2f30df2dcb0b6d36e38fc071ca96a03bdc9bafab2c
+sft,V2-NATURAL-11,wrong,tabr,b,wrong,声称输出b且错误解释每次取偶数位/共6个；实际访问下标1、3、5、7，输出tabr。,30c20ae45dda3268b7b21bff09dc609d0465f922d746693d9b3006dc156ce2c2
+sft,V2-NATURAL-12,correct,181,181,wrong,一致明确输出181，但称负下标从0开始并将其与182相加，索引解释错误。,04af936688018d56b6759c9385d95338dc48fb2dc105c985d9c9fd681f460e99
+sft,V2-NATURAL-13,wrong,"[20, 23]","[27, 29, 31]",wrong,"明确输出错误列表；应先筛出18和21再加2得到[20,23]，且声称打印省略数字无依据。",934c2e8bb0ef8c78568f09eeda6e566ffbabd91436fedb45a5ef84421d3fb9cd
+sft,V2-NATURAL-14,unresolved,3,,wrong,先多次声明本题输出5，后又声明本题输出3，中间同时混用重复值/唯一值以及无关toHexString；无明确撤回或唯一结论。,be6d8c0682ab6cb2e737f920d7009e86acd53ea73ba9f07aa3cf6b544247324d
+sft,V2-NATURAL-15,wrong,260,279,wrong,输出279；将return x*2解释成再加2，并反复声称没有参数/返回/调用，均与程序不符。,95dd337aef71826991fcadd90d29ba1fedd4c93867dfdca1f9faf92f1b620267
+sft,V2-NATURAL-16,wrong,2,3,wrong,第二次调用输出误说为3；解释称add(127)有第三个参数、append替换默认值等错误，实际默认列表复用后长度2。,4ba68235205971303086cb9ad91a545c92911e7d32fa1a522740df085df458d3
+sft,V2-NATURAL-17,wrong,6,5,wrong,三次各加2被算成5，并给出错误字典red:5；应为6。,1a5a94a25e8c6f9e10cd151c8d93b41c9fb10389807f49432fb0f6465bed38ee
+sft,V2-NATURAL-18,wrong,3,4,wrong,主输出一致为4，解释列举的配对和求和均与嵌套条件不符；实际通过三组。,fa7cb139b41bed8bd4112706acff9551d1844348699bc957ba0012b1d0876732
+sft,V2-NATURAL-19,wrong,204,210,wrong,主输出210，且把101/103归为除2余0、错误累计104；变式211不是原题第二答案。,566eea136ef05fb7d85baad1b4f7c2efb64ddbba52a090d9475411a78bccc3c3
+sft,V2-NATURAL-20,unresolved,203,,wrong,本题输出在308和306之间交替，解释还把103累加进去；没有唯一输出，正确应在break前停为203。,60aec92147282e43f00ae0a19eca9b74955ade759c0d8eba4573f4a15a9013b9
+sft,V2-NATURAL-21,unresolved,14,,wrong,主输出先12后8，解释只展开部分递归并从错误的终点方向返回；无法确定唯一原题答案。,7c29cda921e582d74789ffd52b21a247925a908c053557ec79b59da049c1e807
+sft,V2-NATURAL-22,wrong,15,13,wrong,本题输出13；把start=4说成sun/moon第5/6词且错误累加，实际编号4、5、6共15。标为变式的12不计为原题输出冲突。,406559e2c3a87f357171d2522eddb4f5b66ec8958260d0b9126a47efd2c8fa6b
+sft,V2-NATURAL-23,correct,"['fig', 'plum', 'kiwi', 'apricot']","['fig', 'plum', 'kiwi', 'apricot']",wrong,"完整列表与参考一致，但原词长被说成[4,3,5,3]，且引入未在题目中的strings；未正确解释稳定性。",12d39284fc6e34bfb9b43699a523584c6776ec4a7533cc46bd58ec327b260cb1
+sft,V2-NATURAL-24,wrong,103,100,wrong,明确输出100；虽说每轮用上轮值，最终迭代结果仍错误，应15、43、103。,8afe468c911787905e3feee7ece4bf4f02bcd95fe9ff629be872a49266555d9a
+dpo,V2-NATURAL-01,unresolved,137,,wrong,原题输出先119后18且反复交替语境；错误地将wallet的新值当作saved，并引入无关人物信息。,714f1ce55709b08de88ebe8d032dcbe8a356d64e721ac6bf42326bb9673e977d
+dpo,V2-NATURAL-02,unresolved,pine/elm,,wrong,先说oak|elm，后将若干不同列表也标成本题输出；split/切片/连接过程错误且原题结果不唯一。,108e0264a889f064ed41f505272db27b4532bf4093bd110a11d94a005c3d16c6
+dpo,V2-NATURAL-03,unresolved,198,,wrong,本题输出28，随后又称此题输出31；差值和列表长度解释错误。,5bb84d40733d57a3db7254904f2f36ee89b765c890e3ad541edeb8e46f1aefa1
+dpo,V2-NATURAL-04,unresolved,3,,wrong,开头输出1，正文又明确说输出3、结果3，并混入4；没有明确撤回或唯一结果，覆盖列表的解释也错误。,88c9a3b62ead50745b0c3b722eccd29583d9ccb7e6397aafa7e4bae676131c8a
+dpo,V2-NATURAL-05,unresolved,2,,wrong,原题先输出3、正文length返回2，后答4；浅复制过程被错误解释为删除/拼接和重复append。,6a3d3026aae0ecb4bda43906e8785729c2207d2a164f5e38aa2e76acf5fc3c22
+dpo,V2-NATURAL-06,wrong,422,228,wrong,原题输出228，range末项/序列与累加均错；245明确标为变式，不作为原题第二结论。,e5a4249a97b666a4297c6d1b81095e030d3b176bfa39bef165f14a330c11241b
+dpo,V2-NATURAL-07,unresolved,342,,wrong,主输出先300后55，正文还给72/207等冲突运算；负步长方向与项列举均错误。,67f1bf7426195001d52ff1677748181d09c61aed0f36af7bc0f64b61e8660244
+dpo,V2-NATURAL-08,wrong,7,12,wrong,一致明确输出12，错误声称score==143时执行if且跳过else；应输出7。,4812b59636555b155a90b398768e030ce43f25db7b0f5469c568165efa0718bb
+dpo,V2-NATURAL-09,unresolved,11,,wrong,原题输出1，正文说计算11，后多次输出6；将商再次除以12等运算错误，无法唯一判定。,88913c6cf048f244709a95409f7efd8e7554f9267cee1941517ef4ff77a57e21
+dpo,V2-NATURAL-10,correct,5,5,wrong,"多次明确输出5，未出现另一个可识别原题输出；后续伪计算给[137,12]的均值8.579等错误事实，不能据主值正确判解释正确。",2f5fa3a5c04cc718f1d3b7ba82faa688f36481fc63e09f52c019399bea0033ec
+dpo,V2-NATURAL-11,wrong,tabr,b,absent,仅给本题输出b，没有解释；应输出tabr。,ed40cf55acd7851c91a81da70c2c939682f3f8bc9d89972708a8f14fd1bc7e84
+dpo,V2-NATURAL-12,correct,181,181,unresolved,"原题输出两次为181；正文的[-2+1,...]算式本身正确，但未说明它与本题索引的关系，无法可靠判定其解释含义，不因不完整而直接判错。",a83a2b0182893b7a84c06839af297229b0f583464a3de44090bc0872acceebb7
+dpo,V2-NATURAL-13,wrong,"[20, 23]","[19, 23]",wrong,"明确输出[19,23]；错误排除18、保留15，与条件x>15不符，应[20,23]。",299d781efaa0c20c853ed31b85e20446623879be0cdd110a452cd3d7679e4e10
+dpo,V2-NATURAL-14,unresolved,3,,wrong,先输出5，解释又明确说结论6，后回到不同值5；集合去重机制与实际唯一元素数量均误述。,fe824146763067c880671d42197b04cc400e5bd5c77e940b8496b8f7e5136069
+dpo,V2-NATURAL-15,unresolved,260,,wrong,本题输出201、实算205、答案2相互冲突；没有正确追踪123+7后乘2。,37c7e85308421008333e8b897d2f448953380eadad41155cb7e66d22bbc86846
+dpo,V2-NATURAL-16,unresolved,2,,wrong,原题先3、后1、又答案2并继续枚举大量数字；默认可变参数的两次追加过程解释错误。,70657110d8849e81194a7a66d8bb93fdb1c320ff7dc0385a5862a585d67b13a7
+dpo,V2-NATURAL-17,wrong,6,"[4, 4, 2]",wrong,"主标签给列表[4,4,2]而不是red计数6；声称其他字符串依次加4、Python3.7前仅支持dict均错误。",8032a1e70b4f203cad12675ede610b1091da49108ae33a77e5144df54f0e5cb3
+dpo,V2-NATURAL-18,unresolved,3,,absent,只有相互冲突的本题输出3和2，没有解释；无法唯一判定。,04d06e6e4ec78b9c8e318385825dd995ea9727cde60e29c016d9b274f021732a
+dpo,V2-NATURAL-19,unresolved,204,,wrong,本题输出依次108、101、191；错误将continue当作比较到103便停止，并未累加101和103。,644706edc0976cfd2c184e7294ad7094077062528dcdfdebf98bbe7bf0ce8f09
+dpo,V2-NATURAL-20,wrong,203,208,wrong,两次主输出208，正文说最后加103时break，与break在累加前执行不符；应203。,fd9b5f414086260c5771f02c82e60401a621bd5e2db036da696ded86156a4269
+dpo,V2-NATURAL-21,unresolved,14,,wrong,原题输出先12、再22、后2，递归展开混为错误循环，无法确定单一输出。,6c2639a34b2a1599d4043dfff1eacd9afc5f32ff6e62e2693b6c378308836b94
+dpo,V2-NATURAL-22,wrong,15,11,wrong,主输出11，解释把start编号当成字母并错误累加；编号4、5、6应得15。,e84f3ed171a9ef27a963f9a7c6e5ffa1c77a18a0c18afe25e98a1b6593e2bffb
+dpo,V2-NATURAL-23,correct,"['fig', 'plum', 'kiwi', 'apricot']","['fig', 'plum', 'kiwi', 'apricot']",wrong,反复明确返回正确完整排序列表；却用首字母f解释fig最短、引入不在输入中的utrecht及移除规则，未正确说明稳定排序。,572d6486d370a25103a232afe40dfcf60b444dcb521196e05d4af9585744f2f1
+dpo,V2-NATURAL-24,correct,103,103,wrong,反复明确输出103；过程第一轮仍称2，第二轮将2*2+13错算成29，没有正确给出15、43、103。,340f72f68b6c6727267680d67786938d90c2a9112a045b35f9c3866b264f86da
+continued_sft,V2-NATURAL-01,wrong,137,119,wrong,一致输出119，错误把整数赋值解释为把wallet传给-18、从列表删18；saved仍应137。,afaa94a6b6aa8f11d1ca3938a4a3a384f7297ec3f2dbee18c8698d1e0b1fec28
+continued_sft,V2-NATURAL-02,wrong,pine/elm,oak|elm,wrong,明确输出oak|elm；把split/切片解释为删分号并选oak和elm，原程序应pine/elm。,f27cd3bf6f84322b92bbf291519dad33fd157ec807425247c6c72872e42999f5
+continued_sft,V2-NATURAL-03,wrong,198,100,wrong,"两项差虽正确各99，主输出却一致100；解释又称107与[2,4]相加得到107，最终和应198。",a9085ebfa2cb88640cb0160cafef4efc38c0e2e9290f4057877abd066643ae27
+continued_sft,V2-NATURAL-04,correct,3,3,wrong,明确输出3且说明同一引用/append共享修改，但末尾又断言len只比较引用，属于错误方法语义。,d515cc18b01980642d87692cde0a5e9057c1e4e962fcfd53d3d2df4d86fad06b
+continued_sft,V2-NATURAL-05,wrong,2,3,wrong,一致输出3，把浅复制说成前后半段拼接、下标交换；实际second仍长度2。,48b610fa09492eadbc563df6b9e61cc9d44bcbcdfc0548651710b9d54c01c10d
+continued_sft,V2-NATURAL-06,wrong,422,298,wrong,原题多次输出298；虽列接近正确的range项，却说循环每次加3并算错总和。标记为变式的300不作为原题输出。,1acff46126659cd1b854311c8ea923c567f6e0c1a2773071b8d365fc74097e91
+continued_sft,V2-NATURAL-07,wrong,342,1000,wrong,明确输出1000，给出远越终点的序列且错误说正数个数118/每个加107；实际只有118、114、110。,065d58379add833ccc2e6509b7e88dee41dede3b1da11adb1b958c752af4dce2
+continued_sft,V2-NATURAL-08,unresolved,7,,wrong,标签反复给12，正文同时称不满足条件进入else取7，又说相等时取12；同一打印值存在未消解冲突，比较和算术也自相矛盾。,4ed92c955ef15368f3758a0653cda42ae3dddd6033d1f2834966e15c2182a7d7
+continued_sft,V2-NATURAL-09,correct,11,11,wrong,输出11正确；解释称除数12只保留1个余数，不符合整除返回商的语义。,8864c73c73a6111a32a81b53b5612803c35cd64947265bd7bf6a0334d122a0f0
+continued_sft,V2-NATURAL-10,correct,5,5,correct,输出5且137除12商11余5、137-12=125、125%12=5均正确；存在重复和无关标记，故不等于完整高质量教学。,c77e6735e983cd2ec44ecaca326ac65a47c403282acea2eacf17d6f97b59b6db
+continued_sft,V2-NATURAL-11,unresolved,tabr,,wrong,标签给b，正文明确应输出bcccc，另有变式bbaab；原题值冲突且切片解释错误。,5783c37cecdd198999bc84dc30322dff3956724b65005c4e17024db9ae9b7bf2
+continued_sft,V2-NATURAL-12,unresolved,181,,wrong,标签反复给181，正文却明确print输出173；又称负下标从0开始，无法取得无冲突唯一输出。,34bbabab0514d3ba413c6888601c81bd674d117163a831a79dd11720eb57d51c
+continued_sft,V2-NATURAL-13,wrong,"[20, 23]","[27, 29, 31]",wrong,"一致给错误列表[27,29,31]，筛选后映射结果应[20,23]。",b5a89c253a235bc918130bf34c293c9fd410f15850fb543ad87036638bf21b67
+continued_sft,V2-NATURAL-14,unresolved,3,,wrong,原题输出先5后6，正文同时说三种唯一值和len为6；没有一致结论，set机制解释冲突。,c6adaf6422d9a6a4c8e9ad37d07b916e5a1ea0b8e0013920c8d1fd331bed4cb6
+continued_sft,V2-NATURAL-15,wrong,260,279,wrong,输出279，错误将乘2变成再加7并又改变实参，未正确追踪两步。,20c63cef3ad4a805f23e338aed3dd16c6778686bc0601e2c2833fbb6d63bfdd5
+continued_sft,V2-NATURAL-16,wrong,2,3,wrong,一致输出3，解释错误将len结果再加1、同两次调用又说返回3和4；原题第二次应为2。,d81fb2dce72c2c608116a514d7db9547ce5ea5fda54c0135f655267d9d8bbf60
+continued_sft,V2-NATURAL-17,correct,6,6,unresolved,原题明确输出6，三次各加2的计数正确；get()返回最后一个值的所指不清，无法确认是在描述旧计数还是误称更新后的值，保留解释未判定。,bff76d1220829f11cf16b1b08a7894ac33635642db3442cef93f270204e51b9d
+continued_sft,V2-NATURAL-18,wrong,3,5,wrong,明确输出5；解释把2+5+9和末位等无关运算当成配对计数，应有三组。,04f1d3c47a2c9e0486fb34a54bac84bc88d6f39d51ea9961c52afb739d676a7c
+continued_sft,V2-NATURAL-19,unresolved,204,,wrong,输出先210后101，并声称偶数条件永真、continue跳过当前及下一次，均与程序不符。,9fc19d4ee530c0e536dc6753ccfb5197750d6ec061b6e5aa915ab371fd1e38ea
+continued_sft,V2-NATURAL-20,unresolved,203,,wrong,本题输出308与103交替，错误说break时才加总数；实际103到来前break，输出203。,8b51c6b6d9e49c9e49da9f0ac685f7639d96a2eecf21a5e8d66c493c99234a88
+continued_sft,V2-NATURAL-21,wrong,14,11,wrong,一致原题输出11；混淆递归基例返回2与climb(4)，少算层数，应14。,4cf2faf1ca965130a5f5ed7f6c5f887ef872a7cf1c10600b1cd775f1df8d613c
+continued_sft,V2-NATURAL-22,unresolved,15,,wrong,原题输出13后又19，正文还算27；错误称start4时i从0开始，无法唯一判定原题输出。,fe2809729850add0743b2601757946d716e067e5afc3e538c6047eb084a611f4
+continued_sft,V2-NATURAL-23,correct,"['fig', 'plum', 'kiwi', 'apricot']","['fig', 'plum', 'kiwi', 'apricot']",wrong,"完整排序输出正确，但词长误给[4,3,5,3]，且声称key把元素放回原列表，sorted与key语义误述。",93788f81e9e4f56dcae2b3fede9a27e8b60321b42944e36f6d8f8b60d66c2465
+continued_sft,V2-NATURAL-24,unresolved,103,,wrong,主输出先100后112，给出六轮错误序列而原循环只有三轮，无法判定单一原题值。,07939ab656be2d8734b126d7b2cf59db74e4c0031f40ff7b0aaffaa44fbdd42e

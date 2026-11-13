@@ -1,0 +1,263 @@
+{
+  "audit_kind": "supplement_artifact_consistency_after_independent_review",
+  "checked_at_utc": "2026-11-07T03:37:33.143937+00:00",
+  "all_passed": true,
+  "results_sha256": "4c00c831fa1ab18851a1c60568a3ec05b2b5c8bf368bde1f70dad189f247ca16",
+  "suite_sha256": "589fa61561c9d647ad9d1897b7aa3210d89d865ef6435fc0fe66be3aae217de9",
+  "plan_sha256": "b76b3651eb7a0b11783748528afd4ffd7da5a9b440a11b715ffc2b02d399cca2",
+  "review_sha256": "48c3004b87e1c432df881388c7fd4fe48983093e18f9b800a8522295e9ae490f",
+  "case_count": 4,
+  "turn_count": 6,
+  "recorded_real_model_calls": 18,
+  "frozen_sources_match_core": [
+    {
+      "path": "tutor\\legacy\\export_results.py",
+      "sha256": "ee262cfd625998db795b2607ed65c9003d060d616186f0ee8a56ce609c09eca1",
+      "matches_core_frozen_source": true
+    },
+    {
+      "path": "tutor\\legacy\\memory.py",
+      "sha256": "0b2e22670ceae3bae97fb95204ef67063245751c3885b6d199b62d896c7853c4",
+      "matches_core_frozen_source": true
+    },
+    {
+      "path": "tutor\\legacy\\model_backend.py",
+      "sha256": "ffa43446c0a84db1cb48b6a8f54c350e6b24d2b0c67dfff8d5343904034748f6",
+      "matches_core_frozen_source": true
+    },
+    {
+      "path": "tutor\\legacy\\run_cases.py",
+      "sha256": "fe8e5e6916cdcff7ce95536e8319661a4b191ca170c8f161776ec33ee029ea2e",
+      "matches_core_frozen_source": true
+    },
+    {
+      "path": "tutor\\legacy\\system.py",
+      "sha256": "831a690e167b0cd21230f7612970081befdd60fe29b8a2dc38c3bb04d26782f1",
+      "matches_core_frozen_source": true
+    },
+    {
+      "path": "tutor\\legacy\\test_system.py",
+      "sha256": "9ce9a98f170a8d959c94c96fb5eb72a5151ad8b3fc5759353f36efb151bdd2e0",
+      "matches_core_frozen_source": true
+    }
+  ],
+  "model_and_adapter_fingerprints_match_core": true,
+  "all_prompts_verified": true,
+  "model_call_audit": [
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "0e428ac671d3a74ed4ce8d2759375cde3dcf4d7196ab79a9ea843d0cc9506394",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "1c39e873a76f0463f6001fd35f5b64d52822a807105906910e790cc7333edcca",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S01-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "2ac0e25f6c2d511069ce33f16b7946b9c68016a530e6867985b1fb6a2d5aa634",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "003138ee38855d7126aa52bbd308de945497bc7d717087093a8782053d815b42",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "e67ac746458af12db1feedb142ab56a47abe6a6378b221d5254d6ac1d14b207a",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "9aff5a38c69a462b7ddc2c4ead726351c1d43c3779e8762a5f078887b0aa55fa",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "5e46f6a71c9d390eca35f2c67776c31ec1a1d27d7ee1ec8d18152fb4bbcbf4ec",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "2c79a1135f7418a5b4b0319ae857dec3715ae8368026fca3d7c8bae3f09d37e3",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "31ecdd79911d36eb3bc5cc72d52675ead14ce860ab2d24d459a393d04ef341a0",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "4f72f6f6d47ae9ebd4bba1dab58de84b41eeaeca18bcfe327d1730e2c03c7eaa",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "a535216cca84aba27e5fb1cef65a9179132a636673cadf8dbd9c349ee78fc31c",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "82b1be16c139316e0c22d05d377d22a655564b0d21fa3650667a76983fa8b409",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "021d85cae237d4cb3ff0e447cb30d686f98f666a0e9e4473295c00f912459132",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "d8cf90ef8020d81c85b43b3b0ac88a3f906f91461a78370e150568c953a85d47",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "8465cb5ba84492fce65aaaced5396cc48a7787dcc7603a528e2a71a65000c903",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "planner",
+      "new_tokens": 256,
+      "prompt_sha256": "b6d331ea2528ef70a48f6eeb3fe512e58b28719a4755e814e2bbef098bf2a4a4",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "teacher",
+      "new_tokens": 256,
+      "prompt_sha256": "d358610eb5c602f5b40c01225b322b4ce890bdfffeb57eb02d1b922dfbbc7ab7",
+      "accepted": false,
+      "real_model_call": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "role": "reviewer",
+      "new_tokens": 256,
+      "prompt_sha256": "0bfc2bb59b78bf093080134e7922ea365bee8732d076f106e442a28c1c94dc7c",
+      "accepted": false,
+      "real_model_call": true
+    }
+  ],
+  "actual_followups_independently_executed": [
+    {
+      "turn_id": "tutor-S01-T1",
+      "origin": "provided_program",
+      "stdout": "20\n",
+      "answer": "20",
+      "matches_reference_and_system": true
+    },
+    {
+      "turn_id": "tutor-S02-T1",
+      "origin": "provided_program",
+      "stdout": "yth\n",
+      "answer": "yth",
+      "matches_reference_and_system": true
+    },
+    {
+      "turn_id": "tutor-S03-T1",
+      "origin": "provided_program",
+      "stdout": "pyt\n",
+      "answer": "pyt",
+      "matches_reference_and_system": true
+    },
+    {
+      "turn_id": "tutor-S03-T2",
+      "origin": "provided_program",
+      "stdout": "18\n",
+      "answer": "18",
+      "matches_reference_and_system": true
+    },
+    {
+      "turn_id": "tutor-S04-T1",
+      "origin": "provided_program",
+      "stdout": "20\n",
+      "answer": "20",
+      "matches_reference_and_system": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "origin": "provided_program",
+      "stdout": "28\n",
+      "answer": "28",
+      "matches_reference_and_system": true
+    }
+  ],
+  "retrieval_audit": [
+    {
+      "turn_id": "tutor-S03-T2",
+      "retrieved_trace_id": "e46697314d334db79376ca9a752b7643",
+      "matches_original_trace_fields": true,
+      "same_student_and_topic": true
+    },
+    {
+      "turn_id": "tutor-S04-T2",
+      "retrieved_trace_id": "0675d24202c94e93b9d55ebdc433c8e9",
+      "matches_original_trace_fields": true,
+      "same_student_and_topic": true
+    }
+  ],
+  "sqlite_row_counts": {
+    "episodes": 6,
+    "topic_summary": 4
+  },
+  "automatic_checks": {
+    "passed": 61,
+    "total": 65
+  },
+  "qualitative_score_total": 19,
+  "qualitative_score_maximum": 22,
+  "core_preservation_file": "core_preservation_check.json",
+  "all_core_11_files_byte_identical": true,
+  "interpretation": "Artifact consistency does not mean every teaching criterion passed. S02 remains a genuine failure under the frozen rules; no source, case, reference, expectation or core artifact was modified."
+}

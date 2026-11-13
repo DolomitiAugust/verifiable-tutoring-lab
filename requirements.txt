@@ -1,0 +1,2 @@
+# Core data, record checks and tool-only tutor tests use Python 3.11+ standard library only.
+# Optional model training dependencies: requirements-ml.txt
